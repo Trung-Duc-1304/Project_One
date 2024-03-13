@@ -12,14 +12,14 @@
                         <div class="login-form-container">
                             <div class="login-register-form">
                                 <form action="?act=dangky" method="post">
-                                    <input type="text" name="hovaten" placeholder="Họ và Tên" value="<?= isset($hovaten) ? ($hovaten) : '' ?>">
-                                    <p style="color:red;"><?=$hovatenErr?></p>
-                                    <input type="text" name="dkyuser" placeholder="Username" value="<?= isset($dkyuser) ? ($dkyuser) : '' ?>">
-                                    <p style="color:red;"><?=$tendangnhapErr?></p>
-                                    <input type="password" name="dkypass" placeholder="Password" value="<?= isset($dkypass) ? ($dkypass) : '' ?>">
-                                    <p style="color:red;"><?=$matkhauErr?></p>
-                                    <input name="dkyemail" placeholder="Email" type="email" value="<?= isset($dkyemail) ? ($dkyemail) : '' ?>">
-                                    <p style="color:red;"><?=$emailErr?></p>
+                                    <input type="text" name="hovaten" placeholder="Họ và Tên" value="">
+                                    <p style="color:red;"></p>
+                                    <input type="text" name="dkyuser" placeholder="Username" value="">
+                                    <p style="color:red;"></p>
+                                    <input type="password" name="dkypass" placeholder="Password" value="<">
+                                    <p style="color:red;"></p>
+                                    <input name="dkyemail" placeholder="Email" type="email" value="">
+                                    <p style="color:red;"></p>
                                     <span>Bạn đã có tài khoản? <a href="?act=dangnhap" style="color:red;">Đăng nhập ngay</a></span>
                                     <div class="button-box btn-hover mt-3">
                                         <button type="submit" name="dangky">Đăng ký</button>

@@ -12,10 +12,10 @@
                         <div class="login-form-container">
                             <div class="login-register-form">
                                 <form action="?act=dangnhap" method="post">
-                                    <input type="text" name="username" placeholder="Username" value="<?= isset($user) ? ($user) : '' ?>">
-                                    <p style="color:red;"><?=$tendangnhapErr?></p>
-                                    <input type="password" name="password" placeholder="Password" value="<?= isset($pass) ? ($pass) : '' ?>">
-                                    <p style="color:red;"><?=$tkErr?></p>
+                                    <input type="text" name="username" placeholder="Username" value="">
+                                    <p style="color:red;"></p>
+                                    <input type="password" name="password" placeholder="Password" value="">
+                                    <p style="color:red;"></p>
                                     <div class="login-toggle-btn">
                                         <a href="?act=quenmatkhau">Quên mật khẩu?</a>
                                     </div>
