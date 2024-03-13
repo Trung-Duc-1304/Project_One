@@ -183,9 +183,9 @@
                                 </div>
                                 <div class="sidebar-list-style">
                                     <ul>
-                                        <li><a href="act?spdanhmuc">Áo mùa đông<span>6</span></a></li>
-                                        <li><a href="act?spdanhmuc">Áo mùa đông<span>13</span></a></li>
-                                        <li><a href="act?spdanhmuc">Áo mùa đông<span>18</span></a></li>
+                                        <li><a href="?act=spdanhmuc">Áo mùa đông<span>6</span></a></li>
+                                        <li><a href="?act=spdanhmuc">Áo mùa đông<span>13</span></a></li>
+                                        <li><a href="?act=spdanhmuc">Áo mùa đông<span>18</span></a></li>
                                     </ul>
                                 </div>
                             </div>
