@@ -2,13 +2,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <?php
-                            extract($sanpham);
-                        ?>
                     <div class="product-details-img-wrap" data-aos="fade-up" data-aos-delay="200">
                             <div class="swiper-container product-details-big-img-slider-2 pd-big-img-style">
                                 <a href="#">
-                                    <img src="../uploads/<?=$image?>" alt="">
+                                    <img src="../uploads/1.JPG" alt="">
                                 </a>
                             </div>
                             <div class="product-details-small-img-wrap">
@@ -18,45 +15,34 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="product-details-content" data-aos="fade-up" data-aos-delay="400">
-                            <a style="font-size: 25px" href="?act=chitietsp&id=<?=$id?>"><?=$tensp?></a>
+                            <a style="font-size: 25px" href="#">Áo mặc được</a>
                             <div class="product-details-price">
-                                <span class="old-price"><?=number_format($giasp, 0, ',', '.')?>đ</span>
-                                <span class="new-price"><?=number_format($giakm, 0, ',', '.')?>đ</span>
+                                <span class="old-price">120.000đ</span>
+                                <span class="new-price">100.000đ</span>
                             </div>
                             <div class="trangthai">
-                                <?php if($soluong<1) {?>
-                                    <p class="hethang">*Tạm thời hết hàng</p>
-                                <?php }else{ ?>
-                                    <p><span><?= $soluong;?></span> sản phẩm có sẵn</p>
-                                <?php } ?>
+                                    <!-- <p class="hethang">*Tạm thời hết hàng</p> -->
+                                    <p><span>10</span> sản phẩm có sẵn</p>
                             </div>
-                            <?php
-                                extract($danhmuc);
-                            ?>
                             <div class="product-details-meta">
                                 <ul>
                                     <li><span class="title">Category:</span>
                                         <ul>
-                                            <li><a href="?act=spdanhmuc&id=<?=$id?>"><?=$tendm?></a></li>
+                                            <li><a href="#">Áo hoodie</a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </div>
-                            <?php
-                                extract($sanpham);
-                                if($soluong>0) {
-                            ?>
                                 <div class="product-details-action-wrap">
                                     <div class="single-product-cart btn-hover">
-                                        <button onclick="themgiohang(<?= $id; ?>,<?= $giakm; ?>)" class="product-action-btn-2 theme-color" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                        <button  class="product-action-btn-2 theme-color" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
                                     </div>
                                     <div class="single-product-cart btn-hover">
-                                        <form action="?act=chitietsp&id=<?= $id?>" method="post">
+                                        <form action="#" method="post">
                                             <button type="submit" name="datngayct" class="product-action-btn-2 theme-color">Mua ngay</button>
                                         </form>
                                     </div>
                                 </div>
-                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -71,31 +57,23 @@
                 <div class="tab-content">
                     <div id="des-details1" class="tab-pane active">
                         <div class="product-description-content text-center">
-                            <p data-aos="fade-up" data-aos-delay="400"><?=$mota?></p>
+                            <p data-aos="fade-up" data-aos-delay="400">hihihaha</p>
                         </div>
                     </div>
                     <div id="des-details3" class="tab-pane">
                         <div id="loadbinhluan" class="review-wrapper">
-                            <?php extract($dembl);?>
-                            <h3><span id="countbl"><?=$countbl?></span> đánh giá</h3>
-                            <?php
-                                foreach ($listbl as $bl) {
-                                    extract($bl);
-                                    echo '<div class="single-review">
+                            <h3><span id="countbl">nguyenkimky</span> đánh giá</h3>
+                                            <div class="single-review">
                                             <div class="review-img">
                                                 <img src="../assets/images/userbl.png" alt="">
                                             </div>
                                             <div class="review-content">
-                                                <h5><span>'.$hovaten.'</span> - '.$ngaybinhluan.'</h5>
-                                                <p>'.$noidung.'</p>
+                                                <h5><span>ky</span> - 11/2/2023</h5>
+                                                <p>Áo hơi dày</p>
                                             </div>
-                                        </div>';
-                                }
-                                ?>
-                            
+                                        </div>
                         </div>
-                        <?php if(isset($_SESSION['user'])) : ?>
-                                <?php extract($sanpham); ?>
+                        <!-- KHI ĐĂNG NHẬP -->
                                     <div class="ratting-form-wrapper">
                                         <div class="ratting-form">
                                                 <div class="row">
@@ -103,19 +81,19 @@
                                                         <div class="rating-form-style mb-15">
                                                             <label>Đánh giá của bạn <span>*</span></label>
                                                             <textarea id="noidung"></textarea>
-                                                            <p id="binhluanErr" style="color:red;"><?= $noidungErr; ?></p>
+                                                            <p id="binhluanErr" style="color:red;"></p>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12">
                                                         <div class="form-submit">
-                                                            <input id="ngaybinhluan" type="hidden" value="<?= date('Y-m-d'); ?>">
-                                                            <button class="btn btn-dark" onclick="binhluanjs(<?= $id ?>,'<?= $_SESSION['user']['hovaten'] ?>')">Gửi</button>
+                                                            <input id="ngaybinhluan" type="hidden" value="">
+                                                            <button class="btn btn-dark" >Gửi</button>
+                                                            <!-- onclick="binhluanjs()" -->
                                                         </div>
                                                     </div>
                                                 </div>
                                         </div>
                                     </div>
-                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -128,36 +106,64 @@
                 
                 <div class="related-product-active swiper-container">
                     <div class="swiper-wrapper">
-                        <?php foreach($splq as $sp) : ?>
-                            <?php extract($sp); if($soluong>0) {?>
                             <div class="swiper-slide">
                                 <div class="product-wrap" data-aos="fade-up" data-aos-delay="200">
                                     <div class="product-img img-zoom mb-25">
-                                        <a href="?act=chitietsp&id=<?= $id?>">
-                                            <img src="../uploads/<?= $image?>" alt="">
+                                        <a href="#">
+                                            <img src="../uploads/1.JPG" alt="">
                                         </a>
                                         <div class="product-badge badge-top badge-right badge-pink">
-                                            <span>-<?= $khuyenmai?>%</span>
+                                            <span>10%</span>
                                         </div>
                                         <div class="product-action-2-wrap">
-                                            <input type="hidden" name="id" value="<?= $id?>">
+                                            <!-- <input type="hidden" name="id" value="<?= $id?>">
                                             <input type="hidden" name="tensp" value="<?= $tensp?>">
                                             <input type="hidden" name="image" value="<?= $image?>">
-                                            <input type="hidden" name="giasp" value="<?= $giakm?>">
-                                            <button data-id="<?= $id?>" onclick="themgiohang(<?= $id?>,<?= $giakm?>)" class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                            <input type="hidden" name="giasp" value="<?= $giakm?>"> -->
+                                            <button data-id=""  class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
                                         </div>
                                     </div>
                                     <div class="product-content">
-                                        <h3><a href="?act=chitietsp&id=<?= $id?>"><?= $tensp?></a></h3>
+                                        <h3><a href="#">Áo mặc được</a></h3>
                                         <div class="product-price">
-                                            <span class="old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
-                                            <span class="new-price"><?= number_format($giakm, 0, ',', '.')?>₫</span>
+                                            <span class="old-price">120.000₫</span>
+                                            <span class="new-price">100.000₫</span>
                                         </div>
                                     </div>
+                                    
                                 </div>
+                                
                             </div>
-                        <?php } endforeach; ?>
+                            <div class="swiper-slide">
+                                <div class="product-wrap" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="product-img img-zoom mb-25">
+                                        <a href="#">
+                                            <img src="../uploads/1.JPG" alt="">
+                                        </a>
+                                        <div class="product-badge badge-top badge-right badge-pink">
+                                            <span>10%</span>
+                                        </div>
+                                        <div class="product-action-2-wrap">
+                                            <!-- <input type="hidden" name="id" value="<?= $id?>">
+                                            <input type="hidden" name="tensp" value="<?= $tensp?>">
+                                            <input type="hidden" name="image" value="<?= $image?>">
+                                            <input type="hidden" name="giasp" value="<?= $giakm?>"> -->
+                                            <button data-id=""  class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3><a href="#">Áo mặc được</a></h3>
+                                        <div class="product-price">
+                                            <span class="old-price">120.000₫</span>
+                                            <span class="new-price">100.000₫</span>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
+       
