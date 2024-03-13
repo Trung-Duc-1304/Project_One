@@ -71,9 +71,9 @@
                                         <li><a href="">Giới Thiệu</a></li>
                                         <li><a href="?act=sanpham">Sản Phẩm <i class="fa-solid fa-chevron-down"></i></a> 
                                             <ul class="sub-menu-style">
-                                              <li><a href="">Áo thun</a></li>
-                                              <li><a href="">Áo Hoodie</a></li>
-                                              <li><a href="">Áo Sweater</a></li>
+                                              <li><a href="?act=dmsanpham">Áo thun</a></li>
+                                              <li><a href="?act=dmsanpham">Áo Hoodie</a></li>
+                                              <li><a href="?act=dmsanpham">Áo Sweater</a></li>
                                             </ul>
                                             
                                         </li>
