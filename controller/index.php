@@ -26,10 +26,11 @@ if(isset($_GET['act'])&&($_GET['act']!="")){
         case 'chitietsp':
             include "../view/sanpham/chitietsp.php";
             break;
-        case "chuyenkhoanvnp":
-            header("location: ../assets/vnpay_php/vnpay_pay.php");
+          // tin tuc and lien he
+          case 'tintuc':
+            include "../view/tintuc/tintuc.php";
             break;
-        case "chitiethuydon":
+          case 'lienhe':
             include "../view/tintuc/lienhe.php";
             break;
         default:

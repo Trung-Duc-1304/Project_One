@@ -89,6 +89,28 @@
                         </div>
                     </div>
                 </div>
+                <div class="swiper-slide">
+                    <div class="product-wrap" >
+                        <div class="product-img img-zoom mb-25">
+                            <a href="?act=chitietsp">
+                                <img src="../uploads/11.png" alt="">
+                            </a>
+                            <div class="product-badge badge-top badge-right badge-pink">
+                                <span>-10%</span>
+                            </div>
+                            <div class="product-action-2-wrap">
+                                    <button  class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3><a href="?act=chitietsp">Áo Thun Tay Lỡ  Infinite</a></h3>
+                            <div class="product-price">
+                                <span class="new-price">200000₫</span>
+                                <span class="old-price">210000₫</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="product-prev-1 product-nav-1" data-aos="fade-up" data-aos-delay="200"><i class="fa fa-angle-left"></i></div>
             <div class="product-next-1 product-nav-1" data-aos="fade-up" data-aos-delay="200"><i class="fa fa-angle-right"></i></div>

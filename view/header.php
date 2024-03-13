@@ -69,7 +69,14 @@
                                     <ul>
                                         <li><a href="?act=trangchu">Trang Chủ</a></li>
                                         <li><a href="">Giới Thiệu</a></li>
-                                        <li><a href="?act=sanpham">Sản Phẩm</a></li>
+                                        <li><a href="?act=sanpham">Sản Phẩm <i class="fa-solid fa-chevron-down"></i></a> 
+                                            <ul class="sub-menu-style">
+                                              <li><a href="">Áo thun</a></li>
+                                              <li><a href="">Áo Hoodie</a></li>
+                                              <li><a href="">Áo Sweater</a></li>
+                                            </ul>
+                                            
+                                        </li>
                                         <li><a href="?act=tintuc">Tin Tức</a></li>
                                         <li><a href="?act=lienhe">Liên Hệ </a></li>  
                                     </ul>
