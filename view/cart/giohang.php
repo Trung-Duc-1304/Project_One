@@ -51,7 +51,7 @@
                         <div class="col-lg-12">
                             <div class="cart-shiping-update-wrapper">
                                 <div class="cart-clear btn-hover">
-                                    <a href="?act=xoagiohang">Xóa tất cả giỏ hàng</a>
+                                    <a href="">Xóa tất cả giỏ hàng</a>
                                 </div>
                                 <div class="grand-total-wrap col-md-5">
                                     <div class="grand-total-content">
@@ -60,7 +60,7 @@
                                         </div>
                                     </div>
                                     <div class="grand-total-btn btn-hover">
-                                        <a class="btn btn-primary" href="">Tiếp tục đặt hàng</a>
+                                        <a class="btn btn-primary" href="?act=dathang">Tiếp tục đặt hàng</a>
                                     </div>
                                 </div>
                             </div>

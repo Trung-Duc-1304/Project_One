@@ -16,6 +16,9 @@ if(isset($_GET['act'])&&($_GET['act']!="")){
         case 'giohang':
             include "../view/cart/giohang.php";
             break;
+        case 'dathang':
+            include "../view/cart/dongydathang.php";
+            break;
         /* END GIO HANG */
         case 'sanpham':
             include "../view/sanpham/sanpham.php";
