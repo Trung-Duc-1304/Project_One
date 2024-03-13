@@ -1,0 +1,196 @@
+<?php
+require_once '../Model/pdo.php';
+require_once '../Model/danhmuc.php';
+require_once '../Model/sanpham.php';
+require_once '../global.php';
+require_once 'header.php';
+
+if (isset($_GET['act'])) {
+    $act = $_GET['act'];
+    switch ($act) {
+        case 'create_danh_muc':
+            $tendmErr = "";
+            if (isset($_POST['submit'])) {
+                $tendm = $_POST['tendm'];
+                if (empty(trim($tendm))) {
+                    $tendmErr = "Vui lòng nhập tên danh mục !";
+                } else {
+                    insert_dm($tendm);
+                }
+            }
+            require_once './Danh_Muc/add.php';
+            break;
+
+        case 'list_dm':
+            if (isset($_POST['search'])) {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = '';
+            }
+            $listdm = load_all_dm($kyw);
+            require_once './Danh_Muc/list.php';
+            break;
+
+        case 'update_dm':
+            $tendmErr = "";
+            if (isset($_GET['id']) && ($_GET['id'] != "")) {
+                $id = $_GET['id'];
+                $dm = load_one_dm($id);
+                if ($dm) {
+                    $id = $dm['id'];
+                    $tendm = $dm['tendm'];
+                }
+            }
+            if (isset($_POST['submit'])) {
+                $id = $_POST['id'];
+                $tendm = $_POST['tendm'];
+                if (empty(trim($tendm))) {
+                    $tendmErr = "Vui lòng nhập tên danh mục !";
+                } else {
+                    update_dm($id, $tendm);
+                    echo '<script>
+                                    alert("Bạn đã sửa danh mục thành công !");
+                                    window.location.href="?act=list_dm";
+                          </script>';
+                }
+            }
+            require_once './Danh_Muc/update.php';
+            break;
+
+        case 'delete_dm':
+            if (isset($_GET['id']) && ($_GET['id'] != "")) {
+                $id = $_GET['id'];
+                delete_dm($id);
+                echo '<script>
+                        alert("Bạn đã xóa danh mục thành công !");
+                        window.location.href="?act=list_dm";
+                    </script>';
+            }
+            require_once './Danh_Muc/list.php';
+            break;
+
+        // SẢN PHẨM
+
+        case 'list_sp':
+            if (isset($_POST['search'])) {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            if (isset($_GET['page']) && ($_GET['page'] != ""))
+                $page = $_GET['page'];
+            else
+                $page = 1;
+            $tongsp = dem_sp();
+            $listsp = load_all_sp($kyw, $page);
+            include_once './San_Pham/list.php';
+            break;
+
+        case 'create_sp':
+            $tenspErr = "";
+            $imageErr = "";
+            $motaErr = "";
+            if (isset($_POST['submit'])) {
+                $tensp = $_POST['tensp'];
+                $giasp = $_POST['giasp'];
+                $image = basename($_FILES['image']['name']);
+                $soluong = $_POST['soluong'];
+                $khuyenmai = $_POST['khuyenmai'];
+                $mota = $_POST['mota'];
+                $danhmuc = $_POST['danhmuc'];
+                $check = true;
+                if (empty(trim($tensp))) {
+                    $tenspErr = "Vui lòng nhập tên sản phẩm !";
+                    $check = false;
+                }
+                if (empty(trim($mota))) {
+                    $motaErr = "Vui lòng nhập mô tả sản phẩm !";
+                    $check = false;
+                }
+                if (empty($giasp))
+                    $giasp = 1;
+                if (empty($soluong))
+                    $soluong = 1;
+                if (empty($khuyenmai))
+                    $khuyenmai = 0;
+                $giakm = intval($giasp) * ((100 - intval($khuyenmai)) / 100);
+                if (empty($image)) {
+                    $check = false;
+                    $imageErr = "Vui lòng uploads file ảnh !";
+                } else {
+                    $file_tmp = $_FILES['image']['tmp_name'];
+                    $target_file = "../uploads/" . $image;
+                    $extension = pathinfo($target_file, PATHINFO_EXTENSION);
+                    if (!in_array($extension, ["png", "jpeg", "jpg", "webp"])) {
+                        $check = false;
+                        $imageErr = "File không đúng định dạng !";
+                    } else {
+                        if ($check) {
+                            move_uploaded_file($file_tmp, $target_file);
+                        }
+                    }
+                }
+                if ($check) {
+                    insert_sp($danhmuc, $tensp, $giasp, $image, $giakm, $soluong, $khuyenmai, $mota);
+                }
+            }
+            $listdm = load_all_dm("");
+            include_once './San_Pham/add.php';
+            break;
+
+        case 'sua_sp':         
+                $sp = load_one_sp();
+                $listdm = load_all_dm("");
+                include_once './San_Pham/update.php';
+            break;
+
+        case 'update_sp':
+            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                $id = $_POST['id'];
+                $iddm = $_POST['danhmuc'];
+                $tensp = $_POST['tensp'];
+                $giasp = $_POST['giasp'];
+                $khuyenmai = $_POST['khuyenmai'];
+                $soluong = $_POST['soluong'];
+                $mota = $_POST['mota'];            
+                $Image = $_FILES['image']['name'];
+                $target_dir = "../uploads/";
+                $giakm = intval($giasp) * ((100 - intval($khuyenmai)) / 100);
+                $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                    // echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+                } else {
+                    // echo "Sorry, there was an error uploading your file.";
+                }
+                update_sp($id, $iddm, $tensp, $giasp, $khuyenmai, $soluong, $giakm, $mota, $Image);
+            }
+            $listdm = load_all_dm("");
+            $listsp = load_all_sp(0, "");
+            include_once './San_Pham/list.php';
+            break;
+
+        case 'xoa_sp':
+            if (isset($_GET['id']) && ($_GET['id'] != "")) {
+                $id = $_GET['id'];
+                $sp = load_one_sp($id);
+                if ($sp) {
+                    unlink("../uploads/" . $sp['image']);
+                    delete_sp($sp['id']);
+                    echo '<script>
+                            alert("Bạn đã xóa sản phẩm thành công !");
+                            window.location.href="?act=list_sp";
+                        </script>';
+                }
+            }
+            $listsp = load_all_sp("", 0);
+            include_once './San_Pham/list.php';
+            break;
+
+        default:
+            include "home.php";
+            break;
+    }
+} else {
+    include "home.php";
+}
+include "footer.php";

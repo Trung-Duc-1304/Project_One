@@ -1,0 +1,41 @@
+.container-fluid {
+    padding: 20px;
+    width: 75%;
+    margin-left: 250px;
+    margin-top: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.Err {
+    color: red;
+    font-size: 14px;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}

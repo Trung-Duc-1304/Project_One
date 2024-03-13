@@ -1,0 +1,106 @@
+.container-fluid {
+    margin-top: 100px;
+    width: 95%;
+    margin-left: 200px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.float-right {
+    float: right;
+}
+
+.input-group {
+    width: 300px;
+    /* điều chỉnh độ rộng của ô tìm kiếm */
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead th,
+.table tbody td {
+    text-align: center;
+}
+
+.table thead th {
+    background-color: #ff8000;
+    color: #e9ecef;
+    /* màu nền cho header */
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #f1f1f1;
+    /* màu nền cho hàng chẵn */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+    /* màu nền cho hàng lẻ */
+}
+
+.table tbody tr:hover {
+    background-color: #e9ecef;
+    /* màu nền khi hover vào hàng */
+}
+
+.col-1,
+.col-2 {
+    /* điều chỉnh độ rộng cột */
+    width: 10%;
+}
+
+.btn-secondary {
+    background-color: #ff8000;
+    /* màu nút */
+    color: white;
+    /* màu chữ */
+    padding: 5px 10px;
+}
+
+.btn-primary {
+    background-color: #ff8000;
+    /* màu nút tìm kiếm */
+    color: white;
+    /* màu chữ */
+}
+
+.btn-secondary:hover,
+.btn-primary:hover {
+    opacity: 0.8;
+    /* hiệu ứng khi hover vào nút */
+}
+
+.h3 {
+    text-align: center;
+}
+
+.form-control {
+    margin-left: 50%;
+    width: 1050px;
+}
+
+.nhap {
+    margin-left: 50%;
+    width: 200px;
+}
+
+.tim {
+    margin-left: 50%;
+    margin-top: 10px;
+    width: 100px;
+}
