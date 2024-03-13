@@ -23,7 +23,7 @@
                                 <div class="footer-widget footer-widget-margin-2 footer-address mb-40">
                                     <h3 class="footer-title">Địa chỉ liên hệ</h3>
                                     <ul>
-                                        <li><span>Địa chỉ: </span> Mỹ Đình, Hà Nội</li>
+                                        <li><span>Địa chỉ: </span> Trịnh Văn Pô, Nam Từ Liêm, Hà Nội</li>
                                         <li><span>Liên hệ:</span> 0868215098 </li>
                                         <li><span>Email: </span>vinhd768@gmail.com</li>
                                     </ul>
