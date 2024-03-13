@@ -67,18 +67,18 @@
                                     <div class="your-order-middle">
                                         <ul>
                                            
-                                                <li> <span>150000₫</span></li>
+                                                <li> Áo thun tay lỡ<span>150000₫</span></li>
                                         </ul>
                                     </div>
                                     <div class="your-order-info order-shipping">
                                         <ul>
-                                            <li>Thông tin <p><?=$_SESSION['user']['diachi']?></p>
+                                            <li>Thông tin <p>Trịnh Văn Pô, Nam Từ Liêm, Hà Nội</p>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="your-order-info order-total">
                                         <ul>
-                                            <li>Thành tiền <span id="vnp_thanhcong"><?=number_format($tongthanhtoan, 0, ',', '.')?>đ</span></li>
+                                            <li>Thành tiền <span id="vnp_thanhcong">150000đ</span></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -9,7 +9,7 @@
             <div class="bentrai">
                 <h2>Liên hệ với chúng tôi</h2><br>
                 <div class="thongtinlienhe">
-                    <h3>ĐẶNG VINH </h3>
+                    <h3>Boutique </h3>
                     <p><span>Địa chỉ:</span> Tòa nhà FPT Polytechnic, P. Trịnh Văn Bô,
                         <br> Xuân Phương, Nam Từ Liêm, Hà Nội, Việt Nam</p>
                     <p><span>Hotline:</span> 0123.456.789</p>
