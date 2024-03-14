@@ -38,4 +38,3 @@
         $query="DELETE FROM danhmuc WHERE id=".$id;
         pdo_execute($query);
     }
-?>

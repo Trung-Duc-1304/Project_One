@@ -2,6 +2,8 @@
 require_once '../Model/pdo.php';
 require_once '../Model/danhmuc.php';
 require_once '../Model/sanpham.php';
+require_once '../Model/Account.php';
+require_once '../Model/Bienthe.php';
 require_once '../global.php';
 require_once 'header.php';
 
@@ -69,7 +71,7 @@ if (isset($_GET['act'])) {
             require_once './Danh_Muc/list.php';
             break;
 
-        // SẢN PHẨM
+            // SẢN PHẨM
 
         case 'list_sp':
             if (isset($_POST['search'])) {
@@ -138,10 +140,10 @@ if (isset($_GET['act'])) {
             include_once './San_Pham/add.php';
             break;
 
-        case 'sua_sp':         
-                $sp = load_one_sp();
-                $listdm = load_all_dm("");
-                include_once './San_Pham/update.php';
+        case 'sua_sp':
+            $sp = load_one_sp();
+            $listdm = load_all_dm("");
+            include_once './San_Pham/update.php';
             break;
 
         case 'update_sp':
@@ -152,7 +154,7 @@ if (isset($_GET['act'])) {
                 $giasp = $_POST['giasp'];
                 $khuyenmai = $_POST['khuyenmai'];
                 $soluong = $_POST['soluong'];
-                $mota = $_POST['mota'];            
+                $mota = $_POST['mota'];
                 $Image = $_FILES['image']['name'];
                 $target_dir = "../uploads/";
                 $giakm = intval($giasp) * ((100 - intval($khuyenmai)) / 100);
@@ -185,6 +187,115 @@ if (isset($_GET['act'])) {
             $listsp = load_all_sp("", 0);
             include_once './San_Pham/list.php';
             break;
+
+
+            // ACCOUNT
+
+        case 'list_account':
+            $list_account = loadAll_account();
+            require_once './Account/list.php';
+            break;
+
+        case 'sua_account':
+            $load_oneAccount = loadOne_account();
+            require_once './Account/update.php';
+            break;
+        case 'update_account':
+            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                $id = $_POST['id'];
+                $hovaten = $_POST['hovaten'];
+                $tendangnhap = $_POST['tendangnhap'];
+                $matkhau = $_POST['matkhau'];
+                $email = $_POST['email'];
+                $role = $_POST['role'];
+                $trangthai = $_POST['trangthai'];
+
+
+                update_account($id, $hovaten, $tendangnhap, $matkhau, $email, $role, $trangthai);
+            }
+            $list_account = loadAll_account();
+            require_once './Account/list.php';
+            break;
+
+        case 'delete_account':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                delete_account($id);
+            }
+            $list_account = loadAll_account();
+            include_once './Account/list.php';
+            break;
+
+            // Biến thể
+        case 'create_bt':
+            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                $pro_id = $_GET['id'];
+                $size = $_POST['size'];
+                $color = $_POST['color'];
+                $soLuong = $_POST['soLuong'];
+                insert_bt($pro_id, $size, $color, $soLuong);
+                echo '<script>
+                            alert("Bạn đã xóa sản phẩm thành công !");
+                            window.location.href="?act=list_bt&id=' . $pro_id . '";
+                        </script>';
+            }
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                $list_bt = loadAll_bt($id);
+            }
+            $sp = load_one_sp();
+            include_once './Bien_The/add.php';
+            break;
+
+        case 'list_bt':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                $list_bt = loadAll_bt($id);
+            }
+            $sp = load_one_sp();
+            include_once './Bien_The/list.php';
+            break;
+        case 'delete_bt':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $pro_id = $_GET['pro_id'];
+                $id = $_GET['id'];
+                delete_bt($pro_id, $id);
+                echo '<script>
+                                alert("Bạn đã xóa biến thể sản phẩm thành công !");
+                                window.location.href="?act=list_bt&id=' . $pro_id . '";
+                            </script>';
+            }
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                $list_bt = loadAll_bt($id);
+            }
+            $sp = load_one_sp();
+            include_once './Bien_The/list.php';
+            break;
+
+            case 'sua_bt':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    $listOne_bt = loadOne_bt($id);
+                }
+                $sp = load_one_sp();
+                include_once './Bien_The/update.php';
+                break;
+            case 'update_bt':
+                if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                    $id = $_GET['id'];
+                    $pro_id = $_GET['pro_id'];
+                    $soluong = $_POST['soLuong'];
+                    update_bt($id, $pro_id, $soluong);
+                    echo '<script>
+                                alert("Bạn đã xóa biến thể sản phẩm thành công !");
+                                window.location.href="?act=list_bt&id=' . $pro_id . '";
+                            </script>';
+
+                }
+                $list_bt = loadAll_bt($id);
+                include_once './Bien_The/list.php';
+                break;
 
         default:
             include "home.php";

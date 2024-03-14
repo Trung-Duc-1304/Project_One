@@ -21,14 +21,14 @@
                     <table class="table text-center">
                         <thead>
                             <tr>
-                                <th>Mã loại</th>
-                                <th>Tên sản phẩm</th>
-                                <th>Giá gốc</th>
-                                <th>Giá Sales</th>
-                                <th>Ảnh</th>
-                                <th>SL</th>
-                                <th>Loại</th>
-                                <th>Thao Tác</th>
+                                <th class="text-primary  fw-bold">Mã loại</th>
+                                <th class="text-primary  fw-bold">Tên sản phẩm</th>
+                                <th class="text-primary  fw-bold">Giá</th>
+                                <!-- <th class="text-primary  fw-bold">Giá Sales</th> -->
+                                <th class="text-primary  fw-bold">Ảnh</th>
+                                <th class="text-primary  fw-bold">SL</th>
+                                <th class="text-primary  fw-bold">Loại</th>
+                                <th class="text-primary  fw-bold">Thao Tác</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,15 +43,18 @@
                                     <td class=" col-1 align-middle text-center"><?= $id ?></td>
                                     <td class="col-2 align-middle"><?= $tensp ?></td>
                                     <td class="col-2 align-middle"><?= number_format($giasp, 0, ',', '.') ?> VND</td>
-                                    <td class="col-2 align-middle"><?= number_format($giakm, 0, ',', '.') ?> VNĐ</td>
+                                    <!-- <td class="col-2 align-middle"><?= number_format($giakm, 0, ',', '.') ?> VNĐ</td> -->
                                     <td class="col-1 align-middle"><img src="../uploads/<?=$image?>" alt="err" height="50px" width="50px">
                                     </td>
                                     <td class="col-1 align-middle"><?= $soluong ?></td>
                                     <td class="col-1 align-middle"><?= $tendm ?></td>
                                     <td class="col-2 align-middle">
+                                    <a href="?act=create_bt&id=<?=$id?>">
+                                            <button type="button" class="btn btn-info btn-sm">Variant</button>
+                                        </a>
                                         <a href="?act=sua_sp&id=<?=$id?>">
                                             <button type="button" class="btn btn-warning btn-sm">Sửa</button>
-                                        </a> |
+                                        </a>
                                         <a href="?act=xoa_sp&id=<?=$id?>">
                                             <button type="button" onclick="return confirm('Bạn có chắc chắn muốn xóa không?')" class="btn btn-danger btn-sm">Xóa</button>
                                         </a>

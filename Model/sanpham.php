@@ -11,7 +11,10 @@ function load_sp_nb()
 }
 function load_all_sp($kyw, $page)
 {
-    $query = "SELECT sanpham.*, danhmuc.tendm FROM sanpham INNER JOIN danhmuc ON sanpham.iddm=danhmuc.id WHERE 1";
+    $query = "SELECT sanpham.*, danhmuc.tendm FROM sanpham 
+    INNER JOIN danhmuc 
+    ON sanpham.iddm=danhmuc.id 
+    WHERE 1";
     if ($kyw != "") {
         $query .= " AND (tensp like '%" . $kyw . "%' OR giasp LIKE '%" . $kyw . "%')";
     }
