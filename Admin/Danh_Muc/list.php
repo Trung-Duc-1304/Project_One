@@ -11,10 +11,10 @@
             <div class="card">
                 <table class="table text-center">
                     <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Tên Danh Mục</th>
-                            <th>Thao Tác</th>
+                        <tr >
+                            <th class="text-primary  fw-bold">ID</th>
+                            <th class="text-primary  fw-bold">Tên Danh Mục</th>
+                            <th class="text-primary  fw-bold">Thao Tác</th>
                         </tr>
                     </thead>
                     <tbody>
