@@ -17,7 +17,7 @@
                                                         </div>
                                                         <div class="product-action-2-wrap">
                                                             
-                                                                <button data-id="" onclick="themgiohang()" class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                                                <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
                                                             
                                                                 <!-- <button class="product-action-btn-2">Đang hết hàng</button> -->
                                                             
@@ -43,7 +43,7 @@
                                                         </div>
                                                         <div class="product-action-2-wrap">
                                                             
-                                                                <button data-id="" onclick="themgiohang()" class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                                                <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
                                                             
                                                                 <!-- <button class="product-action-btn-2">Đang hết hàng</button> -->
                                                             
@@ -69,7 +69,7 @@
                                                         </div>
                                                         <div class="product-action-2-wrap">
                                                             
-                                                                <button data-id="" onclick="themgiohang()" class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                                                <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
                                                             
                                                                 <!-- <button class="product-action-btn-2">Đang hết hàng</button> -->
                                                             
@@ -95,7 +95,7 @@
                                                         </div>
                                                         <div class="product-action-2-wrap">
                                                             
-                                                                <button data-id="" onclick="themgiohang()" class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                                                <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
                                                             
                                                                 <!-- <button class="product-action-btn-2">Đang hết hàng</button> -->
                                                             
@@ -121,7 +121,7 @@
                                                         </div>
                                                         <div class="product-action-2-wrap">
                                                             
-                                                                <button data-id="" onclick="themgiohang()" class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                                                <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
                                                             
                                                                 <!-- <button class="product-action-btn-2">Đang hết hàng</button> -->
                                                             
@@ -147,7 +147,7 @@
                                                         </div>
                                                         <div class="product-action-2-wrap">
                                                             
-                                                                <button data-id="" onclick="themgiohang()" class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                                                <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
                                                             
                                                                 <!-- <button class="product-action-btn-2">Đang hết hàng</button> -->
                                                             

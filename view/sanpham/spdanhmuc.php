@@ -9,7 +9,7 @@
                                             <div class="col-lg-4 col-sm-5">
                                                 <div class="product-wrap mb-35" data-aos="fade-up" data-aos-delay="200">
                                                     <div class="product-img img-zoom mb-25">
-                                                        <a href="act?chitietsp">
+                                                        <a href="?act=chitietsp">
                                                             <img src="../uploads/1.JPG" alt="">
                                                         </a>
                                                         <div class="product-badge badge-top badge-right badge-pink">
@@ -17,14 +17,14 @@
                                                         </div>
                                                         <div class="product-action-2-wrap">
                                                             
-                                                                <button data-id="" onclick="themgiohang()" class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                                        <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
                                                             
                                                                 <!-- <button class="product-action-btn-2">Đang hết hàng</button> -->
                                                             
                                                         </div>
                                                     </div>
                                                     <div class="product-content">
-                                                        <h3><a href="act?chitietsp">Áo mặc được</a></h3>
+                                                        <h3><a href="?act=chitietsp">Áo mặc được</a></h3>
                                                         <div class="product-price">
                                                             <span class="old-price">120.000₫</span>
                                                             <span class="new-price">100.000₫</span>
@@ -35,22 +35,22 @@
                                             <div class="col-lg-4 col-sm-5">
                                                 <div class="product-wrap mb-35" data-aos="fade-up" data-aos-delay="200">
                                                     <div class="product-img img-zoom mb-25">
-                                                        <a href="act?chitietsp">
+                                                        <a href="?act=chitietsp">
                                                             <img src="../uploads/1.JPG" alt="">
                                                         </a>
                                                         <div class="product-badge badge-top badge-right badge-pink">
                                                             <span>10%</span>
                                                         </div>
                                                         <div class="product-action-2-wrap">
-                                                            
-                                                                <button data-id="" onclick="themgiohang()" class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                                                <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
+                                                                
                                                             
                                                                 <!-- <button class="product-action-btn-2">Đang hết hàng</button> -->
                                                             
                                                         </div>
                                                     </div>
                                                     <div class="product-content">
-                                                        <h3><a href="ctsanpham.html">Áo mặc được</a></h3>
+                                                        <h3><a href="?act=chitietsp">Áo mặc được</a></h3>
                                                         <div class="product-price">
                                                             <span class="old-price">120.000₫</span>
                                                             <span class="new-price">100.000₫</span>

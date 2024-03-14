@@ -35,7 +35,7 @@
                             </div>
                                 <div class="product-details-action-wrap">
                                     <div class="single-product-cart btn-hover">
-                                        <button  class="product-action-btn-2 theme-color" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                        <button  class="product-action-btn-2 theme-color" title="Add To Cart"><i class="pe-7s-cart"></i> <a href="?act=giohang" style="color:white;">Thêm Vào Giỏ Hàng</a></button>
                                     </div>
                                     <div class="single-product-cart btn-hover">
                                         <form action="#" method="post">
@@ -120,7 +120,7 @@
                                             <input type="hidden" name="tensp" value="<?= $tensp?>">
                                             <input type="hidden" name="image" value="<?= $image?>">
                                             <input type="hidden" name="giasp" value="<?= $giakm?>"> -->
-                                            <button data-id=""  class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                            <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
                                         </div>
                                     </div>
                                     <div class="product-content">
@@ -148,7 +148,7 @@
                                             <input type="hidden" name="tensp" value="<?= $tensp?>">
                                             <input type="hidden" name="image" value="<?= $image?>">
                                             <input type="hidden" name="giasp" value="<?= $giakm?>"> -->
-                                            <button data-id=""  class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                            <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
                                         </div>
                                     </div>
                                     <div class="product-content">

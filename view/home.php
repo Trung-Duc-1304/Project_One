@@ -77,7 +77,7 @@
                                 <span>-10%</span>
                             </div>
                             <div class="product-action-2-wrap">
-                                    <button  class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                    <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
                             </div>
                         </div>
                         <div class="product-content">
@@ -99,7 +99,7 @@
                                 <span>-10%</span>
                             </div>
                             <div class="product-action-2-wrap">
-                                    <button  class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                    <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
                             </div>
                         </div>
                         <div class="product-content">
@@ -137,7 +137,7 @@
                                     <span>-10%</span>
                                 </div>
                                 <div class="product-action-2-wrap">
-                                        <button  class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                        <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
                                 </div>
                             </div>
                             <div class="product-content">
@@ -159,7 +159,7 @@
                                     <span>-10%</span>
                                 </div>
                                 <div class="product-action-2-wrap">
-                                        <button  class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                        <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
                                 </div>
                             </div>
                             <div class="product-content">
@@ -181,7 +181,7 @@
                                     <span>-10%</span>
                                 </div>
                                 <div class="product-action-2-wrap">
-                                        <button  class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                        <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
                                 </div>
                             </div>
                             <div class="product-content">
@@ -203,7 +203,7 @@
                                     <span>-10%</span>
                                 </div>
                                 <div class="product-action-2-wrap">
-                                        <button  class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button>
+                                        <a href="?act=giohang"><button data-id=""class="product-action-btn-2" title="Add To Cart"><i class="pe-7s-cart"></i> Thêm Vào Giỏ Hàng</button></a>
                                 </div>
                             </div>
                             <div class="product-content">
