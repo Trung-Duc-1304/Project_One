@@ -107,7 +107,7 @@
         <ul class="menu-inner py-1">
           <!-- Dashboards -->
           <li class="menu-item">
-            <a href="index.php?act=home" class="menu-link">
+            <a href="index.php" class="menu-link">
               <i class="menu-icon tf-icons bx bx-home-circle"></i>
               <div class="text-truncate" data-i18n="𝑻𝒓𝒂𝒏𝒈 𝑪𝒉𝒖̉">𝑻𝒓𝒂𝒏𝒈 𝑪𝒉𝒖̉</div>
               <span class="badge badge-center rounded-pill bg-danger ms-auto">5</span>
