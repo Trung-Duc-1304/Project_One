@@ -99,7 +99,7 @@ if (is_array($listsp)) {
                      <div class="slick_slide_in">
                         <div class="cs_product cs_style_1 cs_bordered">
                             <div class="cs_product_thumb position-relative">
-                                <img src="assets/client/img/product4.png" alt="Product Image" class="w-100">
+                                <img src="uploads/<?=$image?>" alt="Product Image" class="w-100"><?=$image?>
                                 <div class="cs_cart_badge position-absolute">
                                     <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                         <i class="fa-regular fa-heart"></i>
