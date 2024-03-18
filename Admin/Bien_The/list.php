@@ -11,7 +11,7 @@ if (is_array($sp)) {
     <h4 class="fw-bold py-3"><span class="text-muted fw-light">Biến Thể /</span> <?=$tensp?></h4>
     <form action="?act=list_sp" method="post">
         <div class="d-flex justify-content-end flex-wrap gap-3 mb-3">
-        <a href="index.php?act=list_sp" class="btn btn-label-primary"> Danh Sách</a>
+        <a href="index.php?act=list_sp" class="btn btn-label-primary"> Danh Sách sản phẩm</a>
             <a href="index.php?act=create_bt&id=<?=$id?>" class="btn btn-primary text-end">
                 Thêm Biến Thể
             </a>

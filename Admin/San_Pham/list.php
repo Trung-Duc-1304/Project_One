@@ -26,7 +26,6 @@
                                 <th class="text-primary  fw-bold">Giá</th>
                                 <!-- <th class="text-primary  fw-bold">Giá Sales</th> -->
                                 <th class="text-primary  fw-bold">Ảnh</th>
-                                <th class="text-primary  fw-bold">SL</th>
                                 <th class="text-primary  fw-bold">Loại</th>
                                 <th class="text-primary  fw-bold">Thao Tác</th>
                             </tr>
@@ -34,11 +33,7 @@
                         <tbody>
                             <?php
                             foreach ($listsp as $sp) :
-                                extract($sp);
-                                if ($soluong <= 0)
-                                    $trangthai = 1;
-                                else
-                                    $trangthai = 0; ?>
+                                extract($sp);?>
                                 <tr>
                                     <td class=" col-1 align-middle text-center"><?= $id ?></td>
                                     <td class="col-2 align-middle"><?= $tensp ?></td>
@@ -46,7 +41,7 @@
                                     <!-- <td class="col-2 align-middle"><?= number_format($giakm, 0, ',', '.') ?> VNĐ</td> -->
                                     <td class="col-1 align-middle"><img src="../uploads/<?=$image?>" alt="err" height="50px" width="50px">
                                     </td>
-                                    <td class="col-1 align-middle"><?= $soluong ?></td>
+                                    
                                     <td class="col-1 align-middle"><?= $tendm ?></td>
                                     <td class="col-2 align-middle">
                                     <a href="?act=create_bt&id=<?=$id?>">

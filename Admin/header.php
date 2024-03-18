@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact " dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template">
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact " dir="ltr" data-theme="theme-default" data-assets/admin-path="../assets/admin/" data-template="vertical-menu-template">
 
 <head>
   <meta charset="utf-8" />
@@ -13,34 +13,34 @@
   <!-- Canonical SEO -->
   <link rel="canonical" href="https://themeselection.com/item/sneat-bootstrap-html-admin-template/">
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/img/favicon/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/admin/img/favicon/favicon.ico" />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
 
   <!-- Icons -->
-  <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
-  <link rel="stylesheet" href="../assets/vendor/fonts/fontawesome.css" />
-  <link rel="stylesheet" href="../assets/vendor/fonts/flag-icons.css" />
+  <link rel="stylesheet" href="../assets/admin/vendor/fonts/boxicons.css" />
+  <link rel="stylesheet" href="../assets/admin/vendor/fonts/fontawesome.css" />
+  <link rel="stylesheet" href="../assets/admin/vendor/fonts/flag-icons.css" />
 
   <!-- Core CSS -->
-  <link rel="stylesheet" href="../assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
-  <link rel="stylesheet" href="../assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
-  <link rel="stylesheet" href="../assets/css/demo.css" />
+  <link rel="stylesheet" href="../assets/admin/vendor/css/rtl/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="../assets/admin/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="../assets/admin/css/demo.css" />
 
   <!-- Vendors CSS -->
-  <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-  <link rel="stylesheet" href="../assets/vendor/libs/typeahead-js/typeahead.css" />
-  <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+  <link rel="stylesheet" href="../assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+  <link rel="stylesheet" href="../assets/admin/vendor/libs/typeahead-js/typeahead.css" />
+  <link rel="stylesheet" href="../assets/admin/vendor/libs/apex-charts/apex-charts.css" />
 
   <!-- Page CSS -->
-  <link rel="stylesheet" href="../assets/vendor/css/pages/card-analytics.css" />
+  <link rel="stylesheet" href="../assets/admin/vendor/css/pages/card-analytics.css" />
 
   <!-- Helpers -->
-  <script src="../assets/vendor/js/helpers.js"></script>
-  <!-- <script src="../assets/vendor/js/template-customizer.js"></script> -->
-  <script src="../assets/js/config.js"></script>
+  <script src="../assets/admin/vendor/js/helpers.js"></script>
+  <!-- <script src="../assets/admin/vendor/js/template-customizer.js"></script> -->
+  <script src="../assets/admin/js/config.js"></script>
 
 </head>
 
@@ -386,7 +386,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar">
-                              <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle">
+                              <img src="../assets/admin/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle">
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -422,7 +422,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar">
-                              <img src="../assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle">
+                              <img src="../assets/admin/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle">
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -458,7 +458,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar">
-                              <img src="../assets/img/avatars/9.png" alt class="w-px-40 h-auto rounded-circle">
+                              <img src="../assets/admin/img/avatars/9.png" alt class="w-px-40 h-auto rounded-circle">
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -494,7 +494,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar">
-                              <img src="../assets/img/avatars/5.png" alt class="w-px-40 h-auto rounded-circle">
+                              <img src="../assets/admin/img/avatars/5.png" alt class="w-px-40 h-auto rounded-circle">
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -512,7 +512,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar">
-                              <img src="../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle">
+                              <img src="../assets/admin/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle">
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -556,7 +556,7 @@
               <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                   <div class="avatar avatar-online">
-                    <img src="../assets/img/avatars/admin.jpg" alt class="w-px-40 h-auto rounded-circle">
+                    <img src="../assets/admin/img/avatars/admin.jpg" alt class="w-px-40 h-auto rounded-circle">
                   </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -565,7 +565,7 @@
                       <div class="d-flex">
                         <div class="flex-shrink-0 me-3">
                           <div class="avatar avatar-online">
-                            <img src="../assets/img/avatars/admin.jpg" alt class="w-px-40 h-auto rounded-circle">
+                            <img src="../assets/admin/img/avatars/admin.jpg" alt class="w-px-40 h-auto rounded-circle">
                           </div>
                         </div>
                         <div class="flex-grow-1">

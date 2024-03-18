@@ -153,7 +153,7 @@ if (isset($_GET['act'])) {
                 $tensp = $_POST['tensp'];
                 $giasp = $_POST['giasp'];
                 $khuyenmai = $_POST['khuyenmai'];
-                $soluong = $_POST['soluong'];
+                
                 $mota = $_POST['mota'];
                 $Image = $_FILES['image']['name'];
                 $target_dir = "../uploads/";
@@ -164,7 +164,7 @@ if (isset($_GET['act'])) {
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
-                update_sp($id, $iddm, $tensp, $giasp, $khuyenmai, $soluong, $giakm, $mota, $Image);
+                update_sp($id, $iddm, $tensp, $giasp, $khuyenmai,  $giakm, $mota, $Image);
             }
             $listdm = load_all_dm("");
             $listsp = load_all_sp(0, "");
@@ -305,3 +305,4 @@ if (isset($_GET['act'])) {
     include "home.php";
 }
 include "footer.php";
+

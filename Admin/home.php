@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="col-4 pt-3 ps-0">
-          <img src="../assets/img/illustrations/prize-light.png" width="90" height="140" class="rounded-start" alt="View Sales">
+          <img src="../assets/admin/img/illustrations/prize-light.png" width="90" height="140" class="rounded-start" alt="View Sales">
         </div>
       </div>
     </div>
@@ -66,7 +66,7 @@
           <div class="card-body">
             <div class="card-title d-flex align-items-start justify-content-between">
               <div class="avatar flex-shrink-0">
-                <img src="../assets/img/icons/unicons/wallet-info.png" alt="Credit Card" class="rounded">
+                <img src="../assets/admin/img/icons/unicons/wallet-info.png" alt="Credit Card" class="rounded">
               </div>
               <div class="dropdown">
                 <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -109,7 +109,7 @@
           <div class="card-body">
             <div class="card-title d-flex align-items-start justify-content-between">
               <div class="avatar flex-shrink-0">
-                <img src="../assets/img/icons/unicons/briefcase.png" alt="Credit Card" class="rounded">
+                <img src="../assets/admin/img/icons/unicons/briefcase.png" alt="Credit Card" class="rounded">
               </div>
               <div class="dropdown">
                 <button class="btn p-0" type="button" id="cardOpt1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -165,7 +165,7 @@
               <div class="report-list-item rounded-2 mb-3">
                 <div class="d-flex align-items-start">
                   <div class="report-list-icon shadow-sm me-2">
-                    <img src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/svg/icons/paypal-icon.svg" width="22" height="22" alt="Paypal">
+                    <img src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/admin/svg/icons/paypal-icon.svg" width="22" height="22" alt="Paypal">
                   </div>
                   <div class="d-flex justify-content-between align-items-end w-100 flex-wrap gap-2">
                     <div class="d-flex flex-column">
@@ -179,7 +179,7 @@
               <div class="report-list-item rounded-2 mb-3">
                 <div class="d-flex align-items-start">
                   <div class="report-list-icon shadow-sm me-2">
-                    <img src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/svg/icons/shopping-bag-icon.svg" width="22" height="22" alt="Shopping Bag">
+                    <img src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/admin/svg/icons/shopping-bag-icon.svg" width="22" height="22" alt="Shopping Bag">
                   </div>
                   <div class="d-flex justify-content-between align-items-end w-100 flex-wrap gap-2">
                     <div class="d-flex flex-column">
@@ -193,7 +193,7 @@
               <div class="report-list-item rounded-2">
                 <div class="d-flex align-items-start">
                   <div class="report-list-icon shadow-sm me-2">
-                    <img src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/svg/icons/wallet-icon.svg" width="22" height="22" alt="Wallet">
+                    <img src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/admin/svg/icons/wallet-icon.svg" width="22" height="22" alt="Wallet">
                   </div>
                   <div class="d-flex justify-content-between align-items-end w-100 flex-wrap gap-2">
                     <div class="d-flex flex-column">
@@ -334,7 +334,7 @@
           <div class="card-body">
             <div class="card-title d-flex align-items-start justify-content-between">
               <div class="avatar flex-shrink-0">
-                <img src="../assets/img/icons/unicons/cc-warning.png" alt="Credit Card" class="rounded">
+                <img src="../assets/admin/img/icons/unicons/cc-warning.png" alt="Credit Card" class="rounded">
               </div>
               <div class="dropdown">
                 <button class="btn p-0" type="button" id="cardOpt5" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -408,7 +408,7 @@
             <tr>
               <td>
                 <div class="d-flex align-items-center">
-                  <img src="../assets/img/products/oneplus-lg.png" alt="Oneplus" height="32" width="32" class="me-2">
+                  <img src="../assets/admin/img/products/oneplus-lg.png" alt="Oneplus" height="32" width="32" class="me-2">
                   <div class="d-flex flex-column">
                     <span class="fw-medium lh-1">OnePlus 7Pro</span>
                     <small class="text-muted">OnePlus</small>
@@ -434,7 +434,7 @@
             <tr>
               <td>
                 <div class="d-flex align-items-center">
-                  <img src="../assets/img/products/magic-mouse.png" alt="Apple" height="32" width="32" class="me-2">
+                  <img src="../assets/admin/img/products/magic-mouse.png" alt="Apple" height="32" width="32" class="me-2">
                   <div class="d-flex flex-column">
                     <span class="fw-medium lh-1">Magic Mouse</span>
                     <small class="text-muted">Apple</small>
@@ -460,7 +460,7 @@
             <tr>
               <td>
                 <div class="d-flex align-items-center">
-                  <img src="../assets/img/products/imac-pro.png" alt="Apple" height="32" width="32" class="me-2">
+                  <img src="../assets/admin/img/products/imac-pro.png" alt="Apple" height="32" width="32" class="me-2">
                   <div class="d-flex flex-column">
                     <span class="fw-medium lh-1">iMac Pro</span>
                     <small class="text-muted">Apple</small>
@@ -486,7 +486,7 @@
             <tr>
               <td>
                 <div class="d-flex align-items-center">
-                  <img src="../assets/img/products/note10.png" alt="Samsung" height="32" width="32" class="me-2">
+                  <img src="../assets/admin/img/products/note10.png" alt="Samsung" height="32" width="32" class="me-2">
                   <div class="d-flex flex-column">
                     <span class="fw-medium lh-1">Note 10</span>
                     <small class="text-muted">Samsung</small>
@@ -512,7 +512,7 @@
             <tr>
               <td>
                 <div class="d-flex align-items-center">
-                  <img src="../assets/img/products/iphone.png" alt="Apple" height="32" width="32" class="me-2">
+                  <img src="../assets/admin/img/products/iphone.png" alt="Apple" height="32" width="32" class="me-2">
                   <div class="d-flex flex-column">
                     <span class="fw-medium lh-1">iPhone 11 Pro</span>
                     <small class="text-muted">Apple</small>
@@ -538,7 +538,7 @@
             <tr>
               <td>
                 <div class="d-flex align-items-center">
-                  <img src="../assets/img/products/mi-tv.png" alt="Xiaomi" height="32" width="32" class="me-2">
+                  <img src="../assets/admin/img/products/mi-tv.png" alt="Xiaomi" height="32" width="32" class="me-2">
                   <div class="d-flex flex-column">
                     <span class="fw-medium lh-1">Mi LED TV 4X</span>
                     <small class="text-muted">Xiaomi</small>
@@ -564,7 +564,7 @@
             <tr>
               <td>
                 <div class="d-flex align-items-center">
-                  <img src="../assets/img/products/logitech-mx.png" alt="Logitech" height="32" width="32" class="me-2">
+                  <img src="../assets/admin/img/products/logitech-mx.png" alt="Logitech" height="32" width="32" class="me-2">
                   <div class="d-flex flex-column">
                     <span class="fw-medium lh-1">Logitech MX</span>
                     <small class="text-muted">Logitech</small>

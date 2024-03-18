@@ -94,15 +94,15 @@ function insert_sp($danhmuc, $tensp, $giasp, $image, $giakm, $soluong, $khuyenma
     }
 }
 
-function update_sp($id, $iddm, $tensp, $giasp, $khuyenmai, $soluong, $giakm, $mota, $Image)
+function update_sp($id, $iddm, $tensp, $giasp, $khuyenmai,  $giakm, $mota, $Image)
 {
     if ($Image != "")
         $sql = "UPDATE sanpham SET iddm='$iddm',tensp ='$tensp',
-        giasp='$giasp', khuyenmai = '$khuyenmai',soluong ='$soluong', giakm ='$giakm', mota ='$mota', image = '$Image'
+        giasp='$giasp', khuyenmai = '$khuyenmai', giakm ='$giakm', mota ='$mota', image = '$Image'
         WHERE id=" . $id;
     else
         $sql = "UPDATE sanpham SET iddm='$iddm',tensp ='$tensp',
-        giasp='$giasp',  khuyenmai = '$khuyenmai', soluong ='$soluong', giakm ='$giakm', mota ='$mota'
+        giasp='$giasp',  khuyenmai = '$khuyenmai',  giakm ='$giakm', mota ='$mota'
         WHERE id=" . $id;
 
     pdo_execute($sql);
