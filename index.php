@@ -1,4 +1,4 @@
 <?php
-    header("location: controller/index.php");
+   header("location: controller/index.php");
 ?>
-<!-- oke  dsfdsgia-->
+<!-- oke -->

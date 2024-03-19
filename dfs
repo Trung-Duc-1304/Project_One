@@ -1,0 +1,27 @@
+<?php foreach ($list_sp_nb as $sp) : ?>
+                        <?php extract($sp); $delay=200; ?>
+                            <div class="cs_isotope_item t_shirt1 shoes">
+                                <div class="cs_product cs_style_1 cs_bordered">
+                                    <div class="cs_product_thumb position-relative">
+                                        <a href="?act=chitietsp&id=<?= $id?>">
+                                            <img src="../uploads/<?= $image?>" style=" object-fit: cover; height:450px;" alt="">
+                                        </a>
+                                        <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
+                                        <div class="cs_cart_badge position-absolute">
+                                            <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                            <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </a>
+                                        </div>
+                                        <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">Add To Cart</a>
+                                    </div>
+                                    <div class="cs_product_info text-center">
+                                        <h5><a href="?act=chitietsp&id=<?= $id?>"><?= $tensp?></a></h5>
+                                        <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php $delay+=200;?>
+                    <?php endforeach; ?>

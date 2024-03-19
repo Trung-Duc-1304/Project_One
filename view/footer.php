@@ -1,74 +1,92 @@
-<footer class="footer-area">
-            <div class="bg-gray-2">
-                <div class="container">
-                    <div class="footer-top pt-80 pb-35">
+<footer class="cs_footer cs_style_1 cs_primary_bg">
+        <div class="cs_height_130 cs_height_lg_80"></div>
+        <div class="container">
+            <div class="cs_footer_main">
+                <div class="row">
+                    <div class="col-xxl-3 col-lg-3">
+                        <div class="cs_footer_widget cs_text_widget">
+                            <img src="../assets/img/logo.svg" alt="Logo">
+                            <p>Discover endless delights your one stop eCommerce destination.</p>
+                            <img src="../assets/img/payment_method_1.png" alt="Payment">
+                        </div>
+                    </div>
+                    <div class="col-xxl-7 offset-xxl-2 offset-lg-1 col-lg-8">
                         <div class="row">
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                                <div class="footer-widget footer-about mb-40">
-                                    <div class="footer-logo">
-                                        <a href="../assets/giao_dien_home/index.html"><img src="../assets/images/logo.png" alt="logo"></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                                <div class="footer-widget footer-list mb-40">
-                                    <h3 class="footer-title">Chính sách</h3>
-                                    <ul>    
-                                        <li><a href="#">Giao hàng</a></li>
-                                        <li><a href="#">Đổi trả</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                                <div class="footer-widget footer-widget-margin-2 footer-address mb-40">
-                                    <h3 class="footer-title">Địa chỉ liên hệ</h3>
+                            <div class="col-md-4">
+                                <div class="cs_footer_widget cs_menu_widget">
+                                    <h3 class="cs_footer_widget_title cs_fs_21 cs_semibold">Get to know</h3>
                                     <ul>
-                                        <li><span>Địa chỉ: </span> Trịnh Văn Pô, Nam Từ Liêm, Hà Nội</li>
-                                        <li><span>Liên hệ:</span> 0868215098 </li>
-                                        <li><span>Email: </span>vinhd768@gmail.com</li>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="shop.html">Product</a></li>
+                                        <li><a href="blog_details.html">Press</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="contact.html">Contact Us</a></li>
                                     </ul>
-                                    <div class="open-time">
-                                        <p>Giờ mở cửa : <span>8:00 AM</span> <br> Giờ đóng cửa : <span>20:00 PM</span></p>
-                                        <p>Thứ bảy - Chủ nhật : Đóng cửa</p>
-                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="cs_footer_widget cs_menu_widget">
+                                    <h3 class="cs_footer_widget_title cs_fs_21 cs_semibold">Customer Service</h3>
+                                    <ul>
+                                        <li><a href="#">Help Center</a></li>
+                                        <li><a href="#">Shipping & Delivery</a></li>
+                                        <li><a href="#">Exchange & Return</a></li>
+                                        <li><a href="#">Payment Method</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="cs_footer_widget cs_menu_widget">
+                                    <h3 class="cs_footer_widget_title cs_fs_21 cs_semibold">Contact Information</h3>
+                                    <ul class="cs_contact_info">
+                                        <li>Call : +00(244)14-50-774</li>
+                                        <li>Email : <a href="https://static.laralink.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="127b7c747d52617366667b6b73613c717d7f">[email&#160;protected]</a></li>
+                                        <li>Mon – Fri : 11 am – 9 pm</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Product Modal end -->
+            <div class="cs_footer_bottom">
+                <div>
+                    <p class="cs_copywrite_text mb-0">Copyright & 2023, All rights reserved.</p>
+                </div>
+                <div>
+                    <ul class="cs_footer_menu_widget_2">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Legal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="cs_social_links">
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+    <!-- Start scroll up button -->
+    <div class="cs_scrollup_btn" id="cs_scroll_btn">
+        <i class="fa-solid fa-arrow-up"></i>
     </div>
-    <!-- All JS is here -->
-    <script src="../assets/giao_dien_home/assets/js/vendor/modernizr-3.11.7.min.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/vendor/popper.min.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/vendor/bootstrap.min.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/wow.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/scrollup.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/aos.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/magnific-popup.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/jquery.syotimer.min.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/swiper.min.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/imagesloaded.pkgd.min.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/isotope.pkgd.min.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/jquery-ui.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/jquery-ui-touch-punch.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/jquery.nice-select.min.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/waypoints.min.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/jquery.counterup.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/select2.min.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/easyzoom.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/slinky.min.js"></script>
-    <script src="../assets/giao_dien_home/assets/js/plugins/ajax-mail.js"></script>
-    <!--SLIDER RANGER-->
-    <!-- Main JS -->
-    <script src="../assets/giao_dien_home/assets/js/main.js"></script>
-    <script src="../assets/js/cuong.js"></script>
+    <!-- End scroll up button -->
+    <!-- All script files -->
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/jquery.slick.min.js"></script>
+    <script src="../assets/js/isotope.pkg.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/animated-headline.js"></script>
+    <script src="../assets/js/main.js"></script>
 </body>
 
+<!-- Mirrored from static.laralink.com/html/sattiyas/home-v2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Mar 2024 15:07:58 GMT -->
 
-<!-- Mirrored from htmldemo.net/urdan/urdan/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Nov 2023 10:10:57 GMT -->
 </html>
