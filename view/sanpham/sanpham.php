@@ -176,6 +176,7 @@ echo $hihi;
             </div>
             <div class="cs_height_75 cs_height_lg_50"></div>
             <ul class="cs_pagination cs_fs_21 cs_semibold cs_mp0">
+                <?php if(isset())?>
                 <?php if($hihi - 1 > 0) {?>
                 <li class="cs_page_item"><a class="cs_page_link" href="?act=sanpham&page=<?php echo $hihi - 1 ?>"><i class="fa-solid fa-arrow-left"></i></a></li>
                 <?php }?> 
