@@ -64,14 +64,13 @@ echo $hihi;
                         <div class="cs_filter_widget mt-3">
                             <h3 class="cs_filter_widget_title cs_medium cs_fs_18">Price <span></span></h3>
                             <div class="cs_range_slider_wrap">
-                                <div id="slider_range" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                                    <div class="ui-slider-range ui-corner-all ui-widget-header"> </div>
-                                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                                </div>
-                                <div class="cs_amount_wrap">
-                                    <input type="text" id="amount" readonly>
-                                </div>
+                                <form action="?act=sanpham" method="post">
+                                    <label for="giaspdau">Giá tối thiểu:</label>
+                                    <input type="text" name="giaspdau" id="giaspdau">
+                                    <label for="giaspcuoi">Giá tối đa:</label>
+                                    <input type="text" name="giaspcuoi" id="giaspcuoi">
+                                    <input type="submit" value="Lọc" name="submitlocgia">
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -162,7 +161,7 @@ echo $hihi;
                                         <span>(5)</span>
                                         <span>Stock: <span class="cs_accent_color">12 in stock</span></span>
                                     </div>
-                                    <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                                    <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium"><?= number_format($giasp, 0, ',', '.')?>₫</p>
                                     <p class="cs_product_desc">Our men black t-shirt offers a classic fit and is made from high-quality pure cotton <br>materials to keep you feeling and looking great.</p>
                                     <div class="cs_action_btns">
                                         <a href="#" class="cs_btn cs_style_1 cs_fs_16 cs_medium cs_accent_btn">Add to Cart</a>
@@ -175,8 +174,9 @@ echo $hihi;
                 <?php endforeach; ?> 
             </div>
             <div class="cs_height_75 cs_height_lg_50"></div>
-            <ul class="cs_pagination cs_fs_21 cs_semibold cs_mp0">
-                <?php if(isset())?>
+            <?php if(!isset($_POST['submittimkiem']) && !isset($_POST['submitlocgia'])){ ?>
+                <ul class="cs_pagination cs_fs_21 cs_semibold cs_mp0">
+                
                 <?php if($hihi - 1 > 0) {?>
                 <li class="cs_page_item"><a class="cs_page_link" href="?act=sanpham&page=<?php echo $hihi - 1 ?>"><i class="fa-solid fa-arrow-left"></i></a></li>
                 <?php }?> 
@@ -191,6 +191,7 @@ echo $hihi;
                 <li class="cs_page_item"><a class="cs_page_link" href="#">03</a></li>
                 <li class="cs_page_item"><a class="cs_page_link" href="#"><i class="fa-solid fa-arrow-right"></i></a></li> -->
             </ul>
+          <?php  }?>
         </div>
         <div class="cs_height_140 cs_height_lg_80"></div>
         <hr>

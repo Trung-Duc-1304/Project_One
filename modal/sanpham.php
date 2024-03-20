@@ -31,19 +31,6 @@ function load_sp_nb(){
     $query="SELECT * FROM sanpham ORDER BY luotxem desc limit 0,8";
     return pdo_query($query);
 }
-// function load_all_sp($kyw,$page){
-//     $query="SELECT sanpham.*, danhmuc.tendm FROM sanpham INNER JOIN danhmuc ON sanpham.iddm=danhmuc.id WHERE 1";
-//     if($kyw!=""){
-//         $query .=" AND (tensp like '%".$kyw."%' OR giasp LIKE '%" . $kyw . "%')";
-//     }
-//     if($page>0){
-//         $batdau=intval($page*9-9);
-//         $query .=" ORDER BY id desc limit $batdau,9";
-//     }else{
-//         $query .=" ORDER BY id asc";
-//     }
-//     return pdo_query($query);
-// }
 function load_all_sp($kyw, $page) {
     $limit = 8; // Số lượng sản phẩm mỗi trang
     $query = "SELECT sanpham.*, danhmuc.tendm 
@@ -97,13 +84,13 @@ function load_all_spdm($iddm,$kyw,$giadau,$giacuoi,$page){
         $query .=" AND iddm=$iddm";
     }
     if($kyw != ''){
-        $query .=" AND (tensp like '%".$kyw."%' OR giakm LIKE '%" . $kyw . "%')";
+        $query .=" AND (tensp like '%".$kyw."%' OR giasp LIKE '%" . $kyw . "%')";
     }
     if($giadau>0 && $giacuoi>0){
-        $query .=" AND giakm BETWEEN $giadau AND $giacuoi";
+        $query .=" AND giasp BETWEEN $giadau AND $giacuoi";
     }
-    $batdau=intval($page*9-9);
-    $query .=" ORDER BY id desc limit $batdau,9";
+    $batdau=intval($page*8-8);
+    $query .=" ORDER BY id desc limit $batdau,8";
     return pdo_query($query);
 }
 function insert_sp($danhmuc, $tensp, $giasp, $image,$giakm, $soluong,$khuyenmai, $mota) {

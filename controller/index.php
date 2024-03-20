@@ -6,7 +6,6 @@ include "../modal/danhmuc.php";
 include "../modal/sanpham.php";
 include "../modal/taikhoan.php";
 include "../modal/binhluan.php";
-include "../modal/donhang.php";
 if(isset($_SESSION['user'])) {
     $listgh=load_all_giohang($_SESSION['user']['id']); 
     $countgh=count_giohang($_SESSION['user']['id']);
@@ -25,11 +24,17 @@ if(isset($_GET['act'])&&($_GET['act']!="")){
         case 'sanpham':
             if(isset($_POST['submittimkiem'])) $kyw=$_POST['timkiem'];
             else $kyw="";
-            // $dssp_new = selectAll_NewProduct(12);
+            if(isset($_POST['submitlocgia'])){
+                $giadau=$_POST['giaspdau'];
+                $giacuoi=$_POST['giaspcuoi'];
+            }else{
+                $giadau=0;
+                $giacuoi=0;
+            }
             if(isset($_GET['page'])&&($_GET['page']!="")) $page=$_GET['page'];
             else $page=1;
             $tongsp=dem_sp();
-            $list_sp_home=load_all_sp($kyw, $page);
+            $list_sp_home=load_all_spdm(0,$kyw,$giadau,$giacuoi,$page);
             include "../view/sanpham/sanpham.php";
             break;
         case 'spdanhmuc':
