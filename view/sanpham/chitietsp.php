@@ -253,7 +253,7 @@
                                             <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                                 <i class="fa-regular fa-heart"></i>
                                             </a>
-                                            <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                            <a href="?act=chitietsp&id=<?= $id?>" class="cs_cart_icon cs_accent_bg cs_white_color">
                                                 <i class="fa-regular fa-eye"></i>
                                             </a>
                                         </div>

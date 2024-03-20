@@ -42,17 +42,26 @@ echo $hihi;
                         </div>
                     </div>
                     <div class="cs_filter_sidebar_in">
+                        <!-- Tìm kiếm sản phẩm -->
+                        <form class="cs_header_search_form" method="post" action="?act=sanpham">
+                        <input type="text" placeholder="Search..." name="timkiem" value="<?= isset($kyw)?($kyw):'' ?>">
+                        <button type="submit" name="submittimkiem">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        </form>
                         <!-- DANHMUC -->
-                        <p>Danh mục</p>
-                        <?php
-                                    foreach ($listdm as $dm) {
-                                        extract($dm);
-                                        $demsp=dem_sp_dm($id);
-                                        echo '<li><a href="?act=spdanhmuc&id='.$id.'">'.$tendm.' <span>'.$demsp['countsp'].'</span></a></li>';
-                                    }
-                                ?>
+                        <div>
+                            <h4 class="mt-5 cs_filter_widget_title cs_medium cs_fs_18">Danh mục <span></span></h4>
+                            <?php
+                                foreach ($listdm as $dm) {
+                                    extract($dm);
+                                    $demsp=dem_sp_dm($id);
+                                    echo '<li><a href="?act=spdanhmuc&id='.$id.'">'.$tendm.' <span>'.$demsp['countsp'].'</span></a></li>';
+                                }
+                            ?>
+                        </div>
                         <!-- .cs_filter_widget -->
-                        <div class="cs_filter_widget">
+                        <div class="cs_filter_widget mt-3">
                             <h3 class="cs_filter_widget_title cs_medium cs_fs_18">Price <span></span></h3>
                             <div class="cs_range_slider_wrap">
                                 <div id="slider_range" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
@@ -64,168 +73,6 @@ echo $hihi;
                                     <input type="text" id="amount" readonly>
                                 </div>
                             </div>
-                        </div>
-                        <!-- .cs_filter_widget -->
-                        <!-- <div class="cs_filter_widget">
-                            <h3 class="cs_filter_widget_title cs_medium cs_fs_18">Color <span></span></h3>
-                            <ul class="cs_color_filter_list cs_mp0">
-                                <li>
-                                    <div class="cs_color_filter">
-                                        <input type="radio" name="color">
-                                        <span class="cs_color_filter_circle cs_accent_bg"></span>
-                                        <span class="cs_color_text">Red</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="cs_color_filter">
-                                        <input type="radio" name="color">
-                                        <span class="cs_color_filter_circle cs_secondary_bg"></span>
-                                        <span class="cs_color_text">Gray</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="cs_color_filter">
-                                        <input type="radio" name="color">
-                                        <span class="cs_color_filter_circle cs_primary_bg"></span>
-                                        <span class="cs_color_text">Black</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="cs_color_filter">
-                                        <input type="radio" name="color">
-                                        <span class="cs_color_filter_circle cs_white_bg"></span>
-                                        <span class="cs_color_text">White</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div> -->
-                        <!-- <div class="cs_filter_widget">
-                            <h3 class="cs_filter_widget_title cs_medium cs_fs_18">Size <span></span></h3>
-                            <ul class="cs_size_filter_list cs_mp0">
-                                <li>
-                                    <input type="radio" name="size">
-                                    <span>S</span>
-                                </li>
-                                <li>
-                                    <input type="radio" name="size">
-                                    <span>M</span>
-                                </li>
-                                <li>
-                                    <input type="radio" name="size">
-                                    <span>L</span>
-                                </li>
-                                <li>
-                                    <input type="radio" name="size">
-                                    <span>XL</span>
-                                </li>
-                            </ul>
-                        </div> -->
-                        <!-- <div class="cs_filter_widget">
-                            <h3 class="cs_filter_widget_title cs_medium cs_fs_18">Brand <span></span></h3>
-                            <ul class="cs_brand_filter_list cs_mp0">
-                                <li>
-                                    <input type="radio" name="brand">
-                                    <span>Flora</span>
-                                </li>
-                                <li>
-                                    <input type="radio" name="brand">
-                                    <span>Fashione</span>
-                                </li>
-                                <li>
-                                    <input type="radio" name="brand">
-                                    <span>Zara</span>
-                                </li>
-                                <li>
-                                    <input type="radio" name="brand">
-                                    <span>Burino</span>
-                                </li>
-                                <li>
-                                    <input type="radio" name="brand">
-                                    <span>Celvine</span>
-                                </li>
-                                <li>
-                                    <input type="radio" name="brand">
-                                    <span>Denima</span>
-                                </li>
-                                <li>
-                                    <input type="radio" name="brand">
-                                    <span>Yooze</span>
-                                </li>
-                                <li>
-                                    <input type="radio" name="brand">
-                                    <span>Wisete</span>
-                                </li>
-                            </ul>
-                        </div> -->
-                        <div class="cs_filter_widget">
-                            <h3 class="cs_filter_widget_title cs_medium cs_fs_18">Customer Rating <span></span></h3>
-                            <ul class="cs_review_filter cs_mp0">
-                                <li>
-                                    <div class="cs_custom_check">
-                                        <input type="checkbox">
-                                        <label>
-                      <span class="cs_rating_container">
-                        <span class="cs_rating cs_size_sm" data-rating="5">
-                          <span class="cs_rating_percentage"></span>
-                        </span>
-                      </span>
-                      <span>5</span>
-                    </label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="cs_custom_check">
-                                        <input type="checkbox">
-                                        <label>
-                      <span class="cs_rating_container">
-                        <span class="cs_rating cs_size_sm" data-rating="4">
-                          <span class="cs_rating_percentage"></span>
-                        </span>
-                      </span>
-                      <span>4 & Up</span>
-                    </label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="cs_custom_check">
-                                        <input type="checkbox">
-                                        <label>
-                      <span class="cs_rating_container">
-                        <span class="cs_rating cs_size_sm" data-rating="3">
-                          <span class="cs_rating_percentage"></span>
-                        </span>
-                      </span>
-                      <span>3 & Up</span>
-                    </label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="cs_custom_check">
-                                        <input type="checkbox">
-                                        <label>
-                      <span class="cs_rating_container">
-                        <span class="cs_rating cs_size_sm" data-rating="2">
-                          <span class="cs_rating_percentage"></span>
-                        </span>
-                      </span>
-                      <span>2 & Up</span>
-                    </label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="cs_custom_check">
-                                        <input type="checkbox">
-                                        <label>
-                      <span class="cs_rating_container">
-                        <span class="cs_rating cs_size_sm" data-rating="1">
-                          <span class="cs_rating_percentage"></span>
-                        </span>
-                      </span>
-                      <span>1 & Up</span>
-                    </label>
-                                    </div>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -329,10 +176,15 @@ echo $hihi;
             </div>
             <div class="cs_height_75 cs_height_lg_50"></div>
             <ul class="cs_pagination cs_fs_21 cs_semibold cs_mp0">
+                <?php if($hihi - 1 > 0) {?>
+                <li class="cs_page_item"><a class="cs_page_link" href="?act=sanpham&page=<?php echo $hihi - 1 ?>"><i class="fa-solid fa-arrow-left"></i></a></li>
+                <?php }?> 
                 <?php for($i=1;$i<=$page;$i++){ ?>
                         <li class=" cs_page_item <?php echo (($hihi == $i) ? 'active' : '')?>"><a class="cs_page_link" href="?act=sanpham&page=<?php echo $i?>"><?php echo $i ?></a></li>
                 <?php }?>
-                <li class="cs_page_item"><a class="cs_page_link" href="#"><i class="fa-solid fa-arrow-right"></i></a></li> 
+                <?php if($hihi + 1 <= $page) {?>
+                <li class="cs_page_item"><a class="cs_page_link" href="?act=sanpham&page=<?php echo $hihi + 1 ?>"><i class="fa-solid fa-arrow-right"></i></a></li>
+                <?php }?>
                 <!-- <li class="cs_page_item active"><a class="cs_page_link" href="#">01</a></li>
                 <li class="cs_page_item"><a class="cs_page_link" href="#">02</a></li>
                 <li class="cs_page_item"><a class="cs_page_link" href="#">03</a></li>

@@ -134,9 +134,9 @@
                         <h3>Bạn muốn tìm kiếm sản phẩm gì?</h3>
                         <button class="cs_header_search_close" type="button"><i class="fa-solid fa-xmark"></i></button>
                     </div>
-                    <form action="#" class="cs_header_search_form">
-                        <input type="text" placeholder="Search...">
-                        <button type="submit">
+                    <form action="?act=sanpham" method="post" class="cs_header_search_form">
+                        <input type="text" placeholder="Search..." name="timkiem" value="<?php isset($kyw)?($kyw):''?>">
+                        <button type="submit" name="submittimkiem">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
                     </form>

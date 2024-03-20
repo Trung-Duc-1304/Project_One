@@ -1,4 +1,28 @@
 <?php
+function load_sp_aothun(){
+    $query="SELECT sanpham.*
+    FROM sanpham
+    INNER JOIN danhmuc ON sanpham.iddm = danhmuc.id
+    WHERE danhmuc.tendm = 'Áo Thun'
+    LIMIT 3";
+    return pdo_query($query);
+}
+function load_sp_aoho(){
+    $query="SELECT sanpham.*
+    FROM sanpham
+    INNER JOIN danhmuc ON sanpham.iddm = danhmuc.id
+    WHERE danhmuc.tendm = 'Áo Hoodie'
+    LIMIT 3";
+    return pdo_query($query);
+}
+function load_sp_aosw(){
+    $query="SELECT sanpham.*
+    FROM sanpham
+    INNER JOIN danhmuc ON sanpham.iddm = danhmuc.id
+    WHERE danhmuc.tendm = 'Áo Sweater'
+    LIMIT 2";
+    return pdo_query($query);
+}
 function load_sp_home(){
     $query="SELECT * FROM sanpham ORDER BY id desc limit 0,10";
     return pdo_query($query);

@@ -14,6 +14,9 @@ if(isset($_SESSION['user'])) {
 }
 $list_sp_home=load_sp_home();
 $list_sp_nb=load_sp_nb();
+$list_sp_aothun=load_sp_aothun();
+$list_sp_aoho=load_sp_aoho();
+$list_sp_aosw=load_sp_aosw();
 $listdm=load_all_dm("");
 include "../view/header.php";
 if(isset($_GET['act'])&&($_GET['act']!="")){
@@ -379,11 +382,13 @@ if(isset($_GET['act'])&&($_GET['act']!="")){
             break;
         /* END GIO HANG */
         case 'sanpham':
+            if(isset($_POST['submittimkiem'])) $kyw=$_POST['timkiem'];
+            else $kyw="";
             // $dssp_new = selectAll_NewProduct(12);
             if(isset($_GET['page'])&&($_GET['page']!="")) $page=$_GET['page'];
             else $page=1;
             $tongsp=dem_sp();
-            $list_sp_home=load_all_sp("",$page);
+            $list_sp_home=load_all_sp($kyw, $page);
             include "../view/sanpham/sanpham.php";
             break;
         case 'spdanhmuc':
