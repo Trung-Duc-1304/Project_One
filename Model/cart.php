@@ -15,15 +15,17 @@ try {
     $product_id = $_POST['product_id'];
     $id_bienthe  = $_POST['id_bienthe'];
     $size  = $_POST['size'];
+    $color  = $_POST['color'];
     $soluong = $_POST['soluong'];
     $thanhtien = $_POST['thanhtien'];
 
     // Thực hiện truy vấn để thêm sản phẩm vào giỏ hàng (giả sử bạn có bảng cart với các cột product_id và quantity)
-    $stmt = $conn->prepare("INSERT INTO giohang (idtaikhoan, product_id, id_bienthe, size, soluong, thanhtien) VALUES (:idtaikhoan, :product_id, :id_bienthe, :size, :soluong, :thanhtien)");
+    $stmt = $conn->prepare("INSERT INTO giohang (idtaikhoan, product_id, id_bienthe, size, color, soluong, thanhtien) VALUES (:idtaikhoan, :product_id, :id_bienthe, :size, :color, :soluong, :thanhtien)");
     $stmt->bindParam(':idtaikhoan', $idtaikhoan);
     $stmt->bindParam(':product_id', $product_id);
     $stmt->bindParam(':id_bienthe', $id_bienthe);
     $stmt->bindParam(':size', $size);
+    $stmt->bindParam(':color', $color);
     $stmt->bindParam(':soluong', $soluong);
     $stmt->bindParam(':thanhtien', $thanhtien);
     $stmt->execute();

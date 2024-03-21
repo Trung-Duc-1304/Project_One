@@ -133,6 +133,14 @@
               <div class="text-truncate" data-i18n="𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑺𝒂̉𝒏 𝑷𝒉𝒂̂̉𝒎">𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑺𝒂̉𝒏 𝑷𝒉𝒂̂̉𝒎</div>
             </a>
           </li>
+
+          <li class="menu-item">
+            <a href="?act=list_cart" class="menu-link">
+              <i class="menu-icon tf-icons bx bxs-cart-add"></i>
+              <div class="text-truncate" data-i18n="𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑮𝒊𝒐̉ 𝑯𝒂̀𝒏𝒈">𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑮𝒊𝒐̉ 𝑯𝒂̀𝒏𝒈</div>
+            </a>
+          </li>
+
           <!-- Academy menu end -->
           <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link">

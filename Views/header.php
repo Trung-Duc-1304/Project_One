@@ -23,7 +23,7 @@
 
 <body>
     <!-- Start Preloader -->
-    <div class="cs_perloader">
+    <!-- <div class="cs_perloader">
         <div class="cs_perloader_in">
             <svg class="cs_cart_animation" role="img" aria-label="Sattiyas Preloader" viewBox="0 0 128 128" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg">
                 <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
@@ -45,7 +45,7 @@
             </svg>
             <span class="cs_perloader_text">Welcome to Sattiyas. Loading...</span>
         </div>
-    </div>
+    </div> -->
     <!-- End Preloader -->
     <!-- Start header -->
     <header class="cs_site_header cs_style_1 cs_primary_color cs_site_header_full_width cs_sticky_header">
@@ -141,7 +141,7 @@
                             <a href="#" class="cs_action_icon cs_modal_btn" data-modal="register_modal">
                                 <i class="fa-regular fa-circle-user"></i>
                             </a>
-                            <a href="?act=cart" class="cs_action_icon">
+                            <a href="?act=list_cart_user&id=31" class="cs_action_icon">
                                 <span>
                                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_395_1018)">

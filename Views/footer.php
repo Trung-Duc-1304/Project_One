@@ -94,6 +94,7 @@
                 var idtaikhoan = 31;
                 var id_bienthe = 3;
                 var size = $('input[name="size_' + product_id + '"]:checked').val();
+                var color = $('input[name="color_' + product_id + '"]:checked').val();
                 var soluong = 5;
                 var thanhtien = $(this).data("price-sp");
 
@@ -105,6 +106,7 @@
                         idtaikhoan: idtaikhoan,
                         id_bienthe: id_bienthe,
                         size: size,
+                        color: color,
                         soluong: soluong,
                         thanhtien: thanhtien
                     },

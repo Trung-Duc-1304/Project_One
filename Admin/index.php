@@ -4,6 +4,7 @@ require_once '../Model/danhmuc.php';
 require_once '../Model/sanpham.php';
 require_once '../Model/Account.php';
 require_once '../Model/Bienthe.php';
+require_once '../Model/order.php';
 require_once '../global.php';
 require_once 'header.php';
 
@@ -184,6 +185,12 @@ if (isset($_GET['act'])) {
             $listsp = load_all_sp("", 0);
             include_once './San_Pham/list.php';
             break;
+
+            // GIỎ HÀNG
+            case 'list_cart':
+                $list_cart = list_cart();
+                include_once './Cart/list.php';
+                break;
 
 
             // ACCOUNT

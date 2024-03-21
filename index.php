@@ -4,6 +4,7 @@ require_once 'Model/danhmuc.php';
 require_once 'Model/sanpham.php';
 require_once 'Model/Account.php';
 require_once 'Model/Bienthe.php';
+require_once 'Model/order.php';
 require_once 'global.php';
 require_once 'helper.php';
 require_once 'views/header.php';
@@ -13,10 +14,14 @@ $listsp = load_sp_home();
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
-        case 'cart':
-            include_once 'views/cart/cart.php';
-            break;
-            case 'sanpham_ct':
+        case 'list_cart_user':
+                // if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                // }
+                $list_cart_user = list_cart_user();
+                $sum_cart_user = sum_cart_user();
+                include_once 'views/cart/cart.php';
+                break;
+        case 'sanpham_ct':
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
                     $id = $_GET['id'];
                     $pro_ct = load_onespct($id);
