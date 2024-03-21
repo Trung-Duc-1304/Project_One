@@ -4,102 +4,102 @@ if (is_array($listsp)) {
 }
 ?>
 
-    <!-- Start hero -->
-    <section class="container-fluid">
-        <div class="cs_slider position-relative">
-            <div class="cs_slider_container" data-autoplay="1" data-loop="1" data-speed="700" data-center="0" data-slides-per-view="1" data-fade-slide="1">
-                <div class="cs_slider_wrapper">
-                    <div class="slick_slide_in">
-                        <div class="cs_hero cs_style_2 position-relative">
-                            <div class="cs_hero_left">
-                                <div class="cs_hero_text">
-                                    <h4 class="cs_hero_title_mini cs_fs_28">Up to 50% Off</h4>
-                                    <h1 class="cs_hero_title cs_fs_67 cs_bold">Elegant men collection in summer season</h1>
-                                    <a href="shop.html" class="cs_btn cs_style_1 cs_fs_16 cs_medium">See Collection</a>
-                                </div>
-                            </div>
-                            <div class="cs_hero_right">
-                                <div class="cs_hero_thumb"><img src="assets/client/img/hero2.jpg" alt="Thumb"></div>
-                                <div class="cs_animated_text position-absolute">
-                                    <img src="assets/client/img/animated_text.png" alt="Text Image">
-                                    <span class="cs_text_light cs_accent_bg"></span>
-                                </div>
+<!-- Start hero -->
+<section class="container-fluid">
+    <div class="cs_slider position-relative">
+        <div class="cs_slider_container" data-autoplay="1" data-loop="1" data-speed="700" data-center="0" data-slides-per-view="1" data-fade-slide="1">
+            <div class="cs_slider_wrapper">
+                <div class="slick_slide_in">
+                    <div class="cs_hero cs_style_2 position-relative">
+                        <div class="cs_hero_left">
+                            <div class="cs_hero_text">
+                                <h4 class="cs_hero_title_mini cs_fs_28">Up to 50% Off</h4>
+                                <h1 class="cs_hero_title cs_fs_67 cs_bold">Elegant men collection in summer season</h1>
+                                <a href="shop.html" class="cs_btn cs_style_1 cs_fs_16 cs_medium">See Collection</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="slick_slide_in">
-                        <div class="cs_hero cs_style_2 position-relative">
-                            <div class="cs_hero_left">
-                                <div class="cs_hero_text">
-                                    <h4 class="cs_hero_title_mini cs_fs_28">Up to 20% Off</h4>
-                                    <h1 class="cs_hero_title cs_fs_67 cs_bold">Elegant woman collection in summer</h1>
-                                    <a href="shop.html" class="cs_btn cs_style_1 cs_fs_16 cs_medium">See Collection</a>
-                                </div>
-                            </div>
-                            <div class="cs_hero_right">
-                                <div class="cs_hero_thumb"><img src="assets/client/img/hero5.jpg" alt="Thumb"></div>
-                                <div class="cs_animated_text position-absolute">
-                                    <img src="assets/client/img/animated_text.png" alt="Text Image">
-                                    <span class="cs_text_light cs_accent_bg"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slick_slide_in">
-                        <div class="cs_hero cs_style_2 position-relative">
-                            <div class="cs_hero_left">
-                                <div class="cs_hero_text">
-                                    <h4 class="cs_hero_title_mini cs_fs_28">Up to 10% Off</h4>
-                                    <h1 class="cs_hero_title cs_fs_67 cs_bold">Children collection in winter season</h1>
-                                    <a href="shop.html" class="cs_btn cs_style_1 cs_fs_16 cs_medium">See Collection</a>
-                                </div>
-                            </div>
-                            <div class="cs_hero_right">
-                                <div class="cs_hero_thumb"><img src="assets/client/img/hero6.jpg" alt="Thumb"></div>
-                                <div class="cs_animated_text position-absolute">
-                                    <img src="assets/client/img/animated_text.png" alt="Text Image">
-                                    <span class="cs_text_light cs_accent_bg"></span>
-                                </div>
+                        <div class="cs_hero_right">
+                            <div class="cs_hero_thumb"><img src="assets/client/img/hero2.jpg" alt="Thumb"></div>
+                            <div class="cs_animated_text position-absolute">
+                                <img src="assets/client/img/animated_text.png" alt="Text Image">
+                                <span class="cs_text_light cs_accent_bg"></span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="cs_pagingInfo cs_style_1">iifn</div> -->
+                <div class="slick_slide_in">
+                    <div class="cs_hero cs_style_2 position-relative">
+                        <div class="cs_hero_left">
+                            <div class="cs_hero_text">
+                                <h4 class="cs_hero_title_mini cs_fs_28">Up to 20% Off</h4>
+                                <h1 class="cs_hero_title cs_fs_67 cs_bold">Elegant woman collection in summer</h1>
+                                <a href="shop.html" class="cs_btn cs_style_1 cs_fs_16 cs_medium">See Collection</a>
+                            </div>
+                        </div>
+                        <div class="cs_hero_right">
+                            <div class="cs_hero_thumb"><img src="assets/client/img/hero5.jpg" alt="Thumb"></div>
+                            <div class="cs_animated_text position-absolute">
+                                <img src="assets/client/img/animated_text.png" alt="Text Image">
+                                <span class="cs_text_light cs_accent_bg"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slick_slide_in">
+                    <div class="cs_hero cs_style_2 position-relative">
+                        <div class="cs_hero_left">
+                            <div class="cs_hero_text">
+                                <h4 class="cs_hero_title_mini cs_fs_28">Up to 10% Off</h4>
+                                <h1 class="cs_hero_title cs_fs_67 cs_bold">Children collection in winter season</h1>
+                                <a href="shop.html" class="cs_btn cs_style_1 cs_fs_16 cs_medium">See Collection</a>
+                            </div>
+                        </div>
+                        <div class="cs_hero_right">
+                            <div class="cs_hero_thumb"><img src="assets/client/img/hero6.jpg" alt="Thumb"></div>
+                            <div class="cs_animated_text position-absolute">
+                                <img src="assets/client/img/animated_text.png" alt="Text Image">
+                                <span class="cs_text_light cs_accent_bg"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="cs_slides_numbers" style="display: block;">
-                <span class="active">01</span><span class="cs_slide_seperator"> / </span><span class="cs_total_slide"></span>
+            <!-- <div class="cs_pagingInfo cs_style_1">iifn</div> -->
+        </div>
+        <div class="cs_slides_numbers" style="display: block;">
+            <span class="active">01</span><span class="cs_slide_seperator"> / </span><span class="cs_total_slide"></span>
+        </div>
+    </div>
+</section>
+<!-- End hero -->
+<!-- Start best selling Products -->
+<section class="cs_slider position-relative">
+    <div class="cs_height_120 cs_height_lg_80"></div>
+    <div class="container">
+        <div class="cs_section_heading cs_style_1">
+            <div class="cs_section_heading_in">
+                <h2 class="cs_section_title cs_fs_50 cs_bold mb-0">Sản phẩm bán chạy nhất</h2>
+            </div>
+            <div class="cs_slider_arrows cs_style_2">
+                <div class="cs_left_arrow cs_slider_arrow cs_accent_color">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+                <div class="cs_right_arrow cs_slider_arrow cs_accent_color">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
             </div>
         </div>
-    </section>
-    <!-- End hero -->
-    <!-- Start best selling Products -->
-    <section class="cs_slider position-relative">
-        <div class="cs_height_120 cs_height_lg_80"></div>
-        <div class="container">
-            <div class="cs_section_heading cs_style_1">
-                <div class="cs_section_heading_in">
-                    <h2 class="cs_section_title cs_fs_50 cs_bold mb-0">Best selling product</h2>
-                </div>
-                <div class="cs_slider_arrows cs_style_2">
-                    <div class="cs_left_arrow cs_slider_arrow cs_accent_color">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </div>
-                    <div class="cs_right_arrow cs_slider_arrow cs_accent_color">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="cs_height_63 cs_height_lg_35"></div>
-        </div>
-        <div class="container-fluid">
-            <div class="cs_slider_container" data-autoplay="0" data-loop="1" data-speed="600" data-center="0" data-slides-per-view="responsive" data-xs-slides="1" data-sm-slides="2" data-md-slides="2" data-lg-slides="3" data-add-slides="4">
-                <div class="cs_slider_wrapper">
-                    <?php foreach($listsp as $sp):
-                        extract($sp); ?>
-                     <div class="slick_slide_in">
+        <div class="cs_height_63 cs_height_lg_35"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="cs_slider_container" data-autoplay="0" data-loop="1" data-speed="600" data-center="0" data-slides-per-view="responsive" data-xs-slides="1" data-sm-slides="2" data-md-slides="2" data-lg-slides="3" data-add-slides="4">
+            <div class="cs_slider_wrapper">
+                <?php foreach ($listsp as $sp) :
+                    extract($sp); ?>
+                    <div class="slick_slide_in">
                         <div class="cs_product cs_style_1 cs_bordered">
                             <div class="cs_product_thumb position-relative">
-                                <img src="uploads/<?=$image?>" alt="Product Image" class="w-100"><?=$image?>
+                                <img src="uploads/<?= $image ?>" alt="Product Image" class="w-100">
                                 <div class="cs_cart_badge position-absolute">
                                     <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                         <i class="fa-regular fa-heart"></i>
@@ -112,95 +112,50 @@ if (is_array($listsp)) {
                             </div>
                             <div class="cs_product_info text-center">
                                 <h3 class="cs_product_title cs_fs_21 cs_medium">
-                                    <a href="product_details.html"><?=$tensp?></a>
+                                <a href="index.php?act=sanpham_ct&id=<?= $id?>"><?= $tensp ?></a>
                                 </h3>
-                                <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium"><?=$giasp?>VNĐ</p>
+                                <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium"><?= $giasp ?>VNĐ</p>
                             </div>
                         </div>
                     </div>
-                        <?php endforeach ?>               
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End best selling Products -->
-    <!-- Start category -->
-    <div class="cs_height_140 cs_height_lg_80"></div>
-    <div class="row cs_gap_y_24">
-        <div class="col-sm-6">
-            <div class="cs_category cs_style_1">
-                <a href="shop.html" class="cs_category_thumb position-relative">
-                    <img src="assets/client/img/men2.jpg" alt="Category Image" class="w-100">
-                    <span class="cs_category_btn">
-                        <span>Men</span>
-                        <span><i class="fa-solid fa-arrow-right"></i></span>
-                    </span>
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="cs_category cs_style_1">
-                <a href="shop.html" class="cs_category_thumb position-relative">
-                    <img src="assets/client/img/women2.jpg" alt="Category Image" class="w-100">
-                    <span class="cs_category_btn">
-                        <span>Women</span>
-                        <span><i class="fa-solid fa-arrow-right"></i></span>
-                    </span>
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="cs_category cs_style_1">
-                <a href="shop.html" class="cs_category_thumb position-relative">
-                    <img src="assets/client/img/kid1.jpg" alt="Category Image" class="w-100">
-                    <span class="cs_category_btn">
-                        <span>Kids</span>
-                        <span><i class="fa-solid fa-arrow-right"></i></span>
-                    </span>
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="cs_category cs_style_1">
-                <a href="shop.html" class="cs_category_thumb position-relative">
-                    <img src="assets/client/img/children2.jpg" alt="Category Image" class="w-100">
-                    <span class="cs_category_btn">
-                        <span>Children</span>
-                        <span><i class="fa-solid fa-arrow-right"></i></span>
-                    </span>
-                </a>
+                <?php endforeach ?>
             </div>
         </div>
     </div>
-    <!-- End category -->
-    <!-- Start Featured Items -->
-    <section>
-        <div class="cs_height_120 cs_height_lg_70"></div>
-        <div class="container">
-            <div class="text-center">
-                <h2 class="cs_section_title cs_fs_50 cs_bold mb-0">New items in store</h2>
-            </div>
-            <div class="cs_height_63 cs_height_lg_35"></div>
-            <div class="cs_isotope_filter cs_style_1">
-                <ul class="cs_mp0">
-                    <li><a href="#" data-filter=".t_shirt" class="cs_fs_16 cs_medium">T-shirt</a></li>
-                    <li><a href="#" data-filter=".jeans" class="cs_fs_16 cs_medium">Jeans</a></li>
-                    <li><a href="#" data-filter=".c_shirt" class="cs_fs_16 cs_medium">Casual shirt</a></li>
-                    <li><a href="#" data-filter=".leggings" class="cs_fs_16 cs_medium">Leggings</a></li>
+</section>
+<!-- End best selling Products -->
+<!-- Start category -->
+
+<!-- End category -->
+<!-- Start Featured Items -->
+<section>
+    <div class="cs_height_120 cs_height_lg_70"></div>
+    <div class="container">
+        <div class="text-center">
+            <h2 class="cs_section_title cs_fs_50 cs_bold mb-0">Các mặt hàng mới trong cửa hàng</h2>
+        </div>
+        <div class="cs_height_63 cs_height_lg_35"></div>
+        <div class="cs_isotope_filter cs_style_1">
+            <ul class="cs_mp0">
+                <li><a href="#" data-filter=".t_shirt" class="cs_fs_16 cs_medium">ÁO THUN</a></li>
+                <li><a href="#" data-filter=".jeans" class="cs_fs_16 cs_medium">Áo Hoodie</a></li>
+                <li><a href="#" data-filter=".c_shirt" class="cs_fs_16 cs_medium">Áo Sweater</a></li>
+                <!-- <li><a href="#" data-filter=".leggings" class="cs_fs_16 cs_medium">Leggings</a></li>
                     <li><a href="#" data-filter=".skirt" class="cs_fs_16 cs_medium">Skirt</a></li>
                     <li><a href="#" data-filter=".shoes" class="cs_fs_16 cs_medium">Shoes</a></li>
-                    <li><a href="#" data-filter=".accessories" class="cs_fs_16 cs_medium">Accessories</a></li>
-                </ul>
-            </div>
+                    <li><a href="#" data-filter=".accessories" class="cs_fs_16 cs_medium">Accessories</a></li> -->
+            </ul>
         </div>
-        <div class="container-fluid">
-            <div class="cs_isotope cs_style_1 cs_isotope_col_4 cs_has_gutter_24">
-                <div class="cs_grid_sizer"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="cs_isotope cs_style_1 cs_isotope_col_4 cs_has_gutter_24">
+            <div class="cs_grid_sizer"></div>
+            <?php foreach ($listsp as $sp) :
+                extract($sp); ?>
                 <div class="cs_isotope_item t_shirt shoes">
                     <div class="cs_product cs_style_1 cs_bordered">
                         <div class="cs_product_thumb position-relative">
-                            <img src="assets/client/img/product1.png" alt="Product Image" class="w-100">
-                            <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
+                            <img src="uploads/<?= $image ?>" alt="Product Image" class="w-100">
                             <div class="cs_cart_badge position-absolute">
                                 <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                     <i class="fa-regular fa-heart"></i>
@@ -209,323 +164,48 @@ if (is_array($listsp)) {
                                     <i class="fa-regular fa-eye"></i>
                                 </a>
                             </div>
-                            <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">
-                                Add To Cart</a>
+                            <button class='add-to-cart cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute btn' data-product-id="<?= $id ?>"> Thêm vào giỏ hàng </button>
                         </div>
                         <div class="cs_product_info text-center">
                             <h3 class="cs_product_title cs_fs_21 cs_medium">
-                                <a href="product_details.html">Pure black cotton men T-shirt</a>
+                                <a href="product_details.html"><?= $tensp ?></a>
                             </h3>
-                            <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                            <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium"><?= $giasp ?>VNĐ</p>
                         </div>
                     </div>
+
                 </div>
-                <div class="cs_isotope_item t_shirt leggings">
-                    <div class="cs_product cs_style_1 cs_bordered">
-                        <div class="cs_product_thumb position-relative">
-                            <img src="assets/client/img/product2.png" alt="Product Image" class="w-100">
-                            <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-8%</div>
-                            <div class="cs_cart_badge position-absolute">
-                                <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-heart"></i>
-                                </a>
-                                <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-eye"></i>
-                                </a>
-                            </div>
-                            <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">
-                                Add To Cart</a>
-                        </div>
-                        <div class="cs_product_info text-center">
-                            <h3 class="cs_product_title cs_fs_21 cs_medium">
-                                <a href="product_details.html">Gray color cotton men T-shirt</a>
-                            </h3>
-                            <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$220.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cs_isotope_item t_shirt accessories skirt">
-                    <div class="cs_product cs_style_1 cs_bordered">
-                        <div class="cs_product_thumb position-relative">
-                            <img src="assets/client/img/product3.png" alt="Product Image" class="w-100">
-                            <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-12%</div>
-                            <div class="cs_cart_badge position-absolute">
-                                <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-heart"></i>
-                                </a>
-                                <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-eye"></i>
-                                </a>
-                            </div>
-                            <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">
-                                Add To Cart</a>
-                        </div>
-                        <div class="cs_product_info text-center">
-                            <h3 class="cs_product_title cs_fs_21 cs_medium">
-                                <a href="product_details.html">Pure black cotton men T-shirt</a>
-                            </h3>
-                            <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$350.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cs_isotope_item t_shirt leggings skirt">
-                    <div class="cs_product cs_style_1 cs_bordered">
-                        <div class="cs_product_thumb position-relative">
-                            <img src="assets/client/img/product16.png" alt="Product Image" class="w-100">
-                            <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-8%</div>
-                            <div class="cs_cart_badge position-absolute">
-                                <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-heart"></i>
-                                </a>
-                                <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-eye"></i>
-                                </a>
-                            </div>
-                            <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">
-                                Add To Cart</a>
-                        </div>
-                        <div class="cs_product_info text-center">
-                            <h3 class="cs_product_title cs_fs_21 cs_medium">
-                                <a href="product_details.html">Gray color cotton men T-shirt</a>
-                            </h3>
-                            <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cs_isotope_item accessories c_shirt shoes jeans">
-                    <div class="cs_product cs_style_1 cs_bordered">
-                        <div class="cs_product_thumb position-relative">
-                            <img src="assets/client/img/product8.png" alt="Product Image" class="w-100">
-                            <div class="cs_cart_badge position-absolute">
-                                <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-heart"></i>
-                                </a>
-                                <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-eye"></i>
-                                </a>
-                            </div>
-                            <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">
-                                Add To Cart</a>
-                        </div>
-                        <div class="cs_product_info text-center">
-                            <h3 class="cs_product_title cs_fs_21 cs_medium">
-                                <a href="product_details.html">Premium men blue denim jacket</a>
-                            </h3>
-                            <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cs_isotope_item c_shirt leggings jeans">
-                    <div class="cs_product cs_style_1 cs_bordered">
-                        <div class="cs_product_thumb position-relative">
-                            <img src="assets/client/img/product9.png" alt="Product Image" class="w-100">
-                            <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-8%</div>
-                            <div class="cs_cart_badge position-absolute">
-                                <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-heart"></i>
-                                </a>
-                                <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-eye"></i>
-                                </a>
-                            </div>
-                            <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">
-                                Add To Cart</a>
-                        </div>
-                        <div class="cs_product_info text-center">
-                            <h3 class="cs_product_title cs_fs_21 cs_medium">
-                                <a href="product_details.html">Awesome striped casual shirt</a>
-                            </h3>
-                            <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$220.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cs_isotope_item skirt leggings c_shirt">
-                    <div class="cs_product cs_style_1 cs_bordered">
-                        <div class="cs_product_thumb position-relative">
-                            <img src="assets/client/img/product10.png" alt="Product Image" class="w-100">
-                            <div class="cs_cart_badge position-absolute">
-                                <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-heart"></i>
-                                </a>
-                                <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-eye"></i>
-                                </a>
-                            </div>
-                            <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">
-                                Add To Cart</a>
-                        </div>
-                        <div class="cs_product_info text-center">
-                            <h3 class="cs_product_title cs_fs_21 cs_medium">
-                                <a href="product_details.html">Pure black cotton men T-shirt</a>
-                            </h3>
-                            <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$350.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="cs_isotope_item c_shirt shoes accessories jeans">
-                    <div class="cs_product cs_style_1 cs_bordered">
-                        <div class="cs_product_thumb position-relative">
-                            <img src="assets/client/img/product11.png" alt="Product Image" class="w-100">
-                            <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-12%</div>
-                            <div class="cs_cart_badge position-absolute">
-                                <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-heart"></i>
-                                </a>
-                                <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-eye"></i>
-                                </a>
-                            </div>
-                            <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute"> Add To Cart</a>
-                        </div>
-                        <div class="cs_product_info text-center">
-                            <h3 class="cs_product_title cs_fs_21 cs_medium">
-                                <a href="product_details.html">Cotton black suit for men</a>
-                            </h3>
-                            <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$350.00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach ?>
+
         </div>
-    </section>
-    <!-- End Featured Items -->
-    <!-- Start collection 2 -->
-    <section>
-        <div class="cs_height_140 cs_height_lg_80"></div>
-        <div class="container">
-            <div class="cs_card cs_style_3">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="cs_card_thumb">
-                            <img src="assets/client/img/card3.jpg" alt="Card Image">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 align-items-center">
-                        <div class="cs_card_info">
-                            <h2 class="cs_card_title cs_fs_50 cs_bold">Winter jacket limited time offer 40%</h2>
-                            <p class="cs_card_subtitle cs_fs_21 cs_semibold">
-                                Until 02/15/24 Use code WINTER at checkout
-                            </p>
-                            <a href="shop.html" class="cs_btn cs_style_1 cs_fs_16 cs_medium">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End collection 2 -->
-    <!-- Start partners -->
+    </div>
+</section>
+<!-- End Featured Items -->
+<!-- Start collection 2 -->
+<section>
     <div class="cs_height_140 cs_height_lg_80"></div>
     <div class="container">
-        <div class="cs_slider">
-            <div class="cs_slider_container" data-autoplay="0" data-loop="1" data-speed="2000" data-center="0" data-slides-per-view="responsive" data-xs-slides="2" data-sm-slides="3" data-md-slides="3" data-lg-slides="4" data-add-slides="5">
-                <div class="cs_slider_wrapper">
-                    <div class="slick_slide_in">
-                        <div class="cs_partner_logo">
-                            <img src="assets/client/img/brand_1.svg" alt="Partner Logo">
-                        </div>
+        <div class="cs_card cs_style_3">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="cs_card_thumb">
+                        <img src="uploads/d1.jpg" alt="Card Image">
                     </div>
-                    <div class="slick_slide_in">
-                        <div class="cs_partner_logo">
-                            <img src="assets/client/img/brand_2.svg" alt="Partner Logo">
-                        </div>
-                    </div>
-                    <div class="slick_slide_in">
-                        <div class="cs_partner_logo">
-                            <img src="assets/client/img/brand_3.svg" alt="Partner Logo">
-                        </div>
-                    </div>
-                    <div class="slick_slide_in">
-                        <div class="cs_partner_logo">
-                            <img src="assets/client/img/brand_4.svg" alt="Partner Logo">
-                        </div>
-                    </div>
-                    <div class="slick_slide_in">
-                        <div class="cs_partner_logo">
-                            <img src="assets/client/img/brand_5.svg" alt="Partner Logo">
-                        </div>
-                    </div>
-                    <div class="slick_slide_in">
-                        <div class="cs_partner_logo">
-                            <img src="assets/client/img/brand_1.svg" alt="Partner Logo">
-                        </div>
+                </div>
+                <div class="col-lg-6 align-items-center">
+                    <div class="cs_card_info">
+                        <h2 class="cs_card_title cs_fs_50 cs_bold">Áo khoác mùa đông ưu đãi có hạn 40%</h2>
+                        <p class="cs_card_subtitle cs_fs_21 cs_semibold">
+                            Cho đến ngày 15/02/24 Sử dụng mã WINTER khi thanh toán
+                        </p>
+                        <a href="shop.html" class="cs_btn cs_style_1 cs_fs_16 cs_medium">Mua ngay</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="cs_height_140 cs_height_lg_80"></div>
-    <!-- End partners -->
-    <!-- Start testimonial -->
-    <section class="cs_gray_bg">
-        <div class="cs_height_120 cs_height_lg_70"></div>
-        <div class="container">
-            <h2 class="cs_section_title cs_fs_50 cs_bold mb-0 text-center">What Our People Says</h2>
-        </div>
-        <div class="cs_height_35 cs_height_lg_30"></div>
-        <div class="cs_slider position-relative">
-            <div class="cs_slider_container" data-autoplay="0" data-loop="1" data-speed="600" data-center="0" data-slides-per-view="responsive" data-xs-slides="1" data-sm-slides="1" data-md-slides="1" data-lg-slides="1" data-add-slides="1">
-                <div class="container">
-                    <div class="cs_slider_wrapper">
-                        <div class="slick_slide_in">
-                            <div class="cs_testimonial cs_style_1 text-center">
-                                <blockquote class="cs_testimonial_text cs_fs_21 cs_semibold">Shopping at Sattiyas has been an absolute delight! I've had the pleasure of being a <br> customer for the past year, and I can confidently say that this is my go-to online shopping <br> destination. Highly recommend!</blockquote>
-                                <div class="cs_testimonial_user">
-                                    <div class="cs_avatar_thumb">
-                                        <img src="assets/client/img/user.png" alt="Avatar">
-                                    </div>
-                                    <h4 class="cs_avatar_title cs_fs_21 cs_semibold mb-0">Bonal Ahmad</h4>
-                                    <p class="cs_avatar_subtitle mb-0">From London</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slick_slide_in">
-                            <div class="cs_testimonial cs_style_1 text-center">
-                                <blockquote class="cs_testimonial_text cs_fs_21 cs_semibold">Shopping at Sattiyas has been an absolute delight! I've had the pleasure of being a <br> customer for the past year, and I can confidently say that this is my go-to online shopping <br> destination. Highly recommend!</blockquote>
-                                <div class="cs_testimonial_user">
-                                    <div class="cs_avatar_thumb">
-                                        <img src="assets/client/img/user2.png" alt="Avatar">
-                                    </div>
-                                    <h4 class="cs_avatar_title cs_fs_21 cs_semibold mb-0">Jhon Doe</h4>
-                                    <p class="cs_avatar_subtitle mb-0">From UK</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slick_slide_in">
-                            <div class="cs_testimonial cs_style_1 text-center">
-                                <blockquote class="cs_testimonial_text cs_fs_21 cs_semibold">Shopping at Sattiyas has been an absolute delight! I've had the pleasure of being a <br> customer for the past year, and I can confidently say that this is my go-to online shopping <br> destination. Highly recommend!</blockquote>
-                                <div class="cs_testimonial_user">
-                                    <div class="cs_avatar_thumb">
-                                        <img src="assets/client/img/user3.png" alt="Avatar">
-                                    </div>
-                                    <h4 class="cs_avatar_title cs_fs_21 cs_semibold mb-0">Kalio Hokeo</h4>
-                                    <p class="cs_avatar_subtitle mb-0">From London</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cs_slider_arrows cs_style_1 cs_hide_mobile">
-                <div class="cs_left_arrow cs_slider_arrow cs_accent_color">
-                    <span>
-                        <svg width="36" height="16" viewBox="0 0 36 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.292892 7.29289C-0.0976295 7.68342 -0.0976295 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41422 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM36 7L1 7V9L36 9V7Z" fill="currentColor" />
-                        </svg>
-                    </span>
-                </div>
-                <div class="cs_right_arrow cs_slider_arrow cs_accent_color">
-                    <span>
-                        <svg width="36" height="16" viewBox="0 0 36 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M35.7071 8.70711C36.0976 8.31659 36.0976 7.68342 35.7071 7.2929L29.3431 0.928935C28.9526 0.53841 28.3195 0.53841 27.9289 0.928935C27.5384 1.31946 27.5384 1.95262 27.9289 2.34315L33.5858 8L27.9289 13.6569C27.5384 14.0474 27.5384 14.6805 27.9289 15.0711C28.3195 15.4616 28.9526 15.4616 29.3431 15.0711L35.7071 8.70711ZM-8.74228e-08 9L35 9L35 7L8.74228e-08 7L-8.74228e-08 9Z" fill="currentColor" />
-                        </svg>
-                    </span>
-                </div>
-            </div>
-            <div class="cs_pagination cs_style_2 cs_hide_desktop"></div>
-        </div>
-        <div class="cs_height_135 cs_height_lg_80"></div>
-    </section>
+
+
     <!-- End testimonial -->
     <!-- Start blog -->
     <section>

@@ -96,7 +96,6 @@ if (isset($_GET['act'])) {
                 $tensp = $_POST['tensp'];
                 $giasp = $_POST['giasp'];
                 $image = basename($_FILES['image']['name']);
-                $soluong = $_POST['soluong'];
                 $khuyenmai = $_POST['khuyenmai'];
                 $mota = $_POST['mota'];
                 $danhmuc = $_POST['danhmuc'];
@@ -111,8 +110,6 @@ if (isset($_GET['act'])) {
                 }
                 if (empty($giasp))
                     $giasp = 1;
-                if (empty($soluong))
-                    $soluong = 1;
                 if (empty($khuyenmai))
                     $khuyenmai = 0;
                 $giakm = intval($giasp) * ((100 - intval($khuyenmai)) / 100);
@@ -133,7 +130,7 @@ if (isset($_GET['act'])) {
                     }
                 }
                 if ($check) {
-                    insert_sp($danhmuc, $tensp, $giasp, $image, $giakm, $soluong, $khuyenmai, $mota);
+                    insert_sp($danhmuc, $tensp, $giasp, $image, $giakm, $khuyenmai, $mota);
                 }
             }
             $listdm = load_all_dm("");

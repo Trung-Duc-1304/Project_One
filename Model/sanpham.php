@@ -1,7 +1,7 @@
 <?php
 function load_sp_home()
 {
-    $query = "SELECT * FROM sanpham ORDER BY id desc limit 0,10";
+    $query = "SELECT * FROM sanpham ORDER BY id desc limit 0,12";
     return pdo_query($query);
 }
 function load_sp_nb()
@@ -35,6 +35,14 @@ function load_sp_lq($iddm)
     $query .= " ORDER BY id asc";
     return pdo_query($query);
 }
+// spct
+function load_onespct($id)
+{
+    $query = "SELECT * FROM sanpham WHERE id = " . $id;
+    $pro_ct = pdo_query_one($query);
+    return $pro_ct;
+}
+
 function load_one_sp()
 {
     $query = "SELECT * FROM sanpham WHERE id=" . $_GET['id'];
@@ -71,7 +79,7 @@ function load_all_spdm($iddm, $kyw, $giadau, $giacuoi, $page)
     $query .= " ORDER BY id desc limit $batdau,9";
     return pdo_query($query);
 }
-function insert_sp($danhmuc, $tensp, $giasp, $image, $giakm, $soluong, $khuyenmai, $mota)
+function insert_sp($danhmuc, $tensp, $giasp, $image, $giakm, $khuyenmai, $mota)
 {
     $conn = pdo_get_connection();
     $query_check = "SELECT COUNT(*) as count FROM sanpham WHERE image = :image OR tensp=:tensp";
@@ -84,8 +92,8 @@ function insert_sp($danhmuc, $tensp, $giasp, $image, $giakm, $soluong, $khuyenma
                 window.location.href="?act=create_sp";
             </script>';
     } else {
-        $query = "INSERT INTO `sanpham`(`iddm`, `tensp`, `giasp`,`giakm`, `image`, `soluong`,`khuyenmai`, `mota`) 
-        VALUES ('$danhmuc','$tensp','$giasp','$giakm','$image','$soluong','$khuyenmai','$mota')";
+        $query = "INSERT INTO `sanpham`(`iddm`, `tensp`, `giasp`,`giakm`, `image`, `khuyenmai`, `mota`) 
+        VALUES ('$danhmuc','$tensp','$giasp','$giakm','$image','$khuyenmai','$mota')";
         $result2 = pdo_execute($query);
         echo '<script>
                     alert("Bạn đã thêm sản phẩm thành công !");

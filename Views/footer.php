@@ -93,8 +93,9 @@
                 var product_id = $(this).data("product-id"); // Lấy product_id từ thuộc tính data của nút
                 var idtaikhoan = 31;
                 var id_bienthe = 3;
+                var size = $('input[name="size_' + product_id + '"]:checked').val();
                 var soluong = 5;
-                var thanhtien = 100000;
+                var thanhtien = $(this).data("price-sp");
 
                 $.ajax({
                     type: "POST",
@@ -103,6 +104,7 @@
                         product_id: product_id,
                         idtaikhoan: idtaikhoan,
                         id_bienthe: id_bienthe,
+                        size: size,
                         soluong: soluong,
                         thanhtien: thanhtien
                     },

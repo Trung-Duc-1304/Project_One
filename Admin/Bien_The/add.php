@@ -44,6 +44,7 @@ if (is_array($sp)) {
                                     <option value="S">Size S</option>
                                     <option value="M">Size M</option>
                                     <option value="L">Size L</option>
+                                    <option value="XL">Size XL</option>
                                 </select>
                             </div>
 
@@ -56,7 +57,6 @@ if (is_array($sp)) {
                                     <option value="Đen">Màu Đen</option>
                                     <option value="Xanh">Màu Xanh</option>
                                     <option value="Vàng">Màu Vàng</option>
-                                    <option value="Đỏ">Màu Đỏ</option>
                                 </select>
                                 </div>
                                 <div class="col"><label class="form-label" for="ecommerce-product-sl">Số Lượng</label>
