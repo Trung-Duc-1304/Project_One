@@ -51,9 +51,7 @@
                             </div>
 
                             <div class="row mb-2">
-                                <div class="col"><label class="form-label" for="ecommerce-product-sl">Số Lượng</label>
-                                    <input type="number" class="form-control" id="ecommerce-product-sl" placeholder="Số lương" name="soluong" aria-label="Product soluong">
-                                </div>
+                                
                                 <div class="col"><label class="form-label" for="ecommerce-product-km">Khuyến mãi</label>
                                     <input type="text" class="form-control" id="ecommerce-product-km" placeholder="Khuyến mãi" name="khuyenmai" aria-label="Product khuyenmai">
                                 </div>

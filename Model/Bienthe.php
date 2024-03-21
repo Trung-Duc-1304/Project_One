@@ -1,5 +1,4 @@
 <?php
-
 function loadAll_bt($id)
 {
     $sql = "SELECT  bienthe.*, sanpham.tensp FROM bienthe

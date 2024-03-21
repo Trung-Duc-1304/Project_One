@@ -8,7 +8,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Laralink">
-    <title>Sattiyas - Fashion & Jewelry eCommerce HTML5 Template</title>
+    <title>𝒇𝒂𝒔𝒉𝒊𝒐𝒏</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/client/img/FAVICON.svg">
     <!-- Plugins css -->
@@ -60,19 +60,19 @@
                     <div class="cs_main_header_center">
                         <div class="cs_nav cs_medium">
                             <ul class="cs_nav_list">
-                                <li class="menu-item-has-children">
-                                    <a href="home-v2.html">Home</a>
+                                <li class="menu-item-has">
+                                    <a href="index.php?act=home.php">Trang Chủ</a>
 
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="shop.html">Product</a>
+                                    <a href="index.php?act=products.php">Sản phẩm</a>
                                     <ul>
                                         <li><a href="shop.html">All Product</a></li>
                                         <li><a href="shop_sidebar.html">Shop Sidebar</a></li>
                                         <li><a href="product_details.html">Product Details</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="blog.html">Blog</a></li>
+                        
                                 <li class="menu-item-has-children">
                                     <a href="#">Pages</a>
                                     <ul>
