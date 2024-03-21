@@ -73,7 +73,7 @@ if (is_array($list_bt)) {
                                     case 'Trắng':
                                         echo "<li>
                                             <div class='cs_color_filter'>
-                                                <input type='radio' name='color'>
+                                                <input type='radio'name='color_$pro_id' value='$color'>
                                                 <span class='cs_color_filter_circle cs_white_bg'></span>
                                                 <span class='cs_color_text'>$color</span>
                                             </div>
@@ -82,7 +82,7 @@ if (is_array($list_bt)) {
                                     case 'Xanh':
                                         echo "<li>
                                                 <div class='cs_color_filter'>
-                                                    <input type='radio' name='color'>
+                                                <input type='radio'name='color_$pro_id' value='$color'>
                                                     <span class='cs_color_filter_circle bg-primary'></span>
                                                     <span class='cs_color_text'>$color</span>
                                                 </div>
@@ -91,7 +91,7 @@ if (is_array($list_bt)) {
                                     case 'Đen':
                                         echo "<li>
                                                 <div class='cs_color_filter'>
-                                                    <input type='radio' name='color'>
+                                                <input type='radio'name='color_$pro_id' value='$color'>
                                                     <span class='cs_color_filter_circle bg-black'></span>
                                                     <span class='cs_color_text'>$color</span>
                                                 </div>
@@ -374,31 +374,3 @@ if (is_array($list_bt)) {
     </div>
     <div class="cs_height_134 cs_height_lg_80"></div>
 </section>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-    const incrementBtn = document.querySelector('.cs_increment');
-    const quantityInput = document.querySelector('.cs_quantity_input');
-
-    incrementBtn.addEventListener('click', function() {
-        let currentQuantity = parseInt(quantityInput.textContent);
-        quantityInput.textContent = currentQuantity + 1;
-    });
-
-   
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  const decrementBtn = document.querySelector('.cs_decrement');
-  const quantityInput = document.querySelector('.cs_quantity_input');
-  
-  decrementBtn.addEventListener('click', function() {
-    let currentValue = parseInt(quantityInput.textContent);
-    if (currentValue > 1) {
-      quantityInput.textContent = currentValue - 1;
-    }
-  });
-});
-
-
-</script>

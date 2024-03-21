@@ -464,21 +464,30 @@
             $(this).addClass('fa-solid').prevAll().addClass('fa-solid');
         });
 
-        // Quantity Increment and Decrement
-        // $('.cs_increment').click(function() {
-        //     var countElement = $(this).siblings('.cs_quantity_input');
-        //     var count = parseInt(countElement.text());
-        //     count++;
-        //     countElement.text(count);
-        // });
 
-        // $('.cs_decrement').click(function() {
-        //     var countElement = $(this).siblings('.cs_quantity_input');
-        //     var count = parseInt(countElement.text());
-        //     if (count > 0) {
-        //         count--;
-        //         countElement.text(count);
-        //     }
-        // });
     }
 })(jQuery); // End of use strict
+
+document.addEventListener('DOMContentLoaded', function() {
+    const incrementBtn = document.querySelector('.cs_increment');
+    const quantityInput = document.querySelector('.cs_quantity_input');
+
+    incrementBtn.addEventListener('click', function() {
+        let currentQuantity = parseInt(quantityInput.textContent);
+        quantityInput.textContent = currentQuantity + 1;
+    });
+
+
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const decrementBtn = document.querySelector('.cs_decrement');
+    const quantityInput = document.querySelector('.cs_quantity_input');
+
+    decrementBtn.addEventListener('click', function() {
+        let currentValue = parseInt(quantityInput.textContent);
+        if (currentValue > 1) {
+            quantityInput.textContent = currentValue - 1;
+        }
+    });
+});
