@@ -10,7 +10,7 @@
     <meta name="author" content="Laralink">
     <title>𝒇𝒂𝒔𝒉𝒊𝒐𝒏</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/client/img/FAVICON.svg">
+    <link rel="shortcut icon" href="https://img.logoipsum.com/296.svg">
     <!-- Plugins css -->
     <link rel="stylesheet" href="assets/client/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/client/css/fontawesome.min.css">
@@ -52,84 +52,31 @@
         <div class="cs_main_header">
             <div class="container-fluid">
                 <div class="cs_main_header_in">
-                    <div class="cs_main_header_left">
-                        <a class="cs_site_branding" href="index.html">
-                            <img src="assets/client/img/logo_dark.svg" alt="Logo">
+                    <div class="cs_main_header_left mt-2">
+                        <a class="cs_site_branding" href="index.php">
+                           <h2>𝒇𝒂𝒔𝒉𝒊𝒐𝒏</h2> 
                         </a>
                     </div>
                     <div class="cs_main_header_center">
                         <div class="cs_nav cs_medium">
                             <ul class="cs_nav_list">
                                 <li class="menu-item-has">
-                                    <a href="index.php?act=home.php">Trang Chủ</a>
+                                    <a href="index.php">Trang Chủ</a>
 
                                 </li>
-                                <li class="menu-item-has-children">
-                                    <a href="index.php?act=products.php">Sản phẩm</a>
-                                    <ul>
-                                        <li><a href="shop.html">All Product</a></li>
-                                        <li><a href="shop_sidebar.html">Shop Sidebar</a></li>
-                                        <li><a href="product_details.html">Product Details</a></li>
-                                    </ul>
+                                <li class="menu-item-has">
+                                    <a href="index.php?act=products">Sản phẩm</a>
                                 </li>
-                        
-                                <li class="menu-item-has-children">
-                                    <a href="#">Pages</a>
-                                    <ul>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="blog_details.html">Blog Details</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="success.html">Success</a></li>
-                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                    </ul>
+
+                                <li class="menu-item-has">
+                                    <a href="index.php?act=products">Bài Viết</a>
                                 </li>
-                                <li class="menu-item-has-children cs_mega_menu">
-                                    <a href="#">MegaMenu</a>
-                                    <ul class="cs_mega_wrapper">
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Category One</a>
-                                            <ul>
-                                                <li><a href="shop.html">Women's Clothing</a></li>
-                                                <li><a href="shop.html">Men's Clothing</a></li>
-                                                <li><a href="shop.html">Kids' Clothing</a></li>
-                                                <li><a href="shop.html">Shoes (Men, Women, Kids)</a></li>
-                                                <li><a href="shop.html">Accessories (e.g., hats, scarves)</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Category Two</a>
-                                            <ul>
-                                                <li><a href="shop.html">Activewear</a></li>
-                                                <li><a href="shop.html">Formal Wear</a></li>
-                                                <li><a href="shop.html">Casual Wear</a></li>
-                                                <li><a href="shop.html">Outerwear (Jackets, Coats)</a></li>
-                                                <li><a href="shop.html">Swimwear</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Category Three</a>
-                                            <ul>
-                                                <li><a href="shop.html">Lingerie and Sleepwear</a></li>
-                                                <li><a href="shop.html">Maternity Wear</a></li>
-                                                <li><a href="shop.html">Plus Size Clothing</a></li>
-                                                <li><a href="shop.html">Sustainable Fashion</a></li>
-                                                <li><a href="shop.html">Vintage/Second-hand Clothing</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Category Four</a>
-                                            <ul>
-                                                <li><a href="shop.html">Sports Apparel</a></li>
-                                                <li><a href="shop.html">Workwear</a></li>
-                                                <li><a href="shop.html">Designer Clothing</a></li>
-                                                <li><a href="shop.html">Seasonal Collections</a></li>
-                                                <li><a href="shop.html">Costumes and Cosplay</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <li class="menu-item-has">
+                                    <a href="index.php?act=products">Liên Hệ</a>
                                 </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li class="menu-item-has">
+                                    <a href="index.php?act=products">FAQ</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -166,12 +113,12 @@
             <div class="container">
                 <div class="cs_header_search_in">
                     <div class="cs_hero_search_heading">
-                        <h3>What are you looking for?</h3>
+                        <h3>Bạn muốn tìm kiếm sản phẩm gì?</h3>
                         <button class="cs_header_search_close" type="button"><i class="fa-solid fa-xmark"></i></button>
                     </div>
-                    <form action="#" class="cs_header_search_form">
-                        <input type="text" placeholder="Search...">
-                        <button type="submit">
+                    <form action="?act=products" method="post" class="cs_header_search_form">
+                        <input type="text" placeholder="Search..." name="timkiem" value="<?php isset($kyw) ? ($kyw) : '' ?>">
+                        <button type="submit" name="submittimkiem">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </form>

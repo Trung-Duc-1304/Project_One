@@ -101,6 +101,16 @@ function pdo_query_value($sql)
     }
 }
 
+function select_all($sql){
+    $conn = pdo_get_connection();
+    $stmt = $conn->prepare($sql);
+    $stmt -> execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $conn = null;
+    return $result;
+}
+pdo_get_connection();
+
 // function checklogin()
 // {
 //     if (isset($_SESSION['username']) == true) return true;
