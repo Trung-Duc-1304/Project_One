@@ -1,11 +1,9 @@
 <?php
 ob_start();
 session_start();
-include "../modal/pdo.php";
-include "../modal/danhmuc.php";
-include "../modal/sanpham.php";
-include "../modal/taikhoan.php";
-include "../modal/binhluan.php";
+include "../Model/pdo.php";
+include "../Model/danhmuc.php";
+include "../Model/sanpham.php";
 if(isset($_SESSION['user'])) {
     $listgh=load_all_giohang($_SESSION['user']['id']); 
     $countgh=count_giohang($_SESSION['user']['id']);
@@ -17,7 +15,7 @@ $list_sp_aothun=load_sp_aothun();
 $list_sp_aoho=load_sp_aoho();
 $list_sp_aosw=load_sp_aosw();
 $listdm=load_all_dm("");
-include "../view/header.php";
+include "../Views/header.php";
 if(isset($_GET['act'])&&($_GET['act']!="")){
     $act=$_GET['act'];
     switch ($act) {
@@ -35,7 +33,7 @@ if(isset($_GET['act'])&&($_GET['act']!="")){
             else $page=1;
             $tongsp=dem_sp();
             $list_sp_home=load_all_spdm(0,$kyw,$giadau,$giacuoi,$page);
-            include "../view/sanpham/sanpham.php";
+            include "../Views/sanpham/sanpham.php";
             break;
         case 'spdanhmuc':
             if(isset($_GET['id'])&&($_GET['id']!="")){
@@ -51,7 +49,7 @@ if(isset($_GET['act'])&&($_GET['act']!="")){
                 $list_sp_dm=load_all_spdm($_GET['id'],$kyw,$giadau,$giacuoi,1);
                 $sp=load_one_spdm($_GET['id']);
             }
-            include "../view/sanpham/spdanhmuc.php";
+            include "../Views/sanpham/spdanhmuc.php";
             break;
         case 'chitietsp':
             if (isset($_GET['id'])&& ($_GET['id']!="")){
@@ -71,9 +69,9 @@ if(isset($_GET['act'])&&($_GET['act']!="")){
                         }
                     }
                     $splq = load_sp_lq($sanpham['iddm']);
-                    $listbl=load_bl_sp($sanpham['id']);
+                    // $listbl=load_bl_sp($sanpham['id']);
                     $danhmuc = load_one_dm($sanpham['iddm']);
-                    $dembl=dem_bl_sp($sanpham['id']);
+                    // $dembl=dem_bl_sp($sanpham['id']);
                     if(isset($_POST['datngayct'])){
                         if(isset($_SESSION['user'])){
                             $soluong = 1;
@@ -100,7 +98,7 @@ if(isset($_GET['act'])&&($_GET['act']!="")){
                 }
 
             }
-            include "../view/sanpham/chitietsp.php";
+            include "../Views/sanpham/chitietsp.php";
             break;
             if(isset($_SESSION['user'])){
                 if(isset($_GET['id'])&&($_GET['id']!="")){
@@ -112,7 +110,7 @@ if(isset($_GET['act'])&&($_GET['act']!="")){
                     
                 }
             }else{ header("location: ?act=dangnhap");};
-           include "../view/cart/chitiethuydon.php";
+           include "../Views/cart/chitiethuydon.php";
             break;
             if($_SERVER['REQUEST_METHOD']=="POST"){
                 $hovatenlh=$_POST['hovatenlh'];
@@ -123,15 +121,15 @@ if(isset($_GET['act'])&&($_GET['act']!="")){
                 $ngaygui = date('Y-m-d H:i:s');
                 insert_lienhe($hovatenlh,$emaillh,$sodienthoailh,$noidunglh,$ngaygui);
             }
-            include "../view/tintuc/lienhe.php";
+            include "../Views/tintuc/lienhe.php";
             break;
         default:
-        include "../view/home.php";
+        include "../Views/home.php";
             break;
     }
 }else{
-    include "../view/home.php";
+    include "../Views/home.php";
 }
 
-include "../view/footer.php";
+include "../Views/footer.php";
 ?>

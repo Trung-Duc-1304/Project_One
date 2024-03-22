@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Active Menu Cấp 2</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      nav {
+        background-color: #333;
+      }
+
+      .menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
+
+      .menu li {
+        margin-right: 20px;
+        position: relative;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: #fff;
+        padding: 10px;
+        display: block;
+      }
+
+      .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #555;
+      }
+
+      .submenu li {
+        margin: 0;
+      }
+
+      .submenu a {
+        padding: 10px;
+        display: block;
+      }
+
+      .menu li.active > .submenu {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul class="menu">
+        <li><a href="#">Trang chủ</a></li>
+        <li class="active">
+          <a href="#">Danh mục</a>
+          <ul class="submenu">
+            <li><a href="#">Danh mục con 1</a></li>
+            <li><a href="#">Danh mục con 2</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var menuItems = document.querySelectorAll(".menu li");
+
+        menuItems.forEach(function (menuItem) {
+          menuItem.addEventListener("click", function () {
+            // Remove 'active' class from all menu items
+            menuItems.forEach(function (item) {
+              item.classList.remove("active");
+            });
+
+            // Add 'active' class to the clicked menu item
+            menuItem.classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
