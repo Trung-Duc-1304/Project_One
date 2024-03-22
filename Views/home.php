@@ -137,45 +137,96 @@ if (is_array($listsp)) {
         <div class="cs_height_63 cs_height_lg_35"></div>
         <div class="cs_isotope_filter cs_style_1">
             <ul class="cs_mp0">
-                <li><a href="#" data-filter=".t_shirt" class="cs_fs_16 cs_medium">ÁO THUN</a></li>
-                <li><a href="#" data-filter=".jeans" class="cs_fs_16 cs_medium">Áo Hoodie</a></li>
-                <li><a href="#" data-filter=".c_shirt" class="cs_fs_16 cs_medium">Áo Sweater</a></li>
-                <!-- <li><a href="#" data-filter=".leggings" class="cs_fs_16 cs_medium">Leggings</a></li>
-                    <li><a href="#" data-filter=".skirt" class="cs_fs_16 cs_medium">Skirt</a></li>
-                    <li><a href="#" data-filter=".shoes" class="cs_fs_16 cs_medium">Shoes</a></li>
-                    <li><a href="#" data-filter=".accessories" class="cs_fs_16 cs_medium">Accessories</a></li> -->
-            </ul>
+            <li><a href="#" data-filter=".t_shirt" class="cs_fs_16 cs_medium">Áo thun</a></li>
+                    <li><a href="#" data-filter=".t_shirt1" class="cs_fs_16 cs_medium">Áo Hoodie</a></li>
+                    <li><a href="#" data-filter=".hehe" class="cs_fs_16 cs_medium">Áo Sweater</a></li>
+              </ul>
         </div>
     </div>
     <div class="container-fluid">
         <div class="cs_isotope cs_style_1 cs_isotope_col_4 cs_has_gutter_24">
             <div class="cs_grid_sizer"></div>
-            <?php foreach ($listsp as $sp) :
-                extract($sp); ?>
-                <div class="cs_isotope_item t_shirt shoes">
-                    <div class="cs_product cs_style_1 cs_bordered">
-                        <div class="cs_product_thumb position-relative">
-                            <img src="uploads/<?= $image ?>" alt="Product Image" class="w-100">
-                            <div class="cs_cart_badge position-absolute">
-                                <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-heart"></i>
-                                </a>
-                                <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                    <i class="fa-regular fa-eye"></i>
-                                </a>
+            <?php foreach ($list_sp_aothun as $sp) : ?>
+                        <?php extract($sp); $delay=200; ?>
+                            <div class="cs_isotope_item t_shirt shoes">
+                                <div class="cs_product cs_style_1 cs_bordered">
+                                    <div class="cs_product_thumb position-relative">
+                                        <a href="?act=chitietsp&id=<?= $id?>">
+                                            <img src="./uploads/<?= $image?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
+                                        </a>
+                                        <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
+                                        <div class="cs_cart_badge position-absolute">
+                                            <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                            <a href="?act=chitietsp&id=<?= $id?>" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </a>
+                                        </div>
+                                        <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">Add To Cart</a>
+                                    </div>
+                                    <div class="cs_product_info text-center" >
+                                        <h5><a href="?act=chitietsp&id=<?= $id?>"><?= $tensp?></a></h5>
+                                        <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                                    </div>
+                                </div>
                             </div>
-                            <button class='add-to-cart cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute btn' data-product-id="<?= $id ?>"> Thêm vào giỏ hàng </button>
-                        </div>
-                        <div class="cs_product_info text-center">
-                            <h3 class="cs_product_title cs_fs_21 cs_medium">
-                                <a href="product_details.html"><?= $tensp ?></a>
-                            </h3>
-                            <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium"><?= $giasp ?>VNĐ</p>
-                        </div>
-                    </div>
-
-                </div>
-            <?php endforeach ?>
+                        <?php $delay+=200;?>
+                    <?php endforeach; ?>
+                    <?php foreach ($list_sp_aoho as $sp) : ?>
+                        <?php extract($sp); $delay=200; ?>
+                            <div class="cs_isotope_item t_shirt1 shoes">
+                                <div class="cs_product cs_style_1 cs_bordered">
+                                    <div class="cs_product_thumb position-relative">
+                                        <a href="?act=chitietsp&id=<?= $id?>">
+                                            <img src="./uploads/<?= $image?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
+                                        </a>
+                                        <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
+                                        <div class="cs_cart_badge position-absolute">
+                                            <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                            <a href="?act=chitietsp&id=<?= $id?>" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </a>
+                                        </div>
+                                        <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">Add To Cart</a>
+                                    </div>
+                                    <div class="cs_product_info text-center" >
+                                        <h5><a href="?act=chitietsp&id=<?= $id?>"><?= $tensp?></a></h5>
+                                        <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php $delay+=200;?>
+                    <?php endforeach; ?>
+                    <?php foreach ($list_sp_aosw as $sp) : ?>
+                        <?php extract($sp); $delay=200; ?>
+                            <div class="cs_isotope_item hehe shoes">
+                                <div class="cs_product cs_style_1 cs_bordered">
+                                    <div class="cs_product_thumb position-relative">
+                                        <a href="?act=chitietsp&id=<?= $id?>">
+                                            <img src="./uploads/<?= $image?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
+                                        </a>
+                                        <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
+                                        <div class="cs_cart_badge position-absolute">
+                                            <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                            <a href="?act=chitietsp&id=<?= $id?>" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </a>
+                                        </div>
+                                        <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">Add To Cart</a>
+                                    </div>
+                                    <div class="cs_product_info text-center" >
+                                        <h5><a href="?act=chitietsp&id=<?= $id?>"><?= $tensp?></a></h5>
+                                        <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php $delay+=200;?>
+                    <?php endforeach; ?>
 
         </div>
     </div>
