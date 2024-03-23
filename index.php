@@ -6,6 +6,7 @@ require_once 'Model/sanpham.php';
 require_once 'Model/Account.php';
 require_once 'Model/Bienthe.php';
 require_once 'Model/order.php';
+require_once 'Model/binhluan.php';
 require_once 'global.php';
 require_once 'helper.php';
 require_once 'views/header.php';
@@ -28,19 +29,21 @@ if (isset($_GET['act'])) {
         case 'sanpham_ct':
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
                     $id = $_GET['id'];
+                    $sanpham = load_one_sp($id);
                     $pro_ct = load_onespct($id);
                     $list_bt = loadAll_bt($id);
+                    $listbl=load_bl_sp($sanpham['id']);
+                    $dembl=dem_bl_sp($sanpham['id']);
                     include "views/product_ct/sanpham_ct.php";
                 } else {
                     include "views/home.php";
                 }
+                
                 break;
             
         case 'products':
             if(isset($_POST['submittimkiem'])) $kyw=$_POST['timkiem'];
-            
             else $kyw="";
-            echo $kyw;
             if(isset($_POST['submitlocgia'])){
                 $giadau=$_POST['giaspdau'];
                 $giacuoi=$_POST['giaspcuoi'];
@@ -50,7 +53,6 @@ if (isset($_GET['act'])) {
             }
             if(isset($_GET['page'])&&($_GET['page']!="")) $page=$_GET['page'];
             else $page=1;
-            echo $page;
             $tongsp=dem_sp();
             $load_all_sp=load_all_sphome(0,$kyw,$giadau,$giacuoi,$page);
             $listdm=load_all_dm("");
@@ -76,7 +78,7 @@ if (isset($_GET['act'])) {
                         $giadau=0;
                         $giacuoi=0;
                     }
-                    $load_all_sp=load_all_sphome(0,$kyw,$giadau,$giacuoi,1);
+                    $list_sp_dm=load_all_spdm($_GET['id'],$kyw,$giadau,$giacuoi,1);
                     $sp=load_one_spdm($_GET['id']);
                     $listdm=load_all_dm("");
                 }

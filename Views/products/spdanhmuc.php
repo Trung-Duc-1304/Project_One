@@ -29,8 +29,8 @@
                                 foreach ($listdm as $dm) {
                                     extract($dm);
                                     $demsp=dem_sp_dm($id);
-                                    echo '<li class="d-flex justify-content-between align-items-center  p-1">
-                                    <a class="fw-bold" href="?act=spdanhmuc&id='.$id.'">'.$tendm.'
+                                    echo '<li class="d-flex justify-content-between align-items-center  p-1 ">
+                                    <a class="fw-bold act" href="?act=spdanhmuc&id='.$id.'">'.$tendm.'
                                     </a>
                                     <span class="badge rounded-pill text-bg-warning">'.$demsp['countsp'].'</span>
                                     </li>';
@@ -68,13 +68,13 @@
                 <div class="col-lg-9">
                     <div class="cs_product_grid cs_product_grid_3 cs_grid_view">
                         <?php
-                            foreach ($load_all_sp as $sp) {
+                            foreach ($list_sp_dm as $sp) {
                                 extract($sp); ?>
                                     <div class="cs_product_col">
                                         <div class="cs_product cs_style_1">
                                             <div class="cs_product_thumb position-relative">
                                                 <a href="?act=chitietsp&id=<?= $id?>">
-                                                    <img src="./uploads/<?= $image?>" style=" object-fit: cover; height:400px;" alt="">
+                                                    <img src="./uploads/<?= $image?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
                                                 </a>
                                                 <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
                                                 <div class="cs_cart_badge position-absolute">

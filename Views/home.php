@@ -181,7 +181,7 @@ if (is_array($listsp)) {
                                 <div class="cs_product cs_style_1 cs_bordered">
                                     <div class="cs_product_thumb position-relative">
                                         <a href="?act=sanpham_ct&id=<?= $id?>">
-                                            <img src="./uploads/<?= $image?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
+                                            <img src="./uploads/<?= $image?>" style=" object-fit: cover; height:450px;" class="w-100" alt="">
                                         </a>
                                         <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
                                         <div class="cs_cart_badge position-absolute">
@@ -208,7 +208,7 @@ if (is_array($listsp)) {
                                 <div class="cs_product cs_style_1 cs_bordered">
                                     <div class="cs_product_thumb position-relative">
                                         <a href="?act=sanpham_ct&id=<?= $id?>">
-                                            <img src="./uploads/<?= $image?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
+                                            <img src="./uploads/<?= $image?>" style=" object-fit: cover; height:450px;" class="w-100" alt="">
                                         </a>
                                         <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
                                         <div class="cs_cart_badge position-absolute">
