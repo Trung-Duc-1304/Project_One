@@ -1,4 +1,5 @@
 <?php
+// hihi
 require_once 'Model/pdo.php';
 require_once 'Model/danhmuc.php';
 require_once 'Model/sanpham.php';
