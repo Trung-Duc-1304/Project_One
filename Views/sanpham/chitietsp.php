@@ -58,15 +58,12 @@
                     <div class="cs_single_product_details">
                         <a style="font-size: 25px" href="?act=chitietsp&id=<?=$id?>"><?=$tensp?></a>
                         <div class="cs_single_product_review">
-                            <div class="cs_rating_container">
-                                <div class="cs_rating cs_size_sm" data-rating="5">
-                                    <div class="cs_rating_percentage"></div>
-                                </div>
-                            </div>
-                            <span>(5)</span>
                             <span>Kho: <span class="cs_accent_color">12 trong kho</span></span>
                         </div>
-                        <h4 class="cs_single_product_price cs_fs_21 cs_primary_color cs_semibold">Giá: $20.00</h4>
+                        <div class="mt-5">
+                            <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price">Giá: <?= number_format($giakm, 0, ',', '.')?>₫</span>
+                            <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+                        </div>
                         <hr>
                         <div class="cs_single_product_details_text">
                             <p class="mb-0">Áo thun nam màu đen của chúng tôi mang đến kiểu dáng cổ điển và được làm từ chất liệu cotton nguyên chất chất lượng cao giúp bạn luôn cảm thấy thoải mái và trông thật tuyệt.</p>
@@ -156,17 +153,15 @@
             <div class="cs_product_meta_info">
                 <ul class="cs_tab_links cs_style_2 cs_product_tab cs_fs_21 cs_primary_color cs_semibold cs_mp0">
                     <li><a href="#tab_1">Miêu tả</a></li>
-                    <li><a href="#tab_2">Thêm thông tin</a></li>
-                    <li><a href="#tab_3">Hướng dẫn chọn kích cỡ</a></li>
-                    <li class="active"><a href="#tab_4">Đánh giá (1)</a></li>
+                    <!-- <li><a href="#tab_2">Thêm thông tin</a></li>
+                    <li><a href="#tab_3">Hướng dẫn chọn kích cỡ</a></li> -->
+                    <li class="active"><a href="#tab_4">Đánh giá </a></li>
                 </ul>
                 <div class="cs_tabs">
                     <div class="cs_tab" id="tab_1">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis orci ac odio dictum tincidunt. Donec ut metus leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed luctus, dui eu sagittis sodales,
-                        nulla nibh sagittis augue, vel porttitor diam enim non metus. Vestibulum aliquam augue neque. Phasellus tincidunt odio eget ullamcorper efficitur. Cras placerat ut turpis pellentesque vulputate. Nam sed consequat tortor. Curabitur
-                        finibus sapien dolor. Ut eleifend tellus nec erat pulvinar dignissim. Nam non arcu purus. Vivamus et massa massa.
+                    Áo thun nam màu đen của chúng tôi mang đến kiểu dáng cổ điển và được làm từ chất liệu cotton nguyên chất chất lượng cao giúp bạn luôn cảm thấy thoải mái và trông thật tuyệt.
                     </div>
-                    <div class="cs_tab" id="tab_2">
+                    <!-- <div class="cs_tab" id="tab_2">
                         <table class="m-0">
                             <tbody>
                                 <tr>
@@ -180,14 +175,39 @@
                             </tbody>
                         </table>
                         <hr>
-                    </div>
-                    <div class="cs_tab" id="tab_3">
+                    </div> -->
+                    <!-- <div class="cs_tab" id="tab_3">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis orci ac odio dictum tincidunt. Donec ut metus leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed luctus, dui eu sagittis sodales,
                         nulla nibh sagittis augue, vel porttitor diam enim non metus. Vestibulum aliquam augue neque. Phasellus tincidunt odio eget ullamcorper efficitur. Cras placerat ut turpis pellentesque vulputate. Nam sed consequat tortor. Curabitur
                         finibus sapien dolor. Ut eleifend tellus nec erat pulvinar dignissim. Nam non arcu purus. Vivamus et massa massa.
-                    </div>
+                    </div> -->
                     <div class="cs_tab active" id="tab_4">
-                        <ul class="cs_client_review_list cs_mp0">
+                        <?php extract($dembl);?>
+                        <?php
+                            foreach ($listbl as $bl) {
+                            extract($bl);
+                            echo'<ul class="cs_client_review_list cs_mp0">
+                                    <li>
+                                        <div class="cs_client_review">
+                                            <div class="cs_review_media">
+                                                <div class="cs_review_media_thumb"><img src="../assets/img/avatar.png" alt="Avatar"></div>
+                                                <div class="cs_review_media_right">
+                                                    <div class="cs_rating_container">
+                                                        <div class="cs_rating cs_size_sm" data-rating="5">
+                                                            <div class="cs_rating_percentage"></div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="mb-0 cs_primary_color cs_semibold">Nguyễn Kim Kỳ</p>
+                                                </div>
+                                                <p class="cs_review_posted_by">'.$ngaybinhluan.'</p>
+                                            </div>
+                                            <p class="cs_review_text">'.$noidung.'</p>
+                                        </div>
+                                    </li>
+                                </ul>';
+                            }
+                            ?>
+                        <!-- <ul class="cs_client_review_list cs_mp0">
                             <li>
                                 <div class="cs_client_review">
                                     <div class="cs_review_media">
@@ -202,11 +222,10 @@
                                         </div>
                                         <p class="cs_review_posted_by">August 12, 2023</p>
                                     </div>
-                                    <p class="cs_review_text">Gần đây tôi đã mua áo phông Arino và tôi thực sự ấn tượng. Chất lượng âm thanh vượt trội, kết nối không dây liền mạch và công nghệ khử tiếng ồn là một tính năng nổi bật <br>. Họ là
-                                    </p>
+                                    <p class="cs_review_text">Gần đây tôi đã mua áo phông Arino và tôi thực sự ấn tượng. Chất lượng âm thanh vượt trội, kết nối không dây liền mạch và công nghệ khử tiếng ồn là một tính năng nổi bật <br>
                                 </div>
                             </li>
-                        </ul>
+                        </ul> -->
                         <div class="cs_height_20 cs_height_lg_20"></div>
                         <div class="cs_input_rating_wrap">
                             <p>Đánh giá của bạn *</p>
@@ -241,12 +260,12 @@
             <div class="cs_isotope cs_style_1 cs_isotope_col_4 cs_has_gutter_24" >
                 <div class="cs_grid_sizer"></div>
                     <?php foreach($splq as $sp) : ?>
-                        <?php extract($sp); if($soluong>0) {?>
+                        <?php extract($sp);if($soluong>0) {?>
                             <div class="cs_isotope_item t_shirt shoes" >
                                 <div class="cs_product cs_style_1 cs_bordered " >
                                     <div class="cs_product_thumb position-relative" >
                                         <a href="?act=chitietsp&id=<?= $id?>" data-aos="fade-up" data-aos-delay="200">
-                                            <img src="../uploads/<?= $image?>" style=" object-fit: cover; height:400px;"alt="">
+                                            <img src="../uploads/<?= $image?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
                                         </a>
                                         <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
                                         <div class="cs_cart_badge position-absolute">
@@ -261,7 +280,10 @@
                                     </div>
                                     <div class="cs_product_info text-center">
                                         <h5><a href="?act=chitietsp&id=<?= $id?>"><?= $tensp?></a></h5>
-                                        <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                                        <div class="mt-5">
+                                            <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price"><?= number_format($giakm, 0, ',', '.')?>₫</span>
+                                            <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

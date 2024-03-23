@@ -161,7 +161,10 @@ echo $hihi;
                                         <span>(5)</span>
                                         <span>Stock: <span class="cs_accent_color">12 in stock</span></span>
                                     </div>
-                                    <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium"><?= number_format($giasp, 0, ',', '.')?>₫</p>
+                                    <div class="mt-5">
+                                            <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price"><?= number_format($giakm, 0, ',', '.')?>₫</span>
+                                            <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+                                        </div>
                                     <p class="cs_product_desc">Our men black t-shirt offers a classic fit and is made from high-quality pure cotton <br>materials to keep you feeling and looking great.</p>
                                     <div class="cs_action_btns">
                                         <a href="#" class="cs_btn cs_style_1 cs_fs_16 cs_medium cs_accent_btn">Add to Cart</a>

@@ -19,6 +19,20 @@
     <link rel="stylesheet" href="../assets/css/animated-headline.css">
     <!-- Custom css -->
     <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .old-price {
+    text-decoration: line-through;
+    color:gray;
+    }
+
+    .new-price {
+        position: relative; /* Đặt phần giá mới là relative để có thể dùng absolute position cho phần giá mới */
+        top: -1.5em; /* Điều chỉnh giá mới nổi lên so với giá cũ */
+        left: 0; /* Điều chỉnh vị trí so với phần tử cha */
+        background-color: white; /* Đặt màu nền */
+        padding: 0 5px; /* Thêm lề để làm đẹp */
+    }
+    </style>
 </head>
 
 <body>

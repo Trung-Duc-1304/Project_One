@@ -108,11 +108,16 @@
                                         </div>
                                         <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute"> Add To Cart</a>
                                     </div>
-                                    <div class="cs_product_info text-center">
-                                        <h3 class="cs_product_title cs_fs_21 cs_medium">
+                                    <div class="cs_product_info text-center ">
+                                        <h3 class="cs_product_title cs_fs_21 cs_medium ">
                                         <h3><a href="?act=chitietsp&id=<?= $id?>"><?= $tensp?></a></h3>
                                         </h3>
-                                        <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                                        <div class="mt-5">
+                                            <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price"><?= number_format($giakm, 0, ',', '.')?>₫</span>
+                                            <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+                                        </div>
+                                        
+                                        
                                     </div>
                                 </div>
                         </div>
@@ -225,7 +230,10 @@
                                     </div>
                                     <div class="cs_product_info text-center" >
                                         <h5><a href="?act=chitietsp&id=<?= $id?>"><?= $tensp?></a></h5>
-                                        <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                                        <div class="mt-5">
+                                            <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price"><?= number_format($giakm, 0, ',', '.')?>₫</span>
+                                            <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -252,7 +260,10 @@
                                     </div>
                                     <div class="cs_product_info text-center" >
                                         <h5><a href="?act=chitietsp&id=<?= $id?>"><?= $tensp?></a></h5>
-                                        <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                                        <div class="mt-5">
+                                            <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price"><?= number_format($giakm, 0, ',', '.')?>₫</span>
+                                            <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -279,7 +290,10 @@
                                     </div>
                                     <div class="cs_product_info text-center" >
                                         <h5><a href="?act=chitietsp&id=<?= $id?>"><?= $tensp?></a></h5>
-                                        <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                                        <div class="mt-5">
+                                            <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price"><?= number_format($giakm, 0, ',', '.')?>₫</span>
+                                            <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

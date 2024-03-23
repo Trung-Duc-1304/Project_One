@@ -4,10 +4,11 @@ session_start();
 include "../Model/pdo.php";
 include "../Model/danhmuc.php";
 include "../Model/sanpham.php";
+include "../Model/binhluan.php";
 if(isset($_SESSION['user'])) {
-    $listgh=load_all_giohang($_SESSION['user']['id']); 
-    $countgh=count_giohang($_SESSION['user']['id']);
-    $minicart=load_minicart($_SESSION['user']['id']);
+    // $listgh=load_all_giohang($_SESSION['user']['id']); 
+    // $countgh=count_giohang($_SESSION['user']['id']);
+    // $minicart=load_minicart($_SESSION['user']['id']);
 }
 $list_sp_home=load_sp_home();
 $list_sp_nb=load_sp_nb();
@@ -69,9 +70,10 @@ if(isset($_GET['act'])&&($_GET['act']!="")){
                         }
                     }
                     $splq = load_sp_lq($sanpham['iddm']);
-                    // $listbl=load_bl_sp($sanpham['id']);
+                    $soluong = 1;
+                    $listbl=load_bl_sp($sanpham['id']);
                     $danhmuc = load_one_dm($sanpham['iddm']);
-                    // $dembl=dem_bl_sp($sanpham['id']);
+                    $dembl=dem_bl_sp($sanpham['id']);
                     if(isset($_POST['datngayct'])){
                         if(isset($_SESSION['user'])){
                             $soluong = 1;

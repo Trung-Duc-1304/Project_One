@@ -102,7 +102,7 @@
                                         <div class="cs_product cs_style_1">
                                             <div class="cs_product_thumb position-relative">
                                                 <a href="?act=chitietsp&id=<?= $id?>">
-                                                    <img src="../uploads/<?= $image?>" style=" object-fit: cover; height:400px;" alt="">
+                                                    <img src="../uploads/<?= $image?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
                                                 </a>
                                                 <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
                                                 <div class="cs_cart_badge position-absolute">
