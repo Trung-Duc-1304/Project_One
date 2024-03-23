@@ -15,7 +15,7 @@ if (is_array($listsp)) {
                             <div class="cs_hero_text">
                                 <h4 class="cs_hero_title_mini cs_fs_28">Up to 50% Off</h4>
                                 <h1 class="cs_hero_title cs_fs_67 cs_bold">Elegant men collection in summer season</h1>
-                                <a href="shop.html" class="cs_btn cs_style_1 cs_fs_16 cs_medium">See Collection</a>
+                                <a href="?act=products" class="cs_btn cs_style_1 cs_fs_16 cs_medium">See Collection</a>
                             </div>
                         </div>
                         <div class="cs_hero_right">
@@ -33,7 +33,7 @@ if (is_array($listsp)) {
                             <div class="cs_hero_text">
                                 <h4 class="cs_hero_title_mini cs_fs_28">Up to 20% Off</h4>
                                 <h1 class="cs_hero_title cs_fs_67 cs_bold">Elegant woman collection in summer</h1>
-                                <a href="shop.html" class="cs_btn cs_style_1 cs_fs_16 cs_medium">See Collection</a>
+                                <a href="?act=products" class="cs_btn cs_style_1 cs_fs_16 cs_medium">See Collection</a>
                             </div>
                         </div>
                         <div class="cs_hero_right">
@@ -51,7 +51,7 @@ if (is_array($listsp)) {
                             <div class="cs_hero_text">
                                 <h4 class="cs_hero_title_mini cs_fs_28">Up to 10% Off</h4>
                                 <h1 class="cs_hero_title cs_fs_67 cs_bold">Children collection in winter season</h1>
-                                <a href="shop.html" class="cs_btn cs_style_1 cs_fs_16 cs_medium">See Collection</a>
+                                <a href="?act=products" class="cs_btn cs_style_1 cs_fs_16 cs_medium">See Collection</a>
                             </div>
                         </div>
                         <div class="cs_hero_right">
@@ -99,12 +99,14 @@ if (is_array($listsp)) {
                     <div class="slick_slide_in">
                         <div class="cs_product cs_style_1 cs_bordered">
                             <div class="cs_product_thumb position-relative">
-                                <img src="uploads/<?= $image ?>" alt="Product Image" class="w-100">
+                                <a href="?act=sanpham_ct&id=<?= $id?>" >
+                                <img src="uploads/<?= $image ?>" alt="Product Image" style=" object-fit: cover; height:450px;" class="w-100">
+                                <a>
                                 <div class="cs_cart_badge position-absolute">
                                     <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                         <i class="fa-regular fa-heart"></i>
                                     </a>
-                                    <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                    <a href="?act=sanpham_ct&id=<?= $id?>" class="cs_cart_icon cs_accent_bg cs_white_color">
                                         <i class="fa-regular fa-eye"></i>
                                     </a>
                                 </div>
@@ -151,22 +153,22 @@ if (is_array($listsp)) {
                             <div class="cs_isotope_item t_shirt shoes">
                                 <div class="cs_product cs_style_1 cs_bordered">
                                     <div class="cs_product_thumb position-relative">
-                                        <a href="?act=chitietsp&id=<?= $id?>">
-                                            <img src="./uploads/<?= $image?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
-                                        </a>
+                                    <a href="?act=sanpham_ct&id=<?= $id?>" >
+                                        <img src="uploads/<?= $image ?>" alt="Product Image" style=" object-fit: cover; height:450px;" class="w-100">
+                                    <a>
                                         <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
                                         <div class="cs_cart_badge position-absolute">
                                             <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                                 <i class="fa-regular fa-heart"></i>
                                             </a>
-                                            <a href="?act=chitietsp&id=<?= $id?>" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                            <a href="?act=sanpham_ct&id=<?= $id?>" class="cs_cart_icon cs_accent_bg cs_white_color">
                                                 <i class="fa-regular fa-eye"></i>
                                             </a>
                                         </div>
                                         <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">Add To Cart</a>
                                     </div>
                                     <div class="cs_product_info text-center" >
-                                        <h5><a href="?act=chitietsp&id=<?= $id?>"><?= $tensp?></a></h5>
+                                        <h5><a href="?act=sanpham_ct&id=<?= $id?>"><?= $tensp?></a></h5>
                                         <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
                                     </div>
                                 </div>
@@ -178,7 +180,7 @@ if (is_array($listsp)) {
                             <div class="cs_isotope_item t_shirt1 shoes">
                                 <div class="cs_product cs_style_1 cs_bordered">
                                     <div class="cs_product_thumb position-relative">
-                                        <a href="?act=chitietsp&id=<?= $id?>">
+                                        <a href="?act=sanpham_ct&id=<?= $id?>">
                                             <img src="./uploads/<?= $image?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
                                         </a>
                                         <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
@@ -186,14 +188,14 @@ if (is_array($listsp)) {
                                             <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                                 <i class="fa-regular fa-heart"></i>
                                             </a>
-                                            <a href="?act=chitietsp&id=<?= $id?>" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                            <a href="?act=sanpham_ct&id=<?= $id?>" class="cs_cart_icon cs_accent_bg cs_white_color">
                                                 <i class="fa-regular fa-eye"></i>
                                             </a>
                                         </div>
                                         <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">Add To Cart</a>
                                     </div>
                                     <div class="cs_product_info text-center" >
-                                        <h5><a href="?act=chitietsp&id=<?= $id?>"><?= $tensp?></a></h5>
+                                        <h5><a href="?act=sanpham_ct&id=<?= $id?>"><?= $tensp?></a></h5>
                                         <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
                                     </div>
                                 </div>
@@ -205,7 +207,7 @@ if (is_array($listsp)) {
                             <div class="cs_isotope_item hehe shoes">
                                 <div class="cs_product cs_style_1 cs_bordered">
                                     <div class="cs_product_thumb position-relative">
-                                        <a href="?act=chitietsp&id=<?= $id?>">
+                                        <a href="?act=sanpham_ct&id=<?= $id?>">
                                             <img src="./uploads/<?= $image?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
                                         </a>
                                         <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
@@ -213,14 +215,14 @@ if (is_array($listsp)) {
                                             <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                                 <i class="fa-regular fa-heart"></i>
                                             </a>
-                                            <a href="?act=chitietsp&id=<?= $id?>" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                            <a href="?act=sanpham_ct&id=<?= $id?>" class="cs_cart_icon cs_accent_bg cs_white_color">
                                                 <i class="fa-regular fa-eye"></i>
                                             </a>
                                         </div>
                                         <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">Add To Cart</a>
                                     </div>
                                     <div class="cs_product_info text-center" >
-                                        <h5><a href="?act=chitietsp&id=<?= $id?>"><?= $tensp?></a></h5>
+                                        <h5><a href="?act=sanpham_ct&id=<?= $id?>"><?= $tensp?></a></h5>
                                         <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
                                     </div>
                                 </div>
@@ -249,7 +251,7 @@ if (is_array($listsp)) {
                         <p class="cs_card_subtitle cs_fs_21 cs_semibold">
                             Cho đến ngày 15/02/24 Sử dụng mã WINTER khi thanh toán
                         </p>
-                        <a href="shop.html" class="cs_btn cs_style_1 cs_fs_16 cs_medium">Mua ngay</a>
+                        <a href="?act=products" class="cs_btn cs_style_1 cs_fs_16 cs_medium">Mua ngay</a>
                     </div>
                 </div>
             </div>

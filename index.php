@@ -38,7 +38,9 @@ if (isset($_GET['act'])) {
             
         case 'products':
             if(isset($_POST['submittimkiem'])) $kyw=$_POST['timkiem'];
+            
             else $kyw="";
+            echo $kyw;
             if(isset($_POST['submitlocgia'])){
                 $giadau=$_POST['giaspdau'];
                 $giacuoi=$_POST['giaspcuoi'];
@@ -48,9 +50,17 @@ if (isset($_GET['act'])) {
             }
             if(isset($_GET['page'])&&($_GET['page']!="")) $page=$_GET['page'];
             else $page=1;
+            echo $page;
             $tongsp=dem_sp();
             $load_all_sp=load_all_sphome(0,$kyw,$giadau,$giacuoi,$page);
             $listdm=load_all_dm("");
+            // echo '<pre>';
+            // var_dump($load_all_sp);
+            // echo '</pre>';
+            
+            
+            // sizeof($load_all_sp);
+            // echo sizeof($load_all_sp);
             // $load_all_sp = load_all_sp($kyw, $page);
             include_once 'views/products/products.php';
             break;
