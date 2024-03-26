@@ -35,7 +35,7 @@ if (is_array($list_bt)) {
             </div>
             <div class="col-xl-5">
                 <div class="cs_single_product_details">
-                    <h2 class="cs_fs_37 cs_semibold" ><?= $tensp ?></h2>
+                    <h2 class="cs_fs_37 cs_semibold"><?= $tensp ?></h2>
                     <div class="cs_single_product_review">
                         <div class="cs_rating_container">
                             <div class="cs_rating cs_size_sm" data-rating="5">
@@ -44,7 +44,7 @@ if (is_array($list_bt)) {
                         </div>
                         <!-- <span>(5)</span> -->
                     </div>
-                    <h4 class="cs_single_product_price cs_fs_21 cs_primary_color cs_semibold" >Giá Sản Phẩm: <?= $gia_formatted ?> VND</h4>
+                    <h4 class="cs_single_product_price cs_fs_21 cs_primary_color cs_semibold">Giá Sản Phẩm: <?= $gia_formatted ?> VND</h4>
                     <hr>
                     <div class="cs_single_product_details_text">
                         <p class="mb-0"><?= $mota ?></p>
@@ -56,7 +56,7 @@ if (is_array($list_bt)) {
                                 extract($sizes);
                             ?>
                                 <li>
-                                    <input type="radio" name="size_<?= $pro_id ?>" value="<?=$size?>" >
+                                    <input type="radio" name="size_<?= $pro_id ?>" value="<?= $size ?>">
                                     <span><?= $size ?></span>
                                 </li>
                             <?php endforeach ?>
@@ -73,7 +73,7 @@ if (is_array($list_bt)) {
                                     case 'Trắng':
                                         echo "<li>
                                             <div class='cs_color_filter'>
-                                                <input type='radio'name='color_$pro_id' value='$color'>
+                                                <input type='radio' name='color_$pro_id' value='$color'>
                                                 <span class='cs_color_filter_circle cs_white_bg'></span>
                                                 <span class='cs_color_text'>$color</span>
                                             </div>
@@ -97,15 +97,15 @@ if (is_array($list_bt)) {
                                                 </div>
                                               </li>";
                                         break;
-                                        case 'Vàng':
-                                            echo "<li>
+                                    case 'Vàng':
+                                        echo "<li>
                                                     <div class='cs_color_filter'>
                                                         <input type='radio' name='color'>
                                                         <span class='cs_color_filter_circle bg-warning'></span>
                                                         <span class='cs_color_text'>$color</span>
                                                     </div>
                                                   </li>";
-                                            break;
+                                        break;
                                     default:
                                         echo "Trạng thái không xác định<br>";
                                         break;
@@ -119,12 +119,9 @@ if (is_array($list_bt)) {
                             <button class="cs_quantity_btn cs_increment"><i class="fa-solid fa-angle-up"></i></button>
                             <span class="cs_quantity_input" name="quantity">1</span>
                             <button class="cs_quantity_btn cs_decrement"><i class="fa-solid fa-angle-down"></i>
-                        </button>
+                            </button>
                         </div>
-                        <button type="submit" class="add-to-cart btn btn-primary"
-                        data-product-id="<?= $pro_id ?>"
-                        data-price-sp="<?=$giasp?>"
-                         style="padding: 10px;" >Thêm Vào Giỏ Hàng</button>
+                        <button type="submit" class="add-to-cart btn btn-primary" data-product-id="<?= $pro_id ?>" data-price-sp="<?= $giasp ?>" style="padding: 10px;">Thêm Vào Giỏ Hàng</button>
                         <button class="cs_heart_btn"><i class="fa-regular fa-heart"></i></button>
                     </div>
                 </div>

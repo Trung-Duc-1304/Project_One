@@ -1,22 +1,35 @@
 <?php
-function load_sp_aothun(){
-    $query="SELECT sanpham.*
+function load_sp_aothun()
+{
+    $query = "SELECT sanpham.*
     FROM sanpham
     INNER JOIN danhmuc ON sanpham.iddm = danhmuc.id
     WHERE danhmuc.tendm = 'Áo Thun'
     LIMIT 3";
     return pdo_query($query);
 }
-function load_sp_aoho(){
-    $query="SELECT sanpham.*
+function load_sp_aoho()
+{
+    $query = "SELECT sanpham.*
     FROM sanpham
     INNER JOIN danhmuc ON sanpham.iddm = danhmuc.id
     WHERE danhmuc.tendm = 'Áo Hoodie'
     LIMIT 3";
     return pdo_query($query);
 }
-function load_sp_aosw(){
-    $query="SELECT sanpham.*
+
+function load_sp_khoac()
+{
+    $query = "SELECT sanpham.*
+    FROM sanpham
+    INNER JOIN danhmuc ON sanpham.iddm = danhmuc.id
+    WHERE danhmuc.tendm = 'Áo Khoác'
+    LIMIT 3";
+    return pdo_query($query);
+}
+function load_sp_aosw()
+{
+    $query = "SELECT sanpham.*
     FROM sanpham
     INNER JOIN danhmuc ON sanpham.iddm = danhmuc.id
     WHERE danhmuc.tendm = 'Áo Sweater'
@@ -105,19 +118,20 @@ function load_all_spdm($iddm, $kyw, $giadau, $giacuoi, $page)
 }
 
 
-function load_all_sphome($iddm,$kyw,$giadau,$giacuoi,$page){
-    $query="SELECT * FROM sanpham WHERE 1";
-    if($iddm > 0){
-        $query .=" AND iddm=$iddm";
+function load_all_sphome($iddm, $kyw, $giadau, $giacuoi, $page)
+{
+    $query = "SELECT * FROM sanpham WHERE 1";
+    if ($iddm > 0) {
+        $query .= " AND iddm=$iddm";
     }
-    if($kyw != ''){
-        $query .=" AND (tensp like '%".$kyw."%' OR giasp LIKE '%" . $kyw . "%')";
+    if ($kyw != '') {
+        $query .= " AND (tensp like '%" . $kyw . "%' OR giasp LIKE '%" . $kyw . "%')";
     }
-    if($giadau>0 && $giacuoi>0){
-        $query .=" AND giasp BETWEEN $giadau AND $giacuoi";
+    if ($giadau > 0 && $giacuoi > 0) {
+        $query .= " AND giasp BETWEEN $giadau AND $giacuoi";
     }
-    $batdau=intval($page*8-8);
-    $query .=" ORDER BY id desc limit $batdau,8";
+    $batdau = intval($page * 8 - 8);
+    $query .= " ORDER BY id desc limit $batdau,8";
     return pdo_query($query);
 }
 function insert_sp($danhmuc, $tensp, $giasp, $image, $giakm, $khuyenmai, $mota)
