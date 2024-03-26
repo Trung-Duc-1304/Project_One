@@ -31,6 +31,8 @@ if (isset($_GET['act'])) {
                 $id = $_GET['id'];
                 $pro_ct = load_onespct($id);
                 $list_bt = loadAll_bt($id);
+                $splq = load_sp_lq($pro_ct['iddm']);
+                $soluong =1;
                 include "views/product_ct/sanpham_ct.php";
             } else {
                 include "views/home.php";

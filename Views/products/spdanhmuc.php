@@ -1,3 +1,14 @@
+<?php $tongsp = count($list_sp_dm);
+        $limit =8;
+        // Kiểm tra nếu $total hoặc $limit không phải là số hoặc rỗng
+        if (!is_numeric($tongsp) || !is_numeric($limit) || $limit == 0) {
+            echo "Dữ liệu đầu vào không hợp lệ!";
+        } else {
+            //Tính số trang
+            $page = ceil($tongsp / $limit);
+        }
+        $hihi = (isset($_GET['page']) ? $_GET[('page')] : 1);
+                    ?>
 <section>
     <div class="cs_height_140 cs_height_lg_80"></div>
     <div class="container-fluid">
@@ -73,7 +84,7 @@
                         <div class="cs_product_col">
                             <div class="cs_product cs_style_1">
                                 <div class="cs_product_thumb position-relative">
-                                    <a href="?act=chitietsp&id=<?= $id ?>">
+                                    <a href="?act=sanpham_ct&id=<?= $id ?>">
                                         <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:400px;" alt="">
                                     </a>
                                     <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
@@ -81,7 +92,7 @@
                                         <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                             <i class="fa-regular fa-heart"></i>
                                         </a>
-                                        <a href="?act=chitietsp&id=<?= $id ?>" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                        <a href="?act=sanpham_ct&id=<?= $id ?>" class="cs_cart_icon cs_accent_bg cs_white_color">
                                             <i class="fa-regular fa-eye"></i>
                                         </a>
                                     </div>
@@ -89,7 +100,7 @@
                                 </div>
                                 <div class="cs_product_info text-center">
                                     <h3 class="cs_product_title cs_fs_21 cs_medium">
-                                        <a href="?act=chitietsp&id=<?= $id ?>"><?= $tensp ?></a>
+                                        <a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a>
                                     </h3>
                                     <div class="cs_single_product_review">
                                         <div class="cs_rating_container">
@@ -112,12 +123,24 @@
                     <?php } ?>
                 </div>
                 <div class="cs_height_75 cs_height_lg_50"></div>
-                <!-- <ul class="cs_pagination cs_fs_21 cs_semibold cs_mp0">
-                        <li class="cs_page_item active"><a class="cs_page_link" href="#">01</a></li>
+                <?php if (!isset($_POST['submittimkiem']) && !isset($_POST['submitlocgia'])) { ?>
+                    <ul class="cs_pagination cs_fs_21 cs_semibold cs_mp0">
+
+                        <?php if ($hihi - 1 > 0) { ?>
+                            <li class="cs_page_item"><a class="cs_page_link" href="?act=products&page=<?php echo $hihi - 1 ?>"><i class="fa-solid fa-arrow-left"></i></a></li>
+                        <?php } ?>
+                        <?php for ($i = 1; $i <= $page; $i++) { ?>
+                            <li class=" cs_page_item <?php echo (($hihi == $i) ? 'active' : '') ?>"><a class="cs_page_link" href="?act=products&page=<?php echo $i ?>"><?php echo $i ?></a></li>
+                        <?php } ?>
+                        <?php if ($hihi + 1 <= $page) { ?>
+                            <li class="cs_page_item"><a class="cs_page_link" href="?act=products&page=<?php echo $hihi + 1 ?>"><i class="fa-solid fa-arrow-right"></i></a></li>
+                        <?php } ?>
+                        <!-- <li class="cs_page_item active"><a class="cs_page_link" href="#">01</a></li>
                         <li class="cs_page_item"><a class="cs_page_link" href="#">02</a></li>
                         <li class="cs_page_item"><a class="cs_page_link" href="#">03</a></li>
-                        <li class="cs_page_item"><a class="cs_page_link" href="#"><i class="fa-solid fa-arrow-right"></i></a></li>
-                    </ul> -->
+                        <li class="cs_page_item"><a class="cs_page_link" href="#"><i class="fa-solid fa-arrow-right"></i></a></li> -->
+                    </ul>
+                <?php  }?>
             </div>
             <!-- .col -->
         </div>
