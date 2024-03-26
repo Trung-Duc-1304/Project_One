@@ -85,7 +85,7 @@
                             <button type="button" class="cs_action_icon cs_header_search_btn">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
-                            <a href="#" class="cs_action_icon cs_modal_btn" data-modal="register_modal">
+                            <a href="?act=dangky" class="cs_action_icon cs_modal_btn" data-modal="register_modal">
                                 <i class="fa-regular fa-circle-user"></i>
                             </a>
                             <a href="?act=list_cart_user&id=31" class="cs_action_icon">

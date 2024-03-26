@@ -18,6 +18,12 @@ $list_sp_aosw = load_sp_aosw();
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
+        case 'dangky':
+            include_once 'views/taikhoan/dangky.php';
+        break;
+        case 'dangnhap':
+            include_once 'views/taikhoan/dangnhap.php';
+        break;
         case 'list_cart_user':
             // if (isset($_GET['id']) && ($_GET['id'] > 0)) {
             // }

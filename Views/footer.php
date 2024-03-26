@@ -87,6 +87,7 @@
     <script src="assets/client/js/animated-headline.js"></script>
     <script src="assets/client/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/client/css/bootstrap.min.css"></script>
     <script>
         $(document).ready(function() {
             $(".add-to-cart").click(function() {
