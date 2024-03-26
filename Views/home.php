@@ -222,7 +222,7 @@ if (is_array($listsp)) {
                 <div class="cs_isotope_item 2_sm shoes">
                     <div class="cs_product cs_style_1 cs_bordered">
                         <div class="cs_product_thumb position-relative">
-                            <a href="?act=chitietsp&id=<?= $id ?>">
+                            <a href="?act=sanpham_ct&id=<?= $id ?>">
                                 <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
                             </a>
                             <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
@@ -230,14 +230,14 @@ if (is_array($listsp)) {
                                 <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                     <i class="fa-regular fa-heart"></i>
                                 </a>
-                                <a href="?act=chitietsp&id=<?= $id ?>" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                <a href="?act=sanpham_ct&id=<?= $id ?>" class="cs_cart_icon cs_accent_bg cs_white_color">
                                     <i class="fa-regular fa-eye"></i>
                                 </a>
                             </div>
                             <!-- <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">Add To Cart</a> -->
                         </div>
                         <div class="cs_product_info text-center">
-                            <h4><a href="?act=chitietsp&id=<?= $id ?>"><?= $tensp ?></a></h4>
+                            <h4><a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a></h4>
                             <div class="mt-5">
                                 <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price"><?= number_format($giakm, 0, ',', '.')?>₫</span>
                                 <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
@@ -254,7 +254,7 @@ if (is_array($listsp)) {
                 <div class="cs_isotope_item 4_sm shoes">
                     <div class="cs_product cs_style_1 cs_bordered">
                         <div class="cs_product_thumb position-relative">
-                            <a href="?act=chitietsp&id=<?= $id ?>">
+                            <a href="?act=sanpham_ct&id=<?= $id ?>">
                                 <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
                             </a>
                             <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
@@ -262,14 +262,14 @@ if (is_array($listsp)) {
                                 <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                     <i class="fa-regular fa-heart"></i>
                                 </a>
-                                <a href="?act=chitietsp&id=<?= $id ?>" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                <a href="?act=sanpham_ct&id=<?= $id ?>" class="cs_cart_icon cs_accent_bg cs_white_color">
                                     <i class="fa-regular fa-eye"></i>
                                 </a>
                             </div>
                             <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">Add To Cart</a>
                         </div>
                         <div class="cs_product_info text-center">
-                            <h4><a href="?act=chitietsp&id=<?= $id ?>"><?= $tensp ?></a></h4>
+                            <h4><a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a></h4>
                             <div class="mt-5">
                                 <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price"><?= number_format($giakm, 0, ',', '.')?>₫</span>
                                 <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
