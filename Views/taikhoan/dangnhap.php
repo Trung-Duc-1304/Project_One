@@ -6,20 +6,20 @@
                     <div class="card-header text-center">
                         <h3 class="text-danger mb-3">Đăng Nhập</h3>
                     </div>
-                    <form>
+                    <form action="?act=dangnhap" method="post">
                         <div class="mb-5">
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Tên đăng nhập" value="">
-                            <p style="color:red;"></p>
+                            <input type="text" class="form-control"  name="username" placeholder="Tên đăng nhập" value="<?= isset($user) ? ($user) : '' ?>">
+                            <p style="color:red;"><?=$tendangnhapErr?></p>
                         </div>
                         <div class="mb-2">
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu" value="">
-                            <p style="color:red;"></p>
+                            <input type="password" class="form-control" name="password" placeholder="Mật khẩu" value="<?= isset($pass) ? ($pass) : '' ?>">
+                            <p style="color:red;"><?=$tkErr?></p>
                         </div>
                         <div class="mb-3 float-end">
                             <a href="?act=quenmatkhau">Quên mật khẩu?</a>
                         </div>
                         <div class="button-box btn-hover " style="margin-top: 50px;">
-                            <button type="submit" name="dangky" class="btn btn-danger btn-lg">Đăng nhập</button>
+                            <button type="submit" name="dangnhap" class="btn btn-danger btn-lg">Đăng nhập</button>
                         </div>
                     </form>
                 </div>

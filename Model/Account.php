@@ -52,3 +52,27 @@ function check_Pass($Email)
     $Check_pass = pdo_query_one($sql);
     return $Check_pass;
 }
+function check_user($tendangnhap,$password)
+{
+    $sql= "SELECT * FROM taikhoan WHERE tendangnhap='$tendangnhap' AND  matkhau='$password' AND trangthai=0 ";
+    $checkuser=pdo_query_one($sql);
+    return $checkuser;
+}
+function load_all_tk($vaitro,$kyw){
+    $query="SELECT * FROM taikhoan WHERE 1";
+    if ($kyw != "") {
+        $query .= " AND (hovaten LIKE '%" . $kyw . "%' OR email LIKE '%" . $kyw . "%' OR sodienthoai LIKE '%" . $kyw . "%')";
+    }
+    if($vaitro==1){
+        $query .=" AND role='$vaitro' AND trangthai=0";
+    }else if($vaitro==0){
+        $query .=" AND role='$vaitro' AND trangthai=0";
+    }
+    $query .=" ORDER BY id asc";
+    return pdo_query($query);
+}
+function insert_tk($hovaten,$tendangnhap,$matkhau,$email,$sodienthoai,$diachi,$role){
+    $query="INSERT INTO `taikhoan`(`hovaten`, `tendangnhap`, `matkhau`, `email`, `sodienthoai`, `diachi`, `role`) 
+    VALUES ('$hovaten','$tendangnhap','$matkhau','$email','$sodienthoai','$diachi','$role')";
+    pdo_execute($query);
+}

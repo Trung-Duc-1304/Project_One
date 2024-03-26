@@ -6,22 +6,22 @@
                     <div class="card-header text-center">
                         <h3 class="text-danger mb-3">Đăng ký</h3>
                     </div>
-                    <form>
+                    <form action="?act=dangky" method="post">
                         <div class="mb-5">
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Họ và Tên" value="">
-                            <p style="color:red;"></p>
+                            <input type="text" class="form-control" name="hovaten" placeholder="Họ và Tên" value="<?= isset($hovaten) ? ($hovaten) : '' ?>">
+                            <p style="color:red;"><?=$hovatenErr?></p>
                         </div>
                         <div class="mb-5">
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Tên đăng nhập" value="">
-                            <p style="color:red;"></p>
+                            <input type="text" class="form-control" name="dkyuser"  placeholder="Tên đăng nhập" value="<?= isset($dkyuser) ? ($dkyuser) : '' ?>">
+                            <p style="color:red;"><?=$tendangnhapErr?></p>
                         </div>
                         <div class="mb-5">
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu" value="">
-                            <p style="color:red;"></p>
+                            <input type="password" class="form-control" name="dkypass" placeholder="Mật khẩu" value="<?= isset($dkypass) ? ($dkypass) : '' ?>">
+                            <p style="color:red;"><?=$matkhauErr?></p>
                         </div>
                         <div class="">
-                            <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" value="">
-                            <p style="color:red;"></p>
+                            <input type="email" class="form-control" name="dkyemail" placeholder="Email" value="<?= isset($dkyemail) ? ($dkyemail) : '' ?>">
+                            <p style="color:red;"><?=$emailErr?></p>
                         </div>
                         <div class="mb-3">
                             <span>Bạn đã có tài khoản? <a href="?act=dangnhap" style="color:red;">Đăng nhập ngay</a></span>

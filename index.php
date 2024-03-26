@@ -19,9 +19,58 @@ if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
         case 'dangky':
+            $hovatenErr="";
+            $tendangnhapErr="";
+            $matkhauErr="";
+            $emailErr="";
+            if(isset($_POST['dangky'])){
+                $hovaten=$_POST['hovaten'];
+                $dkyemail=$_POST['dkyemail'];
+                $dkyuser=$_POST['dkyuser'];
+                $dkypass=$_POST['dkypass'];
+                $listtk=load_all_tk(0,"");
+                $check=true;
+                if(empty(trim($hovaten))){$check=false; $hovatenErr="Vui lòng không bỏ trống !";} 
+                if(empty(trim($dkyuser))){$check=false; $tendangnhapErr="Vui lòng không bỏ trống !";} 
+                if(empty(trim($dkypass))){$check=false; $matkhauErr="Vui lòng không bỏ trống !";}
+                if(empty(trim($dkyemail))){$check=false; $emailErr="Vui lòng không bỏ trống !";}
+                else{
+                }
+                if($check) {
+                    insert_tk($hovaten,$dkyuser,$dkypass,$dkyemail,"","",0);
+                    echo '<script>
+                            alert("Bạn đã đăng ký tài khoản thành công !");
+                            window.location.href="?act=dangnhap";
+                        </script>';
+                }
+            }
             include_once 'views/taikhoan/dangky.php';
         break;
         case 'dangnhap':
+            $tkErr="";
+            $tendangnhapErr="";
+            if(isset($_POST['dangnhap'])){
+                $user=$_POST['username'];
+                $pass=$_POST['password'];
+                $check=true;
+                if(empty(trim($user))){$check=false; $tendangnhapErr="Vui lòng không để trống !";}
+                if(empty(trim($pass))){$check=false; $tkErr="Vui lòng không để trống !";}
+                if($check){
+                    $checkuser=check_user($user,$pass);
+                    if(is_array($checkuser)){
+                        if($checkuser['matkhau']!=$pass||$checkuser['tendangnhap']!=$user){
+                            $tkErr="Sai mật khẩu hoặc tên đăng nhập. Vui lòng kiểm tra lại !";
+                        }else{
+                            $_SESSION['user']=$checkuser;
+                            header("location: ?act=trangchu");
+                        }
+                        
+                    }else{
+                        $tkErr="Tài khoản không tồn tại. Vui lòng kiểm tra lại hoặc đăng ký !";
+                    }
+                }
+            }
+
             include_once 'views/taikhoan/dangnhap.php';
         break;
         case 'list_cart_user':
