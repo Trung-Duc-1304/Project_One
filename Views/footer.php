@@ -7,7 +7,7 @@
                     <div class="col-xxl-3 col-lg-3">
                         <div class="cs_footer_widget cs_text_widget">
                             <img src="assets/client/img/logo.svg" alt="Logo">
-                            <p>Discover endless delights your one stop eCommerce destination.</p>
+                            <p>Khám phá những niềm vui bất tận điểm đến Thương mại điện tử duy nhất của bạn.</p>
                             <img src="assets/client/img/payment_method_1.png" alt="Payment">
                         </div>
                     </div>
@@ -15,34 +15,34 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="cs_footer_widget cs_menu_widget">
-                                    <h3 class="cs_footer_widget_title cs_fs_21 cs_semibold">Get to know</h3>
+                                    <h3 class="cs_footer_widget_title cs_fs_21 cs_semibold">Làm quen</h3>
                                     <ul>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="shop.html">Product</a></li>
-                                        <li><a href="blog_details.html">Press</a></li>
+                                        <li><a href="about.html">Về chúng tôi</a></li>
+                                        <li><a href="shop.html">Sản phẩm</a></li>
+                                        <li><a href="blog_details.html">Nhấn</a></li>
                                         <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="contact.html">Liên hệ chúng tôi</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="cs_footer_widget cs_menu_widget">
-                                    <h3 class="cs_footer_widget_title cs_fs_21 cs_semibold">Customer Service</h3>
+                                    <h3 class="cs_footer_widget_title cs_fs_21 cs_semibold">Dịch vụ khách hàng</h3>
                                     <ul>
-                                        <li><a href="#">Help Center</a></li>
-                                        <li><a href="#">Shipping & Delivery</a></li>
-                                        <li><a href="#">Exchange & Return</a></li>
-                                        <li><a href="#">Payment Method</a></li>
+                                        <li><a href="#">Trung tâm trợ giúp</a></li>
+                                        <li><a href="#">Vận chuyển & Giao hàng</a></li>
+                                        <li><a href="#">Trao đổi & Trả lại</a></li>
+                                        <li><a href="#">Phương thức thanh toán</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="cs_footer_widget cs_menu_widget">
-                                    <h3 class="cs_footer_widget_title cs_fs_21 cs_semibold">Contact Information</h3>
+                                    <h3 class="cs_footer_widget_title cs_fs_21 cs_semibold">Liên hệ Thông tin</h3>
                                     <ul class="cs_contact_info">
-                                        <li>Call : +00(244)14-50-774</li>
-                                        <li>Email : <a href="https://static.laralink.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="127b7c747d52617366667b6b73613c717d7f">[email&#160;protected]</a></li>
-                                        <li>Mon – Fri : 11 am – 9 pm</li>
+                                        <li>Gọi : +84123456789</li>
+                                        <li>Email : <a href="https://static.laralink.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="127b7c747d52617366667b6b73613c717d7f">[fashion@gmail.com]</a></li>
+                                        <li>Thứ Hai – Thứ Sáu: 11 giờ sáng – 9 giờ tối</li>
                                     </ul>
                                 </div>
                             </div>
@@ -52,13 +52,13 @@
             </div>
             <div class="cs_footer_bottom">
                 <div>
-                    <p class="cs_copywrite_text mb-0">Copyright & 2023, All rights reserved.</p>
+                    <p class="cs_copywrite_text mb-0">Copyright & 2024, All rights reserved.</p>
                 </div>
                 <div>
                     <ul class="cs_footer_menu_widget_2">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Legal</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản của chúng tôie</a></li>
+                        <li><a href="#">Hợp pháp</a></li>
                     </ul>
                 </div>
                 <div>

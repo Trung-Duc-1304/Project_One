@@ -4,8 +4,7 @@ function loadAll_bt($id)
     $sql = "SELECT  bienthe.*, sanpham.tensp FROM bienthe
     INNER JOIN sanpham
     ON bienthe.pro_id = sanpham.id
-    WHERE bienthe.pro_id = '$id' 
-    ORDER BY bienthe.id DESC";
+    WHERE bienthe.pro_id = '$id' ";
     $list_bt = pdo_query($sql);
     return $list_bt;
 }
@@ -15,7 +14,7 @@ function loadOne_bt($id)
     $sql = "SELECT  bienthe.*, sanpham.tensp FROM bienthe
     INNER JOIN sanpham
     ON bienthe.pro_id = sanpham.id
-    WHERE bienthe.id=".$id ;
+    WHERE bienthe.id=" . $id;
     $listOne_bt = pdo_query_one($sql);
     return $listOne_bt;
 }
