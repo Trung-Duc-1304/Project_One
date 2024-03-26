@@ -54,7 +54,7 @@ function check_Pass($Email)
 }
 function check_user($tendangnhap,$password)
 {
-    $sql= "SELECT * FROM taikhoan WHERE tendangnhap='$tendangnhap' AND  matkhau='$password' AND trangthai=0 ";
+    $sql= "SELECT * FROM taikhoan WHERE tendangnhap='$tendangnhap' AND  matkhau='$password' AND trangthai= 'Kích Hoạt' ";
     $checkuser=pdo_query_one($sql);
     return $checkuser;
 }
@@ -64,9 +64,9 @@ function load_all_tk($vaitro,$kyw){
         $query .= " AND (hovaten LIKE '%" . $kyw . "%' OR email LIKE '%" . $kyw . "%' OR sodienthoai LIKE '%" . $kyw . "%')";
     }
     if($vaitro==1){
-        $query .=" AND role='$vaitro' AND trangthai=0";
+        $query .=" AND role='$vaitro' AND trangthai= 'Kích Hoạt'";
     }else if($vaitro==0){
-        $query .=" AND role='$vaitro' AND trangthai=0";
+        $query .=" AND role='$vaitro' AND trangthai= 'Kích Hoạt'";
     }
     $query .=" ORDER BY id asc";
     return pdo_query($query);

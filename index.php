@@ -37,7 +37,7 @@ if (isset($_GET['act'])) {
                 else{
                 }
                 if($check) {
-                    insert_tk($hovaten,$dkyuser,$dkypass,$dkyemail,"","",0);
+                    insert_tk($hovaten,$dkyuser,$dkypass,$dkyemail,"","",'Kích Hoạt');
                     echo '<script>
                             alert("Bạn đã đăng ký tài khoản thành công !");
                             window.location.href="?act=dangnhap";
