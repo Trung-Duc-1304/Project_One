@@ -54,7 +54,7 @@
                 <div class="cs_main_header_in">
                     <div class="cs_main_header_left mt-2">
                         <a class="cs_site_branding" href="index.php">
-                           <h2>𝒇𝒂𝒔𝒉𝒊𝒐𝒏</h2> 
+                            <h2>𝒇𝒂𝒔𝒉𝒊𝒐𝒏</h2>
                         </a>
                     </div>
                     <div class="cs_main_header_center">
@@ -85,7 +85,7 @@
                             <button type="button" class="cs_action_icon cs_header_search_btn">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
-                            <a href="#" class="cs_action_icon cs_modal_btn" data-modal="register_modal">
+                            <a href="?act=login" class="cs_action_icon cs_modal_btn" data-modal="register_modal">
                                 <i class="fa-regular fa-circle-user"></i>
                             </a>
                             <a href="?act=list_cart_user&id=31" class="cs_action_icon">
