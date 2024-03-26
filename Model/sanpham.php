@@ -4,8 +4,7 @@ function load_sp_aothun()
     $query = "SELECT sanpham.*
     FROM sanpham
     INNER JOIN danhmuc ON sanpham.iddm = danhmuc.id
-    WHERE danhmuc.tendm = 'Áo Thun'
-    LIMIT 3";
+    WHERE danhmuc.tendm = 'Áo Thun'";
     return pdo_query($query);
 }
 function load_sp_aoho()
@@ -13,8 +12,7 @@ function load_sp_aoho()
     $query = "SELECT sanpham.*
     FROM sanpham
     INNER JOIN danhmuc ON sanpham.iddm = danhmuc.id
-    WHERE danhmuc.tendm = 'Áo Hoodie'
-    LIMIT 3";
+    WHERE danhmuc.tendm = 'Áo Hoodie'";
     return pdo_query($query);
 }
 
@@ -23,8 +21,7 @@ function load_sp_khoac()
     $query = "SELECT sanpham.*
     FROM sanpham
     INNER JOIN danhmuc ON sanpham.iddm = danhmuc.id
-    WHERE danhmuc.tendm = 'Áo Khoác'
-    LIMIT 3";
+    WHERE danhmuc.tendm = 'Áo Khoác'";
     return pdo_query($query);
 }
 function load_sp_aosw()
@@ -32,8 +29,7 @@ function load_sp_aosw()
     $query = "SELECT sanpham.*
     FROM sanpham
     INNER JOIN danhmuc ON sanpham.iddm = danhmuc.id
-    WHERE danhmuc.tendm = 'Áo Sweater'
-    LIMIT 2";
+    WHERE danhmuc.tendm = 'Áo Sweater'";
     return pdo_query($query);
 }
 function load_sp_home()
