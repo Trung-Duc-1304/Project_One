@@ -34,8 +34,8 @@ function delete_account($id)
 
 function update_account($id, $hovaten, $tendangnhap, $matkhau, $email, $role, $trangthai)
 {
-    $sql = "UPDATE taikhoan SET id = '".$id."', hovaten = '" . $hovaten . "', tendangnhap = '" . $tendangnhap . "', matkhau = '" . $matkhau . "', email = '" . $email . "', role = '" . $role. "', trangthai = '" . $trangthai. "'
-       WHERE id=". $id;
+    $sql = "UPDATE taikhoan SET id = '" . $id . "', hovaten = '" . $hovaten . "', tendangnhap = '" . $tendangnhap . "', matkhau = '" . $matkhau . "', email = '" . $email . "', role = '" . $role . "', trangthai = '" . $trangthai . "'
+       WHERE id=" . $id;
     pdo_execute($sql);
 }
 
@@ -51,4 +51,32 @@ function check_Pass($Email)
     $sql = "SELECT * FROM users WHERE Email='" . $Email . "'";
     $Check_pass = pdo_query_one($sql);
     return $Check_pass;
+}
+
+function check_user($tendangnhap, $password)
+{
+    $sql = "SELECT * FROM taikhoan WHERE tendangnhap='$tendangnhap' AND  matkhau='$password' AND trangthai= 'Kích Hoạt' ";
+    $checkuser = pdo_query_one($sql);
+    return $checkuser;
+}
+
+function load_all_tk($vaitro, $kyw)
+{
+    $sql = "SELECT * FROM taikhoan WHERE 1";
+    if ($kyw != "") {
+        $sql .= " AND (hovaten LIKE '%" . $kyw . "%' OR email LIKE '%" . $kyw . "%' OR sodienthoai LIKE '%" . $kyw . "%')";
+    }
+    if ($vaitro == 'Admin') {
+        $sql .= " AND role='$vaitro' AND trangthai= 'Kích Hoạt'";
+    } else if ($vaitro == 'Thành Viên') {
+        $sql .= " AND role='$vaitro' AND trangthai= 'Kích Hoạt'";
+    }
+    $sql .= " ORDER BY id asc";
+    return pdo_query($sql);
+}
+function insert_tk($hovaten, $tendangnhap, $matkhau, $email, $sodienthoai, $diachi, $role)
+{
+    $sql = "INSERT INTO `taikhoan`(`hovaten`, `tendangnhap`, `matkhau`, `email`, `sodienthoai`, `diachi`, `role`) 
+    VALUES ('$hovaten','$tendangnhap','$matkhau','$email','$sodienthoai','$diachi','$role')";
+    pdo_execute($sql);
 }

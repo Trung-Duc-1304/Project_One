@@ -100,7 +100,7 @@ if (is_array($list_bt)) {
                                     case 'Vàng':
                                         echo "<li>
                                                     <div class='cs_color_filter'>
-                                                        <input type='radio' name='color'>
+                                                    <input type='radio'name='color_$pro_id' value='$color'>
                                                         <span class='cs_color_filter_circle bg-warning'></span>
                                                         <span class='cs_color_text'>$color</span>
                                                     </div>

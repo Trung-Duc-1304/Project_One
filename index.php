@@ -1,4 +1,6 @@
 <?php
+ob_start();
+session_start();
 require_once 'Model/pdo.php';
 require_once 'Model/danhmuc.php';
 require_once 'Model/sanpham.php';
@@ -30,7 +32,7 @@ if (isset($_GET['act'])) {
                 $id = $_GET['id'];
                 $pro_ct = load_onespct($id);
                 $list_bt = loadAll_bt($id);
-                include "views/product_ct/sanpham_ct.php";
+                include "views/products/sanpham_ct.php";
             } else {
                 include "views/home.php";
             }
@@ -72,6 +74,105 @@ if (isset($_GET['act'])) {
             include "views/products/spdanhmuc.php";
             break;
 
+            // TÀI KHOẢN
+        case 'login':
+            $tkErr = "";
+            $tendangnhapErr = "";
+            if (isset($_POST['dangnhap'])) {
+                $user = $_POST['username'];
+                $pass = $_POST['password'];
+                $check = true;
+                if (empty(trim($user))) {
+                    $check = false;
+                    $tendangnhapErr = "Vui lòng không để trống !";
+                }
+                if (empty(trim($pass))) {
+                    $check = false;
+                    $tkErr = "Vui lòng không để trống !";
+                }
+                if ($check) {
+                    $checkuser = check_user($user, $pass);
+                    if (is_array($checkuser)) {
+                        if ($checkuser['matkhau'] != $pass || $checkuser['tendangnhap'] != $user) {
+                            $tkErr = "Sai mật khẩu hoặc tên đăng nhập. Vui lòng kiểm tra lại !";
+                        } else {
+                            $_SESSION['user'] = $checkuser;
+                            header("location: ?act=index.php");
+                        }
+                    } else {
+                        $tkErr = "Tài khoản không tồn tại. Vui lòng kiểm tra lại hoặc đăng ký !";
+                    }
+                }
+            }
+            include_once 'views/auth/login.php';
+            break;
+
+        case 'register':
+            $hovatenErr = "";
+            $tendangnhapErr = "";
+            $matkhauErr = "";
+            $emailErr = "";
+            $sdtErr = "";
+            if (isset($_POST['dangky'])) {
+                $hovaten = $_POST['hovaten'];
+                $dkyemail = $_POST['dkyemail'];
+                $dkyuser = $_POST['dkyuser'];
+                $dkypass = $_POST['dkypass'];
+                $dkysdt = $_POST['dkysdt'];
+                $listtk = load_all_tk(0, "");
+                $check = true;
+                if (empty(trim($hovaten))) {
+                    $hovatenErr = "Vui lòng không bỏ trống !";
+                } else {
+                    if (!preg_match("/^[a-zA-Z \p{L}\p{Mn}]{6,}$/u", $hovaten)) {
+                        $check = false;
+                        $hovatenErr = "Họ và tên tối thiểu 6 ký tự và không bao gồm chữ số!";
+                    }
+                }
+                if (empty(trim($dkyuser))) {
+                    $check = false;
+                    $tendangnhapErr = "Vui lòng không bỏ trống !";
+                }
+                if (empty(trim($dkypass))) {
+                    $check = false;
+                    $matkhauErr = "Vui lòng không bỏ trống !";
+                }
+                if (empty(trim($dkysdt))) {
+                    $check = false;
+                    $sdtErr = "Vui lòng không bỏ trống !";
+                } else {
+                    if (!preg_match("/^0[1-9]\d{8}$/", $dkysdt)) {
+                        $check = false;
+                        $sdtErr = "Số điện thoại không đúng định dạng !";
+                    }
+                }
+                if (empty(trim($dkyemail))) {
+                    $check = false;
+                    $emailErr = "Vui lòng không bỏ trống !";
+                } else {
+                    if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$/", $dkyemail)) {
+                        $check = false;
+                        $emailErr = "Email không đúng định dạng !";
+                    }
+                }
+                if ($check) {
+                    insert_tk($hovaten, $dkyuser, $dkypass, $dkyemail, $dkysdt, "", 'Kích Hoạt');
+                    echo '<script>
+                            alert("Bạn đã đăng ký tài khoản thành công !");
+                            window.location.href="?act=login";
+                        </script>';
+                }
+            }
+            include_once 'views/auth/register.php';
+            break;
+
+        case 'account':
+            include_once 'views/unity/account.php';
+            break;
+        case 'logout':
+            session_unset();
+            header("location: ?act=index.php");
+            break;
         default:
             include "views/home.php";
             break;
