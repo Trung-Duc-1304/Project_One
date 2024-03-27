@@ -85,9 +85,32 @@
                             <button type="button" class="cs_action_icon cs_header_search_btn">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
-                            <a href="?act=dangky" class="cs_action_icon cs_modal_btn" data-modal="register_modal">
-                                <i class="fa-regular fa-circle-user"></i>
-                            </a>
+                            <nav>
+                                        <ul>
+                                            <?php
+                                                if(isset($_SESSION['user'])&&$_SESSION['user']!=""){
+                                                    extract($_SESSION['user']);
+                                            ?>
+                                                <li><a title="Tài khoản" href="?act=thongtintk"><i class="pe-7s-user"></i></a>
+                                                    <ul class="">
+                                                        <li><a href="?act=thongtintk" style="font-size:13px;">Thông tin tài khoản</a></li>
+                                                        <li><a href="?act=lichsumuahang" style="font-size:13px;">Đơn mua</a></li>
+                                                        <?php if($role=='Admin'):?>
+                                                            <li><a href="Admin/index.php" style="font-size:13px;">Quản trị viên</a></li>
+                                                        <?php endif;?>
+                                                        <li><a href="?act=dangxuat" style="font-size:13px;">Đăng xuất</a></li>
+                                                    </ul>
+                                                </li>
+                                            <?php }else{ ?>
+                                                <li><a title="Đăng nhập" href="?act=dangnhap"><i class="pe-7s-user"></i></a>
+                                                    <ul class="">
+                                                        <li><a href="?act=dangnhap" style="font-size:13px;">Đăng nhập</a></li>
+                                                        <li><a href="?act=dangky" style="font-size:13px;">Đăng ký</a></li>   
+                                                    </ul>
+                                                </li>
+                                            <?php }?>
+                                        </ul>
+                                    </nav>
                             <a href="?act=list_cart_user&id=31" class="cs_action_icon">
                                 <span>
                                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">

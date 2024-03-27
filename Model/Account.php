@@ -59,20 +59,36 @@ function check_user($tendangnhap,$password)
     return $checkuser;
 }
 function load_all_tk($vaitro,$kyw){
-    $query="SELECT * FROM taikhoan WHERE 1";
+    $sql="SELECT * FROM taikhoan WHERE 1";
     if ($kyw != "") {
-        $query .= " AND (hovaten LIKE '%" . $kyw . "%' OR email LIKE '%" . $kyw . "%' OR sodienthoai LIKE '%" . $kyw . "%')";
+        $sql .= " AND (hovaten LIKE '%" . $kyw . "%' OR email LIKE '%" . $kyw . "%' OR sodienthoai LIKE '%" . $kyw . "%')";
     }
-    if($vaitro==1){
-        $query .=" AND role='$vaitro' AND trangthai= 'Kích Hoạt'";
-    }else if($vaitro==0){
-        $query .=" AND role='$vaitro' AND trangthai= 'Kích Hoạt'";
+    if($vaitro=='Admin'){
+        $sql .=" AND role='$vaitro' AND trangthai= 'Kích Hoạt'";
+    }else if($vaitro=='Thành Viên'){
+        $sql .=" AND role='$vaitro' AND trangthai= 'Kích Hoạt'";
     }
-    $query .=" ORDER BY id asc";
-    return pdo_query($query);
+    $sql .=" ORDER BY id asc";
+    return pdo_query($sql);
 }
 function insert_tk($hovaten,$tendangnhap,$matkhau,$email,$sodienthoai,$diachi,$role){
-    $query="INSERT INTO `taikhoan`(`hovaten`, `tendangnhap`, `matkhau`, `email`, `sodienthoai`, `diachi`, `role`) 
+    $sql="INSERT INTO `taikhoan`(`hovaten`, `tendangnhap`, `matkhau`, `email`, `sodienthoai`, `diachi`, `role`) 
     VALUES ('$hovaten','$tendangnhap','$matkhau','$email','$sodienthoai','$diachi','$role')";
+    pdo_execute($sql);
+}
+function update_tk($id,$hovaten,$tendangnhap,$matkhau,$email,$sodienthoai,$diachi,$role){
+    $query="UPDATE `taikhoan` SET `id`='$id',`hovaten`='$hovaten',`tendangnhap`='$tendangnhap',`matkhau`='$matkhau',`email`='$email',`sodienthoai`='$sodienthoai',`diachi`='$diachi',`role`='$role' WHERE id=".$id;
     pdo_execute($query);
+}
+function load_one_tk($id){
+    $query="SELECT * FROM taikhoan WHERE id=".$id;
+    return pdo_query_one($query);
+}
+function update_mk($matkhau,$id){
+    $query="UPDATE `taikhoan` SET `matkhau`='$matkhau' WHERE id=".$id;
+    pdo_execute($query);
+}
+function quenmatkhau($email , $tendangnhap){
+    $query="SELECT * FROM taikhoan WHERE email='$email' AND tendangnhap='$tendangnhap' AND trangthai='Kích Hoạt'";
+    return pdo_query_one($query);
 }

@@ -19,9 +19,13 @@
                             <input type="password" class="form-control" name="dkypass" placeholder="Mật khẩu" value="<?= isset($dkypass) ? ($dkypass) : '' ?>">
                             <p style="color:red;"><?=$matkhauErr?></p>
                         </div>
-                        <div class="">
+                        <div class="mb-5">
                             <input type="email" class="form-control" name="dkyemail" placeholder="Email" value="<?= isset($dkyemail) ? ($dkyemail) : '' ?>">
                             <p style="color:red;"><?=$emailErr?></p>
+                        </div>
+                        <div class="">
+                            <input type="text" class="form-control" name="dkysdt" placeholder="Số điện thoại" value="<?= isset($dkysdt) ? ($dkysdt) : '' ?>">
+                            <p style="color:red;"><?=$sdtErr?></p>
                         </div>
                         <div class="mb-3">
                             <span>Bạn đã có tài khoản? <a href="?act=dangnhap" style="color:red;">Đăng nhập ngay</a></span>
