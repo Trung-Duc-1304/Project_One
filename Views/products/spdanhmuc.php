@@ -73,7 +73,7 @@
                         <div class="cs_product_col">
                             <div class="cs_product cs_style_1">
                                 <div class="cs_product_thumb position-relative">
-                                    <a href="?act=chitietsp&id=<?= $id ?>">
+                                    <a href="?act=sanpham_ct&id=<?= $id ?>">
                                         <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:400px;" alt="">
                                     </a>
                                     <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
@@ -81,7 +81,7 @@
                                         <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                             <i class="fa-regular fa-heart"></i>
                                         </a>
-                                        <a href="?act=chitietsp&id=<?= $id ?>" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                        <a href="?act=sanpham_ct&id=<?= $id ?>" class="cs_cart_icon cs_accent_bg cs_white_color">
                                             <i class="fa-regular fa-eye"></i>
                                         </a>
                                     </div>
@@ -89,7 +89,7 @@
                                 </div>
                                 <div class="cs_product_info text-center">
                                     <h3 class="cs_product_title cs_fs_21 cs_medium">
-                                        <a href="?act=chitietsp&id=<?= $id ?>"><?= $tensp ?></a>
+                                        <a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a>
                                     </h3>
                                     <div class="cs_single_product_review">
                                         <div class="cs_rating_container">
