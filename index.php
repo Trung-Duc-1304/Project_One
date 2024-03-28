@@ -7,6 +7,7 @@ require_once 'Model/sanpham.php';
 require_once 'Model/Account.php';
 require_once 'Model/Bienthe.php';
 require_once 'Model/order.php';
+require_once 'Model/Mail.php';
 require_once 'global.php';
 require_once 'helper.php';
 require_once 'views/header.php';
@@ -21,10 +22,11 @@ if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
         case 'list_cart_user':
-            // if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-            // }
-            $list_cart_user = list_cart_user();
-            $sum_cart_user = sum_cart_user();
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                $list_cart_user = list_cart_user($id);
+                $sum_cart_user = sum_cart_user($id);
+            }
             include_once 'views/cart/cart.php';
             break;
         case 'sanpham_ct':
@@ -168,6 +170,84 @@ if (isset($_GET['act'])) {
 
         case 'account':
             include_once 'views/unity/account.php';
+            break;
+        case 'your':
+            include_once 'views/unity/your.php';
+            break;
+        case 'update_user':
+            if (isset($_SESSION['user'])) {
+                $tendangnhapErr = "";
+                $emailErr = "";
+                $sodienthoaiErr = "";
+                $hovatenErr = "";
+                if (isset($_POST['capnhat'])) {
+                    $id = $_POST['id'];
+                    $tendangnhap = $_POST['tendangnhap'];
+                    $matkhau = $_POST['matkhau'];
+                    $hovaten = $_POST['hovaten'];
+                    $sodienthoai = $_POST['sodienthoai'];
+                    $email = $_POST['email'];
+                    $check = true;
+                    if (empty(trim($hovaten))) {
+                        $hovatenErr = "Vui lòng không để trống";
+                    }
+                    if (empty(trim($tendangnhap))) {
+                        $check = false;
+                        $tendangnhapErr = "Vui lòng không bỏ trống !";
+                    }
+                    if (empty($sodienthoai)) $sodienthoai = "";
+                    else {
+                        if (!preg_match("/^0[1-9]\d{8}$/", $sodienthoai)) {
+                            $check = false;
+                            $sodienthoaiErr = "Số điện thoại không đúng định dạng !";
+                        }
+                    }
+                    if (empty(trim($email))) {
+                        $check = false;
+                        $emailErr = "Vui lòng không bỏ trống !";
+                    }
+                    if ($check) {
+                        update_tk($id, $hovaten, $tendangnhap, $matkhau, $email, $sodienthoai);
+                        $_SESSION['user'] = check_user($tendangnhap, $matkhau);
+                        echo '<script>
+                            alert("Bạn đã sửa tài khoản thành công !");
+                            window.location.href="?act=your";
+                        </script>';
+                    }
+                }
+            } else {
+                header("location: ?act=trangchu");
+            }
+            include_once 'views/unity/update.php';
+            break;
+
+        case 'forgot':
+            if (isset($_POST['forgot']) && ($_POST['forgot'])) {
+                $Email = $_POST['email'];
+                $tieude = "FORGOT PASSWORD";
+                $check_pass = check_Pass($Email);
+                $password = "";
+                if ($check_pass && is_array($check_pass) && isset($check_pass['matkhau'])) {
+                    $password = "<p>Cảm ơn bạn đã sử dụng 𝒇𝒂𝒔𝒉𝒊𝒐𝒏</p>
+                                 Tên đăng nhập: <strong>" . $check_pass['tendangnhap'] . "</strong> <br>
+                                 Mật khẩu của bạn là: <strong>" . $check_pass['matkhau'] . "</strong>
+                                 <p style='color:red'>𝒇𝒂𝒔𝒉𝒊𝒐𝒏</p>
+                                 <p>Developer</p>
+                                 <p style='color:red'>----------------------------------------------------------------------------------------------</p>
+                                 <p>Số điện thoại: 034-3456-981 | 0876-55-2004</p>
+                                 <p>Email: fashion08@gmail.com</p>
+                                 <p style='color:red'>----------------------------------------------------------------------------------------------</p>
+                                 ";
+                    echo "<script>alert('Bạn hãy kiểm tra lại Email!');
+                           window.location.href='?act=login';
+                          </script>";
+                } else {
+                    echo "<script>alert('Email không chính xác!');</script>";
+                }
+                $mail = new Mailer();
+                $mail->forgot($tieude, $password, $Email);
+            }
+            include_once 'views/auth/forgot.php';
             break;
         case 'logout':
             session_unset();

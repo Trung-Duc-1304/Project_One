@@ -91,11 +91,11 @@
         $(document).ready(function() {
             $(".add-to-cart").click(function() {
                 var product_id = $(this).data("product-id"); // Lấy product_id từ thuộc tính data của nút
-                var idtaikhoan = 31;
+                var idtaikhoan = $(this).data("user-id");
                 var id_bienthe = 3;
                 var size = $('input[name="size_' + product_id + '"]:checked').val();
                 var color = $('input[name="color_' + product_id + '"]:checked').val();
-                var soluong = 5;
+                var soluong = parseInt($(".cs_quantity_input").text());
                 var thanhtien = $(this).data("price-sp");
 
                 $.ajax({

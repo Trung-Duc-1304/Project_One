@@ -48,7 +48,7 @@ function loadOne_account()
 
 function check_Pass($Email)
 {
-    $sql = "SELECT * FROM users WHERE Email='" . $Email . "'";
+    $sql = "SELECT * FROM taikhoan WHERE email='" . $Email . "'";
     $Check_pass = pdo_query_one($sql);
     return $Check_pass;
 }
@@ -79,4 +79,10 @@ function insert_tk($hovaten, $tendangnhap, $matkhau, $email, $sodienthoai, $diac
     $sql = "INSERT INTO `taikhoan`(`hovaten`, `tendangnhap`, `matkhau`, `email`, `sodienthoai`, `diachi`, `role`) 
     VALUES ('$hovaten','$tendangnhap','$matkhau','$email','$sodienthoai','$diachi','$role')";
     pdo_execute($sql);
+}
+
+function update_tk($id, $hovaten, $tendangnhap, $matkhau, $email, $sodienthoai)
+{
+    $query = "UPDATE `taikhoan` SET `id`='$id',`hovaten`='$hovaten',`tendangnhap`='$tendangnhap',`matkhau`='$matkhau',`email`='$email',`sodienthoai`='$sodienthoai' WHERE id=" . $id;
+    pdo_execute($query);
 }
