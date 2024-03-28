@@ -130,6 +130,21 @@ function load_all_sphome($iddm, $kyw, $giadau, $giacuoi, $page)
     $query .= " ORDER BY id desc limit $batdau,8";
     return pdo_query($query);
 }
+function load_all_sphome2($iddm,$kyw,$giadau,$giacuoi,$page){
+    $query="SELECT * FROM sanpham WHERE 1";
+    if($iddm > 0){
+        $query .=" AND iddm=$iddm";
+    }
+    if($kyw != ''){
+        $query .=" AND (tensp like '%".$kyw."%' OR giasp LIKE '%" . $kyw . "%')";
+    }
+    if($giadau>0 && $giacuoi>0){
+        $query .=" AND giasp BETWEEN $giadau AND $giacuoi";
+    }
+    $batdau=intval($page*8-8);
+    $query .=" ORDER BY id desc ";
+    return pdo_query($query);
+}
 function insert_sp($danhmuc, $tensp, $giasp, $image, $giakm, $khuyenmai, $mota)
 {
     $conn = pdo_get_connection();

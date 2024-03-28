@@ -131,6 +131,34 @@
             // Gọi hàm cập nhật số lượng sản phẩm trong biểu tượng giỏ hàng khi trang được tải
             updateCartCount();
         });
+
+        // ajax bình luận
+        function binhluanjs(id,hovaten){
+            var noidung=$("#noidung").val();
+            if(noidung=="") $("#binhluanErr").text("Vui lòng nhập nội dung trước khi gửi!");
+            else{
+                var ngaybinhluan=$("#ngaybinhluan").val();
+                $.ajax({
+                    type: 'POST',
+                    url: 'index.php?act=sanpham_ct&id='+id+'',
+                    data: {
+                        noidung: noidung
+                    },
+                    success: function(response) {
+                        var soluongcu = parseInt($("#countbl").text());
+                        var soluongmoi = soluongcu + 1;
+                        $("#countbl").text(soluongmoi);
+                        $('#loadbinhluan').append('<div id="loadbinhluan" class="single-review"><div class="review-img"><img src="../assets/images/userbl.png" alt=""></div><div class="review-content"><h5><span>' + hovaten + '</span> - '+ ngaybinhluan + '</h5><p>'+ noidung + '</p></div></div>');
+                        $('#noidung').val('');
+                        $("#binhluanErr").text("");
+                    },
+                    error: function(error) {
+                        console.error('Lỗi: ', error);
+                        alert('Có lỗi xảy ra khi gửi bình luận');
+                    }
+                });
+    }
+}
     </script>
     </body>
 

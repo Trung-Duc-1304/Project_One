@@ -1,3 +1,14 @@
+<?php $tongsp = count($list_sp_dm);
+        $limit =8;
+        // Kiểm tra nếu $total hoặc $limit không phải là số hoặc rỗng
+        if (!is_numeric($tongsp) || !is_numeric($limit) || $limit == 0) {
+            echo "Dữ liệu đầu vào không hợp lệ!";
+        } else {
+            //Tính số trang
+            $page = ceil($tongsp / $limit);
+        }
+        $hihi = (isset($_GET['page']) ? $_GET[('page')] : 1);
+?>
 <section>
     <div class="cs_height_140 cs_height_lg_80"></div>
     <div class="container-fluid">
@@ -100,7 +111,10 @@
                                         <span>(5)</span>
                                         <span>Stock: <span class="cs_accent_color">12 in stock</span></span>
                                     </div>
-                                    <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                                    <div class="mt-5">
+                                        <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price"><?= number_format($giakm, 0, ',', '.')?>₫</span>
+                                        <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+                                    </div>
                                     <p class="cs_product_desc">Our men black t-shirt offers a classic fit and is made from high-quality pure cotton <br>materials to keep you feeling and looking great.</p>
                                     <div class="cs_action_btns">
                                         <a href="#" class="cs_btn cs_style_1 cs_fs_16 cs_medium cs_accent_btn">Add to Cart</a>
@@ -112,12 +126,24 @@
                     <?php } ?>
                 </div>
                 <div class="cs_height_75 cs_height_lg_50"></div>
-                <!-- <ul class="cs_pagination cs_fs_21 cs_semibold cs_mp0">
-                        <li class="cs_page_item active"><a class="cs_page_link" href="#">01</a></li>
+                <?php if (!isset($_POST['submittimkiem']) && !isset($_POST['submitlocgia'])) { ?>
+                    <ul class="cs_pagination cs_fs_21 cs_semibold cs_mp0">
+
+                        <?php if ($hihi - 1 > 0) { ?>
+                            <li class="cs_page_item"><a class="cs_page_link" href="?act=products&page=<?php echo $hihi - 1 ?>"><i class="fa-solid fa-arrow-left"></i></a></li>
+                        <?php } ?>
+                        <?php for ($i = 1; $i <= $page; $i++) { ?>
+                            <li class=" cs_page_item <?php echo (($hihi == $i) ? 'active' : '') ?>"><a class="cs_page_link" href="?act=products&page=<?php echo $i ?>"><?php echo $i ?></a></li>
+                        <?php } ?>
+                        <?php if ($hihi + 1 <= $page) { ?>
+                            <li class="cs_page_item"><a class="cs_page_link" href="?act=products&page=<?php echo $hihi + 1 ?>"><i class="fa-solid fa-arrow-right"></i></a></li>
+                        <?php } ?>
+                        <!-- <li class="cs_page_item active"><a class="cs_page_link" href="#">01</a></li>
                         <li class="cs_page_item"><a class="cs_page_link" href="#">02</a></li>
                         <li class="cs_page_item"><a class="cs_page_link" href="#">03</a></li>
-                        <li class="cs_page_item"><a class="cs_page_link" href="#"><i class="fa-solid fa-arrow-right"></i></a></li>
-                    </ul> -->
+                        <li class="cs_page_item"><a class="cs_page_link" href="#"><i class="fa-solid fa-arrow-right"></i></a></li> -->
+                    </ul>
+                <?php  }?>
             </div>
             <!-- .col -->
         </div>

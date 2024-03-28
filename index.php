@@ -6,6 +6,7 @@ require_once 'Model/danhmuc.php';
 require_once 'Model/sanpham.php';
 require_once 'Model/Account.php';
 require_once 'Model/Bienthe.php';
+require_once 'Model/binhluan.php';
 require_once 'Model/order.php';
 require_once 'global.php';
 require_once 'helper.php';
@@ -28,16 +29,33 @@ if (isset($_GET['act'])) {
             include_once 'views/cart/cart.php';
             break;
         case 'sanpham_ct':
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
+            if (isset($_GET['id'])&& ($_GET['id']!="")){
                 $id = $_GET['id'];
                 $pro_ct = load_onespct($id);
                 $list_bt = loadAll_bt($id);
-                include "views/products/sanpham_ct.php";
-            } else {
-                include "views/home.php";
+                $sanpham = load_one_sp($id);
+                if($sanpham){
+                    $luotxem=$sanpham['luotxem']+1;
+                    update_luotxem_sp($sanpham['id'],$luotxem);
+                    $noidungErr="";
+                    if($_SERVER["REQUEST_METHOD"] == "POST"){
+                        $noidung=$_POST['noidung'];
+                        $ngaybinhluan=date('Y-m-d');
+                        if(empty(trim($noidung))){
+                            $noidungErr="Vui lòng nhập nội dung bình luận trước khi gửi !";
+                        }else{
+                            insert_bl($_SESSION['user']['id'],$sanpham['id'],$noidung,$ngaybinhluan);
+                        }
+                    }
+                    $splq = load_sp_lq($sanpham['iddm']);
+                    $soluong = 1;
+                    $listbl=load_bl_sp($sanpham['id']);
+                    $danhmuc = load_one_dm($sanpham['iddm']);
+                    $dembl=dem_bl_sp($sanpham['id']);
+                }
             }
+            include "views/products/sanpham_ct.php";
             break;
-
         case 'products':
             if (isset($_POST['submittimkiem'])) $kyw = $_POST['timkiem'];
             else $kyw = "";

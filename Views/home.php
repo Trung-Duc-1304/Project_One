@@ -99,7 +99,9 @@ if (is_array($listsp)) {
                     <div class="slick_slide_in">
                         <div class="cs_product cs_style_1 cs_bordered">
                             <div class="cs_product_thumb position-relative">
-                                <img src="uploads/<?= $image ?>" alt="Product Image" class="w-100">
+                                <a href="?act=sanpham_ct&id=<?= $id ?>">
+                                    <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:450px;" class="w-100" alt="">
+                                </a>
                                 <div class="cs_cart_badge position-absolute">
                                     <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                         <i class="fa-regular fa-heart"></i>
@@ -111,10 +113,12 @@ if (is_array($listsp)) {
                                 -->
                             </div>
                             <div class="cs_product_info text-center">
-                                <h3 class="cs_product_title cs_fs_21 cs_medium">
+                                <h5 class="cs_product_title cs_fs_21 cs_medium">
                                     <a href="index.php?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a>
-                                </h3>
-                                <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium"><?= $giasp ?>VNĐ</p>
+                                </h5>
+                                <div class="mt-5">
+                                        <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium "><?= number_format($giasp, 0, ',', '.')?>₫</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -155,7 +159,7 @@ if (is_array($listsp)) {
                     <div class="cs_product cs_style_1 cs_bordered">
                         <div class="cs_product_thumb position-relative">
                             <a href="?act=sanpham_ct&id=<?= $id ?>">
-                                <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
+                                <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:450px;" class="w-100" alt="">
                             </a>
                             <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
                             <div class="cs_cart_badge position-absolute">
@@ -169,8 +173,11 @@ if (is_array($listsp)) {
                             <!-- <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">Add To Cart</a> -->
                         </div>
                         <div class="cs_product_info text-center">
-                            <h5><a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a></h5>
-                            <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                            <h4><a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a></h4>
+                            <div class="mt-5">
+                                <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price"><?= number_format($giakm, 0, ',', '.')?>₫</span>
+                                <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -184,7 +191,7 @@ if (is_array($listsp)) {
                     <div class="cs_product cs_style_1 cs_bordered">
                         <div class="cs_product_thumb position-relative">
                             <a href="?act=sanpham_ct&id=<?= $id ?>">
-                                <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
+                                <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:450px;" class="w-100" alt="">
                             </a>
                             <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
                             <div class="cs_cart_badge position-absolute">
@@ -198,8 +205,11 @@ if (is_array($listsp)) {
                             <!-- <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">Add To Cart</a> -->
                         </div>
                         <div class="cs_product_info text-center">
-                            <h5><a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a></h5>
-                            <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                            <h4><a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a></h4>
+                            <div class="mt-5">
+                                <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price"><?= number_format($giakm, 0, ',', '.')?>₫</span>
+                                <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -213,7 +223,7 @@ if (is_array($listsp)) {
                     <div class="cs_product cs_style_1 cs_bordered">
                         <div class="cs_product_thumb position-relative">
                             <a href="?act=sanpham_ct&id=<?= $id ?>">
-                                <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
+                                <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:450px;" class="w-100" alt="">
                             </a>
                             <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
                             <div class="cs_cart_badge position-absolute">
@@ -227,8 +237,11 @@ if (is_array($listsp)) {
                             <!-- <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">Add To Cart</a> -->
                         </div>
                         <div class="cs_product_info text-center">
-                            <h5><a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a></h5>
-                            <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                            <h4><a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a></h4>
+                            <div class="mt-5">
+                                <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price"><?= number_format($giakm, 0, ',', '.')?>₫</span>
+                                <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -242,7 +255,7 @@ if (is_array($listsp)) {
                     <div class="cs_product cs_style_1 cs_bordered">
                         <div class="cs_product_thumb position-relative">
                             <a href="?act=sanpham_ct&id=<?= $id ?>">
-                                <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
+                                <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:450px;" class="w-100" alt="">
                             </a>
                             <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
                             <div class="cs_cart_badge position-absolute">
@@ -256,8 +269,11 @@ if (is_array($listsp)) {
                             <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">Add To Cart</a>
                         </div>
                         <div class="cs_product_info text-center">
-                            <h5><a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a></h5>
-                            <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
+                            <h4><a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a></h4>
+                            <div class="mt-5">
+                                <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price"><?= number_format($giakm, 0, ',', '.')?>₫</span>
+                                <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -318,9 +334,9 @@ if (is_array($listsp)) {
                             <p class="cs_post_meta_info mb-0 cs_fs_14">NGÀY 13 THÁNG 1 NĂM 2023</p>
                         </div>
                         <div class="cs_post_info">
-                            <h3 class="cs_post_title cs_fs_28 cs_semibold">
+                            <h5 class="cs_post_title cs_fs_28 cs_semibold">
                                 <a href="blog_details.html">Nắm vững nghệ thuật quản lý tủ quần áo</a>
-                            </h3>
+                            </h5>
                             <p class="cs_post_subtitle">Khám phá chìa khóa để đơn giản hóa phong cách của bạn với tủ quần áo con nhộng. Tìm hiểu cách quản lý một bộ sưu tập các tác phẩm linh hoạt sẽ nâng tầm trò chơi thời trang của bạn...</p>
                             <a href="blog_details.html" class="cs_post_btn cs_fs_16 cs_medium cs_primary_color">
                                 <span>Đọc thêm</span>
@@ -340,9 +356,9 @@ if (is_array($listsp)) {
                             <p class="cs_post_meta_info mb-0 cs_fs_14">JMARCH 18, 2023</p>
                         </div>
                         <div class="cs_post_info">
-                            <h3 class="cs_post_title cs_fs_28 cs_semibold">
+                            <h5 class="cs_post_title cs_fs_28 cs_semibold">
                                 <a href="blog_details.html">Redefining style with eco-friendly choices</a>
-                            </h3>
+                            </h5>
                             <p class="cs_post_subtitle">Dive into the world of sustainable fashion and explore how your choices can have a positive impact on the planet. From eco-friendly fabrics to ethical brands...</p>
                             <a href="blog_details.html" class="cs_post_btn cs_fs_16 cs_medium cs_primary_color">
                                 <span>Read More</span>
@@ -362,9 +378,9 @@ if (is_array($listsp)) {
                             <p class="cs_post_meta_info mb-0 cs_fs_14">JANUARY 13, 2023</p>
                         </div>
                         <div class="cs_post_info">
-                            <h3 class="cs_post_title cs_fs_28 cs_semibold">
+                            <h5 class="cs_post_title cs_fs_28 cs_semibold">
                                 <a href="blog_details.html">Tips for mixing and matching patterns</a>
-                            </h3>
+                            </h5>
                             <p class="cs_post_subtitle">Pattern mixing can be a style statement, but it can also be intimidating. Learn the art of combining different patterns and prints to create unique and eye-catching outfits....</p>
                             <a href="blog_details.html" class="cs_post_btn cs_fs_16 cs_medium cs_primary_color">
                                 <span>Read More</span>
