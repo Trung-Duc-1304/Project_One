@@ -3,7 +3,6 @@ if (is_array($listsp)) {
     extract($listsp);
 }
 ?>
-
 <!-- Start hero -->
 <section class="container-fluid">
     <div class="cs_slider position-relative">

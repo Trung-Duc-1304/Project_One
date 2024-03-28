@@ -29,8 +29,8 @@
 
     .product_rights {
         float: left;
-        width: 300px;
         border-radius: 10px;
+        width: 300px;
         margin-left: 35px;
         box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
     }
@@ -38,62 +38,19 @@
     .image_user img {
         width: 70px;
         margin-top: 10px;
+        text-align: center;
     }
 
     .product_rightst {
-        padding: 10px;
-        width: 110%;
+        text-align: center;
+        padding: 5px 15px;
+        border-radius: 10px;
         margin-left: 35px;
         box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .1), 0 2px 6px 2px rgba(60, 64, 67, .15);
-        border-radius: 5px;
     }
 
-    .conts {
-        text-align: center;
-    }
-
-    .conts h4 {
-        text-align: center;
-        font-size: 17px;
-    }
-
-    .conts h3 {
-        margin-bottom: 40px;
-    }
-
-    .smember_info {
-        display: grid;
-        width: 400px;
-        margin-top: -75px;
-        margin-bottom: 30px;
-    }
-
-    .smember {
-        display: flex;
-        justify-content: center;
-    }
-
-    .date,
-    .member_class,
-    .point {
-        text-align: center;
-        font-size: 18px;
-        padding: 15px;
-    }
-
-    .smember i {
-        margin-top: 10px;
-        font-size: 30px;
-        color: red;
-    }
-
-    .smember h6 {
-        margin-top: 12px;
-        font-size: 15px;
-    }
-
-    .active {
-        color: red;
+    .product_rightst label {
+        text-align: start;
     }
 </style>
 <section style="padding:30px;">
@@ -102,7 +59,7 @@
             <div class="product_rights">
                 <div class="child">
                     <i class="fa-solid fa-house-chimney"></i>
-                    <li><a href="?act=account" class="active">Trang Chủ</a></li>
+                    <li><a href="?act=account">Trang Chủ</a></li>
                 </div>
                 <?php
                 if ($role == 'Admin') {
@@ -128,11 +85,11 @@
                 </div>
                 <div class="child">
                     <i class="fa-solid fa-recycle"></i>
-                    <li> <a href="?act=update_user">Cập Nhật Thông Tin</a></li>
+                    <li> <a href="?act=update_user" class="active">Cập Nhật Thông Tin</a></li>
                 </div>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-5">
             <div class="product_rightst">
                 <div class="conts">
                     <div class="image_user">
@@ -142,7 +99,6 @@
                     if (isset($_SESSION['user'])) {
                         extract($_SESSION['user']);
                     ?>
-                        <h4>Xin Chào</h4>
                         <h3> <?= $tendangnhap ?></h3>
                     <?php
                     } else {
@@ -151,24 +107,46 @@
                     <?php }
                     ?>
                 </div>
-                <div class="smember">
-                    <div class="date">
-                        <h5>Ngày Tham Gia</h5>
-                        <i class="fa-regular fa-calendar-check"></i>
-                        <h6>20/3/2024</h6>
+                <form action="?act=update_user" method="post">
+                    <div class="smember_info">
+                        <div class="form-group text-start">
+                            <div class="group">
+                                <label>Email</label>
+                            </div>
+                            <input class="form-control" name="email" type="text" value="<?= $email ?>">
+                        </div>
+                        <div class="form-group text-start mt-2">
+                            <div class="group">
+                                <label>Số điện thoại</label>
+                            </div>
+                            <input class="form-control" name="sodienthoai" type="text" value="<?= $sodienthoai ?>">
+                        </div>
+                        <div class="form-group text-start mt-2">
+                            <div class="group">
+                                <label>Full_Name</label>
+                            </div>
+                            <input class="form-control" name="hovaten" type="text" value="<?= $hovaten ?>">
+                        </div>
+                        <div class="form-group text-start mt-2">
+                            <div class="group">
+                                <label>Tài khoản</label>
+                            </div>
+                            <input class="form-control" name="tendangnhap" type="text" value="<?= $tendangnhap ?>">
+                        </div>
+                        <div class="form-group text-start mt-2 mb-2">
+                            <div class="group">
+                                <label>Mật khẩu</label>
+                            </div>
+                            <input class="form-control" name="matkhau" type="text" value="<?= $matkhau ?>">
+                        </div>
+                        <div class="form-group mt-2 mb-2">
+                            <input type="hidden" name="id" value="<?= $id ?>">
+                            <input class="btn btn-info rounded p-2 w-100" type="submit" name="capnhat" value="Cập Nhật">
+                        </div>
                     </div>
-                    <div class="member_class">
-                        <h5>Hạng Thành Viên</h5>
-                        <i class="fa-solid fa-medal"></i>
-                        <h6>Null</h6>
-                    </div>
-                    <div class="point">
-                        <h5>Điểm Tích Lũy</h5>
-                        <i class="fa-regular fa-sun"></i>
-                        <h6>1110</h6>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
+    </div>
     </div>
 </section>

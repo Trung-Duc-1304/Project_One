@@ -89,7 +89,7 @@
                             if (isset($_SESSION['user']) && $_SESSION['user'] != "") {
                                 extract($_SESSION['user']);
                             ?>
-                                <a href="?act=list_cart_user&id=31" class="cs_action_icon">
+                                <a href="?act=list_cart_user&id=<?= $id ?>" class="cs_action_icon">
                                     <i class="fa-solid fa-cart-plus"></i>
                                 </a>
                                 <a href="?act=account" class="cs_action_icon fw-bold d-flex justify-content-center align-items-center text-primary gap-1">
