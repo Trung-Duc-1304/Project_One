@@ -137,7 +137,7 @@ if (is_array($list_bt)) {
                 </ul>
                 <div class="cs_tabs">
                     <div class="cs_tab" id="tab_1">
-                    Áo thun nam màu đen của chúng tôi mang đến kiểu dáng cổ điển và được làm từ chất liệu cotton nguyên chất chất lượng cao giúp bạn luôn cảm thấy thoải mái và trông thật tuyệt.
+                    <?=$mota?>
                     </div>
                     <div class="cs_tab active" id="tab_4">
                         <?php extract($dembl);?>
@@ -180,7 +180,7 @@ if (is_array($list_bt)) {
                                     </div>
                                     <div class="col-lg-12">
                                         <input id="ngaybinhluan" type="hidden" value="<?= date('Y-m-d'); ?>">
-                                        <button class="cs_btn cs_style_1 cs_fs_16 cs_medium" onclick="binhluanjs(<?= $id ?>,'<?= $_SESSION['user']['hovaten'] ?>', event)" type="submit">Gửi</button>
+                                        <button class="cs_btn cs_style_1 cs_fs_16 cs_medium" onclick="binhluanjs(<?= $id ?>,'<?= $_SESSION['user']['hovaten'] ?>')" >Gửi</button>
 
                                     </div>
                                 </form>

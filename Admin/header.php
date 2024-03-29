@@ -149,7 +149,7 @@
           </li>
 
           <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link ">
+            <a href="index.php?act=listbl" class="menu-link ">
               <i class='menu-icon tf-icons bx bx-food-menu'></i>
               <div class="text-truncate" data-i18n="𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑩𝒊̀𝒏𝒉 𝑳𝒖𝒂̣̂𝒏">𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑩𝒊̀𝒏𝒉 𝑳𝒖𝒂̣̂𝒏</div>
               <!-- <span class="badge badge-center rounded-pill bg-success ms-auto">4</span> -->

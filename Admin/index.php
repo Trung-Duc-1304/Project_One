@@ -2,6 +2,7 @@
 require_once '../Model/pdo.php';
 require_once '../Model/danhmuc.php';
 require_once '../Model/sanpham.php';
+require_once '../Model/binhluan.php';
 require_once '../Model/Account.php';
 require_once '../Model/Bienthe.php';
 require_once '../Model/order.php';
@@ -300,7 +301,35 @@ if (isset($_GET['act'])) {
                 $list_bt = loadAll_bt($id);
                 include_once './Bien_The/list.php';
                 break;
-
+            case 'listbl':
+                if(isset($_POST['xoacacmucchon'])){
+                    if(isset($_POST['select'])){
+                        $ids=$_POST['select'];
+                        foreach ($ids as $id) {
+                            delete_bl($id);
+                        }
+                    }
+                }
+                if(isset($_POST['search'])){
+                    $kyw=$_POST['kyw'];
+                }else{
+                    $kyw="";
+                }
+                $listbl=load_all_bl($kyw);
+                include "Binh_Luan/list.php";
+                break;
+            case 'xoabl':
+                if(isset($_GET['id'])&&($_GET['id']!="")){
+                    $id=$_GET['id'];
+                    delete_bl($id);
+                    echo '<script>
+                            alert("Bạn đã xóa bình luận thành công !");
+                            window.location.href="?act=listbl";
+                        </script>';
+                }
+                $listbl=load_all_bl("");
+                include "Binh_Luan/list.php";
+                break;
         default:
             include "home.php";
             break;
