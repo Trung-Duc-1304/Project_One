@@ -87,6 +87,7 @@
     <script src="assets/client/js/animated-headline.js"></script>
     <script src="assets/client/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $(document).ready(function() {
             $(".add-to-cart").click(function() {
@@ -97,7 +98,6 @@
                 var color = $('input[name="color_' + product_id + '"]:checked').val();
                 var soluong = parseInt($(".cs_quantity_input").text());
                 var thanhtien = $(this).data("price-sp");
-
                 $.ajax({
                     type: "POST",
                     url: "Model/cart.php",
@@ -130,6 +130,36 @@
 
             // Gọi hàm cập nhật số lượng sản phẩm trong biểu tượng giỏ hàng khi trang được tải
             updateCartCount();
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var removeButtons = document.querySelectorAll('.remove-btn');
+
+            removeButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    var itemId = this.getAttribute('data-id');
+                    // Gửi yêu cầu xóa sản phẩm đến máy chủ PHP sử dụng AJAX
+                    var xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === XMLHttpRequest.DONE) {
+                            if (xhr.status === 200) {
+                                // Xác nhận xóa thành công từ máy chủ, thực hiện xóa mục khỏi giao diện người dùng
+                                var item = document.querySelector('.item[data-id="' + itemId + '"]');
+                                if (item) {
+                                    item.parentNode.removeChild(item);
+                                }
+                            } else {
+                                // Xử lý lỗi nếu cần thiết
+                                console.error('Lỗi xóa sản phẩm');
+                            }
+                        }
+                    };
+                    xhr.open('POST', 'xoa_san_pham.php', true);
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send('id=' + encodeURIComponent(itemId));
+                });
+            });
         });
     </script>
     </body>

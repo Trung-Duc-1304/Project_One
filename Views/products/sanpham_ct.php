@@ -9,6 +9,7 @@ if (is_array($list_bt)) {
     // debug($list_bt, $pro_ct);
 }
 ?>
+
 <!-- Start single product -->
 <section>
     <div class="cs_height_35 cs_height_lg_35"></div>
@@ -121,6 +122,10 @@ if (is_array($list_bt)) {
                             <button class="cs_quantity_btn cs_decrement"><i class="fa-solid fa-angle-down"></i>
                             </button>
                         </div>
+                        <?php if (!isset($_SESSION['user'])) {
+                            echo " <a href='?act=login' type='submit' class='add-to-cart btn btn-primary' > Vui Lòng Đăng Nhập</a>";
+                            exit(); // Dừng mã PHP
+                        } ?>
                         <button type="submit" class="add-to-cart btn btn-primary" data-product-id="<?= $pro_id ?>" data-user-id="<?= $_SESSION['user']['id'] ?>" data-price-sp="<?= $giasp ?>" style="padding: 10px;">Thêm Vào Giỏ Hàng</button>
                         <button class="cs_heart_btn"><i class="fa-regular fa-heart"></i></button>
                     </div>

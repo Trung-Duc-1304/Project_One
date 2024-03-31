@@ -9,7 +9,6 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     // Thiết lập chế độ lỗi để PDO ném ngoại lệ khi có lỗi
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     // Lấy dữ liệu sản phẩm từ yêu cầu Ajax
     $idtaikhoan = $_POST['idtaikhoan'];
     $product_id = $_POST['product_id'];
@@ -29,7 +28,6 @@ try {
     $stmt->bindParam(':soluong', $soluong);
     $stmt->bindParam(':thanhtien', $thanhtien);
     $stmt->execute();
-
 } catch (PDOException $e) {
     // Xử lý lỗi
     echo "Error: " . $e->getMessage();
