@@ -95,6 +95,7 @@ if (isset($_GET['act'])) {
             }
             include_once 'views/taikhoan/dangky.php';
             break;
+            //case đang nhập
         case 'dangnhap':
             $tkErr = "";
             $tendangnhapErr = "";
