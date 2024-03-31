@@ -76,6 +76,15 @@ if (isset($_GET['act'])) {
             include "views/products/spdanhmuc.php";
             break;
 
+        case 'checkout_cart_user':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                $list_cart_user = list_cart_user($id);
+                $sum_cart_user = sum_cart_user($id);
+            }
+            include_once 'views/cart/checkout_cart.php';
+            break;
+
             // TÀI KHOẢN
         case 'login':
             $tkErr = "";
@@ -108,7 +117,7 @@ if (isset($_GET['act'])) {
             }
             include_once 'views/auth/login.php';
             break;
-
+            // dăng ký
         case 'register':
             $hovatenErr = "";
             $tendangnhapErr = "";
@@ -124,7 +133,7 @@ if (isset($_GET['act'])) {
                 $listtk = load_all_tk(0, "");
                 $check = true;
                 if (empty(trim($hovaten))) {
-                    $hovatenErr = "Vui lòng không bỏ trống !";
+                    $hovatenErr = "Vui lòng không bỏ trống ten!";
                 } else {
                     if (!preg_match("/^[a-zA-Z \p{L}\p{Mn}]{6,}$/u", $hovaten)) {
                         $check = false;
@@ -133,15 +142,20 @@ if (isset($_GET['act'])) {
                 }
                 if (empty(trim($dkyuser))) {
                     $check = false;
-                    $tendangnhapErr = "Vui lòng không bỏ trống !";
+                    $tendangnhapErr = "Vui lòng không bỏ trống te!";
                 }
                 if (empty(trim($dkypass))) {
                     $check = false;
-                    $matkhauErr = "Vui lòng không bỏ trống !";
+                    $matkhauErr = "Vui lòng không bỏ trống pass !";
+                } else {
+                    if (!preg_match("/^(?=.*?[0-9]).{8,}$/", $dkysdt)) {
+                        $check = false;
+                        $matkhauErr = "chứa ít nhất một chữ số, và độ dài tối thiểu là 8 ký tự !";
+                    }
                 }
                 if (empty(trim($dkysdt))) {
                     $check = false;
-                    $sdtErr = "Vui lòng không bỏ trống !";
+                    $sdtErr = "Vui lòng không bỏ trống sdt!";
                 } else {
                     if (!preg_match("/^0[1-9]\d{8}$/", $dkysdt)) {
                         $check = false;
@@ -150,7 +164,7 @@ if (isset($_GET['act'])) {
                 }
                 if (empty(trim($dkyemail))) {
                     $check = false;
-                    $emailErr = "Vui lòng không bỏ trống !";
+                    $emailErr = "Vui lòng không bỏ trống email!";
                 } else {
                     if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$/", $dkyemail)) {
                         $check = false;
@@ -174,6 +188,7 @@ if (isset($_GET['act'])) {
         case 'your':
             include_once 'views/unity/your.php';
             break;
+            // cập nhật
         case 'update_user':
             if (isset($_SESSION['user'])) {
                 $tendangnhapErr = "";
@@ -220,7 +235,7 @@ if (isset($_GET['act'])) {
             }
             include_once 'views/unity/update.php';
             break;
-
+            // quên mk
         case 'forgot':
             if (isset($_POST['forgot']) && ($_POST['forgot'])) {
                 $Email = $_POST['email'];
@@ -252,6 +267,87 @@ if (isset($_GET['act'])) {
         case 'logout':
             session_unset();
             header("location: ?act=index.php");
+            break;
+
+            // cart
+        case 'delete_cart':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $user_id = $_GET['user_id'];
+                $id = $_GET['id'];
+                delete_cart($user_id, $id);
+                echo '<script>
+                                alert("Bạn đã xóa sản phẩm thành công!");
+                                window.location.href="?act=list_cart_user&id=' . $user_id . '";
+                            </script>';
+            }
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                $list_cart_user = list_cart_user($id);
+                $sum_cart_user = sum_cart_user($id);
+            }
+            include_once 'views/cart/cart.php';
+            break;
+        case 'pay_code':
+            if (isset($_POST['redirect']) && ($_POST['redirect'])) {
+                $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
+                $vnp_Returnurl = "http://localhost/Project_One/view/Vnpay.php"; // thông báo đặt hàng thành công
+                $vnp_TmnCode = "LHI3CJNJ"; //Mã website tại VNPAY 
+                $vnp_HashSecret = "VKWPOOTWGEVOUBFMBNYFJLAQVONVFGTY"; //Chuỗi bí mật
+                $Price = $_POST['price'];
+                $vnp_TxnRef = rand(00, 9999); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
+                $vnp_OrderInfo = 'Thanh Toán Đơn Hàng';
+                $vnp_OrderType = 'billpayment';
+                $vnp_Amount = $Price * 100;
+                $vnp_Locale = 'vn';
+                $vnp_BankCode = 'NCB';
+                $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
+                $inputData = array(
+                    "vnp_Version" => "2.1.0",
+                    "vnp_TmnCode" => $vnp_TmnCode,
+                    "vnp_Amount" => $vnp_Amount,
+                    "vnp_Command" => "pay",
+                    "vnp_CreateDate" => date('YmdHis'),
+                    "vnp_CurrCode" => "VND",
+                    "vnp_IpAddr" => $vnp_IpAddr,
+                    "vnp_Locale" => $vnp_Locale,
+                    "vnp_OrderInfo" => $vnp_OrderInfo,
+                    "vnp_OrderType" => $vnp_OrderType,
+                    "vnp_ReturnUrl" => $vnp_Returnurl,
+                    "vnp_TxnRef" => $vnp_TxnRef
+                );
+
+                if (isset($vnp_BankCode) && $vnp_BankCode != "") {
+                    $inputData['vnp_BankCode'] = $vnp_BankCode;
+                }
+                ksort($inputData);
+                $query = "";
+                $i = 0;
+                $hashdata = "";
+                foreach ($inputData as $key => $value) {
+                    if ($i == 1) {
+                        $hashdata .= '&' . urlencode($key) . "=" . urlencode($value);
+                    } else {
+                        $hashdata .= urlencode($key) . "=" . urlencode($value);
+                        $i = 1;
+                    }
+                    $query .= urlencode($key) . "=" . urlencode($value) . '&';
+                }
+
+                $vnp_Url = $vnp_Url . "?" . $query;
+                if (isset($vnp_HashSecret)) {
+                    $vnpSecureHash =   hash_hmac('sha512', $hashdata, $vnp_HashSecret); //  
+                    $vnp_Url .= 'vnp_SecureHash=' . $vnpSecureHash;
+                }
+                $returnData = array(
+                    'code' => '00', 'message' => 'success', 'data' => $vnp_Url
+                );
+                if (isset($_POST['redirect'])) {
+                    header('Location: ' . $vnp_Url);
+                    die();
+                } else {
+                    echo json_encode($returnData);
+                }
+            }
             break;
         default:
             include "views/home.php";

@@ -619,9 +619,9 @@
                     <div class="dropdown-divider"></div>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="auth-login-cover.html" target="_blank">
+                    <a class="dropdown-item" href="../index.php?act=home" target="_blank">
                       <i class="bx bx-power-off me-2"></i>
-                      <span class="align-middle">Đăng xuất</span>
+                      <span class="align-middle">Thoát Admin</span>
                     </a>
                   </li>
                 </ul>

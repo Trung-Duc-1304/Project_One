@@ -120,11 +120,10 @@ $hihi = (isset($_GET['page']) ? $_GET[('page')] : 1);
                                 <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                     <i class="fa-regular fa-heart"></i>
                                 </a>
-                                <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                <a href="?act=sanpham_ct&id=<?= $id ?>" class="cs_cart_icon cs_accent_bg cs_white_color">
                                     <i class="fa-regular fa-eye"></i>
                                 </a>
                             </div>
-                            <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">Add To Cart</a>
                         </div>
                         <div class="cs_product_info text-center">
                             <h3 class="cs_product_title cs_fs_21 cs_medium">

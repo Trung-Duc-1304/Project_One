@@ -206,3 +206,9 @@ function sum_luotxem()
     $query = "SELECT SUM(luotxem) FROM sanpham";
     return pdo_query_one($query);
 }
+
+function delete_cart($user_id, $id)
+{
+    $query = "DELETE FROM giohang WHERE idtaikhoan= $user_id AND id=" . $id;
+    pdo_execute($query);
+}
