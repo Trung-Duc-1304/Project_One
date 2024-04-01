@@ -95,7 +95,7 @@ if (isset($_GET['act'])) {
             }
             include_once 'views/taikhoan/dangky.php';
             break;
-            //case đang nhập
+         
         case 'dangnhap':
             $tkErr = "";
             $tendangnhapErr = "";
@@ -138,6 +138,7 @@ if (isset($_GET['act'])) {
 
             include_once 'views/taikhoan/dangnhap.php';
             break;
+            //case dang xuat
         case 'dangxuat':
             session_unset();
             header('location: ?act=trangchu');
