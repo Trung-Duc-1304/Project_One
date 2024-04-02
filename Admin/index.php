@@ -300,6 +300,10 @@ if (isset($_GET['act'])) {
                 $list_bt = loadAll_bt($id);
                 include_once './Bien_The/list.php';
                 break;
+                case 'danhsachthongke': 
+                    $listthongke=load_all_thongke(1);
+                    include_once './Thong_Ke/list.php';
+                    break;   
 
         default:
             include "home.php";

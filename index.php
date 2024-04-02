@@ -138,7 +138,7 @@ if (isset($_GET['act'])) {
 
             include_once 'views/taikhoan/dangnhap.php';
             break;
-            //case dang xuat
+            
         case 'dangxuat':
             session_unset();
             header('location: ?act=trangchu');

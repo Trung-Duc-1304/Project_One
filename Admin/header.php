@@ -165,7 +165,7 @@
           </li>
 
           <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link">
+            <a href="index.php?act=danhsachthongke" class="menu-link">
               <i class='menu-icon tf-icons bx bx-bar-chart-alt-2'></i>
               <div class="text-truncate" data-i18n="𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑻𝒉𝒐̂́𝒏𝒈 𝑲𝒆̂">𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑻𝒉𝒐̂́𝒏𝒈 𝑲𝒆̂</div>
             </a>
