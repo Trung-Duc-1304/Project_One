@@ -5,6 +5,7 @@ require_once '../Model/sanpham.php';
 require_once '../Model/Account.php';
 require_once '../Model/Bienthe.php';
 require_once '../Model/order.php';
+require_once '../Model/thongke.php';
 require_once '../global.php';
 require_once 'header.php';
 
