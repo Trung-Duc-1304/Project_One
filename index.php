@@ -115,12 +115,7 @@ if (isset($_GET['act'])) {
                 if (empty(trim($pass))) {
                     $check = false;
                     $tkErr = "Vui lòng không để trống !";
-                } else {
-                    if (!preg_match("/^(?=.*[0-9])(?=.*[A-Z])\w{8,18}$/", $pass)) {
-                        $check = false;
-                        $tkErr = "Mật khẩu tối thiểu 8 ký tự bao gồm ký tự số và ký tự in hoa !";
-                    }
-                }
+                } 
                 if ($check) {
                     $checkuser = check_user($user, $pass);
                     if (is_array($checkuser)) {
