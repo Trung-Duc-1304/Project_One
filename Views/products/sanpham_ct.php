@@ -136,95 +136,69 @@ if (is_array($list_bt)) {
         <hr>
         <div class="cs_product_meta_info">
             <ul class="cs_tab_links cs_style_2 cs_product_tab cs_fs_21 cs_primary_color cs_semibold cs_mp0">
-                <li><a href="#tab_1">Description</a></li>
-                <li><a href="#tab_2">Additional information</a></li>
-                <li><a href="#tab_3">Size Guide</a></li>
-                <li class="active"><a href="#tab_4">Review (1)</a></li>
+                <li><a href="#tab_1">Miêu tả</a></li>
+                <!-- <li><a href="#tab_2">Thêm thông tin</a></li>
+                    <li><a href="#tab_3">Hướng dẫn chọn kích cỡ</a></li> -->
+                <li class="active"><a href="#tab_4">Đánh giá </a></li>
             </ul>
             <div class="cs_tabs">
                 <div class="cs_tab" id="tab_1">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis orci ac odio dictum tincidunt. Donec ut metus leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed luctus, dui eu sagittis sodales,
-                    nulla nibh sagittis augue, vel porttitor diam enim non metus. Vestibulum aliquam augue neque. Phasellus tincidunt odio eget ullamcorper efficitur. Cras placerat ut turpis pellentesque vulputate. Nam sed consequat tortor. Curabitur
-                    finibus sapien dolor. Ut eleifend tellus nec erat pulvinar dignissim. Nam non arcu purus. Vivamus et massa massa.
-                </div>
-                <div class="cs_tab" id="tab_2">
-                    <table class="m-0">
-                        <tbody>
-                            <tr>
-                                <td>Color</td>
-                                <td>Blue, Gray, Green, Red, Yellow</td>
-                            </tr>
-                            <tr>
-                                <td>Size</td>
-                                <td>Large, Medium, Small</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <hr>
-                </div>
-                <div class="cs_tab" id="tab_3">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis orci ac odio dictum tincidunt. Donec ut metus leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed luctus, dui eu sagittis sodales,
-                    nulla nibh sagittis augue, vel porttitor diam enim non metus. Vestibulum aliquam augue neque. Phasellus tincidunt odio eget ullamcorper efficitur. Cras placerat ut turpis pellentesque vulputate. Nam sed consequat tortor. Curabitur
-                    finibus sapien dolor. Ut eleifend tellus nec erat pulvinar dignissim. Nam non arcu purus. Vivamus et massa massa.
+                    <h6><?= $mota ?></h6>
+                    <hr class="mt-4">
                 </div>
                 <div class="cs_tab active" id="tab_4">
-                    <ul class="cs_client_review_list cs_mp0">
-                        <li>
-                            <div class="cs_client_review">
-                                <div class="cs_review_media">
-                                    <div class="cs_review_media_thumb"><img src="assets/client/img/avatar.png" alt="Avatar"></div>
-                                    <div class="cs_review_media_right">
-                                        <div class="cs_rating_container">
-                                            <div class="cs_rating cs_size_sm" data-rating="5">
-                                                <div class="cs_rating_percentage"></div>
+                    <div id="loadbinhluan">
+                        <?php extract($dembl); ?>
+                        <?php
+                        foreach ($list_bl as $bl) {
+                            extract($bl);
+                            echo '<ul class="cs_client_review_list cs_mp0">
+                                        <li>
+                                            <div class="cs_client_review">
+                                                <div class="cs_review_media">
+                                                    <div class="cs_review_media_thumb"><img src="assets/client/img/grid.png" alt="Avatar"></div>
+                                                    <div class="cs_review_media_right">
+                                                        <div class="cs_rating_container">
+                                                            <div class="cs_rating cs_size_sm" data-rating="0">
+                                                                <div class="cs_rating_percentage"></div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="mb-0 cs_primary_color cs_semibold">' . $hovaten . '</p>
+                                                    </div>
+                                                    <p class="cs_review_posted_by">' . $ngaybinhluan . '</p>
+                                                </div>
+                                                <p class="cs_review_text">' . $noidung . '</p>
                                             </div>
-                                        </div>
-                                        <p class="mb-0 cs_primary_color cs_semibold">Zhon Abony</p>
-                                    </div>
-                                    <p class="cs_review_posted_by">August 12, 2023</p>
-                                </div>
-                                <p class="cs_review_text">I recently purchased the Arino T-shirts and I'm thoroughly impressed. The sound quality is exceptional, the wireless connectivity is seamless, and the noise cancellation technology is a <br> standout feature. They're
-                                    a bit pricey, but well worth the investment. Highly recommend.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                    <p class="m-0">Your email address will not be published. Required fields are marked *</p>
-                    <div class="cs_height_20 cs_height_lg_20"></div>
-                    <div class="cs_input_rating_wrap">
-                        <p>Your rating *</p>
-                        <div class="cs_input_rating cs_accent_color" data-rating="0">
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
+                                        </li>
+                                    </ul>';
+                        }
+                        ?>
                     </div>
-                    <div class="cs_height_20 cs_height_lg_22"></div>
-                    <form class="row cs_review_form cs_gap_y_24">
-                        <div class="col-lg-12">
-                            <textarea rows="3" class="cs_form_field" placeholder="Write your review *"></textarea>
+                    <div class="cs_height_20 cs_height_lg_20"></div>
+
+                    <?php if (isset($_SESSION['user'])) : ?>
+                        <?php extract($sanpham); ?>
+                        <div class="cs_input_rating_wrap">
+                            <p>Đánh giá của bạn *</p>
                         </div>
-                        <div class="col-lg-6">
-                            <input type="text" class="cs_form_field" placeholder="Your name *">
-                        </div>
-                        <div class="col-lg-6">
-                            <input type="text" class="cs_form_field" placeholder="Your email *">
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="form_check">
-                                <input class="form-check-input" type="checkbox">
-                                <label class="form-check-label m-0">
-                                    By using this form you agree with the storage and handling of your data by this website. *
-                                </label>
+                        <div class="cs_height_20 cs_height_lg_22"></div>
+                        <form class="row cs_review_form cs_gap_y_24">
+                            <div class="col-lg-12">
+                                <textarea rows="3" class="cs_form_field" placeholder="Write your review *" id="noidung"></textarea>
+                                <p id="binhluanErr" style="color:red;"><?= (isset($noidungErr) && $noidungErr != '') ? $noidungErr : ''; ?></p>
                             </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <button class="cs_btn cs_style_1 cs_fs_16 cs_medium" type="submit">Submit Now</button>
-                        </div>
-                    </form>
+                            <div class="col-lg-12">
+                                <input id="ngaybinhluan" type="hidden" value="<?= date('d-m-Y'); ?>">
+                                <input type="button" value="Gửi" class="cs_btn cs_style_1 cs_fs_16 cs_medium" onclick="binhluanjs(<?= $id ?>,'<?= $_SESSION['user']['hovaten'] ?>')">
+                            </div>
+                        </form>
+                    <?php else : ?>
+                        <h4>Vui lòng <a href="?act=login" style="color:red;">đăng nhập</a> để bình luận!</h4>
+                        <hr>
+                    <?php endif; ?>
+
                 </div>
+
             </div>
             <!-- .cs_tabs -->
         </div>
@@ -250,128 +224,43 @@ if (is_array($list_bt)) {
         </div>
         <div class="cs_height_63 cs_height_lg_35"></div>
     </div>
-    <div class="cs_slider_container" data-autoplay="0" data-loop="1" data-speed="600" data-center="0" data-slides-per-view="responsive" data-xs-slides="1" data-sm-slides="2" data-md-slides="2" data-lg-slides="3" data-add-slides="4">
+    <div class="cs_slider_container container" data-autoplay="0" data-loop="1" data-speed="600" data-center="0" data-slides-per-view="responsive" data-xs-slides="1" data-sm-slides="2" data-md-slides="2" data-lg-slides="3" data-add-slides="4">
         <div class="cs_slider_wrapper">
-            <div class="slick_slide_in">
-                <div class="cs_product cs_style_1">
-                    <div class="cs_product_thumb position-relative">
-                        <img src="assets/client/img/product1.png" alt="Product Image" class="w-100">
-                        <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
-                        <div class="cs_cart_badge position-absolute">
-                            <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                <i class="fa-regular fa-heart"></i>
-                            </a>
-                            <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                <i class="fa-regular fa-eye"></i>
-                            </a>
+            <?php foreach ($splq as $sp) : ?>
+                <?php extract($sp);
+                if ($soluong > 0) { ?>
+                    <div class="slick_slide_in">
+                        <div class="cs_product cs_style_1">
+                            <div class="cs_product_thumb position-relative">
+                                <a href="?act=sanpham_ct&id=<?= $id ?>">
+                                    <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
+                                </a>
+                                <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
+                                <div class="cs_cart_badge position-absolute">
+                                    <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </a>
+                                    <a href="?act=sanpham_ct&id=<?= $id ?>" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </a>
+                                </div>
+                                <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">
+                                    Add To Cart</a>
+                            </div>
+                            <div class="cs_product_info text-center">
+                                <h3 class="cs_product_title cs_fs_21 cs_medium">
+                                    <a href="?act=sanpham_ct&id=<?= $id ?>">Pure black cotton men T-shirt</a>
+                                </h3>
+                                <div class="mt-5">
+                                    <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price"><?= number_format($giakm, 0, ',', '.') ?>₫</span>
+                                        <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.') ?>₫</span>
+                                </div>
+                            </div>
                         </div>
-                        <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">
-                            Add To Cart</a>
                     </div>
-                    <div class="cs_product_info text-center">
-                        <h3 class="cs_product_title cs_fs_21 cs_medium">
-                            <a href="product_details.html">Pure black cotton men T-shirt</a>
-                        </h3>
-                        <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
-                    </div>
-                </div>
-            </div>
-            <div class="slick_slide_in">
-                <div class="cs_product cs_style_1">
-                    <div class="cs_product_thumb position-relative">
-                        <img src="assets/client/img/product2.png" alt="Product Image" class="w-100">
-                        <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-8%</div>
-                        <div class="cs_cart_badge position-absolute">
-                            <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                <i class="fa-regular fa-heart"></i>
-                            </a>
-                            <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                <i class="fa-regular fa-eye"></i>
-                            </a>
-                        </div>
-                        <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">
-                            Add To Cart</a>
-                    </div>
-                    <div class="cs_product_info text-center">
-                        <h3 class="cs_product_title cs_fs_21 cs_medium">
-                            <a href="product_details.html">Gray color cotton men T-shirt</a>
-                        </h3>
-                        <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$220.00</p>
-                    </div>
-                </div>
-            </div>
-            <div class="slick_slide_in">
-                <div class="cs_product cs_style_1">
-                    <div class="cs_product_thumb position-relative">
-                        <img src="assets/client/img/product9.png" alt="Product Image" class="w-100">
-                        <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-8%</div>
-                        <div class="cs_cart_badge position-absolute">
-                            <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                <i class="fa-regular fa-heart"></i>
-                            </a>
-                            <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                <i class="fa-regular fa-eye"></i>
-                            </a>
-                        </div>
-                        <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">
-                            Add To Cart</a>
-                    </div>
-                    <div class="cs_product_info text-center">
-                        <h3 class="cs_product_title cs_fs_21 cs_medium">
-                            <a href="product_details.html">Awesome striped casual shirt</a>
-                        </h3>
-                        <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$220.00</p>
-                    </div>
-                </div>
-            </div>
-            <div class="slick_slide_in">
-                <div class="cs_product cs_style_1">
-                    <div class="cs_product_thumb position-relative">
-                        <img src="assets/client/img/product26.png" alt="Product Image" class="w-100">
-                        <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-12%</div>
-                        <div class="cs_cart_badge position-absolute">
-                            <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                <i class="fa-regular fa-heart"></i>
-                            </a>
-                            <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                <i class="fa-regular fa-eye"></i>
-                            </a>
-                        </div>
-                        <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">
-                            Add To Cart</a>
-                    </div>
-                    <div class="cs_product_info text-center">
-                        <h3 class="cs_product_title cs_fs_21 cs_medium">
-                            <a href="product_details.html">Men casual check shirt</a>
-                        </h3>
-                        <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$350.00</p>
-                    </div>
-                </div>
-            </div>
-            <div class="slick_slide_in">
-                <div class="cs_product cs_style_1">
-                    <div class="cs_product_thumb position-relative">
-                        <img src="assets/client/img/product2.png" alt="Product Image" class="w-100">
-                        <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-8%</div>
-                        <div class="cs_cart_badge position-absolute">
-                            <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                <i class="fa-regular fa-heart"></i>
-                            </a>
-                            <a href="product_details.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                <i class="fa-regular fa-eye"></i>
-                            </a>
-                        </div>
-                        <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">
-                            Add To Cart</a>
-                    </div>
-                    <div class="cs_product_info text-center">
-                        <h3 class="cs_product_title cs_fs_21 cs_medium">
-                            <a href="product_details.html">Gray color cotton men T-shirt</a>
-                        </h3>
-                        <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$220.00</p>
-                    </div>
-                </div>
-            </div>
+            <?php }
+            endforeach; ?>
+
         </div>
     </div>
     <div class="cs_height_134 cs_height_lg_80"></div>

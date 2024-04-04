@@ -34,3 +34,22 @@ function sum_cart_user($id)
     WHERE giohang.idtaikhoan = $id";
     return pdo_query($sql);
 }
+
+function list_order()
+{
+    $sql = "SELECT * FROM donhang WHERE 1
+    ";
+    return pdo_query($sql);
+}
+
+function list_order_one()
+{
+    $sql = "SELECT * FROM donhang WHERE id = " . $_GET['id'];
+    return pdo_query_one($sql);
+}
+
+function update_order($id, $trangthai, $thanhtoan)
+{
+    $query = "UPDATE `donhang` SET `trangthai`='$trangthai', `thanhtoan`='$thanhtoan'  WHERE id=" . $id;
+    pdo_execute($query);
+}
