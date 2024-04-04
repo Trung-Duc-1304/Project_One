@@ -43,6 +43,7 @@
                             <div class="row mb-2">
                                 <div class="col"><label class="form-label" for="ecommerce-product-Tên sản phẩm">Tên sản phẩm</label>
                                     <input type="text" class="form-control" id="ecommerce-product-Tên sản phẩm" placeholder="Tên sản phẩm" name="tensp" aria-label="Product Tên sản phẩm">
+                                    <p class="text-danger"><?= $tenspErr ?></p>
                                 </div>
                                 <div class="col"><label class="form-label" for="ecommerce-product-barcode">Price</label>
                                     <input type="text" class="form-control" id="ecommerce-product-Price" placeholder="Price" name="giasp" aria-label="Product Price">
@@ -50,15 +51,16 @@
 
                             </div>
 
-                            <div class="row mb-2">
-                                
+                            <!-- <div class="row mb-2">
+
                                 <div class="col"><label class="form-label" for="ecommerce-product-km">Khuyến mãi</label>
                                     <input type="text" class="form-control" id="ecommerce-product-km" placeholder="Khuyến mãi" name="khuyenmai" aria-label="Product khuyenmai">
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="mb-3">
                                 <label class="form-label" for="ecommerce-product-name">Mô Tả</label>
                                 <textarea name="mota" class="form-control" cols="30" rows="1" placeholder="Mô tả"></textarea>
+                                <p class="text-danger"><?= $motaErr ?></p>
                             </div>
                             <div class="card mb-2">
                                 <div class="card-header d-flex justify-content-between align-items-center">
@@ -81,6 +83,7 @@
                                     </div>
                                     <input type="file" id="image-input" name="image" accept="image/*" onchange="previewImage()" required style="display: none" />
                                     <div id="image-preview"></div>
+                                    <p class="text-danger"><?= $imageErr ?></p>
                                 </div>
                             </div>
                         </div>

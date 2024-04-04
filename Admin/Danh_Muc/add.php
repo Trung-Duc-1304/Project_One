@@ -32,7 +32,7 @@
               <div class="mb-3">
                 <label class="form-label" for="ecommerce-product-name">Tên Danh Mục</label>
                 <input type="text" class="form-control" placeholder="Tên Danh Mục" name="tendm" aria-label="tendm">
-                <p class="btn "><?= $tendmErr ?></p>
+                <p class="text-danger"><?= $tendmErr ?></p>
               </div>
             </div>
           </div>

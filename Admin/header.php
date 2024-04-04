@@ -142,7 +142,7 @@
 
           <!-- Academy menu end -->
           <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link">
+            <a href="?act=list_order" class="menu-link">
               <i class="menu-icon tf-icons bx bx-cart-download"></i>
               <div class="text-truncate" data-i18n="𝑸𝒖𝒂̉𝒏 𝑳𝒚́ Đ𝒐̛𝒏 𝑯𝒂̀𝒏𝒈">𝑸𝒖𝒂̉𝒏 𝑳𝒚́ Đ𝒐̛𝒏 𝑯𝒂̀𝒏𝒈</div>
             </a>

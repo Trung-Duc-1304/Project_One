@@ -74,7 +74,8 @@
     </footer>
     <!-- End footer -->
     <!-- Start scroll up button -->
-    <div class="cs_scrollup_btn" id="cs_scroll_btn">
+    <df-messenger intent="WELCOME" chat-title="Chat với Support" agent-id="43911016-6190-4d15-8c93-35ce28710a81" language-code="vi"></df-messenger>
+    <div style="margin-right: 6px; margin-bottom: 70px;" class="cs_scrollup_btn" id="cs_scroll_btn">
         <i class="fa-solid fa-arrow-up"></i>
     </div>
     <!-- End scroll up button -->
@@ -162,8 +163,38 @@
             });
         });
     </script>
+    <script>
+        // ajax bình luận
+        function binhluanjs(id, hovaten) {
+            console.log("Bắt đầu hàm binhluanjs");
+            var noidung = $("#noidung").val();
+            if (noidung == "") $("#binhluanErr").text("Vui lòng nhập nội dung trước khi gửi!");
+            else {
+                var ngaybinhluan = $("#ngaybinhluan").val();
+                $.ajax({
+                    type: 'POST',
+                    url: 'index.php?act=sanpham_ct&id=' + id,
+                    data: {
+                        noidung: noidung
+                    },
+                    success: function(response) {
+                        var soluongcu = parseInt($("#countbl").text());
+                        var soluongmoi = soluongcu + 1;
+                        $("#countbl").text(soluongmoi);
+                        $('#loadbinhluan').append('<div id="loadbinhluan"><ul class="cs_client_review_list cs_mp0"><li><div class="cs_client_review"><div class="cs_review_media"><div class="cs_review_media_thumb"><img src="assets/images/hihi.png" alt="Avatar"></div><div class="cs_review_media_right"><div class="cs_rating_container"><div class="cs_rating cs_size_sm" data-rating="5"><div class="cs_rating_percentage"></div></div></div><p class="mb-0 cs_primary_color cs_semibold">' + hovaten + '</p></div><p class="cs_review_posted_by">' + ngaybinhluan + '</p></div><p class="cs_review_text">' + noidung + '</p></div></li></ul></div>');
+                        $('#noidung').val('');
+                        $("#binhluanErr").text("");
+                    },
+                    error: function(error) {
+                        console.error('Lỗi: ', error);
+                        alert('Có lỗi xảy ra khi gửi bình luận');
+                    }
+                });
+            }
+        }
+    </script>
+    Mainjs
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     </body>
-
-    <!-- Mirrored from static.laralink.com/html/sattiyas/home-v2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 Mar 2024 15:07:58 GMT -->
 
     </html>
