@@ -1,4 +1,6 @@
 <?php
+session_start();
+ob_start();
 require_once '../Model/pdo.php';
 require_once '../Model/danhmuc.php';
 require_once '../Model/sanpham.php';
@@ -7,6 +9,26 @@ require_once '../Model/Bienthe.php';
 require_once '../Model/order.php';
 require_once '../global.php';
 require_once 'header.php';
+
+function checkRole()
+{
+    // Kiểm tra xem người dùng có quyền admin không
+    if ($_SESSION['role'] != "Admin" && $_SESSION['role'] != "Nhân Viên") {
+        // Nếu không phải admin, chuyển hướng người dùng đến trang không có quyền
+        header("Location: login.php");
+        exit();
+    }
+}
+// Kiểm tra đăng nhập
+if (isset($_SESSION['tendangnhap'])) {
+    // Gọi hàm kiểm tra quyền sau khi đăng nhập
+    checkRole();
+    // Người dùng có quyền admin đã đăng nhập, có thể hiển thị trang chính
+} else {
+    // Người dùng chưa đăng nhập, chuyển hướng đến trang đăng nhập
+    header("Location: login.php");
+    exit();
+}
 
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -97,43 +119,47 @@ if (isset($_GET['act'])) {
                 $tensp = $_POST['tensp'];
                 $giasp = $_POST['giasp'];
                 $image = basename($_FILES['image']['name']);
-                $khuyenmai = $_POST['khuyenmai'];
                 $mota = $_POST['mota'];
                 $danhmuc = $_POST['danhmuc'];
                 $check = true;
+
                 if (empty(trim($tensp))) {
-                    $tenspErr = "Vui lòng nhập tên sản phẩm !";
+                    $tenspErr = "Vui lòng nhập tên sản phẩm!";
                     $check = false;
                 }
+
                 if (empty(trim($mota))) {
-                    $motaErr = "Vui lòng nhập mô tả sản phẩm !";
+                    $motaErr = "Vui lòng nhập mô tả sản phẩm!";
                     $check = false;
                 }
-                if (empty($giasp))
+
+                if (empty($giasp)) {
                     $giasp = 1;
-                if (empty($khuyenmai))
-                    $khuyenmai = 0;
-                $giakm = intval($giasp) * ((100 - intval($khuyenmai)) / 100);
+                }
+
                 if (empty($image)) {
                     $check = false;
-                    $imageErr = "Vui lòng uploads file ảnh !";
+                    $imageErr = "Vui lòng tải lên file ảnh!";
                 } else {
                     $file_tmp = $_FILES['image']['tmp_name'];
                     $target_file = "../uploads/" . $image;
                     $extension = pathinfo($target_file, PATHINFO_EXTENSION);
+
                     if (!in_array($extension, ["png", "jpeg", "jpg", "webp"])) {
                         $check = false;
-                        $imageErr = "File không đúng định dạng !";
+                        $imageErr = "File không đúng định dạng!";
                     } else {
                         if ($check) {
                             move_uploaded_file($file_tmp, $target_file);
                         }
                     }
                 }
+
                 if ($check) {
                     insert_sp($danhmuc, $tensp, $giasp, $image, $giakm, $khuyenmai, $mota);
                 }
             }
+
             $listdm = load_all_dm("");
             include_once './San_Pham/add.php';
             break;
@@ -250,18 +276,23 @@ if (isset($_GET['act'])) {
             include_once './Account/list.php';
             break;
 
-            // Biến thể
+            // biến thể
         case 'create_bt':
+            $soluongErr = "";
             if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                 $pro_id = $_GET['id'];
                 $size = $_POST['size'];
                 $color = $_POST['color'];
                 $soLuong = $_POST['soLuong'];
-                insert_bt($pro_id, $size, $color, $soLuong);
-                echo '<script>
+                if (empty(trim($soLuong))) {
+                    $soluongErr = "Vui lòng nhập số lượng  !";
+                } else {
+                    insert_bt($pro_id, $size, $color, $soLuong);
+                    echo '<script>
                             alert("Bạn đã thêm biến thể thành công !");
                             window.location.href="?act=list_bt&id=' . $pro_id . '";
                         </script>';
+                }
             }
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 $id = $_GET['id'];
@@ -320,6 +351,9 @@ if (isset($_GET['act'])) {
             include_once './Bien_The/list.php';
             break;
 
+        case 'logout':
+            session_unset();
+            break;
         default:
             include "home.php";
             break;
