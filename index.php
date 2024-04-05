@@ -283,9 +283,24 @@ if (isset($_GET['act'])) {
             }
             include_once 'views/auth/forgot.php';
             break;
-        case 'logout':
-            session_unset();
-            header("location: ?act=index.php");
+
+        case 'user_order':
+            if (isset($_GET['id']) && ($_GET['id'])) {
+                $id = $_GET['id'];
+
+                $list_order_user = list_order_user($id);
+            }
+            include_once 'views/unity/order.php';
+            break;
+
+        case "huy_order":
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                huy_order($id);
+            }
+            header('location: ?act=user_order&id=' . $_SESSION['user']['id'] . '');
+            $list_order_user = list_order_user($id);
+            include_once 'views/unity/order.php';
             break;
 
             // cart
@@ -367,6 +382,11 @@ if (isset($_GET['act'])) {
                     echo json_encode($returnData);
                 }
             }
+            break;
+
+        case 'logout':
+            session_unset();
+            header("location: ?act=index.php");
             break;
         default:
             include "views/home.php";

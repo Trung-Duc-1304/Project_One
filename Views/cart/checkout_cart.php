@@ -1,3 +1,32 @@
+<?php
+if (isset($_POST['monny']) && ($_POST['monny'])) {
+    $idtaikhoan = $_SESSION['user']['id'];
+    $hovatennhan = $_POST['hovatennhan'];
+    $tensp = $_POST['tensp'];
+    $color = $_POST['color'];
+    $Size = $_POST['size'];
+    $soLuong = $_POST['soLuong'];
+    $ngaydathang = date('Y/m/d');
+    $diachinhan = $_POST['diachinhan'];
+    $sodienthoainhan = $_POST['sodienthoainhan'];
+    $phuongthuctt = $_POST['phuongthuctt'];
+    $thanhtoan = $_POST['thanhtoan'];
+    inserorder(
+        $idtaikhoan,
+        $hovatennhan,
+        $tensp,
+        $color,
+        $Size,
+        $soLuong,
+        $ngaydathang,
+        $diachinhan,
+        $sodienthoainhan,
+        $phuongthuctt,
+        $thanhtoan
+    );
+    header("location: index.php?action=payment&Flight=" . $Flight_ID);
+}
+?>
 <!-- Start Cart Page Heading -->
 <section>
     <div class="container">
@@ -19,109 +48,85 @@
 <!-- Start Checkout -->
 <div class="container">
     <div class="row">
-        <div class="col-xl-7">
-            <!-- <p class="cs_checkout-alert m-0">Have a coupon? <a href="#">Click here to enter your code</a></p> -->
-            <div class="cs_height_40 cs_height_lg_40"></div>
-            <h2 class="cs_checkout-title cs_fs_28">Chi tiết thanh toán</h2>
-            <div class="cs_height_45 cs_height_lg_40"></div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <label class="cs_shop-label">Tên đầu tiên *</label>
-                    <input type="text" class="cs_shop-input">
-                    <div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div>
-                </div>
-                <div class="col-lg-6">
-                    <label class="cs_shop-label">Họ *</label>
-                    <input type="text" class="cs_shop-input">
-                </div>
-                <!-- <div class="col-lg-12">
-                    <label class="cs_shop-label">Tình trạng *</label>
-                    <select class="cs_shop-input">
-                        <option value="California">California</option>
-                        <option value="Gercy">Áo mới</option>
-                        <option value="Daiking">Daikin</option>
-                    </select>
-                </div> -->
-                <div class="col-lg-12">
-                    <label class="cs_shop-label">Điện thoại *</label>
-                    <input type="text" class="cs_shop-input">
-                </div>
-                <div class="col-lg-12">
-                    <label class="cs_shop-label">Địa chỉ email*</label>
-                    <input type="text" class="cs_shop-input">
-                </div>
-            </div>
-            <div class="cs_height_45 cs_height_lg_45"></div>
-            <h2 class="cs_checkout-title">Thông tin thêm</h2>
-            <div class="cs_height_25 cs_height_lg_25"></div>
-            <label class="cs_shop-label">Ghi chú đơn hàng (tùy chọn)</label>
-            <textarea cols="30" rows="2" class="cs_shop-input"></textarea>
-            <div class="cs_height_30 cs_height_lg_30"></div>
-        </div>
-        <div class="col-xl-5">
-            <div class="cs_shop-side-spacing">
-                <div class="cs_shop-card">
-                    <h2 class="cs_fs_21">Đơn hàng của bạn</h2>
-                    <table>
-                        <tbody>
-                            <tr class="cs_semi_bold">
-                                <td>Các sản phẩm</td>
-                                <td class="text-end">Số lượng</td>
-                            </tr>
-                            <?php foreach ($list_cart_user as $cart) :
-                                extract($cart) ?>
-                                <tr>
-                                    <td><?= $tensp ?> x <?= $soluong ?></td>
-                                    <td class="text-end"><?= number_format($thanhtien, 0, ',', '.') ?> VNĐ</td>
-                                </tr>
-                            <?php endforeach ?>
-                            <tr>
-                                <?php
-                                foreach ($sum_cart_user as $cart) :
-                                    extract($cart)
-                                ?>
-                                <?php endforeach ?>
-                                <td class="cs_semi_bold">Tổng phụ</td>
-                                <td class="text-end"><?= number_format($total_amount, 0, ',', '.') ?> VNĐ</td>
-                            </tr>
-                            <tr class="cs_semi_bold">
-                                <td>Tổng cộng</td>
-                                <td class="text-end"><?= number_format($total_amount, 0, ',', '.') ?> VNĐ</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="cs_height_30 cs_height_lg_30"></div>
-                    <!-- <a href="success.html" class="cs_btn cs_style_1 cs_fs_16 cs_medium w-100">Đặt hàng</a> -->
-                </div>
-                <div class="cs_height_50 cs_height_lg_30"></div>
-                <div class="cs_shop-card">
-                    <h2 class="cs_fs_21">Sự chi trả</h2>
-                    <div class="cs_height_20 cs_height_lg_20"></div>
-                    <p class="m-0 cs_payment_text">Dữ liệu cá nhân của bạn sẽ được sử dụng để xử lý đơn đặt hàng, hỗ trợ trải nghiệm của bạn trên trang web này và cho các mục đích khác được mô tả trong của chúng tôi. <a href="#">Chính sách bảo mật.</a>.</p>
-                    <div class="cs_height_20 cs_height_lg_20"></div>
-                    <!-- <button class="cs_btn cs_style_1 cs_fs_16 cs_medium w-100">Đặt Hàng Ngay</button> -->
-                    <div class="d-flex justify-content-center align-items-center">
-                        <form action="?act=pay_code" method="post">
-                            <div class="btn">
-                                <button onclick="confirmPayment()" type="button" class="btn btn-primary" name="monny">Thanh Toán Tiền Mặt</button>
-                                <!-- <input onclick="confirmPayment_vnpay()" class="btn btn-info" type="submit" name="redirect" value="Thanh Toán VNPAY">
-                            <input type="hidden" name="price" value="<?= $total_amount ?>"> -->
-                            </div>
-                        </form>
-                        <form method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="Views/momo/momo_pay_atm.php">
-                            <input class="btn btn-primary" type="submit" name="payUrl" value="Thanh Toán Momo">
-                            <input type="hidden" name="price" value="<?= $total_amount ?>">
-                            <input type="hidden" name="tensp" value="<?= $tensp ?>">
-                            <input type="hidden" name="soluong" value="<?= $soluong ?>">
-                            <input type="hidden" name="size" value="<?= $size ?>">
-                            <input type="hidden" name="color" value="<?= $color ?>">
-                            <input type="hidden" name="user_id" value="<?= $_SESSION['user']['id'] ?>">
-                        </form>
+        <form method="post" class="d-flex">
+            <div class="col-xl-7">
+                <!-- <p class="cs_checkout-alert m-0">Have a coupon? <a href="#">Click here to enter your code</a></p> -->
+                <div class="cs_height_40 cs_height_lg_40"></div>
+                <h2 class="cs_checkout-title cs_fs_28">Chi tiết thanh toán</h2>
+                <div class="cs_height_45 cs_height_lg_40"></div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label class="cs_shop-label">Họ Tên *</label>
+                        <input type="text" name="hovatennhan" class="cs_shop-input">
+                        <div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <label class="cs_shop-label" name="sodienthoainhan">Điện thoại *</label>
+                        <input type="text" class="cs_shop-input">
+                    </div>
+                    <div class="col-lg-12">
+                        <label class="cs_shop-label" name="diachinhan">Địa chỉ *</label>
+                        <input type="text" class="cs_shop-input">
                     </div>
                 </div>
-                <div class="cs_height_30 cs_height_lg_30"></div>
             </div>
-        </div>
+            <div class="col-xl-5">
+                <div class="cs_shop-side-spacing">
+                    <div class="cs_shop-card">
+                        <h2 class="cs_fs_21">Đơn hàng của bạn</h2>
+                        <table>
+                            <tbody>
+                                <tr class="cs_semi_bold">
+                                    <td>Các sản phẩm</td>
+                                    <td class="text-end">Đơn giá</td>
+                                </tr>
+                                <?php foreach ($list_cart_user as $cart) :
+                                    extract($cart) ?>
+                                    <tr>
+                                        <td><?= $tensp ?> x <?= $soluong ?></td>
+                                        <td class="text-end"><?= number_format($thanhtien, 0, ',', '.') ?> VNĐ</td>
+                                    </tr>
+                                <?php endforeach ?>
+                                <tr>
+                                    <?php
+                                    foreach ($sum_cart_user as $cart) :
+                                        extract($cart)
+                                    ?>
+                                    <?php endforeach ?>
+                                    <!-- <td class="cs_semi_bold">Tổng phụ</td> -->
+                                    <!-- <td class="text-end"><?= number_format($total_amount, 0, ',', '.') ?> VNĐ</td> -->
+                                </tr>
+                                <tr class="cs_semi_bold">
+                                    <td>Tổng cộng</td>
+                                    <td class="text-end"><?= number_format($total_amount, 0, ',', '.') ?> VNĐ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="cs_height_30 cs_height_lg_30"></div>
+                        <!-- <a href="success.html" class="cs_btn cs_style_1 cs_fs_16 cs_medium w-100">Đặt hàng</a> -->
+                        <div class="d-flex justify-content-center align-items-center mt-2">
+                            <div class="btn">
+                                <button type="submit" class="btn btn-primary" name="monny">Thanh Toán Tiền Mặt</button>
+                            </div>
+                            <form method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="Views/momo/momo_pay_atm.php">
+                                <input class="btn btn-primary" type="submit" name="payUrl" value="Thanh Toán Momo">
+                                <input type="hidden" name="price" value="<?= $total_amount ?>">
+                                <input type="hidden" name="tensp" value="<?= $tensp ?>">
+                                <input type="hidden" name="soluong" value="<?= $soluong ?>">
+                                <input type="hidden" name="size" value="<?= $size ?>">
+                                <input type="hidden" name="color" value="<?= $color ?>">
+                                <input type="hidden" name="user_id" value="<?= $_SESSION['user']['id'] ?>">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="cs_height_30 cs_height_lg_30"></div>
+                </div>
+            </div>
+            <input type="hidden" name="tensp" value="<?= $tensp ?>">
+            <input type="hidden" name="soluong" value="<?= $soluong ?>">
+            <input type="hidden" name="size" value="<?= $size ?>">
+            <input type="hidden" name="color" value="<?= $color ?>">
+        </form>
     </div>
 </div>
 <!-- End Checkout -->
@@ -142,20 +147,20 @@
         });
     }
 
-    function confirmPayment() {
-        // Hiển thị thông báo xác nhận
-        Swal.fire({
-            title: 'Xác nhận thanh toán',
-            text: 'Bạn chắc chắn muốn thanh toán chứ?',
-            icon: 'question',
-            showCancelButton: true,
-            confirmButtonText: 'Đồng ý',
-            cancelButtonText: 'Hủy bỏ'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Nếu người dùng đồng ý, chuyển hướng đến trang thanh toán
-                window.location.href = 'view/noti_pay.php';
-            }
-        });
-    }
+    // function confirmPayment() {
+    //     // Hiển thị thông báo xác nhận
+    //     Swal.fire({
+    //         title: 'Xác nhận thanh toán',
+    //         text: 'Bạn chắc chắn muốn thanh toán chứ?',
+    //         icon: 'question',
+    //         showCancelButton: true,
+    //         confirmButtonText: 'Đồng ý',
+    //         cancelButtonText: 'Hủy bỏ'
+    //     }).then((result) => {
+    //         if (result.isConfirmed) {
+    //             // Nếu người dùng đồng ý, chuyển hướng đến trang thanh toán
+    //             window.location.href = 'view/noti_pay.php';
+    //         }
+    //     });
+    // }
 </script>

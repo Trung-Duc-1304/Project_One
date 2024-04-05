@@ -11,12 +11,9 @@
 
                 <div class="d-flex flex-column justify-content-center">
                     <h4 class="mb-1 mt-3">Thêm Sản Phẩm</h4>
+
                 </div>
-                <div class="d-flex align-content-center flex-wrap gap-3">
-                    <input type="reset" class="btn btn-label-secondary" value="Nhập Lại">
-                    <a href="index.php?act=list_sp" class="btn btn-label-primary"> Danh Sách</a>
-                    <input type="submit" class="btn btn-primary" value="Xác Nhận" name="submit">
-                </div>
+
             </div>
 
             <div class="row">
@@ -85,6 +82,11 @@
                                     <div id="image-preview"></div>
                                     <p class="text-danger"><?= $imageErr ?></p>
                                 </div>
+                            </div>
+                            <div class="d-flex align-content-center flex-wrap gap-3 ">
+                                <input type="reset" class="btn btn-label-secondary" value="Nhập Lại">
+                                <a href="index.php?act=list_sp" class="btn btn-label-primary"> Danh Sách</a>
+                                <input type="submit" class="btn btn-primary" value="Xác Nhận" name="submit">
                             </div>
                         </div>
                     </div>

@@ -42,6 +42,12 @@ function list_order()
     return pdo_query($sql);
 }
 
+function list_order_user($id)
+{
+    $sql = "SELECT * FROM donhang WHERE idtaikhoan = $id";
+    return pdo_query($sql);
+}
+
 function list_order_one()
 {
     $sql = "SELECT * FROM donhang WHERE id = " . $_GET['id'];
@@ -52,4 +58,38 @@ function update_order($id, $trangthai, $thanhtoan)
 {
     $query = "UPDATE `donhang` SET `trangthai`='$trangthai', `thanhtoan`='$thanhtoan'  WHERE id=" . $id;
     pdo_execute($query);
+}
+
+function huy_order($id)
+{
+    $sql = "UPDATE donhang SET trangthai = 'Đã hủy' WHERE id =" . $id;
+    pdo_execute($sql);
+}
+
+function inserorder(
+    $idtaikhoan,
+    $hovatennhan,
+    $tensp,
+    $color,
+    $Size,
+    $soLuong,
+    $ngaydathang,
+    $diachinhan,
+    $sodienthoainhan,
+    $phuongthuctt,
+    $thanhtoan
+) {
+    $sql = "INSERT INTO donhang(idtaikhoan, hovatennhan, tensp, color, Size, soLuong, ngaydathang, diachinhan, sodienthoainhan, phuongthuctt, thanhtoan)
+    VALUES('$idtaikhoan'
+            ,'$hovatennhan'
+            ,'$tensp'
+            ,'$color'
+            ,'$Size'
+            ,'$soLuong'
+            ,'$ngaydathang'
+            ,'$diachinhan'
+            ,'$sodienthoainhan'
+            ,'$phuongthuctt'
+            ,'$thanhtoan')";
+    pdo_execute($sql);
 }
