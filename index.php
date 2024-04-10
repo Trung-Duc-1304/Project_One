@@ -1,6 +1,6 @@
 <?php
-ob_start();
 session_start();
+ob_start();
 require_once 'Model/pdo.php';
 require_once 'Model/danhmuc.php';
 require_once 'Model/sanpham.php';
@@ -12,6 +12,8 @@ require_once 'Model/binhluan.php';
 require_once 'Model/Mail.php';
 require_once 'global.php';
 require_once 'helper.php';
+
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 $listsp = load_sp_home();
 $listdm = load_all_dm("");

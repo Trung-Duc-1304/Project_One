@@ -11,6 +11,9 @@ require_once '../Model/Bienthe.php';
 require_once '../Model/order.php';
 require_once '../global.php';
 require_once 'header.php';
+
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+
 function checkRole()
 {
     // Kiểm tra xem người dùng có quyền admin không
@@ -387,11 +390,27 @@ if (isset($_GET['act'])) {
             include "Binh_Luan/list.php";
             break;
             // thống kê
-        case 'danhsachthongke':
-            $day = (isset($_GET['day']) && $_GET['day'] != "") ? $_GET['day'] : 1;
-            $listthongke = thongke($day);
+        case 'thongke_ngay':
+            $currentDate = date('Y-m-d');
+            $listthongke = thongke_ngay($currentDate);
+            $Count_price_tk = Count_price_tk($currentDate);
             include_once './Thong_Ke/list.php';
             break;
+        case 'thongke_tuan':
+            $currentDate = date("Y-m-d");
+            $firstDayOfWeek = date('Y-m-d', strtotime('last monday', strtotime($currentDate)));
+            $listthongke = thongke_tuan($currentDate, $firstDayOfWeek);
+            $Count_price_tk = Count_price_tuan($currentDate, $firstDayOfWeek);
+            include_once './Thong_Ke/list.php';
+            break;
+
+        case 'thongke_thang':
+            $currentMonth = date("Y-m");
+            $listthongke = thongke_thang($currentMonth);
+            $Count_price_tk = Count_price_thang($currentMonth);
+            include_once './Thong_Ke/list.php';
+            break;
+
         default:
             include "home.php";
             break;

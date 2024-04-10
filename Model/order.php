@@ -42,7 +42,7 @@ function list_order()
     JOIN taikhoan ON bill.User_ID  = taikhoan.id 
     JOIN bil_ct ON bill.Bill_ID = bil_ct.id_bill
     JOIN sanpham ON bil_ct.product_id = sanpham.id 
-    GROUP BY bill.User_ID";
+    GROUP BY bill.User_ID, bill.Time_set";
     return pdo_query($sql);
 }
 
@@ -62,19 +62,22 @@ function list_order_home()
     $sql = "SELECT *,bill.trangthai as trangthaidh FROM bill 
     JOIN taikhoan ON bill.User_ID  = taikhoan.id 
     JOIN bil_ct ON bill.Bill_ID = bil_ct.id_bill
-    JOIN sanpham ON bil_ct.product_id = sanpham.id";
+    JOIN sanpham ON bil_ct.product_id = sanpham.id
+    ORDER BY bill.Bill_ID DESC";
     return pdo_query($sql);
 }
 
 function list_order_user($Userid)
 {
-    $sql = "SELECT *,bill.trangthai as trangthaidh, bil_ct.id AS idbillct FROM bill 
-    JOIN taikhoan ON bill.User_ID  = taikhoan.id 
+    $time = isset($_GET['time']) ? $_GET['time'] : '';
+    $sql = "SELECT *, bill.trangthai as trangthaidh, bil_ct.id AS idbillct FROM bill 
+    JOIN taikhoan ON bill.User_ID = taikhoan.id 
     JOIN bil_ct ON bill.Bill_ID = bil_ct.id_bill
     JOIN sanpham ON bil_ct.product_id = sanpham.id
-    WHERE  bill.User_ID = $Userid";
-    return pdo_query($sql);
+    WHERE bill.User_ID = $Userid AND bill.Time_set = '$time'"; // Sử dụng tham số đặt chỗ với tên :time
+    return pdo_query($sql); // Truyền giá trị của tham số vào truy vấn SQL
 }
+
 
 function list_order_one()
 {

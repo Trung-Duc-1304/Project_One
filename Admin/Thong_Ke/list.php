@@ -10,9 +10,9 @@
             Chọn ngày thống kê
         </button>
         <ul id="dropdownList" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="index.php?act=danhsachthongke&day=1">Ngày</a></li>
-            <li><a class="dropdown-item" href="index.php?act=danhsachthongke&day=5">Tuần</a></li>
-            <li><a class="dropdown-item" href="index.php?act=danhsachthongke&day=7">Tháng</a></li>
+            <li><a class="dropdown-item" href="?act=thongke_ngay">Ngày</a></li>
+            <li><a class="dropdown-item" href="?act=thongke_tuan">Tuần</a></li>
+            <li><a class="dropdown-item" href="?act=thongke_thang">Tháng</a></li>
             <!-- Thêm các mục khác nếu cần -->
         </ul>
     </div>
@@ -25,7 +25,7 @@
                             <th class="text-primary  fw-bold">Ngày tháng</th>
                             <th class="text-primary  fw-bold">Tổng số đơn hàng</th>
                             <th class="text-primary  fw-bold">Doanh thu</th>
-                            <th class="text-primary  fw-bold">Số lượng bán</th>
+                            <th class="text-primary  fw-bold">Người dùng mua</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,25 +33,32 @@
                         if (!empty($listthongke)) :
                             foreach ($listthongke as $thongke) :
                                 extract($thongke);
+                                $formatDate = date("d/m/Y", strtotime($Time_set));
                         ?>
                                 <tr>
                                     <td class="col-1 align-middle text-center">
-                                        <?= $Time_set ?>
+                                        <?= $formatDate ?>
                                     </td>
                                     <td class="col-1 align-middle">
-                                        <?= sizeof($listthongke) ?>
+                                        <button class=" btn badge bg-label-warning"><?= $soluongsp ?> Đơn</button>
                                     </td>
                                     <td class="col-1 align-middle">
-                                        <?= number_format($tongdoanhthu, 0, ',', '.') . 'đ' ?>
+                                        <?= number_format($tongdoanhthu) ?> VNĐ
                                     </td>
                                     <td class="col-1 align-middle">
-                                        <?= $soluongsp ?>
+                                        <?= $hovaten ?>
                                     </td>
                                 </tr>
                         <?php endforeach;
                         endif ?>
                     </tbody>
                 </table>
+            </div>
+            <div class="d-flex justify-content-end align-items-center mt-2">
+                <h4 class="fw-bold me-2">
+                    Tổng danh thu:
+                </h4>
+                <h5 class="fw-bold text-danger "> <?= number_format($Count_price_tk['total_price']) ?> VNĐ</h5>
             </div>
         </div>
     </div>

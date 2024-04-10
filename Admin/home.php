@@ -8,13 +8,13 @@
           <div class="d-flex align-items-end row">
             <div class="col-8">
               <div class="card-body">
-                <h6 class="card-title mb-1 text-nowrap">Xin chúc mừng Katie!</h6>
+                <h6 class="card-title mb-1 text-nowrap">Xin chúc mừng <?= $_SESSION['user']['hovaten'] ?></h6>
                 <small class="d-block mb-3 text-nowrap">Bán chạy nhất của tháng</small>
 
-                <h5 class="card-title text-primary mb-1">$48,9k</h5>
+                <h5 class="card-title text-primary mb-1"><?= number_format($Count_price['total_price']) ?> VNĐ</h5>
                 <small class="d-block mb-4 pb-1 text-muted">78% mục tiêu</small>
 
-                <a href="javascript:;" class="btn btn-sm btn-primary">Xem doanh số bán hàng</a>
+                <a href="?act=danhsachthongke" class="btn btn-sm btn-primary">Xem doanh số bán hàng</a>
               </div>
             </div>
             <div class="col-4 pt-3 ps-0">

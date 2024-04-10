@@ -1,32 +1,61 @@
 <?php
-function thongke($day)
+function thongke_ngay($currentDate)
 {
-    date_default_timezone_set('Asia/Ho_Chi_Minh');
-    $currentDate = new DateTime();
-    $subtractedDate = clone $currentDate;
-    $subtractedDate->modify('-' . $day . ' days');
-    $ngaykthuc = $subtractedDate->format('Y/m/d');
-    $sql = "SELECT *,SUM(price) as tongdoanhthu,SUM(bil_ct.soluong) as soluongsp FROM bill JOIN bil_ct ON bill.Bill_ID  = bil_ct.id_bill
-    WHERE Time_set >=$ngaykthuc";
+    $sql = "SELECT *, SUM(bill.price) as tongdoanhthu, SUM(bil_ct.soluong) as soluongsp, SUM(bill.User_ID) as sumbill 
+    FROM bill JOIN bil_ct 
+    ON bill.Bill_ID  = bil_ct.id_bill
+    JOIN taikhoan
+    ON taikhoan.id = bill.User_ID
+    WHERE bill.Time_set = '$currentDate'
+    GROUP BY bill.User_ID
+    ORDER BY bil_ct.id DESC 
+    ";
     return pdo_query($sql);
 }
 
-function load_all_thongke($ngay)
+function thongke_tuan($currentDate, $firstDayOfWeek)
 {
-    $query = "SELECT * FROM thongke WHERE 1";
-    if ($ngay == 365) {
-        $query .= " AND ngaydat >= DATE_SUB(NOW(), INTERVAL 365 DAY)";
-    } else if ($ngay == 180) {
-        $query .= " AND ngaydat >= DATE_SUB(NOW(), INTERVAL 180 DAY)";
-    } else if ($ngay == 90) {
-        $query .= " AND ngaydat >= DATE_SUB(NOW(), INTERVAL 90 DAY)";
-    } else if ($ngay == 28) {
-        $query .= " AND ngaydat >= DATE_SUB(NOW(), INTERVAL 28 DAY)";
-    } else if ($ngay == 7) {
-        $query .= " AND ngaydat >= DATE_SUB(NOW(), INTERVAL 7 DAY)";
-    } else if ($ngay == 1) {
-        $query .= " AND ngaydat >= DATE_SUB(NOW(), INTERVAL 1 DAY)";
-    }
-    return pdo_query($query);
+    $sql = "SELECT *, SUM(bill.price) as tongdoanhthu, SUM(bil_ct.soluong) as soluongsp, SUM(bill.User_ID) as sumbill 
+    FROM bill JOIN bil_ct 
+    ON bill.Bill_ID  = bil_ct.id_bill
+    JOIN taikhoan
+    ON taikhoan.id = bill.User_ID
+    WHERE bill.Time_set >= '$firstDayOfWeek' AND bill.Time_set <= '$currentDate'
+    GROUP BY bill.User_ID, bill.Time_set
+    ORDER BY bill.Time_set DESC 
+    ";
+    return pdo_query($sql);
 }
-?>
+
+function thongke_thang($currentMonth)
+{
+    $sql = "SELECT *, SUM(bill.price) as tongdoanhthu, DATE_FORMAT(bill.Time_set, '%Y-%m') AS Month, SUM(bil_ct.soluong) as soluongsp, SUM(bill.User_ID) as sumbill 
+    FROM bill JOIN bil_ct 
+    ON bill.Bill_ID  = bil_ct.id_bill
+    JOIN taikhoan
+    ON taikhoan.id = bill.User_ID
+    WHERE DATE_FORMAT(bill.Time_set, '%Y-%m') = '$currentMonth'
+    GROUP BY bill.User_ID, bill.Time_set
+    ORDER BY bill.Time_set DESC 
+    ";
+    return pdo_query($sql);
+}
+
+
+function Count_price_tk($currentDate)
+{
+    $sql = "SELECT SUM(price) AS total_price FROM bill WHERE Time_set = '$currentDate'";
+    return pdo_query_one($sql);
+}
+
+function Count_price_tuan($currentDate, $firstDayOfWeek)
+{
+    $sql = "SELECT SUM(price) AS total_price FROM bill WHERE Time_set >= '$firstDayOfWeek' AND Time_set <= '$currentDate'";
+    return pdo_query_one($sql);
+}
+
+function Count_price_thang($currentMonth)
+{
+    $sql = "SELECT SUM(price) AS total_price FROM bill WHERE DATE_FORMAT(Time_set, '%Y-%m') = '$currentMonth'";
+    return pdo_query_one($sql);
+}

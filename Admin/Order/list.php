@@ -21,11 +21,12 @@
                     <tbody>
                         <?php foreach ($list_order as $order) :
                             extract($order);
-                            $chitiet = "?act=ct_order&user_id=" . $User_ID;
+                            $chitiet = "?act=ct_order&user_id=$User_ID&time=$Time_set";
+                            $formatDate = date("d/m/Y", strtotime($Time_set));
                         ?>
                             <tr>
                                 <td><?= $hovaten ?></td>
-                                <td><?= $Time_set ?></td>
+                                <td><?= $formatDate ?></td>
                                 <td><?= number_format($total_amount) ?> VND</td>
                                 <td>
                                     <a class="btn btn-primary" href="<?= $chitiet ?>">Chi tiết</a>
