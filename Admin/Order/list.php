@@ -13,35 +13,22 @@
                     <thead>
                         <tr>
                             <th class="text-primary  fw-bold">Họ Tên</th>
-                            <th class="text-primary  fw-bold">Tên sản phẩm</th>
-                            <th class="text-primary  fw-bold">Màu-Size-SL</th>
                             <th class="text-primary  fw-bold">Ngày đặt</th>
-                            <th class="text-primary  fw-bold">Phone</th>
-                            <th class="text-primary  fw-bold">Địa chỉ</th>
-                            <th class="text-primary  fw-bold">Phương thức</th>
-                            <th class="text-primary  fw-bold">Trạng thái</th>
                             <th class="text-primary  fw-bold">Thanh toán</th>
-                            <th class="text-primary  fw-bold">Action</th>
+                            <th class="text-primary  fw-bold">Xem</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($list_order as $order) :
                             extract($order);
-                            $sua = "index.php?act=update_order&id=" . $id;
+                            $chitiet = "?act=ct_order&user_id=" . $User_ID;
                         ?>
                             <tr>
-                                <td><?= $hovatennhan ?></td>
-                                <td><?= $tensp ?></td>
-                                <td><?= $color ?>-<?= $Size ?>-<?= $soLuong ?></td>
-                                <td><?= $ngaydathang ?></td>
-                                <td><?= $sodienthoainhan ?></td>
-                                <td><?= $diachinhan ?></td>
-                                <td><?= $phuongthuctt ?></td>
-                                <td><?= $trangthai ?></td>
-                                <td><?= $thanhtoan ?></td>
+                                <td><?= $hovaten ?></td>
+                                <td><?= $Time_set ?></td>
+                                <td><?= number_format($total_amount) ?> VND</td>
                                 <td>
-                                    <a href="<?= $sua ?>"><input class="btn btn-primary btn-sm trash" type="button" value="Sửa">
-                                    </a>
+                                    <a class="btn btn-primary" href="<?= $chitiet ?>">Chi tiết</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

@@ -6,7 +6,7 @@
 function pdo_get_connection()
 {
     $dburl = "mysql:host=localhost;
-            dbname=ban_ao;
+            dbname=ban_ao2;
             charset=utf8";
     $username = 'root';
     $password = '';
@@ -101,10 +101,11 @@ function pdo_query_value($sql)
     }
 }
 
-function select_all($sql){
+function select_all($sql)
+{
     $conn = pdo_get_connection();
     $stmt = $conn->prepare($sql);
-    $stmt -> execute();
+    $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $conn = null;
     return $result;

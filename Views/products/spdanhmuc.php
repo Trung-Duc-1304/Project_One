@@ -1,6 +1,23 @@
+<?php $tongsp = count($list_sp_dm);
+        $limit =8;
+        // Kiểm tra nếu $total hoặc $limit không phải là số hoặc rỗng
+        if (!is_numeric($tongsp) || !is_numeric($limit) || $limit == 0) {
+            echo "Dữ liệu đầu vào không hợp lệ!";
+        } else {
+            //Tính số trang
+            $page = ceil($tongsp / $limit);
+        }
+        $hihi = (isset($_GET['page']) ? $_GET[('page')] : 1);
+?>
 <section>
-    <div class="cs_height_140 cs_height_lg_80"></div>
+    <div class="cs_height_40 cs_height_lg_80"></div>
     <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="cs_single_product_breadcrumb breadcrumb">
+                <li class="breadcrumb-item"><a href="?act=index">Trang Chủ</a></li>
+                <li class="breadcrumb-item"><a href="?act=products">Sản Phẩm</a></li>
+            </ol>
+        </nav>
         <div class="row cs_gap_y_70">
             <div class="col-lg-3">
                 <div class="cs_filter_sidebar">
@@ -22,6 +39,30 @@
                     </div>
                     <div class="cs_filter_sidebar_in">
                         <div class="cs_filter_sidebar_in">
+                            
+                            <!-- Lọc giá -->
+                            <div class="cs_filter_widget mt-3">
+                                <h3 class="cs_filter_widget_title cs_medium cs_fs_18">Price <span></span></h3>
+                                <div class="cs_range_slider_wrap">
+                                    <form action="?act=spdanhmuc&id=<?=$_GET['id']?>" method="post">
+                                        <label for="giaspdau">Giá thấp nhất:</label>
+                                        <select class="form-select" name="giaspdau" id="giaspdau">
+                                            <option value="150000">150.000 VNĐ</option>
+                                            <option value="200000">200.000 VNĐ</option>
+                                            <option value="300000">300.000 VNĐ</option>
+                                        </select>
+                                        <label for="giaspcuoi">Giá cao nhất:</label>
+                                        <select class="form-select" name="giaspcuoi" id="giaspcuoi">
+                                            <option value="300000">300.000 VNĐ</option>
+                                            <option value="500000">500.000 VNĐ</option>
+                                            <option value="1000000">1000.000 VNĐ</option>
+                                        </select>
+                                        <div class="d-flex justify-content-center ">
+                                            <input class="btn btn-primary mt-3" type="submit" value="Lọc Sản Phẩm" name="submitlocgia">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                             <!-- DANHMUC -->
                             <div>
                                 <h4 class="mt-5 cs_filter_widget_title cs_medium cs_fs_18">Danh mục <span></span></h4>
@@ -39,86 +80,96 @@
                             </div>
 
                         </div>
-                        <!-- <div class="cs_filter_widget mt-3">
-                            <h3 class="cs_filter_widget_title cs_medium cs_fs_18">Price <span></span></h3>
-                            <div class="cs_range_slider_wrap">
-                                <form  action="?act=spdanhmuc" method="post">
-                                    <label for="giaspdau">Giá thấp nhất:</label>
-                                    <select  class="form-select" name="giaspdau" id="giaspdau">
-                                        <option value="150000">150.000 VNĐ</option>
-                                        <option value="200000">200.000 VNĐ</option>
-                                        <option value="300000">300.000 VNĐ</option>
-                                    </select>
-                                    <label for="giaspcuoi">Giá cao nhất:</label>
-                                    <select class="form-select" name="giaspcuoi" id="giaspcuoi">
-                                        <option value="300000">300.000 VNĐ</option>
-                                        <option value="500000">500.000 VNĐ</option>
-                                        <option value="1000000">1000.000 VNĐ</option>
-                                    </select>
-                                    <div class="d-flex justify-content-center ">
-                                        <input class="btn btn-primary mt-3" type="submit" value="Lọc Sản Phẩm" name="submitlocgia">
-                                    </div>
-                                </form>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
             <!-- .col -->
             <div class="col-lg-9">
                 <div class="cs_product_grid cs_product_grid_3 cs_grid_view">
-                    <?php
-                    foreach ($list_sp_dm as $sp) {
-                        extract($sp); ?>
-                        <div class="cs_product_col">
-                            <div class="cs_product cs_style_1">
-                                <div class="cs_product_thumb position-relative">
-                                    <a href="?act=sanpham_ct&id=<?= $id ?>">
-                                        <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:400px;" alt="">
-                                    </a>
-                                    <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
-                                    <div class="cs_cart_badge position-absolute">
-                                        <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                            <i class="fa-regular fa-heart"></i>
+                        <?php foreach ($list_sp_dm as $sp) {
+                            extract($sp); ?>
+                            <div class="cs_product_col">
+                                <div class="cs_product cs_style_1">
+                                    <div class="cs_product_thumb position-relative">
+                                        <a href="?act=sanpham_ct&id=<?= $id ?>">
+                                            <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:400px;" alt="">
                                         </a>
-                                        <a href="?act=sanpham_ct&id=<?= $id ?>" class="cs_cart_icon cs_accent_bg cs_white_color">
-                                            <i class="fa-regular fa-eye"></i>
-                                        </a>
-                                    </div>
-                                    <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">Add To Cart</a>
-                                </div>
-                                <div class="cs_product_info text-center">
-                                    <h3 class="cs_product_title cs_fs_21 cs_medium">
-                                        <a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a>
-                                    </h3>
-                                    <div class="cs_single_product_review">
-                                        <div class="cs_rating_container">
-                                            <div class="cs_rating cs_size_sm" data-rating="4.5">
-                                                <div class="cs_rating_percentage"></div>
-                                            </div>
+                                        <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
+                                        <div class="cs_cart_badge position-absolute">
+                                            <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                            <a href="?act=sanpham_ct&id=<?= $id ?>" class="cs_cart_icon cs_accent_bg cs_white_color">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </a>
                                         </div>
-                                        <span>(5)</span>
-                                        <span>Stock: <span class="cs_accent_color">12 in stock</span></span>
+                                        
                                     </div>
-                                    <p class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium">$250.00</p>
-                                    <p class="cs_product_desc">Our men black t-shirt offers a classic fit and is made from high-quality pure cotton <br>materials to keep you feeling and looking great.</p>
-                                    <div class="cs_action_btns">
-                                        <a href="#" class="cs_btn cs_style_1 cs_fs_16 cs_medium cs_accent_btn">Add to Cart</a>
-                                        <button class="cs_heart_btn"><i class="fa-regular fa-heart"></i></button>
+                                    <div class="cs_product_info text-center">
+                                        <h3 class="cs_product_title cs_fs_21 cs_medium">
+                                            <a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a>
+                                        </h3>
+                                        <div class="cs_single_product_review">
+                                            <div class="cs_rating_container">
+                                                <div class="cs_rating cs_size_sm" data-rating="4.5">
+                                                    <div class="cs_rating_percentage"></div>
+                                                </div>
+                                            </div>
+                                            <span>(5)</span>
+                                            <span>Stock: <span class="cs_accent_color">12 in stock</span></span>
+                                        </div>
+                                        <div class="mt-5">
+                                            <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+                                        </div>
+                                        <p class="cs_product_desc">Our men black t-shirt offers a classic fit and is made from high-quality pure cotton <br>materials to keep you feeling and looking great.</p>
+                                        <div class="cs_action_btns">
+                                            <a href="#" class="cs_btn cs_style_1 cs_fs_16 cs_medium cs_accent_btn">Add to Cart</a>
+                                            <button class="cs_heart_btn"><i class="fa-regular fa-heart"></i></button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    <?php } ?>
+                        <?php } ?>
                 </div>
                 <div class="cs_height_75 cs_height_lg_50"></div>
-                <!-- <ul class="cs_pagination cs_fs_21 cs_semibold cs_mp0">
-                        <li class="cs_page_item active"><a class="cs_page_link" href="#">01</a></li>
-                        <li class="cs_page_item"><a class="cs_page_link" href="#">02</a></li>
-                        <li class="cs_page_item"><a class="cs_page_link" href="#">03</a></li>
-                        <li class="cs_page_item"><a class="cs_page_link" href="#"><i class="fa-solid fa-arrow-right"></i></a></li>
-                    </ul> -->
-            </div>
+                <?php if (!isset($_POST['submittimkiem'])) { ?>
+                    <ul class="cs_pagination cs_fs_21 cs_semibold cs_mp0">
+
+                        <?php if ($hihi - 1 > 0) { ?>
+                            <li class="cs_page_item"><a class="cs_page_link" href="?act=products&page=<?php echo $hihi - 1 ?>"><i class="fa-solid fa-arrow-left"></i></a></li>
+                        <?php } ?>
+                        <?php for ($i = 1; $i <= $page; $i++) { ?>
+                            <li class=" cs_page_item <?php echo (($hihi == $i) ? 'active' : '') ?>"><a class="cs_page_link" href="?act=products&page=<?php echo $i ?>"><?php echo $i ?></a></li>
+                        <?php } ?>
+                        <?php if ($hihi + 1 <= $page) { ?>
+                            <li class="cs_page_item"><a class="cs_page_link" href="?act=products&page=<?php echo $hihi + 1 ?>"><i class="fa-solid fa-arrow-right"></i></a></li>
+                        <?php } ?>
+                    </ul>
+                <?php  }else{?>
+                        <?php $tongsp = count($list_sp_dm);
+                        $limit =8;
+                        // Kiểm tra nếu $total hoặc $limit không phải là số hoặc rỗng
+                        if (!is_numeric($tongsp) || !is_numeric($limit) || $limit == 0) {
+                            echo "Dữ liệu đầu vào không hợp lệ!";
+                        } else {
+                            //Tính số trang
+                            $page = ceil($tongsp / $limit);
+                        }
+                        $hihi = (isset($_GET['page']) ? $_GET[('page')] : 1);
+                        ?>
+                        <ul class="cs_pagination cs_fs_21 cs_semibold cs_mp0">
+                        <?php if($hihi - 1 > 0) {?>
+                        <li class="cs_page_item"><a class="cs_page_link" href="?act=products&page=<?php echo $hihi - 1 ?>"><i class="fa-solid fa-arrow-left"></i></a></li>
+                        <?php }?> 
+                        <?php for($i=1;$i<=$page;$i++){ ?>
+                                <li class=" cs_page_item <?php echo (($hihi == $i) ? 'active' : '')?>"><a class="cs_page_link" href="?act=products&page=<?php echo $i?>"><?php echo $i ?></a></li>
+                        <?php }?>
+                        <?php if($hihi + 1 <= $page) {?>
+                        <li class="cs_page_item"><a class="cs_page_link" href="?act=products&page=<?php echo $hihi + 1 ?>"><i class="fa-solid fa-arrow-right"></i></a></li>
+                        <?php }?>
+                    </ul>
+                <?php }?>    
+                
             <!-- .col -->
         </div>
     </div>

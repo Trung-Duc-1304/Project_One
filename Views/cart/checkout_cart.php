@@ -26,13 +26,13 @@
             <div class="cs_height_45 cs_height_lg_40"></div>
             <div class="row">
                 <div class="col-lg-6">
-                    <label class="cs_shop-label">Tên đầu tiên *</label>
-                    <input type="text" class="cs_shop-input">
+                    <label class="cs_shop-label">Họ và tên *</label>
+                    <input value="<?= $_SESSION['user']['hovaten'] ?>" type="text" class="cs_shop-input">
                     <div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div>
                 </div>
                 <div class="col-lg-6">
-                    <label class="cs_shop-label">Họ *</label>
-                    <input type="text" class="cs_shop-input">
+                    <label class="cs_shop-label">Tên đăng nhập*</label>
+                    <input value="<?= $_SESSION['user']['tendangnhap'] ?>" type="text" class="cs_shop-input">
                 </div>
                 <!-- <div class="col-lg-12">
                     <label class="cs_shop-label">Tình trạng *</label>
@@ -44,11 +44,11 @@
                 </div> -->
                 <div class="col-lg-12">
                     <label class="cs_shop-label">Điện thoại *</label>
-                    <input type="text" class="cs_shop-input">
+                    <input value="<?= $_SESSION['user']['sodienthoai'] ?>" type="text" class="cs_shop-input">
                 </div>
                 <div class="col-lg-12">
                     <label class="cs_shop-label">Địa chỉ email*</label>
-                    <input type="text" class="cs_shop-input">
+                    <input value="<?= $_SESSION['user']['email'] ?>" type="text" class="cs_shop-input">
                 </div>
             </div>
             <div class="cs_height_45 cs_height_lg_45"></div>
@@ -66,13 +66,14 @@
                         <tbody>
                             <tr class="cs_semi_bold">
                                 <td>Các sản phẩm</td>
-                                <td class="text-end">Số lượng</td>
+                                <td class="text-end">Giá tiền</td>
                             </tr>
-                            <?php foreach ($list_cart_user as $cart) :
+                            <?php foreach ($list_cart_user as $key => $cart) :
+                                $_SESSION['cartsp'][$key] = $cart;
                                 extract($cart) ?>
                                 <tr>
-                                    <td><?= $tensp ?> x <?= $soluong ?></td>
-                                    <td class="text-end"><?= number_format($thanhtien, 0, ',', '.') ?> VNĐ</td>
+                                    <td><?= $tensp ?> <span style="color:red;">(<?= $soluong ?>)</span> </td>
+                                    <td class="text-end"><?= number_format(($soluong * $giasp), 0, ',', '.') ?> VNĐ</td>
                                 </tr>
                             <?php endforeach ?>
                             <tr>
@@ -101,19 +102,15 @@
                     <div class="cs_height_20 cs_height_lg_20"></div>
                     <!-- <button class="cs_btn cs_style_1 cs_fs_16 cs_medium w-100">Đặt Hàng Ngay</button> -->
                     <div class="d-flex justify-content-center align-items-center">
-                        <form action="?act=pay_code" method="post">
-                            <div class="btn">
-                                <button onclick="confirmPayment()" type="button" class="btn btn-primary" name="monny">Thanh Toán Tiền Mặt</button>
-                                <!-- <input onclick="confirmPayment_vnpay()" class="btn btn-info" type="submit" name="redirect" value="Thanh Toán VNPAY">
-                            <input type="hidden" name="price" value="<?= $total_amount ?>"> -->
-                            </div>
-                        </form>
-                        <form method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="Views/momo/momo_pay_atm.php">
-                            <input class="btn btn-primary" type="submit" name="payUrl" value="Thanh Toán Momo">
+
+                        <form method="POST" target="_blank" action="?act=thanhtaanonline">
+                            <input type="submit" class="btn btn-primary" name="monny" value="Thanh Toán Tiền Mặt"></input>
+                            <input class="btn btn-primary" type="submit" name="payUrl" value="Thanh Toán VN Pay">
                             <input type="hidden" name="price" value="<?= $total_amount ?>">
                             <input type="hidden" name="tensp" value="<?= $tensp ?>">
                             <input type="hidden" name="soluong" value="<?= $soluong ?>">
                             <input type="hidden" name="size" value="<?= $size ?>">
+                            <input type="hidden" name="giasp" value="<?= $giasp ?>">
                             <input type="hidden" name="color" value="<?= $color ?>">
                             <input type="hidden" name="user_id" value="<?= $_SESSION['user']['id'] ?>">
                         </form>

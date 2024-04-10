@@ -134,43 +134,66 @@
         });
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var removeButtons = document.querySelectorAll('.remove-btn');
+        $(document).ready(function() {
+    // Lắng nghe sự kiện khi số lượng thay đổi
+    $('.cs_quantity_btn').on('click', function() {
+        var $button = $(this);
+        var $row = $button.closest('tr');
 
-            removeButtons.forEach(function(button) {
-                button.addEventListener('click', function() {
-                    var itemId = this.getAttribute('data-id');
-                    // Gửi yêu cầu xóa sản phẩm đến máy chủ PHP sử dụng AJAX
-                    var xhr = new XMLHttpRequest();
-                    xhr.onreadystatechange = function() {
-                        if (xhr.readyState === XMLHttpRequest.DONE) {
-                            if (xhr.status === 200) {
-                                // Xác nhận xóa thành công từ máy chủ, thực hiện xóa mục khỏi giao diện người dùng
-                                var item = document.querySelector('.item[data-id="' + itemId + '"]');
-                                if (item) {
-                                    item.parentNode.removeChild(item);
-                                }
-                            } else {
-                                // Xử lý lỗi nếu cần thiết
-                                console.error('Lỗi xóa sản phẩm');
-                            }
-                        }
-                    };
-                    xhr.open('POST', 'xoa_san_pham.php', true);
-                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-                    xhr.send('id=' + encodeURIComponent(itemId));
-                });
-            });
+        // Lấy ID của sản phẩm
+        var productId = $row.attr('data-product-id');
+
+        // Lấy giá tiền của sản phẩm
+        var pricePerItem = parseFloat($row.find('.unit-price').text().replace(' VNĐ', '').replace(/\./g, '').replace(',', '.'));
+
+        // Lấy số lượng hiện tại
+        var oldValue = parseInt($row.find('.cs_quantity_input').text());
+
+        
+        // Cập nhật số lượng mới
+        $row.find('.cs_quantity_input').text(newValue);
+
+        // Tính giá tiền mới dựa trên số lượng mới
+        var newPrice = pricePerItem * newValue;
+
+        // Cập nhật giá tiền mới vào cột Tổng
+        $row.find('.total-price').text(newPrice.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }));
+
+        // Lưu số lượng mới vào localStorage
+        localStorage.setItem('quantity_' + productId, newValue);
+
+        // Cập nhật tổng giá trị của tất cả các sản phẩm
+        updateTotalAmount();
+        
+    });
+
+    // Hàm cập nhật tổng giá trị của tất cả các sản phẩm
+    function updateTotalAmount() {
+        var totalAmount = 0;
+        $('.total-price').each(function() {
+            var price = parseFloat($(this).text().replace(' VNĐ', '').replace(/\./g, '').replace(',', '.'));
+            totalAmount += price;
         });
+
+        // Hiển thị tổng giá trị mới
+        $('.total-amount').text(totalAmount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }));
+    }
+
+    
+    // Cập nhật tổng giá trị của tất cả các sản phẩm sau khi tải lại trang
+    updateTotalAmount();
+});
+
+
     </script>
-    <script>
-        // ajax bình luận
-        function binhluanjs(id, hovaten) {
+   <script>
+    // ajax bình luận
+    function binhluanjs(id,hovaten){
             console.log("Bắt đầu hàm binhluanjs");
-            var noidung = $("#noidung").val();
-            if (noidung == "") $("#binhluanErr").text("Vui lòng nhập nội dung trước khi gửi!");
-            else {
-                var ngaybinhluan = $("#ngaybinhluan").val();
+            var noidung=$("#noidung").val();
+            if(noidung=="") $("#binhluanErr").text("Vui lòng nhập nội dung trước khi gửi!");
+            else{
+                var ngaybinhluan=$("#ngaybinhluan").val();
                 $.ajax({
                     type: 'POST',
                     url: 'index.php?act=sanpham_ct&id=' + id,
@@ -181,7 +204,7 @@
                         var soluongcu = parseInt($("#countbl").text());
                         var soluongmoi = soluongcu + 1;
                         $("#countbl").text(soluongmoi);
-                        $('#loadbinhluan').append('<div id="loadbinhluan"><ul class="cs_client_review_list cs_mp0"><li><div class="cs_client_review"><div class="cs_review_media"><div class="cs_review_media_thumb"><img src="assets/images/hihi.png" alt="Avatar"></div><div class="cs_review_media_right"><div class="cs_rating_container"><div class="cs_rating cs_size_sm" data-rating="5"><div class="cs_rating_percentage"></div></div></div><p class="mb-0 cs_primary_color cs_semibold">' + hovaten + '</p></div><p class="cs_review_posted_by">' + ngaybinhluan + '</p></div><p class="cs_review_text">' + noidung + '</p></div></li></ul></div>');
+                        $('#loadbinhluan').append('<div id="loadbinhluan"><ul class="cs_client_review_list cs_mp0"><li><div class="cs_client_review"><div class="cs_review_media"><div class="cs_review_media_thumb"><img src="assets/client/img/grid.png" alt="Avatar"></div><div class="cs_review_media_right"><div class="cs_rating_container"><div class="cs_rating cs_size_sm" data-rating="5"><div class="cs_rating_percentage"></div></div></div><p class="mb-0 cs_primary_color cs_semibold">' + hovaten + '</p></div><p class="cs_review_posted_by">' + ngaybinhluan + '</p></div><p class="cs_review_text">' + noidung + '</p></div></li></ul></div>');
                         $('#noidung').val('');
                         $("#binhluanErr").text("");
                     },
@@ -190,10 +213,9 @@
                         alert('Có lỗi xảy ra khi gửi bình luận');
                     }
                 });
-            }
-        }
-    </script>
-    Mainjs
+    }
+}
+   </script>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     </body>
 

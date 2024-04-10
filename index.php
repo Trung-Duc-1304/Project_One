@@ -6,29 +6,132 @@ require_once 'Model/danhmuc.php';
 require_once 'Model/sanpham.php';
 require_once 'Model/Account.php';
 require_once 'Model/Bienthe.php';
+require_once 'Model/bill.php';
 require_once 'Model/order.php';
 require_once 'Model/binhluan.php';
 require_once 'Model/Mail.php';
 require_once 'global.php';
 require_once 'helper.php';
-require_once 'views/header.php';
+
 $listsp = load_sp_home();
 $listdm = load_all_dm("");
 $list_sp_aothun = load_sp_aothun();
 $load_sp_khoac = load_sp_khoac();
 $list_sp_aoho = load_sp_aoho();
 $list_sp_aosw = load_sp_aosw();
-
+require_once 'views/header.php';
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
         case 'list_cart_user':
+
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 $id = $_GET['id'];
                 $list_cart_user = list_cart_user($id);
                 $sum_cart_user = sum_cart_user($id);
             }
             include_once 'views/cart/cart.php';
+            break;
+        case 'thanhtaanonline':
+            if (isset($_POST['monny']) && $_POST['monny']) {
+                if (!empty($_POST)) {
+                    $id = $_POST['user_id'];
+                    $tongtien = $_POST['price'];
+                    $_SESSION['tongtien'] = $tongtien;
+                    $timeset = date('Y/m/d');
+                    $_SESSION['idbill'] = $idbill = insert_bill($id, $tongtien, $timeset);
+                    foreach ($_SESSION['cartsp'] as $key => $value) {
+                        insert_bill_ct($idbill, $value['product_id'], $value['tensp'], $value['giasp'], $value['soluong'], $value['color'], $value['size']);
+                    }
+                }
+                header('Location: ?act=dathangthanhcong');
+            }
+
+            if (isset($_POST['payUrl']) && $_POST['payUrl']) {
+                if (!empty($_POST)) {
+                    $id = $_POST['user_id'];
+                    $tongtien = $_POST['price'];
+                    $_SESSION['tongtien'] = $tongtien;
+                    $timeset = date('y/m/d');
+                    $_SESSION['idbill'] = $idbill = insert_bill($id, $tongtien, $timeset);
+                    foreach ($_SESSION['cartsp'] as $key => $value) {
+                        insert_bill_ct($idbill, $value['product_id'], $value['tensp'], $value['giasp'], $value['soluong'], $value['color'], $value['size']);
+                    }
+                }
+                header('Location:vnpay_php/vnpay_php/vnpay_create_payment.php');
+            }
+
+
+            break;
+        case 'dathangthanhcong':
+            if (isset($_GET['vnp_ResponseCode']) && $_GET['vnp_ResponseCode'] == '00') {
+                update_billct($_SESSION['idbill']);
+            }
+            delete_cart1($_SESSION['user']['id']);
+            unset($_SESSION['idbill']);
+            unset($_SESSION['tongtien']);
+            unset($_SESSION['cartsp']);
+            include "Views/cart/camon.php";
+            break;
+        case 'lichsumuahang':
+            if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
+                if (isset($_GET['idorder']) && !empty($_GET['idorder'])) {
+                    $historyOder = historyOder($_SESSION['user']['id'], $_GET['idorder'], '', '');
+                } else {
+                    $historyOder = listallhistoryOder($_SESSION['user']['id'], '', '');
+                }
+                if (!empty($historyOder)) {
+                    $tongsp = sizeof($historyOder);
+                    $end = 8;
+                    $sotrang = ceil($tongsp / $end);
+                    $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                    $star = ($page - 1) * 8;
+                    if (isset($_GET['idorder']) && !empty($_GET['idorder'])) {
+                        $historyOder = "";
+                        $historyOder1 = historyOder($_SESSION['user']['id'], $_GET['idorder'], $star, $end);
+                    } else {
+                        $historyOder = listallhistoryOder($_SESSION['user']['id'], $star, $end);
+                    }
+                }
+            }
+            include "Views/cart/lichsumuahang.php";
+            break;
+        case 'orderCancel':
+            if (isset($_GET['huy'])) {
+                $id = $_GET['ID'];
+                xoa_trangthai($id);
+                header('Location:?act=lichsumuahang');
+            }
+
+            include "Views/cart/lichsumuahang.php";
+            break;
+
+        case 'tangsl':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                if (isset($_GET['product_id']) && $_GET['product_id'] != "") {
+                    $product_id = $_GET['product_id'];
+                    $showone = load_onespct($product_id);
+                    $soluong = $_GET['soluong'];
+                    if ($soluong == 1) {
+                        $soluong = 1;
+                        if (isset($_GET['tang'])) {
+                            $soluong = $soluong + 1;
+                        }
+                    } else {
+                        if (isset($_GET['tang'])) {
+                            $soluong = $soluong + 1;
+                        }
+                        if (isset($_GET['giam'])) {
+                            $soluong = $soluong - 1;
+                        }
+                    }
+                    $tongtien = $soluong * $showone['giasp'];
+                    update_giohang($id, $soluong, $tongtien);
+                }
+            }
+            $iduser = $_SESSION['user']['id'];
+            header("Location: ?act=list_cart_user&id=$iduser");
             break;
         case 'sanpham_ct':
             if (isset($_GET['id']) && ($_GET['id'] != "")) {
@@ -60,8 +163,10 @@ if (isset($_GET['act'])) {
             break;
 
         case 'products':
-            if (isset($_POST['submittimkiem'])) $kyw = $_POST['timkiem'];
-            else $kyw = "";
+            if (isset($_POST['submittimkiem']))
+                $kyw = $_POST['timkiem'];
+            else
+                $kyw = "";
             if (isset($_POST['submitlocgia'])) {
                 $giadau = $_POST['giaspdau'];
                 $giacuoi = $_POST['giaspcuoi'];
@@ -69,8 +174,10 @@ if (isset($_GET['act'])) {
                 $giadau = 0;
                 $giacuoi = 0;
             }
-            if (isset($_GET['page']) && ($_GET['page'] != "")) $page = $_GET['page'];
-            else $page = 1;
+            if (isset($_GET['page']) && ($_GET['page'] != ""))
+                $page = $_GET['page'];
+            else
+                $page = 1;
             $tongsp = dem_sp();
             $load_all_sp = load_all_sphome(0, $kyw, $giadau, $giacuoi, $page);
             $listdm = load_all_dm("");
@@ -80,8 +187,10 @@ if (isset($_GET['act'])) {
 
         case 'spdanhmuc':
             if (isset($_GET['id']) && ($_GET['id'] != "")) {
-                if (isset($_POST['submittimkiem'])) $kyw = $_POST['timkiem'];
-                else $kyw = "";
+                if (isset($_POST['submittimkiem']))
+                    $kyw = $_POST['timkiem'];
+                else
+                    $kyw = "";
                 if (isset($_POST['submitlocgia'])) {
                     $giadau = $_POST['giaspdau'];
                     $giacuoi = $_POST['giaspcuoi'];
@@ -229,7 +338,8 @@ if (isset($_GET['act'])) {
                         $check = false;
                         $tendangnhapErr = "Vui lòng không bỏ trống !";
                     }
-                    if (empty($sodienthoai)) $sodienthoai = "";
+                    if (empty($sodienthoai))
+                        $sodienthoai = "";
                     else {
                         if (!preg_match("/^0[1-9]\d{8}$/", $sodienthoai)) {
                             $check = false;
@@ -354,11 +464,13 @@ if (isset($_GET['act'])) {
 
                 $vnp_Url = $vnp_Url . "?" . $query;
                 if (isset($vnp_HashSecret)) {
-                    $vnpSecureHash =   hash_hmac('sha512', $hashdata, $vnp_HashSecret); //  
+                    $vnpSecureHash = hash_hmac('sha512', $hashdata, $vnp_HashSecret); //  
                     $vnp_Url .= 'vnp_SecureHash=' . $vnpSecureHash;
                 }
                 $returnData = array(
-                    'code' => '00', 'message' => 'success', 'data' => $vnp_Url
+                    'code' => '00',
+                    'message' => 'success',
+                    'data' => $vnp_Url
                 );
                 if (isset($_POST['redirect'])) {
                     header('Location: ' . $vnp_Url);

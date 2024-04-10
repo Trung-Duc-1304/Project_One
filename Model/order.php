@@ -15,7 +15,7 @@ function list_cart()
 
 function list_cart_user($id)
 {
-    $sql = "SELECT  giohang.*, taikhoan.hovaten, sanpham.tensp, sanpham.image FROM giohang
+    $sql = "SELECT  giohang.*, taikhoan.hovaten, sanpham.tensp, sanpham.image,giasp,giakm FROM giohang
     INNER JOIN taikhoan 
     ON giohang.idtaikhoan = taikhoan.id
     INNER JOIN sanpham 
@@ -26,9 +26,10 @@ function list_cart_user($id)
     return pdo_query($sql);
 }
 
+
 function sum_cart_user($id)
 {
-    $sql = "SELECT giohang.*, SUM(giohang.thanhtien * giohang.soluong) AS total_amount FROM giohang
+    $sql = "SELECT giohang.*, SUM(giohang.thanhtien) AS total_amount FROM giohang
     INNER JOIN sanpham 
     ON giohang.product_id = sanpham.id
     WHERE giohang.idtaikhoan = $id";
@@ -37,19 +38,56 @@ function sum_cart_user($id)
 
 function list_order()
 {
-    $sql = "SELECT * FROM donhang WHERE 1
-    ";
+    $sql = "SELECT *,bill.trangthai as trangthaidh,  SUM(bil_ct.giasp * bil_ct.soluong) AS total_amount FROM bill 
+    JOIN taikhoan ON bill.User_ID  = taikhoan.id 
+    JOIN bil_ct ON bill.Bill_ID = bil_ct.id_bill
+    JOIN sanpham ON bil_ct.product_id = sanpham.id 
+    GROUP BY bill.User_ID";
+    return pdo_query($sql);
+}
+
+function Count_order()
+{
+    $sql = "SELECT COUNT(*) AS total_orders FROM `bil_ct`";
+    return pdo_query_one($sql);
+}
+function list_order_home()
+{
+    $sql = "SELECT *,bill.trangthai as trangthaidh FROM bill 
+    JOIN taikhoan ON bill.User_ID  = taikhoan.id 
+    JOIN bil_ct ON bill.Bill_ID = bil_ct.id_bill
+    JOIN sanpham ON bil_ct.product_id = sanpham.id";
+    return pdo_query($sql);
+}
+
+function list_order_user($Userid)
+{
+    $sql = "SELECT *,bill.trangthai as trangthaidh, bil_ct.id AS idbillct FROM bill 
+    JOIN taikhoan ON bill.User_ID  = taikhoan.id 
+    JOIN bil_ct ON bill.Bill_ID = bil_ct.id_bill
+    JOIN sanpham ON bil_ct.product_id = sanpham.id
+    WHERE  bill.User_ID = $Userid";
     return pdo_query($sql);
 }
 
 function list_order_one()
 {
-    $sql = "SELECT * FROM donhang WHERE id = " . $_GET['id'];
+    $sql = "SELECT *,bill.trangthai as trangthaidh, bil_ct.id AS idbillct FROM bill 
+    JOIN bil_ct ON bill.Bill_ID = bil_ct.id_bill
+    WHERE Bill_ID  = " . $_GET['id'];
     return pdo_query_one($sql);
 }
 
-function update_order($id, $trangthai, $thanhtoan)
+function update_order($id, $idbill, $trangthai)
 {
-    $query = "UPDATE `donhang` SET `trangthai`='$trangthai', `thanhtoan`='$thanhtoan'  WHERE id=" . $id;
+    $query = "UPDATE `bill` AS b
+    INNER JOIN `bil_ct` AS bc
+    SET b.trangthai = $trangthai  
+    WHERE b.Bill_ID = $id AND bc.id = " . $idbill;
+    pdo_execute($query);
+}
+function update_giohang($id, $soluong, $thanhtien)
+{
+    $query = "UPDATE `giohang` SET `soluong`='$soluong', `thanhtien`='$thanhtien'  WHERE id=" . $id;
     pdo_execute($query);
 }

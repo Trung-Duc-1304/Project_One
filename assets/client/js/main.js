@@ -470,7 +470,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const incrementBtn = document.querySelector('.cs_increment');
-    const quantityInput = document.querySelector('.cs_quantity_input');
+    const quantityInput = document.querySelector('.cs_quantity_input h');
 
     incrementBtn.addEventListener('click', function() {
         let currentQuantity = parseInt(quantityInput.textContent);
@@ -482,7 +482,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const decrementBtn = document.querySelector('.cs_decrement');
-    const quantityInput = document.querySelector('.cs_quantity_input');
+    const quantityInput = document.querySelector('.cs_quantity_input h');
 
     decrementBtn.addEventListener('click', function() {
         let currentValue = parseInt(quantityInput.textContent);

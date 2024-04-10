@@ -4,7 +4,7 @@ function load_sp_aothun()
     $query = "SELECT sanpham.*
     FROM sanpham
     INNER JOIN danhmuc ON sanpham.iddm = danhmuc.id
-    WHERE danhmuc.tendm = 'Áo Thun'";
+    WHERE sanpham.status = 1 AND danhmuc.tendm = 'Áo Thun'";
     return pdo_query($query);
 }
 function load_sp_aoho()
@@ -12,7 +12,7 @@ function load_sp_aoho()
     $query = "SELECT sanpham.*
     FROM sanpham
     INNER JOIN danhmuc ON sanpham.iddm = danhmuc.id
-    WHERE danhmuc.tendm = 'Áo Hoodie'";
+    WHERE sanpham.status = 1 AND danhmuc.tendm = 'Áo Hoodie'";
     return pdo_query($query);
 }
 
@@ -21,7 +21,7 @@ function load_sp_khoac()
     $query = "SELECT sanpham.*
     FROM sanpham
     INNER JOIN danhmuc ON sanpham.iddm = danhmuc.id
-    WHERE danhmuc.tendm = 'Áo Khoác'";
+    WHERE sanpham.status = 1 AND danhmuc.tendm = 'Áo Khoác'";
     return pdo_query($query);
 }
 function load_sp_aosw()
@@ -29,17 +29,17 @@ function load_sp_aosw()
     $query = "SELECT sanpham.*
     FROM sanpham
     INNER JOIN danhmuc ON sanpham.iddm = danhmuc.id
-    WHERE danhmuc.tendm = 'Áo Sweater'";
+    WHERE sanpham.status = 1 AND danhmuc.tendm = 'Áo Sweater'";
     return pdo_query($query);
 }
 function load_sp_home()
 {
-    $query = "SELECT * FROM sanpham ORDER BY id desc limit 0,12";
+    $query = "SELECT * FROM sanpham WHERE `status` = 1 ORDER BY id desc limit 0,12";
     return pdo_query($query);
 }
 function load_sp_nb()
 {
-    $query = "SELECT * FROM sanpham ORDER BY luotxem desc limit 0,8";
+    $query = "SELECT * FROM sanpham WHERE `status` = 1 ORDER BY luotxem desc limit 0,8";
     return pdo_query($query);
 }
 function load_all_sp($kyw, $page)
@@ -47,7 +47,7 @@ function load_all_sp($kyw, $page)
     $query = "SELECT sanpham.*, danhmuc.tendm FROM sanpham 
     INNER JOIN danhmuc 
     ON sanpham.iddm=danhmuc.id 
-    WHERE 1";
+    WHERE sanpham.status = 1";
     if ($kyw != "") {
         $query .= " AND (tensp like '%" . $kyw . "%' OR giasp LIKE '%" . $kyw . "%')";
     }
@@ -61,7 +61,7 @@ function load_all_sp($kyw, $page)
 }
 function load_sp_lq($iddm)
 {
-    $query = "SELECT sanpham.*, danhmuc.tendm FROM sanpham INNER JOIN danhmuc ON sanpham.iddm=danhmuc.id WHERE 1";
+    $query = "SELECT sanpham.*, danhmuc.tendm FROM sanpham INNER JOIN danhmuc ON sanpham.iddm=danhmuc.id WHERE sanpham.status = 1";
     if ($iddm != "") {
         $query .= " AND iddm=" . $iddm;
     }
@@ -98,7 +98,7 @@ function dem_sp()
 }
 function load_all_spdm($iddm, $kyw, $giadau, $giacuoi, $page)
 {
-    $query = "SELECT * FROM sanpham WHERE 1";
+    $query = "SELECT * FROM sanpham WHERE `status` = 1";
     if ($iddm > 0) {
         $query .= " AND iddm=$iddm";
     }
@@ -116,7 +116,7 @@ function load_all_spdm($iddm, $kyw, $giadau, $giacuoi, $page)
 
 function load_all_sphome($iddm, $kyw, $giadau, $giacuoi, $page)
 {
-    $query = "SELECT * FROM sanpham WHERE 1";
+    $query = "SELECT * FROM sanpham WHERE `status` = 1";
     if ($iddm > 0) {
         $query .= " AND iddm=$iddm";
     }
@@ -128,6 +128,21 @@ function load_all_sphome($iddm, $kyw, $giadau, $giacuoi, $page)
     }
     $batdau = intval($page * 8 - 8);
     $query .= " ORDER BY id desc limit $batdau,8";
+    return pdo_query($query);
+}
+function load_all_sphome2($iddm,$kyw,$giadau,$giacuoi,$page){
+    $query="SELECT * FROM sanpham WHERE `status` = 1";
+    if($iddm > 0){
+        $query .=" AND iddm=$iddm";
+    }
+    if($kyw != ''){
+        $query .=" AND (tensp like '%".$kyw."%' OR giasp LIKE '%" . $kyw . "%')";
+    }
+    if($giadau>0 && $giacuoi>0){
+        $query .=" AND giasp BETWEEN $giadau AND $giacuoi";
+    }
+    $batdau=intval($page*8-8);
+    $query .=" ORDER BY id desc ";
     return pdo_query($query);
 }
 function insert_sp($danhmuc, $tensp, $giasp, $image, $giakm, $khuyenmai, $mota)
@@ -183,7 +198,7 @@ function update_luotxem_sp($id, $luotxem)
 }
 function delete_sp($id)
 {
-    $query = "DELETE FROM sanpham WHERE id=" . $id;
+    $query = "UPDATE sanpham SET `status`= 0 WHERE id='$id'";
     pdo_execute($query);
 }
 function delete_sp_dm($id)
@@ -206,7 +221,6 @@ function sum_luotxem()
     $query = "SELECT SUM(luotxem) FROM sanpham";
     return pdo_query_one($query);
 }
-
 function delete_cart($user_id, $id)
 {
     $query = "DELETE FROM giohang WHERE idtaikhoan= $user_id AND id=" . $id;

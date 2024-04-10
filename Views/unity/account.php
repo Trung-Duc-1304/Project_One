@@ -114,7 +114,7 @@
                 <?php } else ?>
                 <div class="child">
                     <i class="fa-solid fa-cart-arrow-down"></i>
-                    <li><a href="?act=user_order&id=<?= $id ?>">Đơn Hàng</a></li>
+                    <li><a href="?act=lichsumuahang&id=<?= $_SESSION['user']['id']?>">Đơn Hàng</a></li>
                 </div>
                 <!-- <div class="child">
                     <i class="fa-solid fa-paper-plane"></i>

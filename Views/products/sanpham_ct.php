@@ -16,9 +16,8 @@ if (is_array($list_bt)) {
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="cs_single_product_breadcrumb breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
-                <li class="breadcrumb-item"><a href="#">Sản Phẩm</a></li>
-                <li class="breadcrumb-item"><a href="#">Chi Tiết Sản Phẩm</a></li>
+                <li class="breadcrumb-item"><a href="?act=index">Trang Chủ</a></li>
+                <li class="breadcrumb-item"><a href="?act=products">Sản Phẩm</a></li>
                 <li class="breadcrumb-item active"><?= $tensp ?></li>
             </ol>
         </nav>
@@ -118,16 +117,15 @@ if (is_array($list_bt)) {
                     <div class="cs_action_btns">
                         <div class="cs_quantity">
                             <button class="cs_quantity_btn cs_increment"><i class="fa-solid fa-angle-up"></i></button>
-                            <span class="cs_quantity_input" name="quantity">1</span>
-                            <button class="cs_quantity_btn cs_decrement"><i class="fa-solid fa-angle-down"></i>
-                            </button>
+                            <span class="cs_quantity_input">1</span>
+                            <button class="cs_quantity_btn cs_decrement"><i class="fa-solid fa-angle-down"></i></button>
                         </div>
                         <?php if (!isset($_SESSION['user'])) {
-                            echo " <a href='?act=login' type='submit' class='add-to-cart btn btn-primary' > Vui Lòng Đăng Nhập</a>";
-                            exit(); // Dừng mã PHP
-                        } ?>
+                            echo " <a href='?act=login' type='submit' class='add-to-cart btn btn-primary' > Thêm vào giỏ hàng</a>";
+                             // Dừng mã PHP
+                        }else{ ?>
                         <button type="submit" class="add-to-cart btn btn-primary" data-product-id="<?= $pro_id ?>" data-user-id="<?= $_SESSION['user']['id'] ?>" data-price-sp="<?= $giasp ?>" style="padding: 10px;">Thêm Vào Giỏ Hàng</button>
-                        <button class="cs_heart_btn"><i class="fa-regular fa-heart"></i></button>
+                        <?php }?>
                     </div>
                 </div>
             </div>
@@ -227,8 +225,7 @@ if (is_array($list_bt)) {
     <div class="cs_slider_container container" data-autoplay="0" data-loop="1" data-speed="600" data-center="0" data-slides-per-view="responsive" data-xs-slides="1" data-sm-slides="2" data-md-slides="2" data-lg-slides="3" data-add-slides="4">
         <div class="cs_slider_wrapper">
             <?php foreach ($splq as $sp) : ?>
-                <?php extract($sp);
-                if ($soluong > 0) { ?>
+                <?php extract($sp);?>
                     <div class="slick_slide_in">
                         <div class="cs_product cs_style_1">
                             <div class="cs_product_thumb position-relative">
@@ -244,24 +241,45 @@ if (is_array($list_bt)) {
                                         <i class="fa-regular fa-eye"></i>
                                     </a>
                                 </div>
-                                <a href="cart.html" class="cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute">
-                                    Add To Cart</a>
                             </div>
                             <div class="cs_product_info text-center">
                                 <h3 class="cs_product_title cs_fs_21 cs_medium">
                                     <a href="?act=sanpham_ct&id=<?= $id ?>">Pure black cotton men T-shirt</a>
                                 </h3>
                                 <div class="mt-5">
-                                    <sapn class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium new-price"><?= number_format($giakm, 0, ',', '.') ?>₫</span>
-                                        <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.') ?>₫</span>
+                                    <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.') ?>₫</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-            <?php }
-            endforeach; ?>
+            <?php  endforeach; ?>
 
         </div>
     </div>
     <div class="cs_height_134 cs_height_lg_80"></div>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const incrementBtn = document.querySelector('.cs_increment');
+    const quantityInput = document.querySelector('.cs_quantity_input');
+
+    incrementBtn.addEventListener('click', function() {
+        let currentQuantity = parseInt(quantityInput.textContent);
+        quantityInput.textContent = currentQuantity + 1;
+    });
+
+
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const decrementBtn = document.querySelector('.cs_decrement');
+    const quantityInput = document.querySelector('.cs_quantity_input ');
+
+    decrementBtn.addEventListener('click', function() {
+        let currentValue = parseInt(quantityInput.textContent);
+        if (currentValue > 1) {
+            quantityInput.textContent = currentValue - 1;
+        }
+    });
+});
+</script>

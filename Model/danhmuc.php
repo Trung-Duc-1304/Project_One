@@ -1,7 +1,7 @@
 <?php
 function load_all_dm($kyw)
 {
-    $query = "SELECT * FROM danhmuc WHERE 1";
+    $query = "SELECT * FROM danhmuc WHERE `status` = 1";
     if ($kyw != '') {
         $query .= " AND tendm like '%" . $kyw . "%'";
     }
@@ -10,7 +10,7 @@ function load_all_dm($kyw)
 }
 function load_one_dm($id)
 {
-    $query = "SELECT * FROM danhmuc WHERE id=" . $id;
+    $query = "SELECT * FROM danhmuc WHERE `status`= 1 AND id=" . $id;
     return pdo_query_one($query);
 }
 function insert_dm($tendm)
@@ -35,11 +35,11 @@ function insert_dm($tendm)
 }
 function update_dm($id, $tendm)
 {
-    $query = "UPDATE `danhmuc` SET `tendm`='$tendm' WHERE id=" . $id;
+    $query = "UPDATE `danhmuc` SET `tendm`='$tendm', WHERE id=" . $id;
     pdo_execute($query);
 }
 function delete_dm($id)
 {
-    $query = "DELETE FROM danhmuc WHERE id=" . $id;
+    $query = "UPDATE `danhmuc` SET `status`= 0 WHERE id=" . $id;
     pdo_execute($query);
 }

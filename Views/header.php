@@ -20,6 +20,7 @@
     <!-- Custom css -->
     <link rel="stylesheet" href="assets/client/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    
 </head>
 
 <body>
@@ -65,8 +66,16 @@
                                     <a href="index.php">Trang Chủ</a>
 
                                 </li>
-                                <li class="menu-item-has">
-                                    <a href="index.php?act=products">Sản phẩm</a>
+                                <li class="menu-item-has-children">
+                                    <a href="?act=products">Sản phẩm</a>
+                                    <ul>
+                                        <?php
+                                            foreach ($listdm as $dm) {
+                                            extract($dm);
+                                            echo '<li><a href="?act=spdanhmuc&id='.$id.'">'.$tendm.' </a></li>';
+                                            }
+                                        ?>
+                                    </ul>
                                 </li>
 
                                 <li class="menu-item-has">

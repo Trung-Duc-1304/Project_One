@@ -34,28 +34,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($list_cart_user as $cart) :
-                            extract($cart) ?>
-                            <tr>
+                        <?php ?>
+                        <?php foreach ($list_cart_user as $cart) : ?>
+                            <tr data-product-id="<?= $cart['id'] ?>">
                                 <td>
                                     <div class="cs_cart_table_media rounded-4 ">
-                                        <img class="rounded-4" src="./uploads/<?= $image ?>" alt="Thumb">
-                                        <h3><?= $tensp ?></h3>
+                                        <img class="rounded-4" src="./uploads/<?= $cart['image'] ?>" alt="Thumb">
+                                        <h3><?= $cart['tensp'] ?></h3>
                                     </div>
                                 </td>
-                                <td><?= number_format($thanhtien, 0, ',', '.') ?> VNĐ</td>
-                                <td><?= $size ?></td>
-                                <td><?= $color ?></td>
+                                <td class="unit-price"><?= number_format($cart['giasp'], 0, ',', '.') ?> VNĐ</td>
+                                <td><?= $cart['size'] ?></td>
+                                <td><?= $cart['color'] ?></td>
                                 <td>
                                     <div class="cs_quantity">
-                                        <button class="cs_quantity_btn cs_increment"><i class="fa-solid fa-angle-up"></i></button>
-                                        <span class="cs_quantity_input"><?= $soluong ?></span>
-                                        <button class="cs_quantity_btn cs_decrement"><i class="fa-solid fa-angle-down"></i></button>
+                                        <a href="?act=tangsl&soluong=<?=$cart['soluong']?>&id=<?= $cart['id']?>&product_id=<?=$cart['product_id']?>&tang"><button class="cs_quantity_btn cs_increment"><i class="fa-solid fa-angle-up"></i></button></a>
+                                        <span class="cs_quantity_input"><?= $cart['soluong'] ?></span>
+                                        <a href="?act=tangsl&soluong=<?=$cart['soluong']?>&id=<?= $cart['id']?>&product_id=<?=$cart['product_id']?>&giam"><button class="cs_quantity_btn cs_decrement"><i class="fa-solid fa-angle-down"></i></button></a>
                                     </div>
                                 </td>
-                                <td><?= number_format($thanhtien, 0, ',', '.') ?> VNĐ</td>
+                                <td class="total-price"><?= number_format($cart['soluong'] * $cart['giasp'], 0, ',', '.') ?> VNĐ</td>
                                 <td class="text-center">
-                                    <a href="?act=delete_cart&user_id=<?= $_SESSION['user']['id'] ?>&id=<?= $id ?>">
+                                    <a href="?act=delete_cart&user_id=<?= $_SESSION['user']['id'] ?>&id=<?= $cart['id'] ?>">
                                         <button onclick="return confirm('Bạn có chắc chắn muốn xóa không?')" class="cs_cart-table-close"><i class="fa-solid fa-xmark"></i></button>
                                     </a>
                                 </td>
@@ -69,27 +69,17 @@
         <div class="col-xl-4">
             <div class="cs_shop-side-spacing">
                 <div class="cs_shop-card">
-                    <!-- <h2 class="cs_fs_21 cs_medium">Coupon Code</h2>
-                        <form action="#" class="cs_coupon-doce-form">
-                            <input type="text" placeholder="Coupon Code">
-                            <button class="cs_product_btn cs_color1 cs_semi_bold">Apply</button>
-                        </form> -->
                     <div class="cs_height_30 cs_height_lg_30"></div>
                     <h2 class="cs_fs_21 cs_medium">Tổng số tiền thanh toán</h2>
                     <table class="cs_medium">
                         <tbody>
-                            <?php
-                            foreach ($sum_cart_user as $cart) :
-                                extract($cart)
-                            ?>
-                            <?php endforeach ?>
                             <tr>
                                 <td>Đơn giá</td>
-                                <td class="text-end"><?= number_format($total_amount, 0, ',', '.') ?> VNĐ</td>
+                                <td class="text-end total-amount"><?= number_format($total_amount, 0, ',', '.') ?> VNĐ</td>
                             </tr>
                             <tr>
                                 <td>Tổng cộng</td>
-                                <td class="text-end"><?= number_format($total_amount, 0, ',', '.') ?> VNĐ</td>
+                                <td class="text-end total-amount"><?= number_format($total_amount, 0, ',', '.') ?> VNĐ</td>
                             </tr>
                         </tbody>
                     </table>
@@ -101,7 +91,9 @@
         </div>
     </div>
 </div>
+
 <!-- End Cart -->
 <div class="cs_height_110 cs_height_lg_50"></div>
 <hr>
+
 <!-- Start footer -->

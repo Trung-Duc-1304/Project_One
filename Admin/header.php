@@ -40,7 +40,11 @@
   <script src="../assets/admin/vendor/js/helpers.js"></script>
   <!-- <script src="../assets/admin/vendor/js/template-customizer.js"></script> -->
   <script src="../assets/admin/js/config.js"></script>
-
+  <style>
+    .swal2-container {
+      z-index: 99999;
+    }
+  </style>
 </head>
 
 <body>
@@ -149,7 +153,14 @@
           </li>
 
           <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link ">
+            <a href="?act=bill" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-cart-download"></i>
+              <div class="text-truncate" data-i18n="𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑩𝒊𝒍𝒍">𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑩𝒊𝒍𝒍</div>
+            </a>
+          </li>
+
+          <li class="menu-item">
+            <a href="?act=listbl" class="menu-link ">
               <i class='menu-icon tf-icons bx bx-food-menu'></i>
               <div class="text-truncate" data-i18n="𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑩𝒊̀𝒏𝒉 𝑳𝒖𝒂̣̂𝒏">𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑩𝒊̀𝒏𝒉 𝑳𝒖𝒂̣̂𝒏</div>
               <!-- <span class="badge badge-center rounded-pill bg-success ms-auto">4</span> -->
@@ -165,20 +176,22 @@
           </li>
 
           <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link">
+            <a href="?act=danhsachthongke" class="menu-link">
               <i class='menu-icon tf-icons bx bx-bar-chart-alt-2'></i>
               <div class="text-truncate" data-i18n="𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑻𝒉𝒐̂́𝒏𝒈 𝑲𝒆̂">𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑻𝒉𝒐̂́𝒏𝒈 𝑲𝒆̂</div>
             </a>
           </li>
+
+          <li class="menu-item">
+            <a href="../" class="menu-link">
+              <i class='menu-icon tf-icons bx bx bxl-unity'></i>
+              <div class="text-truncate" data-i18n="𝑸𝒖𝒂𝒚 𝑳𝒂̣𝒊 𝑪𝒍𝒊𝒆𝒏𝒕">𝑸𝒖𝒂𝒚 𝑳𝒂̣𝒊 𝑪𝒍𝒊𝒆𝒏𝒕</div>
+            </a>
+          </li>
         </ul>
-
-
 
       </aside>
       <!-- / Menu -->
-
-
-
       <!-- Layout container -->
       <div class="layout-page">
 
@@ -619,7 +632,7 @@
                     <div class="dropdown-divider"></div>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="../index.php?act=home" target="_blank">
+                    <a class="dropdown-item" href="#" id="btnLogout">
                       <i class="bx bx-power-off me-2"></i>
                       <span class="align-middle">Thoát Admin</span>
                     </a>

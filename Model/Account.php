@@ -21,14 +21,14 @@ function  update_user($id, $User, $Email, $Password, $Tel, $FullName)
 
 function loadAll_account()
 {
-    $sql = "SELECT * FROM taikhoan ORDER BY id DESC";
+    $sql = "SELECT * FROM taikhoan WHERE `status` = 1 ORDER BY id DESC";
     $list_account = pdo_query($sql);
     return $list_account;
 }
 
 function delete_account($id)
 {
-    $sql = "DELETE FROM taikhoan WHERE id=" . $id;
+    $sql = "UPDATE taikhoan SET `status` = 0 WHERE id=" . $id;
     pdo_execute($sql);
 }
 
@@ -48,7 +48,7 @@ function loadOne_account()
 
 function check_Pass($Email)
 {
-    $sql = "SELECT * FROM taikhoan WHERE email='" . $Email . "'";
+    $sql = "SELECT * FROM users WHERE Email='" . $Email . "'";
     $Check_pass = pdo_query_one($sql);
     return $Check_pass;
 }

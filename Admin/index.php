@@ -1,12 +1,38 @@
 <?php
+session_start();
+ob_start();
 require_once '../Model/pdo.php';
 require_once '../Model/danhmuc.php';
 require_once '../Model/sanpham.php';
+require_once '../Model/binhluan.php';
+require_once '../Model/thongke.php';
 require_once '../Model/Account.php';
 require_once '../Model/Bienthe.php';
 require_once '../Model/order.php';
 require_once '../global.php';
 require_once 'header.php';
+function checkRole()
+{
+    // Kiểm tra xem người dùng có quyền admin không
+    if ($_SESSION['role'] != "Admin" && $_SESSION['role'] != "Nhân Viên") {
+        // Nếu không phải admin, chuyển hướng người dùng đến trang không có quyền
+        header("Location: login.php");
+        exit();
+    }
+}
+// Kiểm tra đăng nhập
+if (isset($_SESSION['tendangnhap'])) {
+    // Gọi hàm kiểm tra quyền sau khi đăng nhập
+    checkRole();
+    // Người dùng có quyền admin đã đăng nhập, có thể hiển thị trang chính
+} else {
+    // Người dùng chưa đăng nhập, chuyển hướng đến trang đăng nhập
+    header("Location: login.php");
+    exit();
+}
+
+$list_order_home = list_order_home();
+$Count_order = Count_order();
 
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -97,43 +123,47 @@ if (isset($_GET['act'])) {
                 $tensp = $_POST['tensp'];
                 $giasp = $_POST['giasp'];
                 $image = basename($_FILES['image']['name']);
-                $khuyenmai = $_POST['khuyenmai'];
                 $mota = $_POST['mota'];
                 $danhmuc = $_POST['danhmuc'];
                 $check = true;
+
                 if (empty(trim($tensp))) {
-                    $tenspErr = "Vui lòng nhập tên sản phẩm !";
+                    $tenspErr = "Vui lòng nhập tên sản phẩm!";
                     $check = false;
                 }
+
                 if (empty(trim($mota))) {
-                    $motaErr = "Vui lòng nhập mô tả sản phẩm !";
+                    $motaErr = "Vui lòng nhập mô tả sản phẩm!";
                     $check = false;
                 }
-                if (empty($giasp))
+
+                if (empty($giasp)) {
                     $giasp = 1;
-                if (empty($khuyenmai))
-                    $khuyenmai = 0;
-                $giakm = intval($giasp) * ((100 - intval($khuyenmai)) / 100);
+                }
+
                 if (empty($image)) {
                     $check = false;
-                    $imageErr = "Vui lòng uploads file ảnh !";
+                    $imageErr = "Vui lòng tải lên file ảnh!";
                 } else {
                     $file_tmp = $_FILES['image']['tmp_name'];
                     $target_file = "../uploads/" . $image;
                     $extension = pathinfo($target_file, PATHINFO_EXTENSION);
+
                     if (!in_array($extension, ["png", "jpeg", "jpg", "webp"])) {
                         $check = false;
-                        $imageErr = "File không đúng định dạng !";
+                        $imageErr = "File không đúng định dạng!";
                     } else {
                         if ($check) {
                             move_uploaded_file($file_tmp, $target_file);
                         }
                     }
                 }
+
                 if ($check) {
                     insert_sp($danhmuc, $tensp, $giasp, $image, $giakm, $khuyenmai, $mota);
                 }
             }
+
             $listdm = load_all_dm("");
             include_once './San_Pham/add.php';
             break;
@@ -197,6 +227,14 @@ if (isset($_GET['act'])) {
             include_once './Order/list.php';
             break;
 
+        case 'ct_order':
+            if (isset($_GET['user_id']) && ($_GET['user_id'] > 0)) {
+                $Userid = $_GET['user_id'];
+                $list_order = list_order_user($Userid);
+            }
+            include_once './Order/detail.php';
+            break;
+
         case 'update_order':
             $list_order_one = list_order_one();
             include_once './Order/update.php';
@@ -205,12 +243,13 @@ if (isset($_GET['act'])) {
         case 'update_orders':
             if (isset($_POST['submit']) && ($_POST['submit'])) {
                 $id = $_POST['id'];
+                $idbill = $_POST['idbillct'];
+                $Userid = $_POST['Userid'];
                 $trangthai = $_POST['trangthai'];
-                $thanhtoan = $_POST['thanhtoan'];
-                update_order($id, $trangthai, $thanhtoan);
+                update_order($id, $idbill, $trangthai);
+                header('location: ?act=ct_order&user_id=' . $Userid . '');
             }
-            $list_order = list_order();
-            include_once './Order/list.php';
+            include_once './Order/detail.php';
             break;
 
             // ACCOUNT
@@ -250,18 +289,23 @@ if (isset($_GET['act'])) {
             include_once './Account/list.php';
             break;
 
-            // Biến thể
+            // biến thể
         case 'create_bt':
+            $soluongErr = "";
             if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                 $pro_id = $_GET['id'];
                 $size = $_POST['size'];
                 $color = $_POST['color'];
                 $soLuong = $_POST['soLuong'];
-                insert_bt($pro_id, $size, $color, $soLuong);
-                echo '<script>
+                if (empty(trim($soLuong))) {
+                    $soluongErr = "Vui lòng nhập số lượng  !";
+                } else {
+                    insert_bt($pro_id, $size, $color, $soLuong);
+                    echo '<script>
                             alert("Bạn đã thêm biến thể thành công !");
                             window.location.href="?act=list_bt&id=' . $pro_id . '";
                         </script>';
+                }
             }
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 $id = $_GET['id'];
@@ -319,7 +363,32 @@ if (isset($_GET['act'])) {
             $list_bt = loadAll_bt($id);
             include_once './Bien_The/list.php';
             break;
-
+        case 'listbl':
+            if (isset($_POST['search'])) {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            $listbl = load_all_bl($kyw);
+            include "Binh_Luan/list.php";
+            break;
+        case 'xoabl':
+            if (isset($_GET['id']) && ($_GET['id'] != "")) {
+                $id = $_GET['id'];
+                update_bl($id);
+                echo '<script>
+                            alert("Bạn đã xoá bình luận thành công !");
+                            window.location.href="?act=listbl";
+                        </script>';
+            }
+            $listbl = load_all_bl("");
+            include "Binh_Luan/list.php";
+            break;
+        case 'danhsachthongke':
+            $day = (isset($_GET['day']) && $_GET['day'] != "") ? $_GET['day'] : 1;
+            $listthongke = thongke($day);
+            include_once './Thong_Ke/list.php';
+            break;
         default:
             include "home.php";
             break;

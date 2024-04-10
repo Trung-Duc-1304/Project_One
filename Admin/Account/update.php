@@ -49,11 +49,11 @@ if (is_array($load_oneAccount)) {
                                             <option value="Thành Viên">Thành Viên</option>
                                         <?php endif; ?>
 
-                                        <?php if ($role == "Nhân Viên") : ?>
+                                        <!-- <?php if ($role == "Nhân Viên") : ?>
                                             <option value="Nhân Viên" selected>Nhân Viên</option>
                                         <?php else : ?>
                                             <option value="Nhân Viên">Nhân Viên</option>
-                                        <?php endif; ?>
+                                        <?php endif; ?> -->
 
                                     </select>
                                 </div>
