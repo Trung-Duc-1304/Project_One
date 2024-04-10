@@ -101,11 +101,15 @@
                         <td>
                             <a href="<?= '?act=lichsumuahang&idorder=' . $values['Bill_ID'] ?>" class="btn btn-warning">Chi
                                 tiết</a>
-                            <?php if ($values['trangthaicuadh'] == 0) { ?>
+                            <?php if ($values['trangthaicuadh'] == 0) {
+                            ?>
                                 <a href="<?= '?act=orderCancel&huy&ID=' . $values['Bill_ID'] ?>" onclick="return confirm('Bạn có chắc hủy không')" class="btn btn-danger">Hủy đơn</a>
-                            <?php } elseif ($values['trangthaicuadh'] == -1) { ?>
+                            <?php
+                            } else if ($values['trangthaicuadh'] == -1) {
+                            ?>
                                 <a class="btn btn-danger">Đã hủy</a>
-                            <?php } ?>
+                            <?php
+                            } ?>
                         </td>
 
 

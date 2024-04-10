@@ -51,6 +51,12 @@ function Count_order()
     $sql = "SELECT COUNT(*) AS total_orders FROM `bil_ct`";
     return pdo_query_one($sql);
 }
+
+function Count_price()
+{
+    $sql = "SELECT SUM(price) AS total_price FROM bill";
+    return pdo_query_one($sql);
+}
 function list_order_home()
 {
     $sql = "SELECT *,bill.trangthai as trangthaidh FROM bill 

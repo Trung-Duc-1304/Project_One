@@ -33,6 +33,7 @@ if (isset($_SESSION['tendangnhap'])) {
 
 $list_order_home = list_order_home();
 $Count_order = Count_order();
+$Count_price = Count_price();
 
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -363,6 +364,7 @@ if (isset($_GET['act'])) {
             $list_bt = loadAll_bt($id);
             include_once './Bien_The/list.php';
             break;
+            // bình luận
         case 'listbl':
             if (isset($_POST['search'])) {
                 $kyw = $_POST['kyw'];
@@ -384,6 +386,7 @@ if (isset($_GET['act'])) {
             $listbl = load_all_bl("");
             include "Binh_Luan/list.php";
             break;
+            // thống kê
         case 'danhsachthongke':
             $day = (isset($_GET['day']) && $_GET['day'] != "") ? $_GET['day'] : 1;
             $listthongke = thongke($day);

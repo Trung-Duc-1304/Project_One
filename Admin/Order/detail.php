@@ -47,8 +47,11 @@ foreach ($list_order as $ten) {
                                 <td><?= $Pay ?> </td>
                                 <td><?= number_format($total) ?> VND</td>
                                 <td>
-                                    <a class="btn btn-warning  " href="<?= $sua ?>">Sửa</a>
-
+                                    <?php if ($trangthaidh == 3 || $trangthaidh == -1) {
+                                        echo '';
+                                    } else {
+                                        echo '<a class="btn btn-warning  " href="<?= $sua ?>">Sửa</a>';
+                                    } ?>
                                 </td>
                             </tr>
                         <?php endforeach ?>

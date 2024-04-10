@@ -87,8 +87,8 @@
           <div class="col-lg-6 col-md-3 col-6 mb-4">
             <div class="card">
               <div class="card-body pb-2">
-                <span class="d-block fw-medium">Lợi nhuận</span>
-                <h3 class="card-title mb-0">624k</h3>
+                <span class="d-block fw-medium">Doanh Thu</span>
+                <h4 class="card-title mb-0"> <?= number_format($Count_price['total_price']) ?> VND</h4>
                 <div id="profitChart"></div>
               </div>
             </div>
@@ -422,8 +422,8 @@
                     </td>
                     <td>
                       <?php
-                      switch ($Home['trangthai']) {
-                        case '0':
+                      switch ($Home['trangthaidh']) {
+                        case "0":
                           echo "<span class='badge bg-label-info'>Chờ xác nhận</span><br>";
                           break;
                         case '1':
@@ -435,7 +435,7 @@
                         case '3':
                           echo "<span class='badge bg-label-success'>Đã giao</span><br>";
                           break;
-                        case '-1':
+                        case "-1":
                           echo "<span class='badge bg-label-danger'>Đã hủy</span><br>";
                           break;
                         default:
@@ -455,162 +455,6 @@
                     </td>
                   </tr>
                 <?php endforeach ?>
-                <!-- <tr>
-              <td>
-                <div class="d-flex align-items-center">
-                  <img src="../assets/admin/img/products/magic-mouse.png" alt="Apple" height="32" width="32" class="me-2">
-                  <div class="d-flex flex-column">
-                    <span class="fw-medium lh-1">Magic Mouse</span>
-                    <small class="text-muted">Apple</small>
-                  </div>
-                </div>
-              </td>
-              <td><span class="badge bg-label-warning rounded-pill badge-center p-3 me-2"><i class="bx bx-mouse bx-xs"></i></span> Mouse</td>
-              <td>
-                <div class="lh-1"><span class="text-primary fw-medium">$149</span></div>
-                <small class="text-muted">Đã thanh toán đầy đủ</small>
-              </td>
-              <td><span class="badge bg-label-success">Hoàn thành</span></td>
-              <td>
-                <div class="dropdown">
-                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>Xem chi tiết</a>
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Xóa bỏ</a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="d-flex align-items-center">
-                  <img src="../assets/admin/img/products/imac-pro.png" alt="Apple" height="32" width="32" class="me-2">
-                  <div class="d-flex flex-column">
-                    <span class="fw-medium lh-1">iMac Pro</span>
-                    <small class="text-muted">Apple</small>
-                  </div>
-                </div>
-              </td>
-              <td><span class="badge bg-label-info rounded-pill badge-center p-3 me-2"><i class="bx bx-desktop bx-xs"></i></span> Computer</td>
-              <td>
-                <div class="text-muted lh-1"><span class="text-primary fw-medium">$0</span>/899</div>
-                <small class="text-muted">Chưa thanh toán</small>
-              </td>
-              <td><span class="badge bg-label-danger">ĐÃ HỦY</span></td>
-              <td>
-                <div class="dropdown">
-                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>Xem chi tiết</a>
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Xóa bỏ</a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="d-flex align-items-center">
-                  <img src="../assets/admin/img/products/note10.png" alt="Samsung" height="32" width="32" class="me-2">
-                  <div class="d-flex flex-column">
-                    <span class="fw-medium lh-1">Note 10</span>
-                    <small class="text-muted">Samsung</small>
-                  </div>
-                </div>
-              </td>
-              <td><span class="badge bg-label-primary rounded-pill badge-center p-3 me-2"><i class="bx bx-mobile-alt bx-xs"></i></span> Smart Phone</td>
-              <td>
-                <div class="lh-1"><span class="text-primary fw-medium">$149</span></div>
-                <small class="text-muted">Đã thanh toán đầy đủ</small>
-              </td>
-              <td><span class="badge bg-label-success">Hoàn thành</span></td>
-              <td>
-                <div class="dropdown">
-                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Xem chi tiết</a>
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Xóa bỏ</a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="d-flex align-items-center">
-                  <img src="../assets/admin/img/products/iphone.png" alt="Apple" height="32" width="32" class="me-2">
-                  <div class="d-flex flex-column">
-                    <span class="fw-medium lh-1">iPhone 11 Pro</span>
-                    <small class="text-muted">Apple</small>
-                  </div>
-                </div>
-              </td>
-              <td><span class="badge bg-label-primary rounded-pill badge-center p-3 me-2"><i class="bx bx-mobile-alt bx-xs"></i></span> Smart Phone</td>
-              <td>
-                <div class="lh-1"><span class="text-primary fw-medium">$399</span></div>
-                <small class="text-muted">Đã thanh toán đầy đủ</small>
-              </td>
-              <td><span class="badge bg-label-success">Hoàn thành</span></td>
-              <td>
-                <div class="dropdown">
-                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Xem chi tiết</a>
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Xóa bỏ</a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="d-flex align-items-center">
-                  <img src="../assets/admin/img/products/mi-tv.png" alt="Xiaomi" height="32" width="32" class="me-2">
-                  <div class="d-flex flex-column">
-                    <span class="fw-medium lh-1">Mi LED TV 4X</span>
-                    <small class="text-muted">Xiaomi</small>
-                  </div>
-                </div>
-              </td>
-              <td><span class="badge bg-label-danger rounded-pill badge-center p-3 me-2"><i class="bx bx-tv bx-xs"></i></span> Smart TV</td>
-              <td>
-                <div class="text-muted lh-1"><span class="text-primary fw-medium">$349</span>/2499</div>
-                <small class="text-muted">Thanh toán một phần</small>
-              </td>
-              <td><span class="badge bg-label-primary">Đã xác nhận</span></td>
-              <td>
-                <div class="dropdown">
-                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Xem chi tiết</a>
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Xóa bỏ</a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="d-flex align-items-center">
-                  <img src="../assets/admin/img/products/logitech-mx.png" alt="Logitech" height="32" width="32" class="me-2">
-                  <div class="d-flex flex-column">
-                    <span class="fw-medium lh-1">Logitech MX</span>
-                    <small class="text-muted">Logitech</small>
-                  </div>
-                </div>
-              </td>
-              <td><span class="badge bg-label-warning rounded-pill badge-center p-3 me-2"><i class="bx bx-mouse bx-xs"></i></span> Mouse</td>
-              <td>
-                <div class="lh-1"><span class="text-primary fw-medium">$89</span></div>
-                <small class="text-muted">Đã thanh toán đầy đủ</small>
-              </td>
-              <td><span class="badge bg-label-primary">Hoàn thành</span></td>
-              <td>
-                <div class="dropdown">
-                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Xem chi tiết</a>
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Xóa bỏ</a>
-                  </div>
-                </div>
-              </td>
-            </tr> -->
               </tbody>
             </table>
           </div>

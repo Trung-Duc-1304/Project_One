@@ -153,13 +153,6 @@
           </li>
 
           <li class="menu-item">
-            <a href="?act=bill" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-cart-download"></i>
-              <div class="text-truncate" data-i18n="𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑩𝒊𝒍𝒍">𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑩𝒊𝒍𝒍</div>
-            </a>
-          </li>
-
-          <li class="menu-item">
             <a href="?act=listbl" class="menu-link ">
               <i class='menu-icon tf-icons bx bx-food-menu'></i>
               <div class="text-truncate" data-i18n="𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑩𝒊̀𝒏𝒉 𝑳𝒖𝒂̣̂𝒏">𝑸𝒖𝒂̉𝒏 𝑳𝒚́ 𝑩𝒊̀𝒏𝒉 𝑳𝒖𝒂̣̂𝒏</div>
