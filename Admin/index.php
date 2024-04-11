@@ -249,9 +249,10 @@ if (isset($_GET['act'])) {
                 $id = $_POST['id'];
                 $idbill = $_POST['idbillct'];
                 $Userid = $_POST['Userid'];
+                $time = $_POST['Time_set'];
                 $trangthai = $_POST['trangthai'];
                 update_order($id, $idbill, $trangthai);
-                header('location: ?act=ct_order&user_id=' . $Userid . '');
+                header('location: ?act=ct_order&user_id=' . $Userid . '&time=' . $time . '');
             }
             include_once './Order/detail.php';
             break;

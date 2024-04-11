@@ -26,6 +26,13 @@ function loadAll_account()
     return $list_account;
 }
 
+function loadAll_account_insert()
+{
+    $sql = "SELECT email FROM taikhoan ";
+    $list_account = pdo_query($sql);
+    return $list_account;
+}
+
 function delete_account($id)
 {
     $sql = "UPDATE taikhoan SET `status` = 0 WHERE id=" . $id;
@@ -48,7 +55,7 @@ function loadOne_account()
 
 function check_Pass($Email)
 {
-    $sql = "SELECT * FROM users WHERE Email='" . $Email . "'";
+    $sql = "SELECT * FROM taikhoan WHERE email='" . $Email . "'";
     $Check_pass = pdo_query_one($sql);
     return $Check_pass;
 }

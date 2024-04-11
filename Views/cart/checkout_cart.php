@@ -20,7 +20,6 @@
 <div class="container">
     <div class="row">
         <div class="col-xl-7">
-            <!-- <p class="cs_checkout-alert m-0">Have a coupon? <a href="#">Click here to enter your code</a></p> -->
             <div class="cs_height_40 cs_height_lg_40"></div>
             <h2 class="cs_checkout-title cs_fs_28">Chi tiết thanh toán</h2>
             <div class="cs_height_45 cs_height_lg_40"></div>
@@ -34,19 +33,15 @@
                     <label class="cs_shop-label">Tên đăng nhập*</label>
                     <input value="<?= $_SESSION['user']['tendangnhap'] ?>" type="text" class="cs_shop-input">
                 </div>
-                <!-- <div class="col-lg-12">
-                    <label class="cs_shop-label">Tình trạng *</label>
-                    <select class="cs_shop-input">
-                        <option value="California">California</option>
-                        <option value="Gercy">Áo mới</option>
-                        <option value="Daiking">Daikin</option>
-                    </select>
-                </div> -->
                 <div class="col-lg-12">
+                    <label class="cs_shop-label">Địa chỉ nhận hàng*</label>
+                    <input value="<?= $_SESSION['user']['diachi'] ?>" type="text" class="cs_shop-input">
+                </div>
+                <div class="col-lg-6">
                     <label class="cs_shop-label">Điện thoại *</label>
                     <input value="<?= $_SESSION['user']['sodienthoai'] ?>" type="text" class="cs_shop-input">
                 </div>
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <label class="cs_shop-label">Địa chỉ email*</label>
                     <input value="<?= $_SESSION['user']['email'] ?>" type="text" class="cs_shop-input">
                 </div>

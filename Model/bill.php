@@ -63,8 +63,9 @@ function historyOder($kh_id, $idoder, $star, $end)
 function listallhistoryOder($kh_id, $star, $end)
 {
     try {
-        $sql = "SELECT *,bill.trangthai as trangthaicuadh FROM bill JOIN taikhoan ON bill.User_ID = taikhoan.id
-        WHERE User_ID = :user_id  ORDER BY id DESC";
+        $sql = "SELECT *,bill.trangthai as trangthaicuadh FROM bill 
+        JOIN taikhoan ON bill.User_ID = taikhoan.id
+        WHERE User_ID = :user_id  ORDER BY bill.Bill_ID DESC";
         if ($star != '' && $end != "") {
             $sql .= " LIMIT $star,$end";
         }

@@ -48,7 +48,8 @@ if (is_array($list_order_one)) {
                 <!-- /Second column -->
             </div>
             <input type="hidden" name="id" value="<?= $Bill_ID ?>">
-            <input type="hidden" name="Userid" value="<?= $_SESSION['user']['id'] ?>">
+            <input type="hidden" name="Userid" value="<?= $User_ID ?>">
+            <input type="hidden" name="Time_set" value="<?= $Time_set ?>">
             <input type="hidden" name="idbillct" value="<?= $idbillct ?>">
         </form>
     </div>

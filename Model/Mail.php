@@ -20,11 +20,11 @@ class Mailer
             $mail->isSMTP();                                      // Đặt người gửi thư sử dụng SMTP
             $mail->Host = 'smtp.gmail.com';  // Chỉ định máy chủ SMTP chính và dự phòng
             $mail->SMTPAuth = true;                               // Kích hoạt xác thực SMTP
-            $mail->Username = 'ducltph46032@fpt.edu.vn';                 // tên người dùng SMTP
-            $mail->Password = 'dfcdwdsafwgyykqi';                           // Mật khẩu SMTP
+            $mail->Username = 'duc130504@gmail.com';                 // tên người dùng SMTP
+            $mail->Password = 'gkdfccjexafplugy';                           // Mật khẩu SMTP
             $mail->SMTPSecure = 'tls';                            // Kích hoạt mã hóa TLS, `ssl` cũng được chấp nhận
             $mail->Port = 587;                                    // Cổng TCP để kết nối với
-            $mail->setFrom('ducltph46032@fpt.edu.vn', '𝒇𝒂𝒔𝒉𝒊𝒐𝒏');
+            $mail->setFrom('duc130504@gmail.com', '𝒇𝒂𝒔𝒉𝒊𝒐𝒏');
             $mail->addAddress($Email, '𝒇𝒂𝒔𝒉𝒊𝒐𝒏');     // Thêm người nhận             // Tên là tùy chọn
             $mail->isHTML(true);                                  // Đặt định dạng email thành HTML
             $mail->Subject = $tieude;

@@ -48,9 +48,9 @@
                 <th>
                     Thành tiền
                 </th>
-                <th>
+                <!-- <th>
                     Tình trạng đơn hàng
-                </th>
+                </th> -->
                 <th>
 
                 </th>
@@ -107,7 +107,7 @@
                             <?php
                             } else if ($values['trangthaicuadh'] == -1) {
                             ?>
-                                <a class="btn btn-danger">Đã hủy</a>
+                                <a class="btn btn-secondary">Đã hủy</a>
                             <?php
                             } ?>
                         </td>
@@ -155,11 +155,11 @@
                                 ?>VND
                             </strong>
                         </td>
-                        <td class="col-sm-2">
+                        <!-- <td class="col-sm-2">
                             <span class=" text-danger">
                                 <?= ($values['trangthai'] == 0) ? 'Chờ xác nhận' : ($values['trangthai'] == 1 ? 'Chờ lấy hàng' : ($values['trangthai'] == 2 ? 'Đang giao hàng' : ($values['trangthai'] == 3 ? 'Đã giao' : ($values['trangthai'] == -1 ? 'Đã hủy' : '')))) ?>
                             </span>
-                        </td>
+                        </td> -->
                         <td class="col-sm-2"><a class="btn btn-danger" href="<?= '?act=lichsumuahang' ?>">Quay lại</a></td>
                     </tr>
                 <?php } ?>

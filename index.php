@@ -254,22 +254,21 @@ if (isset($_GET['act'])) {
             $matkhauErr = "";
             $emailErr = "";
             $sdtErr = "";
+            $diachiErr = "";
             if (isset($_POST['dangky'])) {
                 $hovaten = $_POST['hovaten'];
                 $dkyemail = $_POST['dkyemail'];
                 $dkyuser = $_POST['dkyuser'];
                 $dkypass = $_POST['dkypass'];
                 $dkysdt = $_POST['dkysdt'];
+                $dkydc = $_POST['dkydc'];
                 $listtk = load_all_tk(0, "");
+                $loadAll_account_insert = loadAll_account_insert();
                 $check = true;
                 if (empty(trim($hovaten))) {
-                    $hovatenErr = "Vui lòng không bỏ trống ten!";
-                } else {
-                    if (!preg_match("/^[a-zA-Z \p{L}\p{Mn}]{6,}$/u", $hovaten)) {
-                        $check = false;
-                        $hovatenErr = "Họ và tên tối thiểu 6 ký tự và không bao gồm chữ số!";
-                    }
+                    $hovatenErr = "Vui lòng không bỏ trống tên!";
                 }
+
                 if (empty(trim($dkyuser))) {
                     $check = false;
                     $tendangnhapErr = "Vui lòng không bỏ trống te!";
@@ -289,20 +288,34 @@ if (isset($_GET['act'])) {
                 } else {
                     if (!preg_match("/^0[1-9]\d{8}$/", $dkysdt)) {
                         $check = false;
-                        $sdtErr = "Số điện thoại không đúng định dạng !";
+                        $sdtErr = "Số điện thoại không đúng định dạng (10 số) !";
                     }
                 }
                 if (empty(trim($dkyemail))) {
                     $check = false;
                     $emailErr = "Vui lòng không bỏ trống email!";
                 } else {
-                    if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$/", $dkyemail)) {
+                    if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $dkyemail)) {
                         $check = false;
                         $emailErr = "Email không đúng định dạng !";
                     }
                 }
+
+                foreach ($loadAll_account_insert as $account) {
+                    extract($account);
+                    if ($dkyemail == $email) {
+                        $check = false;
+                        $emailErr = "Địa chỉ email đã tồn tại!";
+                    }
+                }
+
+                if (empty(trim($dkydc))) {
+                    $check = false;
+                    $diachiErr = "Vui lòng không bỏ trống địa chỉ!";
+                }
+
                 if ($check) {
-                    insert_tk($hovaten, $dkyuser, $dkypass, $dkyemail, $dkysdt, "", 'Kích Hoạt');
+                    insert_tk($hovaten, $dkyuser, $dkypass, $dkyemail, $dkysdt, $dkydc, "", 'Kích Hoạt');
                     echo '<script>
                             alert("Bạn đã đăng ký tài khoản thành công !");
                             window.location.href="?act=login";

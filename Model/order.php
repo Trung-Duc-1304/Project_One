@@ -42,7 +42,9 @@ function list_order()
     JOIN taikhoan ON bill.User_ID  = taikhoan.id 
     JOIN bil_ct ON bill.Bill_ID = bil_ct.id_bill
     JOIN sanpham ON bil_ct.product_id = sanpham.id 
-    GROUP BY bill.User_ID, bill.Time_set";
+    GROUP BY bill.User_ID, bill.Time_set
+    ORDER BY bill.Time_set DESC
+    ";
     return pdo_query($sql);
 }
 
@@ -74,8 +76,9 @@ function list_order_user($Userid)
     JOIN taikhoan ON bill.User_ID = taikhoan.id 
     JOIN bil_ct ON bill.Bill_ID = bil_ct.id_bill
     JOIN sanpham ON bil_ct.product_id = sanpham.id
-    WHERE bill.User_ID = $Userid AND bill.Time_set = '$time'"; // Sử dụng tham số đặt chỗ với tên :time
-    return pdo_query($sql); // Truyền giá trị của tham số vào truy vấn SQL
+    WHERE bill.User_ID = $Userid AND bill.Time_set = '$time'
+    ORDER BY bil_ct.id DESC";
+    return pdo_query($sql);
 }
 
 

@@ -16,22 +16,32 @@
                         <h3 class="mb-3">𝐟𝐚𝐬𝐡𝐢𝐨𝐧</h3>
                     </div>
                     <form action="?act=register" method="post">
-                        <div class="mb-3">
-                            <input type="text" class="form-control" name="hovaten" placeholder="Họ và Tên" value="<?= isset($hovaten) ? ($hovaten) : '' ?>">
-                            <p style="color:red;"><?= $hovatenErr ?></p>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <input type="text" class="form-control" name="hovaten" placeholder="Họ và Tên" value="<?= isset($hovaten) ? ($hovaten) : '' ?>">
+                                <p style="color:red;"><?= $hovatenErr ?></p>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" name="dkyuser" placeholder="Tên đăng nhập" value="<?= isset($dkyuser) ? ($dkyuser) : '' ?>">
+                                <p style="color:red;"><?= $tendangnhapErr ?></p>
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <input type="email" class="form-control" name="dkyemail" placeholder="Email" value="<?= isset($dkyemail) ? ($dkyemail) : '' ?>">
-                            <p style="color:red;"><?= $emailErr ?></p>
+                            <input type="text" class="form-control" name="dkyemail" placeholder="Email" value="<?= isset($dkyemail) ? ($dkyemail) : '' ?>">
+                            <p style="color:red;"><?= $emailErr ?>
                         </div>
                         <div class="">
                             <input type="text" class="form-control" name="dkysdt" placeholder="Số điện thoại" value="<?= isset($dkysdt) ? ($dkysdt) : '' ?>">
                             <p style="color:red;"><?= $sdtErr ?></p>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 ">
+                            <input type="text" class="form-control" name="dkydc" placeholder="địa chỉ" value="<?= isset($dkydc) ? ($dkydc) : '' ?>">
+                            <p style="color:red;"><?= $diachiErr ?></p>
+                        </div>
+                        <!-- <div class="mb-3 col-lg-6">
                             <input type="text" class="form-control" name="dkyuser" placeholder="Tên đăng nhập" value="<?= isset($dkyuser) ? ($dkyuser) : '' ?>">
                             <p style="color:red;"><?= $tendangnhapErr ?></p>
-                        </div>
+                        </div> -->
                         <div class="mb-3">
                             <input type="password" class="form-control" name="dkypass" placeholder="Mật khẩu" value="<?= isset($dkypass) ? ($dkypass) : '' ?>">
                             <p style="color:red;"><?= $matkhauErr ?></p>

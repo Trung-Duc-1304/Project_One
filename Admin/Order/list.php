@@ -29,7 +29,7 @@
                                 <td><?= $formatDate ?></td>
                                 <td><?= number_format($total_amount) ?> VND</td>
                                 <td>
-                                    <a class="btn btn-primary" href="<?= $chitiet ?>">Chi tiết</a>
+                                    <a class="btn btn-primary" href="<?= $chitiet ?>">Xem đơn</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>
