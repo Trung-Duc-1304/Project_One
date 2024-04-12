@@ -88,8 +88,8 @@ function insert_tk($hovaten, $tendangnhap, $matkhau, $email, $sodienthoai, $diac
     pdo_execute($sql);
 }
 
-function update_tk($id, $hovaten, $tendangnhap, $matkhau, $email, $sodienthoai)
+function update_tk($id, $hovaten, $tendangnhap, $matkhau, $email, $sodienthoai, $diachi)
 {
-    $query = "UPDATE `taikhoan` SET `id`='$id',`hovaten`='$hovaten',`tendangnhap`='$tendangnhap',`matkhau`='$matkhau',`email`='$email',`sodienthoai`='$sodienthoai' WHERE id=" . $id;
+    $query = "UPDATE `taikhoan` SET `id`='$id',`hovaten`='$hovaten',`tendangnhap`='$tendangnhap',`matkhau`='$matkhau',`email`='$email',`sodienthoai`='$sodienthoai', `diachi`='$diachi' WHERE id=" . $id;
     pdo_execute($query);
 }

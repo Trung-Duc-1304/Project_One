@@ -117,6 +117,12 @@
                         </div>
                         <div class="form-group text-start mt-2">
                             <div class="group">
+                                <label>Địa chỉ</label>
+                            </div>
+                            <input class="form-control" name="diachi" type="text" value="<?= $diachi ?>">
+                        </div>
+                        <div class="form-group text-start mt-2">
+                            <div class="group">
                                 <label>Số điện thoại</label>
                             </div>
                             <input class="form-control" name="sodienthoai" type="text" value="<?= $sodienthoai ?>">
