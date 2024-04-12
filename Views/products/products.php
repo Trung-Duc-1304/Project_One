@@ -18,7 +18,7 @@ $hihi = (isset($_GET['page']) ? $_GET[('page')] : 1);
 <section>
     <div class="cs_height_40 cs_height_lg_80"></div>
     <div class="container-fluid">
-    <nav aria-label="breadcrumb">
+        <nav aria-label="breadcrumb">
             <ol class="cs_single_product_breadcrumb breadcrumb">
                 <li class="breadcrumb-item"><a href="?act=index">Trang Chủ</a></li>
                 <li class="breadcrumb-item"><a href="?act=products">Sản Phẩm</a></li>
@@ -52,7 +52,7 @@ $hihi = (isset($_GET['page']) ? $_GET[('page')] : 1);
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </form>
-                    
+
                     <!-- .cs_filter_widget -->
                     <div class="cs_filter_widget mt-3">
                         <h3 class="cs_filter_widget_title cs_medium cs_fs_18">Price <span></span></h3>
@@ -123,7 +123,7 @@ $hihi = (isset($_GET['page']) ? $_GET[('page')] : 1);
                             <a href="?act=sanpham_ct&id=<?= $id ?>">
                                 <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:400px;" class="w-100" alt="">
                             </a>
-                            <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute"><span>-<?= $khuyenmai?>%</span></div>
+                            <!-- <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute"><span>-<?= $khuyenmai ?>%</span></div> -->
                             <div class="cs_cart_badge position-absolute">
                                 <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                     <i class="fa-regular fa-heart"></i>
@@ -147,8 +147,8 @@ $hihi = (isset($_GET['page']) ? $_GET[('page')] : 1);
                                 <span>Stock: <span class="cs_accent_color">12 in stock</span></span>
                             </div>
                             <div class="mt-5">
-                                
-                                <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium "><?= number_format($giasp, 0, ',', '.')?>₫</span>
+
+                                <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium "><?= number_format($giasp, 0, ',', '.') ?>₫</span>
                             </div>
                             <p class="cs_product_desc">Our men black t-shirt offers a classic fit and is made from high-quality pure cotton <br>materials to keep you feeling and looking great.</p>
                             <div class="cs_action_btns">
@@ -175,30 +175,30 @@ $hihi = (isset($_GET['page']) ? $_GET[('page')] : 1);
                     <li class="cs_page_item"><a class="cs_page_link" href="?act=products&page=<?php echo $hihi + 1 ?>"><i class="fa-solid fa-arrow-right"></i></a></li>
                 <?php } ?>
             </ul>
-        <?php  }else {?>
-                    <?php $tongsp = count(load_all_sphome2(0,$kyw,$giadau,$giacuoi,$page));
-                        $limit =8;
-                        // Kiểm tra nếu $total hoặc $limit không phải là số hoặc rỗng
-                        if (!is_numeric($tongsp) || !is_numeric($limit) || $limit == 0) {
-                            echo "Dữ liệu đầu vào không hợp lệ!";
-                        } else {
-                            //Tính số trang
-                            $page = ceil($tongsp / $limit);
-                        }
-                        $hihi = (isset($_GET['page']) ? $_GET[('page')] : 1);
-                    ?>
-                    <ul class="cs_pagination cs_fs_21 cs_semibold cs_mp0">
-                        <?php if($hihi - 1 > 0) {?>
-                        <li class="cs_page_item"><a class="cs_page_link" href="?act=products&page=<?php echo $hihi - 1 ?>"><i class="fa-solid fa-arrow-left"></i></a></li>
-                        <?php }?> 
-                        <?php for($i=1;$i<=$page;$i++){ ?>
-                                <li class=" cs_page_item <?php echo (($hihi == $i) ? 'active' : '')?>"><a class="cs_page_link" href="?act=products&page=<?php echo $i?>"><?php echo $i ?></a></li>
-                        <?php }?>
-                        <?php if($hihi + 1 <= $page) {?>
-                        <li class="cs_page_item"><a class="cs_page_link" href="?act=products&page=<?php echo $hihi + 1 ?>"><i class="fa-solid fa-arrow-right"></i></a></li>
-                        <?php }?>
-                    </ul>
-                <?php }?>
+        <?php  } else { ?>
+            <?php $tongsp = count(load_all_sphome2(0, $kyw, $giadau, $giacuoi, $page));
+            $limit = 8;
+            // Kiểm tra nếu $total hoặc $limit không phải là số hoặc rỗng
+            if (!is_numeric($tongsp) || !is_numeric($limit) || $limit == 0) {
+                echo "Dữ liệu đầu vào không hợp lệ!";
+            } else {
+                //Tính số trang
+                $page = ceil($tongsp / $limit);
+            }
+            $hihi = (isset($_GET['page']) ? $_GET[('page')] : 1);
+            ?>
+            <ul class="cs_pagination cs_fs_21 cs_semibold cs_mp0">
+                <?php if ($hihi - 1 > 0) { ?>
+                    <li class="cs_page_item"><a class="cs_page_link" href="?act=products&page=<?php echo $hihi - 1 ?>"><i class="fa-solid fa-arrow-left"></i></a></li>
+                <?php } ?>
+                <?php for ($i = 1; $i <= $page; $i++) { ?>
+                    <li class=" cs_page_item <?php echo (($hihi == $i) ? 'active' : '') ?>"><a class="cs_page_link" href="?act=products&page=<?php echo $i ?>"><?php echo $i ?></a></li>
+                <?php } ?>
+                <?php if ($hihi + 1 <= $page) { ?>
+                    <li class="cs_page_item"><a class="cs_page_link" href="?act=products&page=<?php echo $hihi + 1 ?>"><i class="fa-solid fa-arrow-right"></i></a></li>
+                <?php } ?>
+            </ul>
+        <?php } ?>
     </div>
     <div class="cs_height_140 cs_height_lg_80"></div>
     <hr>

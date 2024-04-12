@@ -110,16 +110,16 @@ if (is_array($listsp)) {
                                     </a>
                                 </div> <!-- <button class='add-to-cart cs_cart_btn cs_accent_bg cs_fs_16 cs_white_color cs_medium position-absolute btn' data-product-id="<?= $id ?>"> Thêm vào giỏ hàng </button>
                                 -->
-                                
+
                             </div>
                             <div class="cs_product_info text-center">
                                 <h5 class="cs_product_title cs_fs_21 cs_medium">
                                     <a href="index.php?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a>
                                 </h5>
                                 <div class="mt-5">
-                                    
-                                    <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
-                                        
+
+                                    <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.') ?>₫</span>
+
                                 </div>
                             </div>
                         </div>
@@ -163,7 +163,7 @@ if (is_array($listsp)) {
                             <a href="?act=sanpham_ct&id=<?= $id ?>">
                                 <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:450px;" class="w-100" alt="">
                             </a>
-                            <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
+                            <!-- <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div> -->
                             <div class="cs_cart_badge position-absolute">
                                 <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                     <i class="fa-regular fa-heart"></i>
@@ -172,14 +172,14 @@ if (is_array($listsp)) {
                                     <i class="fa-regular fa-eye"></i>
                                 </a>
                             </div>
-                            
+
                             <!--  -->
                         </div>
                         <div class="cs_product_info text-center">
                             <h4><a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a></h4>
                             <div class="mt-5">
-                                
-                                <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+
+                                <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.') ?>₫</span>
                             </div>
                         </div>
                     </div>
@@ -196,7 +196,7 @@ if (is_array($listsp)) {
                             <a href="?act=sanpham_ct&id=<?= $id ?>">
                                 <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:450px;" class="w-100" alt="">
                             </a>
-                            <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
+                            <!-- <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div> -->
                             <div class="cs_cart_badge position-absolute">
                                 <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                     <i class="fa-regular fa-heart"></i>
@@ -205,14 +205,14 @@ if (is_array($listsp)) {
                                     <i class="fa-regular fa-eye"></i>
                                 </a>
                             </div>
-                            
+
                             <!--  -->
                         </div>
                         <div class="cs_product_info text-center">
                             <h4><a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a></h4>
                             <div class="mt-5">
-                                
-                                <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+
+                                <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.') ?>₫</span>
                             </div>
                         </div>
                     </div>
@@ -229,7 +229,7 @@ if (is_array($listsp)) {
                             <a href="?act=sanpham_ct&id=<?= $id ?>">
                                 <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:450px;" class="w-100" alt="">
                             </a>
-                            <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
+                            <!-- <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div> -->
                             <div class="cs_cart_badge position-absolute">
                                 <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                     <i class="fa-regular fa-heart"></i>
@@ -238,14 +238,14 @@ if (is_array($listsp)) {
                                     <i class="fa-regular fa-eye"></i>
                                 </a>
                             </div>
-                            
+
                             <!--  -->
                         </div>
                         <div class="cs_product_info text-center">
                             <h4><a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a></h4>
                             <div class="mt-5">
-                                
-                                <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+
+                                <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.') ?>₫</span>
                             </div>
                         </div>
                     </div>
@@ -262,7 +262,7 @@ if (is_array($listsp)) {
                             <a href="?act=sanpham_ct&id=<?= $id ?>">
                                 <img src="./uploads/<?= $image ?>" style=" object-fit: cover; height:450px;" class="w-100" alt="">
                             </a>
-                            <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div>
+                            <!-- <div class="cs_discount_badge cs_white_bg cs_fs_14 cs_primary_color position-absolute">-25%</div> -->
                             <div class="cs_cart_badge position-absolute">
                                 <a href="wishlist.html" class="cs_cart_icon cs_accent_bg cs_white_color">
                                     <i class="fa-regular fa-heart"></i>
@@ -271,13 +271,13 @@ if (is_array($listsp)) {
                                     <i class="fa-regular fa-eye"></i>
                                 </a>
                             </div>
-                            
+
                         </div>
                         <div class="cs_product_info text-center">
                             <h4><a href="?act=sanpham_ct&id=<?= $id ?>"><?= $tensp ?></a></h4>
                             <div class="mt-5">
-                                
-                                <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.')?>₫</span>
+
+                                <span class="cs_product_price cs_fs_18 cs_accent_color mb-0 cs_medium  mb-0 cs_medium old-price"><?= number_format($giasp, 0, ',', '.') ?>₫</span>
                             </div>
                         </div>
                     </div>
@@ -291,7 +291,7 @@ if (is_array($listsp)) {
 <!-- End Featured Items -->
 <!-- Start collection 2 -->
 <section>
-<div class="cs_height_140 cs_height_lg_80"></div>
+    <div class="cs_height_140 cs_height_lg_80"></div>
     <div class="container">
         <div class="cs_card cs_style_3">
             <div class="row">

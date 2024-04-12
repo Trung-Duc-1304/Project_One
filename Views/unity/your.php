@@ -114,6 +114,12 @@
                         </div>
                         <input class="form-control" type="text" value="<?= $email ?>" disabled>
                     </div>
+                    <div class="form-group text-start">
+                        <div class="group">
+                            <label>Đại chỉ</label>
+                        </div>
+                        <input class="form-control" type="text" value="<?= $diachi ?>" disabled>
+                    </div>
                     <div class="form-group text-start mt-2">
                         <div class="group">
                             <label>Số điện thoại</label>

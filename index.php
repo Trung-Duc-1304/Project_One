@@ -331,7 +331,7 @@ if (isset($_GET['act'])) {
         case 'your':
             include_once 'views/unity/your.php';
             break;
-            // cập nhật
+            // cập nhật user
         case 'update_user':
             if (isset($_SESSION['user'])) {
                 $tendangnhapErr = "";
@@ -345,6 +345,7 @@ if (isset($_GET['act'])) {
                     $hovaten = $_POST['hovaten'];
                     $sodienthoai = $_POST['sodienthoai'];
                     $email = $_POST['email'];
+                    $diachi = $_POST['diachi'];
                     $check = true;
                     if (empty(trim($hovaten))) {
                         $hovatenErr = "Vui lòng không để trống";
@@ -366,7 +367,7 @@ if (isset($_GET['act'])) {
                         $emailErr = "Vui lòng không bỏ trống !";
                     }
                     if ($check) {
-                        update_tk($id, $hovaten, $tendangnhap, $matkhau, $email, $sodienthoai);
+                        update_tk($id, $hovaten, $tendangnhap, $matkhau, $email, $sodienthoai, $diachi);
                         $_SESSION['user'] = check_user($tendangnhap, $matkhau);
                         echo '<script>
                             alert("Bạn đã sửa tài khoản thành công !");
@@ -431,6 +432,7 @@ if (isset($_GET['act'])) {
             }
             include_once 'views/cart/cart.php';
             break;
+            // thanh toán online
         case 'pay_code':
             if (isset($_POST['redirect']) && ($_POST['redirect'])) {
                 $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
