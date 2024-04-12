@@ -14,7 +14,7 @@
                 <h5 class="card-title text-primary mb-1"><?= number_format($Count_price['total_price']) ?> VNĐ</h5>
                 <small class="d-block mb-4 pb-1 text-muted">78% mục tiêu</small>
 
-                <a href="?act=danhsachthongke" class="btn btn-sm btn-primary">Xem doanh số bán hàng</a>
+                <a href="?act=thongke_thang" class="btn btn-sm btn-primary">Xem doanh số bán hàng</a>
               </div>
             </div>
             <div class="col-4 pt-3 ps-0">
@@ -400,7 +400,7 @@
                   <th>Sản phẩm</th>
                   <th>Giá</th>
                   <th>Tình trạng</th>
-                  <th>hành động</th>
+                  <!-- <th>hành động</th> -->
                 </tr>
               </thead>
               <tbody class="table-border-bottom-0">
@@ -417,7 +417,7 @@
                       </div>
                     </td>
                     <td>
-                      <div class="text-muted lh-1"><?= number_format($giasp) ?> VNĐ</div>
+                      <div class=" lh-1 text-danger"><?= number_format($giasp) ?> VNĐ</div>
                       <small class="text-muted"><?= $Pay ?></small>
                     </td>
                     <td>
@@ -444,7 +444,7 @@
                       }
                       ?>
                     </td>
-                    <td>
+                    <!-- <td>
                       <div class="dropdown">
                         <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
                         <div class="dropdown-menu">
@@ -452,7 +452,7 @@
                           <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Xóa bỏ</a>
                         </div>
                       </div>
-                    </td>
+                    </td> -->
                   </tr>
                 <?php endforeach ?>
               </tbody>
